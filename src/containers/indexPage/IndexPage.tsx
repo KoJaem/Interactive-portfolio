@@ -5,12 +5,10 @@ import { MoveImage } from './components';
 
 export const IndexPage = () => {
   return (
-    <Container>
-      <Typography size="16">IndexPage</Typography>
-    </Container>
+    <>
+      <MoveImage src="/favicon.ico" />
+      <MoveImage src="/favicon.ico" />
+      <MoveImage src="/favicon.ico" />
+    </>
   );
 };
-
-const Container = styled.section`
-  display: flex;
-`;
