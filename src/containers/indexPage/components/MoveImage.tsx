@@ -1,42 +1,73 @@
-import React, { CSSProperties, useEffect, useMemo, useRef, useState } from 'react'
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import React, {
+  useEffect,
+  useState,
+} from 'react';
 import styled from 'styled-components';
 // Math.floor(Math.random() * 500)
 type Props = {
   src: string;
-}
+};
 export const MoveImage = ({ src }: Props) => {
-  const [height, setHeight] = useState<number>();
-  // const [speed, setSpeed] = useState<number>();
+  const [top, setTop] = useState<number>();
+  const [random, setRandom] = useState<number>();
+  const [speed, setSpeed] = useState<number>();
+  const [visible, setVisible] = useState<boolean>(true);
 
   useEffect(() => {
     // Math.random() 범위지정 : (Math.random() * (최대 - 최소)) + 최소
-    const ran = Math.floor((Math.random() * 70) + 15);
-    setHeight(ran);
-  }, [])
+    const ran = Math.floor(Math.random() * 100);
+    setRandom(ran);
+  }, []);
 
-  if (height) {
-    return (
-      <Container positionNum={height}>
-        <Image alt="" src={src} />
-      </Container>
-    );
-  }
-  return <></>;
+  useEffect(() => {
+    if (random) {
+      setTop(Math.floor((random / 100) * 55 + 25)); // (random / 100) * (최대-최소) + 최소
+      setSpeed(Math.floor((random / 100) * 10 + 10));
+    }
+  }, [random]);
 
+  return (
+    <>
+      {top && (
+        <Container
+          animate={{
+            x: 'calc(-100vw - 100% - 50px)',
+            display: visible ? 'flex' : 'none',
+          }}
+          onAnimationComplete={() => setVisible(false)}
+          transition={{ duration: speed, ease: 'linear' }}
+          top={top}
+          zindex={Math.floor(top)}
+        >
+          <MovingImg alt="" src={src} layout="fill" priority />
+        </Container>
+      )}
+    </>
+  );
 };
 type StyledProps = {
-  positionNum : number;
-}
-const Container = styled.section<StyledProps>`
+  top: number;
+  zindex: number;
+};
+const Container = styled(motion.section)<StyledProps>`
   position: absolute;
   display: flex;
+  left: 100vw;
+  width: 100%;
+  max-width: 320px;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
   align-items: center;
-  top: ${({ positionNum }) => `${positionNum}vh`};
-  left: 50%; // 임시
+  top: ${({ top }) => `${top}vh`};
   justify-content: center;
-  transform: translate(-50%, -50%);
+  z-index: ${({ zindex }) => zindex};
+  transform: translate(0, -50%);
+  box-shadow: 4px 4px 4px;
 `;
 
-const Image = styled.img`
-
+const MovingImg = styled(Image)`
+  pointer-events: none;
 `;

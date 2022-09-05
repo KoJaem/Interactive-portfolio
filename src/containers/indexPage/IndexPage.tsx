@@ -6,9 +6,9 @@ import { MoveImage } from './components';
 export const IndexPage = () => {
   return (
     <>
-      <MoveImage src="/favicon.ico" />
-      <MoveImage src="/favicon.ico" />
-      <MoveImage src="/favicon.ico" />
+      <MoveImage src="/sample1.jpg" />
+      <MoveImage src="/sample2.jpg" />
+      <MoveImage src="/sample3.jpg" />
     </>
   );
 };
