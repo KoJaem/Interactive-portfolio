@@ -1,9 +1,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import React, {
-  useEffect,
-  useState,
-} from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useInterval } from 'src/hooks';
 import styled from 'styled-components';
 // Math.floor(Math.random() * 500)
 type Props = {
@@ -12,32 +10,40 @@ type Props = {
 export const MoveImage = ({ src }: Props) => {
   const [top, setTop] = useState<number>();
   const [random, setRandom] = useState<number>();
+  const [x, setX] = useState<number>(0);
   const [speed, setSpeed] = useState<number>();
   const [visible, setVisible] = useState<boolean>(true);
 
   useEffect(() => {
-    // Math.random() 범위지정 : (Math.random() * (최대 - 최소)) + 최소
     const ran = Math.floor(Math.random() * 100);
     setRandom(ran);
   }, []);
 
+  const randomCalc = useCallback((max: number, min: number): number => {
+    if (random) return Math.floor((random / 100) * (max - min) + min); // (random / 100) * (최대-최소) + 최소
+    return 0;
+  }, [random]);
+
   useEffect(() => {
     if (random) {
-      setTop(Math.floor((random / 100) * 55 + 25)); // (random / 100) * (최대-최소) + 최소
-      setSpeed(Math.floor((random / 100) * 10 + 10));
+      setTop(randomCalc(75, 25));
+      setSpeed(randomCalc(200, 100));
     }
-  }, [random]);
+  }, [random, randomCalc]);
+
+  useInterval(() => {
+    if(speed) setX(x => x + speed);
+  }, 1000)
 
   return (
     <>
       {top && (
         <Container
           animate={{
-            x: 'calc(-100vw - 100% - 50px)',
-            display: visible ? 'flex' : 'none',
+            x : x && -x,
+            // display: visible ? 'flex' : 'none',
           }}
-          onAnimationComplete={() => setVisible(false)}
-          transition={{ duration: speed, ease: 'linear' }}
+          transition={{ ease: 'linear' , duration: 1}}
           top={top}
           zindex={Math.floor(top)}
         >
@@ -54,7 +60,7 @@ type StyledProps = {
 const Container = styled(motion.section)<StyledProps>`
   position: absolute;
   display: flex;
-  left: 100vw;
+  left: 100%;
   width: 100%;
   max-width: 320px;
   height: 200px;
@@ -64,7 +70,7 @@ const Container = styled(motion.section)<StyledProps>`
   top: ${({ top }) => `${top}vh`};
   justify-content: center;
   z-index: ${({ zindex }) => zindex};
-  transform: translate(0, -50%);
+  transform: translate(-50%, -50%);
   box-shadow: 4px 4px 4px;
 `;
 
