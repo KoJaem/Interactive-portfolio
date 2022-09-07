@@ -1,12 +1,23 @@
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
+import { useRecoilState, useSetRecoilState } from 'recoil';
+import { checkClick, selectProject } from 'src/recoil/atom';
 import styled from 'styled-components';
+
 type Props = {
   src: string;
 };
 export default function ClickImage({ src }: Props) {
-  const [click, setClick] = useState<boolean>(false);
+  const [click, setClick] = useRecoilState<boolean>(checkClick);
+  const [project, setProject] = useRecoilState(selectProject);
+  
+
+  const getProjectName = (src: string) => {
+    const projectName = src.slice(1).replace(/.jpg|.jpeg|.png|.gif/gi, '');
+    return projectName;
+  }
+
 
   useEffect(() => {
     click && console.log('클릭');
@@ -14,21 +25,23 @@ export default function ClickImage({ src }: Props) {
 
   const handleClick = () => {
     setClick(!click);
+    project ? setProject('') : setProject(getProjectName(src)); //
+
     // Todo : 속도를 전부 0으로 만들어줘야함
   };
 
   return (
     <Container
       onClick={() => handleClick()}
-      initial={{ translateX: '-50%', translateY: '-50%' }}
+      initial={{ translateX: '-50%', translateY: '-50%', left: '50%', top:'50%',}}
       animate={{
         left: click ? '50%' : undefined,
-        top: click ? '15vh' : undefined,
-        scale: click ? [1, 2, 1] : 1,
+        top: click ? '15vh' : '50%',
+        scale: click ? [1, 1.25, 1] : 1,
         transition: {
-          left: { delay: 1.5, duration: 0.5 },
-          top: { delay: 1.5, duration: 0.5 },
-          scale: { duration: 2 },
+          left: { delay: 0.5, duration: 0.5 },
+          top: { delay: 0.5, duration: 0.5 },
+          scale: { duration: 1 },
         },
       }}
     >
@@ -40,8 +53,6 @@ export default function ClickImage({ src }: Props) {
 const Container = styled(motion.div)`
   position: absolute;
   display: flex;
-  left: 50%;
-  top: 50%;
   width: 100%;
   max-width: 320px;
   height: 200px;
