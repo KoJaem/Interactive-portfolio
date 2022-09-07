@@ -2,21 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 import { useRecoilValue } from "recoil";
 import { selectProject } from 'src/recoil/atom';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { customColor } from 'src/constants';
 
 export const SimpleIntro = () => {
   const projectName = useRecoilValue(selectProject);
   return (
     <Container
       animate={{
-        backgroundColor: ['#b7c5b180', '#bdc0c2'],
+        backgroundColor: [customColor.darkGreen, customColor.darkSky],
         transition: {
           backgroundColor: {
             duration: 1,
           },
         },
       }}
-      exit={{ backgroundColor: '#f9ffeb', transition: { duration: 1 } }}
+      exit={{ backgroundColor: customColor.lightYellow, transition: { duration: 1 } }}
     >
       {projectName}
     </Container>

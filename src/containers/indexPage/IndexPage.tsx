@@ -1,21 +1,29 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useRecoilValue } from 'recoil';
+import { customColor } from 'src/constants';
 import { checkClick, selectProject } from 'src/recoil/atom';
 import styled from 'styled-components';
-import { MoveImage, SimpleIntro } from './components';
+import { SimpleIntro } from './components';
 import ClickImage from './components/ClickImage';
 
 export const IndexPage = () => {
   const click = useRecoilValue(checkClick);
   const project = useRecoilValue(selectProject);
+  const getProjectInfo = useCallback(async () => {
+    const data = await require(`src/dummy/${project}`);
+    console.log(data.simpleInfo);
+  },[project]);
 
+  useEffect(() => {
+    if (project) getProjectInfo();
+  }, [project, getProjectInfo]);
 
   return (
     <Container
-      initial={{ backgroundColor: '#f9ffeb' }}
+      initial={{ backgroundColor: customColor.white }}
       animate={{
-        backgroundColor: click ? '#b7c5b180' : undefined,
+        backgroundColor: click ? customColor.darkGreen : undefined,
         transition: { duration: click ? 2 : undefined },
       }}
     >

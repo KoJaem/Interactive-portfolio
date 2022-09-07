@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
-import { useRecoilState, useSetRecoilState } from 'recoil';
+import React, { useEffect } from 'react';
+import { useRecoilState } from 'recoil';
 import { checkClick, selectProject } from 'src/recoil/atom';
 import styled from 'styled-components';
 
@@ -45,7 +45,7 @@ export default function ClickImage({ src }: Props) {
         },
       }}
     >
-      <Img alt="" src={src} layout="fill" priority />
+      <Img alt="" src={src} layout="fill" />
     </Container>
   );
 }
