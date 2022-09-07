@@ -42,9 +42,10 @@ export const MoveImage = ({ src }: Props) => {
           animate={{
             x: x && -x,
             // display: visible ? 'flex' : 'none', // Todo : 화면에 안보이면 display: none 을 해서 성능을 높이면 좋을것같음.
+            transition: {ease: 'linear', duration: 1}
           }}
           initial={{ translateY: '-50%' }}
-          transition={{ ease: 'linear', duration: 1 }}
+          // transition={{ ease: 'linear', duration: 1 }}
           top={top}
           zindex={Math.floor(top)}
         >

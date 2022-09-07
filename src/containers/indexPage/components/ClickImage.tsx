@@ -39,9 +39,8 @@ export default function ClickImage({ src }: Props) {
         top: click ? '15vh' : '50%',
         scale: click ? [1, 1.25, 1] : 1,
         transition: {
-          left: { delay: 0.5, duration: 0.5 },
-          top: { delay: 0.5, duration: 0.5 },
-          scale: { duration: 1 },
+          delay: 0.5, duration: 0.5,
+          scale: { duration: 1, delay: 0 },
         },
       }}
     >
