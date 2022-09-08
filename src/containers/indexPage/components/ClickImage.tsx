@@ -24,9 +24,9 @@ export default function ClickImage({ src }: Props) {
   }, [click]);
 
   const handleClick = () => {
-    setClick(!click);
-    project ? setProject('') : setProject(getProjectName(src)); //
-
+    setClick(true);
+    setProject(getProjectName(src));
+    // project ? setProject('') : setProject(getProjectName(src));
     // Todo : 속도를 전부 0으로 만들어줘야함
   };
 
@@ -35,7 +35,7 @@ export default function ClickImage({ src }: Props) {
       onClick={() => handleClick()}
       initial={{ translateX: '-50%', translateY: '-50%', left: '50%', top:'50%',}}
       animate={{
-        left: click ? '50%' : undefined,
+        // left: click ? '50%' : undefined,
         top: click ? '15vh' : '50%',
         scale: click ? [1, 1.25, 1] : 1,
         transition: {

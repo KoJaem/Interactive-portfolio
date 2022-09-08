@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { useRecoilValue } from 'recoil';
-import { selectProject } from 'src/recoil/atom';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
+import { checkClick, selectProject } from 'src/recoil/atom';
 import { motion } from 'framer-motion';
 import { customColor } from 'src/constants';
 import { simpleInfoType } from 'src/types';
@@ -9,20 +9,27 @@ import { Typography } from 'src/components';
 import { MotionText } from './MotionText';
 
 export const SimpleIntro = () => {
-  const projectName = useRecoilValue(selectProject);
-  const [project, setProject] = useState<simpleInfoType>();
+  const [project, setProject] = useRecoilState(selectProject);
+  const [projectInfo, setProjectInfo] = useState<simpleInfoType>();
+  const setClick = useSetRecoilState(checkClick);
 
   const getProjectInfo = useCallback(async () => {
-    const {simpleInfo} = await require(`src/dummy/${projectName}`);
-    setProject(simpleInfo);
-  }, [projectName]);
+    const {simpleInfo} = await require(`src/dummy/${project}`);
+    setProjectInfo(simpleInfo);
+  }, [project]);
 
   useEffect(() => {
-    if (projectName) getProjectInfo();
-  }, [projectName, getProjectInfo]);
+    if (project) getProjectInfo();
+  }, [project, getProjectInfo]);
+
+  const handleExit = () => {
+    setClick(false);
+    setProject('');
+    // Todo : 속도를 전부 원래대로 만들어줘야함
+  }
   return (
     <>
-      {project && (
+      {projectInfo && (
         <Container
           animate={{
             backgroundColor: [customColor.darkGreen, customColor.darkSky],
@@ -37,20 +44,21 @@ export const SimpleIntro = () => {
             transition: { duration: 1 },
           }}
         >
+          <ExitBtn onClick={() => handleExit()}>X버튼 테스트</ExitBtn>
           <MotionText>
-            <Typography size="40">{project.title}</Typography>
-            <Typography size="20">{`${project.date[0]} ~ ${project.date[1]}`}</Typography>
-            <Typography size="20">{project.topic}</Typography>
-            <Typography size="20">{project.intro}</Typography>
+            <Typography size="40">{projectInfo.title}</Typography>
+            <Typography size="20">{`${projectInfo.date[0]} ~ ${projectInfo.date[1]}`}</Typography>
+            <Typography size="20">{projectInfo.topic}</Typography>
+            <Typography size="20">{projectInfo.intro}</Typography>
             <Typography size="20">
               기술스택
-              {project.developEnv.map((data, i) => (
+              {projectInfo.developEnv.map((data, i) => (
                 <li key={i}>{data}</li>
               ))}
             </Typography>
             <Typography size="20">
               나의 역할
-              {project.myRole.map((data, i) => (
+              {projectInfo.myRole.map((data, i) => (
                 <li key={i}>{data}</li>
               ))}
             </Typography>
@@ -70,4 +78,9 @@ const Container = styled(motion.section)`
   padding: 0 40px;
   padding-top: calc(15vh + 150px);
   overflow-y: auto;
+`;
+
+const ExitBtn = styled.section`
+  display: flex;
+  background-color: white;
 `;
