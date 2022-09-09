@@ -7,14 +7,16 @@ import { customColor } from 'src/constants';
 import { simpleInfoType } from 'src/types';
 import { Typography } from 'src/components';
 import { MotionText } from './MotionText';
+import { useRouter } from 'next/router';
 
 export const SimpleIntro = () => {
   const [project, setProject] = useRecoilState(selectProject);
   const [projectInfo, setProjectInfo] = useState<simpleInfoType>();
   const setClick = useSetRecoilState(checkClick);
+  const router = useRouter();
 
   const getProjectInfo = useCallback(async () => {
-    const {simpleInfo} = await require(`src/dummy/${project}`);
+    const { simpleInfo } = await require(`src/dummy/${project}`);
     setProjectInfo(simpleInfo);
   }, [project]);
 
@@ -26,7 +28,12 @@ export const SimpleIntro = () => {
     setClick(false);
     setProject('');
     // Todo : 속도를 전부 원래대로 만들어줘야함
-  }
+  };
+
+  const handleDetail = () => {
+    console.log('자세히보기 버튼 클릭');
+    router.push(`detail/${project}`);
+  };
   return (
     <>
       {projectInfo && (
@@ -45,6 +52,9 @@ export const SimpleIntro = () => {
           }}
         >
           <ExitBtn onClick={() => handleExit()}>X버튼 테스트</ExitBtn>
+          <DetailBtn onClick={() => handleDetail()}>
+            자세히보기 테스트
+          </DetailBtn>
           <MotionText>
             <Typography size="40">{projectInfo.title}</Typography>
             <Typography size="20">{`${projectInfo.date[0]} ~ ${projectInfo.date[1]}`}</Typography>
@@ -83,4 +93,9 @@ const Container = styled(motion.section)`
 const ExitBtn = styled.section`
   display: flex;
   background-color: white;
+`;
+
+const DetailBtn = styled.section`
+  display: flex;
+  background-color: lightblue;
 `;

@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import React, { useEffect } from 'react';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useSetRecoilState } from "recoil";
 import { checkClick, selectProject } from 'src/recoil/atom';
 import styled from 'styled-components';
 
@@ -10,7 +10,8 @@ type Props = {
 };
 export default function ClickImage({ src }: Props) {
   const [click, setClick] = useRecoilState<boolean>(checkClick);
-  const [project, setProject] = useRecoilState(selectProject);
+  // const [project, setProject] = useRecoilState(selectProject);
+  const setProject = useSetRecoilState(selectProject);
   
 
   const getProjectName = (src: string) => {
