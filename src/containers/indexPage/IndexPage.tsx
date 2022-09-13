@@ -22,7 +22,7 @@ export const IndexPage = () => {
       {/* <MoveImage src="/sample1.jpg" /> */}
       {/* <MoveImage src="/sample2.jpg" /> */}
       {/* <MoveImage src="/sample3.jpg" /> */}
-      <AnimatePresence>{selectedProject && <SimpleIntro />}</AnimatePresence>
+      <AnimatePresence mode='wait'>{selectedProject && <SimpleIntro />}</AnimatePresence>
     </Container>
   );
 };

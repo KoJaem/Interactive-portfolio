@@ -11,7 +11,7 @@ export const DetailPage = () => {
   return (
     <>
     야야야야야야
-        {/* <Screen
+        <Screen
           initial={{ scaleX: 1 }}
           animate={{
             scaleX: 0,
@@ -23,7 +23,7 @@ export const DetailPage = () => {
           }}
           style={{ originX: isPresent ? 0 : 1 }} // 애니메이션 방향 설정
         />
-        <button onClick={() => {router.push('/')}}>테스트버튼</button> */}
+        <button onClick={() => {router.push('/')}}>테스트버튼</button>
     </>
   );
 };
