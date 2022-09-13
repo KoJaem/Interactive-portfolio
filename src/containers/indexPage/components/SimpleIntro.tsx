@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { checkClick, selectProject } from 'src/recoil/atom';
-import { motion } from 'framer-motion';
+import { useRecoilState, useSetRecoilState } from 'recoil';
+import { selectProject } from 'src/recoil/atom';
+import { motion, useIsPresent } from 'framer-motion';
 import { customColor } from 'src/constants';
 import { simpleInfoType } from 'src/types';
 import { Typography } from 'src/components';
@@ -12,8 +12,9 @@ import { useRouter } from 'next/router';
 export const SimpleIntro = () => {
   const [project, setProject] = useRecoilState(selectProject);
   const [projectInfo, setProjectInfo] = useState<simpleInfoType>();
-  const setClick = useSetRecoilState(checkClick);
   const router = useRouter();
+  const isPresent = useIsPresent();
+  const [isDetail, setIsDetail] = useState<boolean>(false);
 
   const getProjectInfo = useCallback(async () => {
     const { simpleInfo } = await require(`src/dummy/${project}`);
@@ -25,13 +26,13 @@ export const SimpleIntro = () => {
   }, [project, getProjectInfo]);
 
   const handleExit = () => {
-    setClick(false);
     setProject('');
     // Todo : 속도를 전부 원래대로 만들어줘야함
   };
 
   const handleDetail = () => {
     console.log('자세히보기 버튼 클릭');
+    setIsDetail(true);
     router.push(`detail/${project}`);
   };
   return (
@@ -75,6 +76,12 @@ export const SimpleIntro = () => {
           </MotionText>
         </Container>
       )}
+      <Screen
+        initial={{ scaleX: 1 }}
+        animate={{ scaleX: 0, transition: { duration: 0.5, ease: 'circOut' } }}
+        exit={{ scaleX: 1, transition: { duration: 0.5, ease: 'circIn' } }}
+        style={{ originX: isDetail ? 'left' : 'right' }} // 애니메이션 방향 설정
+      />
     </>
   );
 };
@@ -98,4 +105,14 @@ const ExitBtn = styled.section`
 const DetailBtn = styled.section`
   display: flex;
   background-color: lightblue;
+`;
+
+const Screen = styled(motion.section)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #5c9ea7;
+  z-index: 2;
 `;
