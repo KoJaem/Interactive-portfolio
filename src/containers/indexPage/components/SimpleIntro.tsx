@@ -34,60 +34,64 @@ export const SimpleIntro = () => {
   const handleDetail = () => {
     console.log('자세히보기 버튼 클릭');
     // setIsDetail(true);
-    router.push(`detail/${project}`);
+    router.push(
+      {
+        pathname: `detail/${project}`,
+        query: {
+          screenAnimation: true,
+        },
+      },
+      `detail/${project}`,
+    );
   };
   return (
     <>
-        {projectInfo && (
-          <Container
-            animate={{
-              backgroundColor: [customColor.darkGreen, customColor.darkSky],
-              transition: {
-                backgroundColor: {
-                  duration: 1,
-                },
+      {projectInfo && (
+        <Container
+          animate={{
+            backgroundColor: [customColor.darkGreen, customColor.darkSky],
+            transition: {
+              backgroundColor: {
+                duration: 1,
               },
-            }}
-            exit={{
-              backgroundColor: customColor.lightYellow,
-              transition: { duration: 1 },
-            }}
-          >
-            <ExitBtn onClick={() => handleExit()}>X버튼 테스트</ExitBtn>
-            <Link href={`detail/${project}`}>
-            <DetailBtn>
-              자세히보기 테스트
-            </DetailBtn>
-            </Link>
-            <MotionText>
-              <Typography size="40">{projectInfo.title}</Typography>
-              <Typography size="20">{`${projectInfo.date[0]} ~ ${projectInfo.date[1]}`}</Typography>
-              <Typography size="20">{projectInfo.topic}</Typography>
-              <Typography size="20">{projectInfo.intro}</Typography>
-              <Typography size="20">
-                기술스택
-                {projectInfo.developEnv.map((data, i) => (
-                  <li key={i}>{data}</li>
-                ))}
-              </Typography>
-              <Typography size="20">
-                나의 역할
-                {projectInfo.myRole.map((data, i) => (
-                  <li key={i}>{data}</li>
-                ))}
-              </Typography>
-            </MotionText>
-          </Container>
-        )}
-          <Screen
+            },
+          }}
+          exit={{
+            backgroundColor: [null, '#000000'], // test 테스트를 위해 검정색 넣음 나중엔 부모컴포넌트 색깔로 줄 예정 (customColor.lightYellow)
+            transition: { duration: 1 },
+          }}
+        >
+          <ExitBtn onClick={() => handleExit()}>X버튼 테스트</ExitBtn>
+            <DetailBtn onClick={() => handleDetail()}>자세히보기 테스트</DetailBtn>
+          <MotionText>
+            <Typography size="40">{projectInfo.title}</Typography>
+            <Typography size="20">{`${projectInfo.date[0]} ~ ${projectInfo.date[1]}`}</Typography>
+            <Typography size="20">{projectInfo.topic}</Typography>
+            <Typography size="20">{projectInfo.intro}</Typography>
+            <Typography size="20">
+              기술스택
+              {projectInfo.developEnv.map((data, i) => (
+                <li key={i}>{data}</li>
+              ))}
+            </Typography>
+            <Typography size="20">
+              나의 역할
+              {projectInfo.myRole.map((data, i) => (
+                <li key={i}>{data}</li>
+              ))}
+            </Typography>
+          </MotionText>
+        </Container>
+      )}
+      {/* <Screen
             initial={{ scaleX: 1 }}
             animate={{
               scaleX: 0,
               transition: { duration: 1, ease: 'circOut' },
             }}
-            exit={{ scaleX: 1, transition: { duration: 1, ease: 'circIn' } }} // ! exit 이 적용 안되는중. github Issue 보면 nextJs 환경에서 나와 유사한 사람 꽤 있는듯함
+            exit={{ scaleX: 1, transition: { duration: 1, ease: 'circIn' } }}
             style={{ originX: isPresent ? 'left' : 'right' }} // 애니메이션 방향 원점 설정
-          />
+          /> */}
     </>
   );
 };
@@ -108,7 +112,7 @@ const ExitBtn = styled.section`
   background-color: white;
 `;
 
-const DetailBtn = styled.a`
+const DetailBtn = styled.div`
   display: flex;
   background-color: lightblue;
 `;
