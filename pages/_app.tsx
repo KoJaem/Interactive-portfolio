@@ -7,15 +7,13 @@ import { Transition } from 'src/components/Transition';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <RecoilRoot>
       <Transition>
-        <RecoilRoot>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </RecoilRoot>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </Transition>
-    </>
+    </RecoilRoot>
   );
 }
 

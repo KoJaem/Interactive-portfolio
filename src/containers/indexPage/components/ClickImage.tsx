@@ -37,7 +37,7 @@ export default function ClickImage({ src }: Props) {
         scale: selectedProject ? [1, 1.25, 1] : 1,
         transition: {
           delay: 0.5, duration: 0.5,
-          scale: { duration: 1, delay: 0 },
+          scale: { duration: 0.5, delay: 0 },
         },
       }}
     >

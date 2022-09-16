@@ -41,15 +41,37 @@ export const Transition = ({ children }: Props) => {
     <Container>
       <AnimatePresence mode="wait">
         <motion.div key={asPath}>
-          {children}
+          <motion.div
+            initial={{ height: '100vh', scaleX: 1, x: 0 }}
+            exit={{
+              height: '45vh',
+              x: '-100%',
+              transition: {
+                height: { duration: 0.5, ease: 'circOut' },
+                x: { duration: 0.5, delay: 0.8 },
+                // scaleX: { duration: 1, delay: 2 }
+              },
+              // scaleX: 0,
+            }}
+            // style={{originX : 'left'}}
+          >
+            {children}
+          </motion.div>
           {screenAni && (
             <Screen
-              initial={{ scaleX: 1 }}
+              initial={{ scaleX: 1, height: '100vh' }}
               animate={{
                 scaleX: 0,
-                transition: { duration: 1, ease: 'circOut' },
+                transition: { duration: 0.5, ease: 'circOut' },
               }}
-              exit={{ scaleX: 1, transition: { duration: 1, ease: 'circIn' } }}
+              exit={{
+                scaleX: 1,
+                height: ['45vh', '100vh'],
+                transition: {
+                  scaleX: { duration: 0.5, ease: 'circIn', delay: 0.3 },
+                  height: { duration: 0.5, delay: 1.3},
+                },
+              }}
               style={{ originX: changePath ? 'right' : 'left' }} // 애니메이션 방향 원점 설정
             />
           )}
@@ -65,7 +87,7 @@ const Container = styled.section`
 
 const Screen = styled(motion.section)`
   position: fixed;
-  top: 0;
+  /* top: 0; */
   left: 0;
   right: 0;
   bottom: 0;
