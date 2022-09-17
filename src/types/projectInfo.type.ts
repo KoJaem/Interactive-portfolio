@@ -6,3 +6,9 @@ export type simpleInfoType = {
   developEnv: string[];
   myRole: string[];
 };
+
+export type detailInfoType = simpleInfoType & {
+  github: string;
+  achieve: string[];
+  review: string;
+};

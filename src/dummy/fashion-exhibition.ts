@@ -1,4 +1,4 @@
-import { simpleInfoType } from 'src/types';
+import { detailInfoType, simpleInfoType } from 'src/types';
 
 export const simpleInfo: simpleInfoType = {
   title: 'fashion-exhibition',
@@ -14,3 +14,9 @@ export const simpleInfo: simpleInfoType = {
   ],
 };
 
+export const detailInfo: detailInfoType = {
+  ...simpleInfo,
+  github: 'https://github.com/KoJaem/jolp-exhibition-fashion',
+  achieve: ['성과들'],
+  review: '리뷰',
+};
