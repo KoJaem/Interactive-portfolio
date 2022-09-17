@@ -54,6 +54,7 @@ export const Transition = ({ children }: Props) => {
           {screenAni && <Screen />}
         </motion.div>
       </AnimatePresence>
+      <Screen />
     </Container>
   );
 };
