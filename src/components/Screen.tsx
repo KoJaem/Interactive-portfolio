@@ -10,15 +10,15 @@ export const Screen = () => {
         animate={{
           scaleX: 0,
           originX: 'left',
-          transition: { duration: 0.5, ease: 'circOut' },
+          transition: { duration: 0.5 },
         }}
         exit={{
           scaleX: 1,
           height: ['45vh', '100vh'],
           originX: 'right',
           transition: {
-            scaleX: { duration: 0.5, ease: 'circIn', delay: 0.3 },
-            height: { duration: 0.5, delay: 1.3 },
+            scaleX: { duration: 0.5, delay: 0.2 },
+            height: { duration: 0.5, delay: 1.2 },
           },
         }}
       />
@@ -27,15 +27,15 @@ export const Screen = () => {
         animate={{
           scaleX: 0,
           originX: 'right',
-          transition: { duration: 0.5, ease: 'circOut' },
+          transition: { duration: 0.5 },
         }}
         exit={{
           scaleX: 1,
           height: ['45vh', '100vh'],
           originX: 'right',
           transition: {
-            scaleX: { duration: 0.5, ease: 'circIn', delay: 0.3 },
-            height: { duration: 0.5, delay: 1.3 },
+            scaleX: { duration: 0.5, delay: 0.2 },
+            height: { duration: 0.5, delay: 1.2 },
           },
         }}
       />
