@@ -8,7 +8,7 @@ import styled from 'styled-components';
 type Props = {
   src: string;
 };
-export default function ClickImage({ src }: Props) {
+export function ClickImage({ src }: Props) {
   // const [project, setProject] = useRecoilState(selectProject);
   // const setProject = useSetRecoilState(selectProject);
 
