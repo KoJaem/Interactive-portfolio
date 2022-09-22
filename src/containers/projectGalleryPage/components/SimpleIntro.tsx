@@ -34,15 +34,7 @@ export const SimpleIntro = () => {
   const handleDetail = () => {
     console.log('자세히보기 버튼 클릭');
     // setIsDetail(true);
-    router.push(
-      {
-        pathname: `detail/${project}`,
-        query: {
-          screenAnimation: true,
-        },
-      },
-      `detail/${project}`,
-    );
+    router.push(`projectGallery/detail/${project}`);
   };
   return (
     <>
@@ -62,7 +54,9 @@ export const SimpleIntro = () => {
           }}
         >
           <ExitBtn onClick={() => handleExit()}>X버튼 테스트</ExitBtn>
-            <DetailBtn onClick={() => handleDetail()}>자세히보기 테스트</DetailBtn>
+          <DetailBtn onClick={() => handleDetail()}>
+            자세히보기 테스트
+          </DetailBtn>
           <MotionText>
             <Typography size="40">{projectInfo.title}</Typography>
             <Typography size="20">{`${projectInfo.date[0]} ~ ${projectInfo.date[1]}`}</Typography>
@@ -83,15 +77,6 @@ export const SimpleIntro = () => {
           </MotionText>
         </Container>
       )}
-      {/* <Screen
-            initial={{ scaleX: 1 }}
-            animate={{
-              scaleX: 0,
-              transition: { duration: 1, ease: 'circOut' },
-            }}
-            exit={{ scaleX: 1, transition: { duration: 1, ease: 'circIn' } }}
-            style={{ originX: isPresent ? 'left' : 'right' }} // 애니메이션 방향 원점 설정
-          /> */}
     </>
   );
 };
@@ -104,7 +89,7 @@ const Container = styled(motion.section)`
   max-width: 1178px;
   padding: 0 40px;
   padding-top: calc(15vh + 150px);
-  overflow-y: auto;
+  overflow: hidden;
 `;
 
 const ExitBtn = styled.section`

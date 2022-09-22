@@ -1,6 +1,6 @@
-import { AnimatePresence, motion, useIsPresent } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import React, { ReactNode, useEffect, useRef, useState } from 'react';
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import { Screen } from './Screen';
 
@@ -28,17 +28,14 @@ type Props = {
   children: ReactNode;
 };
 
-export const Transition = ({ children }: Props) => {
-  const { asPath, query } = useRouter();
+export const ScreenTransition = ({ children }: Props) => {
+  const { asPath } = useRouter();
   // const [screenAnimation, setScreenAnimation] = useState<boolean>(false);
-  const screenAni = query.screenAnimation;
-  console.log(query);
 
   return (
-    <Container>
-      <AnimatePresence mode="wait">
-        <motion.div key={asPath}>
-          <motion.div
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.section key={asPath}>
+          <Container
             initial={{ height: '100vh', scaleX: 1, x: 0 }}
             exit={{
               height: '45vh',
@@ -50,14 +47,14 @@ export const Transition = ({ children }: Props) => {
             }}
           >
             {children}
-          </motion.div>
-          {screenAni && <Screen />}
-        </motion.div>
+          </Container>
+          <Screen />
+        </motion.section>
       </AnimatePresence>
-    </Container>
   );
 };
 
-const Container = styled.section`
+const Container = styled(motion.section)`
   overflow: hidden;
+  height: 100vh;
 `;

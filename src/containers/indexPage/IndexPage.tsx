@@ -7,15 +7,7 @@ export const IndexPage = () => {
     <>
       <button
         onClick={() => {
-          router.push(
-            {
-              pathname: '/projectGallery',
-              query: {
-                screenAnimation: true,
-              },
-            },
-            '/projectGallery',
-          );
+          router.push('/projectGallery');
         }}
       >
         갤러리로 가기

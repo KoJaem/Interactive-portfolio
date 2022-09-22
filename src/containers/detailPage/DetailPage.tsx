@@ -7,7 +7,7 @@ import { detailInfoType } from 'src/types';
 export const DetailPage = () => {
   const router = useRouter();
   const { project } = router.query;
-  const [projectInfo, setProjectInfo] = useState <detailInfoType>();
+  const [projectInfo, setProjectInfo] = useState<detailInfoType>();
 
   const getProjectInfo = useCallback(async () => {
     const { simpleInfo } = await require(`src/dummy/${project}`);
@@ -27,9 +27,9 @@ export const DetailPage = () => {
   // }, [project]);
 
   useEffect(() => {
-    if(!router.isReady) return;
+    if (!router.isReady) return;
     getProjectInfo();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.isReady]);
 
   return (
@@ -39,15 +39,7 @@ export const DetailPage = () => {
           {projectInfo.title}
           <button
             onClick={() => {
-              router.push(
-                {
-                  pathname: `/`,
-                  query: {
-                    screenAnimation: true,
-                  },
-                },
-                `/`,
-              );
+              router.push('/');
             }}
           >
             테스트버튼

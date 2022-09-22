@@ -30,13 +30,14 @@ export function ClickImage({ src }: Props) {
   return (
     <Container
       onClick={() => handleClick()}
-      initial={{ translateX: '-50%', translateY: '-50%', left: '50%', top:'50%',}}
       animate={{
         // left: click ? '50%' : undefined,
         top: selectedProject ? '15vh' : '50%',
+        translateY: '-50%',
         scale: selectedProject ? [1, 1.25, 1] : 1,
         transition: {
-          delay: 0.5, duration: 0.5,
+          delay: 0.5,
+          duration: 0.5,
           scale: { duration: 0.5, delay: 0 },
         },
       }}
@@ -57,6 +58,9 @@ const Container = styled(motion.div)`
   align-items: center;
   justify-content: center;
   box-shadow: 4px 4px 4px;
+  /* transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%; */
 `;
 
 const Img = styled(Image)``;
