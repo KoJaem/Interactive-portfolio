@@ -6,6 +6,7 @@ export type customColorType = {
   lightWhite: string;
   darkSky: string;
   lightYellow: string;
+  purple: string;
 };
 
 export const customColor: customColorType = {
@@ -16,4 +17,5 @@ export const customColor: customColorType = {
   lightWhite: '#f9ffeb',
   darkSky: '#bdc0c2',
   lightYellow: '#f9ffeb',
+  purple : '#6E3FF4',
 };

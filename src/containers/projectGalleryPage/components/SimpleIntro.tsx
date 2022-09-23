@@ -1,20 +1,19 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { useRecoilState, useSetRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { selectProject } from 'src/recoil/atom';
-import { AnimatePresence, motion, useIsPresent } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { customColor } from 'src/constants';
 import { simpleInfoType } from 'src/types';
 import { Typography } from 'src/components';
 import { MotionText } from './MotionText';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
+import { TextBox } from './TextBox';
 
 export const SimpleIntro = () => {
   const [project, setProject] = useRecoilState(selectProject);
   const [projectInfo, setProjectInfo] = useState<simpleInfoType>();
   const router = useRouter();
-  const isPresent = useIsPresent();
   // const [isDetail, setIsDetail] = useState<boolean>(false);
 
   const getProjectInfo = useCallback(async () => {
@@ -58,22 +57,46 @@ export const SimpleIntro = () => {
             자세히보기 테스트
           </DetailBtn>
           <MotionText>
-            <Typography size="40">{projectInfo.title}</Typography>
-            <Typography size="20">{`${projectInfo.date[0]} ~ ${projectInfo.date[1]}`}</Typography>
-            <Typography size="20">{projectInfo.topic}</Typography>
-            <Typography size="20">{projectInfo.intro}</Typography>
-            <Typography size="20">
-              기술스택
-              {projectInfo.developEnv.map((data, i) => (
-                <li key={i}>{data}</li>
-              ))}
-            </Typography>
-            <Typography size="20">
-              나의 역할
-              {projectInfo.myRole.map((data, i) => (
-                <li key={i}>{data}</li>
-              ))}
-            </Typography>
+            <div>
+              <Title>
+                <Typography size="40" color={'purple'} fontWeight="bold">
+                  {projectInfo.title}
+                </Typography>
+                <Typography
+                  size="20"
+                  fontWeight="bold"
+                >{`${projectInfo.date[0]} ~ ${projectInfo.date[1]}`}</Typography>
+              </Title>
+              <Introduction>
+                <TextBox color="#6774E5" paddingLR={28} paddingBT={16}>
+                  <Typography size="28" color="white" fontWeight="bold">
+                    {projectInfo.topic}
+                  </Typography>
+                </TextBox>
+                <TextBox color="#78ABF6" paddingLR={28} paddingBT={40}>
+                  <Typography
+                    size="28"
+                    fontWeight="bold"
+                    color="white"
+                    fontHeight="1.2"
+                  >
+                    {projectInfo.intro}
+                  </Typography>
+                </TextBox>
+                <Typography size="20">
+                  기술스택
+                  {projectInfo.developEnv.map((data, i) => (
+                    <li key={i}>{data}</li>
+                  ))}
+                </Typography>
+                <Typography size="20">
+                  나의 역할
+                  {projectInfo.myRole.map((data, i) => (
+                    <li key={i}>{data}</li>
+                  ))}
+                </Typography>
+              </Introduction>
+            </div>
           </MotionText>
         </Container>
       )}
@@ -84,10 +107,9 @@ export const SimpleIntro = () => {
 const Container = styled(motion.section)`
   display: flex;
   flex-direction: column;
-  width: 100%;
   height: 100%;
   max-width: 1178px;
-  padding: 0 40px;
+  padding: 0 80px;
   padding-top: calc(15vh + 150px);
   overflow: hidden;
 `;
@@ -102,12 +124,15 @@ const DetailBtn = styled.div`
   background-color: lightblue;
 `;
 
-const Screen = styled(motion.section)`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #5c9ea7;
-  z-index: 2;
+const Title = styled.section`
+  display: flex;
+  align-items: baseline;
+  gap: 0 12px;
+`;
+
+const Introduction = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px 0;
 `;
