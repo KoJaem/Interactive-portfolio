@@ -52,12 +52,12 @@ export const SimpleIntro = () => {
             transition: { duration: 1 },
           }}
         >
-          <ExitBtn onClick={() => handleExit()}>X버튼 테스트</ExitBtn>
+          {/* <ExitBtn onClick={() => handleExit()}>X버튼 테스트</ExitBtn>
           <DetailBtn onClick={() => handleDetail()}>
             자세히보기 테스트
-          </DetailBtn>
+          </DetailBtn> */}
           <MotionText>
-            <div>
+            <Wrapper>
               <Title>
                 <Typography size="40" color={'purple'} fontWeight="bold">
                   {projectInfo.title}
@@ -83,20 +83,34 @@ export const SimpleIntro = () => {
                     {projectInfo.intro}
                   </Typography>
                 </TextBox>
-                <Typography size="20">
-                  기술스택
-                  {projectInfo.developEnv.map((data, i) => (
-                    <li key={i}>{data}</li>
-                  ))}
-                </Typography>
-                <Typography size="20">
-                  나의 역할
-                  {projectInfo.myRole.map((data, i) => (
-                    <li key={i}>{data}</li>
-                  ))}
-                </Typography>
+                <EndIntro>
+                  <TextBox color="#78ABF6" paddingLR={28} paddingBT={20}>
+                    {projectInfo.developEnv.map((data, i) => (
+                      <Typography
+                        size="24"
+                        color="white"
+                        fontWeight="bold"
+                        key={i}
+                      >
+                        {data}
+                      </Typography>
+                    ))}
+                  </TextBox>
+                  <TextBox color="#78ABF6" paddingLR={28} paddingBT={20} gapBT={12}>
+                    {projectInfo.myRole.map((data, i) => (
+                      <Typography
+                        size="24"
+                        color="white"
+                        fontWeight="bold"
+                        key={i}
+                      >
+                        {data}
+                      </Typography>
+                    ))}
+                  </TextBox>
+                </EndIntro>
               </Introduction>
-            </div>
+            </Wrapper>
           </MotionText>
         </Container>
       )}
@@ -110,8 +124,12 @@ const Container = styled(motion.section)`
   height: 100%;
   max-width: 1178px;
   padding: 0 80px;
-  padding-top: calc(15vh + 150px);
+  padding-top: calc(15vh + 120px);
   overflow: hidden;
+`;
+
+const Wrapper = styled.section`
+  max-width: 900px;
 `;
 
 const ExitBtn = styled.section`
@@ -135,4 +153,10 @@ const Introduction = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 8px 0;
+`;
+
+const EndIntro = styled.section`
+  display: flex;
+  width: 100%;
+  gap: 0 12px;
 `;

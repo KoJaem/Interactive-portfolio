@@ -4,17 +4,19 @@ type Props = {
   color: string;
   paddingLR: number;
   paddingBT: number;
+  gapBT?: number;
   children: ReactNode;
 }
-export const TextBox = ({color, paddingLR, paddingBT, children}: Props) => {
+export const TextBox = ({color, paddingLR, paddingBT, gapBT, children}: Props) => {
   return (
-    <Container color={color} paddingLR={paddingLR} paddingBT={paddingBT}>{children}</Container>
+    <Container color={color} paddingLR={paddingLR} paddingBT={paddingBT} gapBT={gapBT}>{children}</Container>
   )
 }
 type StyledProps = {
   color: string;
   paddingLR: number;
   paddingBT: number;
+  gapBT?: number;
 };
 const Container = styled.section<StyledProps>`
   background-color: ${({ color }) => color};
@@ -23,4 +25,8 @@ const Container = styled.section<StyledProps>`
   width: 100%;
   max-width: 900px;
   white-space: pre-wrap;
+  display: flex;
+  gap: ${({gapBT}) => `${gapBT}px 0`};
+  flex-direction: column;
+  justify-content: center;
 `;
