@@ -68,12 +68,12 @@ export const SimpleIntro = () => {
                 >{`${projectInfo.date[0]} ~ ${projectInfo.date[1]}`}</Typography>
               </Title>
               <Introduction>
-                <TextBox color="#6774E5" paddingLR={28} paddingBT={16}>
+                <TextBox color="#6774E5" paddingLR={28} paddingBT={16} description="프로젝트 주제">
                   <Typography size="28" color="white" fontWeight="bold">
                     {projectInfo.topic}
                   </Typography>
                 </TextBox>
-                <TextBox color="#78ABF6" paddingLR={28} paddingBT={40}>
+                <TextBox color="#78ABF6" paddingLR={28} paddingBT={40} description="프로젝트 소개">
                   <Typography
                     size="28"
                     fontWeight="bold"
@@ -84,7 +84,7 @@ export const SimpleIntro = () => {
                   </Typography>
                 </TextBox>
                 <EndIntro>
-                  <TextBox color="#78ABF6" paddingLR={28} paddingBT={20}>
+                  <TextBox color="#78ABF6" paddingLR={28} paddingBT={20} description="개발환경">
                     {projectInfo.developEnv.map((data, i) => (
                       <Typography
                         size="24"
@@ -96,7 +96,7 @@ export const SimpleIntro = () => {
                       </Typography>
                     ))}
                   </TextBox>
-                  <TextBox color="#78ABF6" paddingLR={28} paddingBT={20} gapBT={12}>
+                  <TextBox color="#78ABF6" paddingLR={28} paddingBT={20} gapBT={12} description="나의역할">
                     {projectInfo.myRole.map((data, i) => (
                       <Typography
                         size="24"
