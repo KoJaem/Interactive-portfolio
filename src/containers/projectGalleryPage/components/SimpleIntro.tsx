@@ -9,6 +9,8 @@ import { Typography } from 'src/components';
 import { MotionText } from './MotionText';
 import { useRouter } from 'next/router';
 import { TextBox } from './TextBox';
+import { MdClose } from 'react-icons/md';
+import {ImEnlarge} from 'react-icons/im';
 
 export const SimpleIntro = () => {
   const [project, setProject] = useRecoilState(selectProject);
@@ -52,10 +54,10 @@ export const SimpleIntro = () => {
             transition: { duration: 1 },
           }}
         >
-          {/* <ExitBtn onClick={() => handleExit()}>X버튼 테스트</ExitBtn>
-          <DetailBtn onClick={() => handleDetail()}>
-            자세히보기 테스트
-          </DetailBtn> */}
+          <IconWrapper>
+            <DetailBtn size={28} onClick={() => handleDetail()} />
+            <ExitBtn size={40} onClick={() => handleExit()} />
+          </IconWrapper>
           <MotionText>
             <Wrapper>
               <Title>
@@ -68,12 +70,22 @@ export const SimpleIntro = () => {
                 >{`${projectInfo.date[0]} ~ ${projectInfo.date[1]}`}</Typography>
               </Title>
               <Introduction>
-                <TextBox color="#6774E5" paddingLR={28} paddingBT={16} description="프로젝트 주제">
+                <TextBox
+                  color="#6774E5"
+                  paddingLR={28}
+                  paddingBT={16}
+                  description="프로젝트 주제"
+                >
                   <Typography size="28" color="white" fontWeight="bold">
                     {projectInfo.topic}
                   </Typography>
                 </TextBox>
-                <TextBox color="#78ABF6" paddingLR={28} paddingBT={40} description="프로젝트 소개">
+                <TextBox
+                  color="#78ABF6"
+                  paddingLR={28}
+                  paddingBT={40}
+                  description="프로젝트 소개"
+                >
                   <Typography
                     size="28"
                     fontWeight="bold"
@@ -84,7 +96,12 @@ export const SimpleIntro = () => {
                   </Typography>
                 </TextBox>
                 <EndIntro>
-                  <TextBox color="#78ABF6" paddingLR={28} paddingBT={20} description="개발환경">
+                  <TextBox
+                    color="#78ABF6"
+                    paddingLR={28}
+                    paddingBT={20}
+                    description="개발환경"
+                  >
                     {projectInfo.developEnv.map((data, i) => (
                       <Typography
                         size="24"
@@ -96,7 +113,13 @@ export const SimpleIntro = () => {
                       </Typography>
                     ))}
                   </TextBox>
-                  <TextBox color="#78ABF6" paddingLR={28} paddingBT={20} gapBT={12} description="나의역할">
+                  <TextBox
+                    color="#78ABF6"
+                    paddingLR={28}
+                    paddingBT={20}
+                    gapBT={12}
+                    description="나의역할"
+                  >
                     {projectInfo.myRole.map((data, i) => (
                       <Typography
                         size="24"
@@ -126,20 +149,29 @@ const Container = styled(motion.section)`
   padding: 0 80px;
   padding-top: calc(15vh + 120px);
   overflow: hidden;
+  position: relative;
 `;
 
 const Wrapper = styled.section`
   max-width: 900px;
 `;
 
-const ExitBtn = styled.section`
+const IconWrapper = styled.section`
+  position: absolute;
   display: flex;
-  background-color: white;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  top: 12px;
+  right: 60px;
 `;
 
-const DetailBtn = styled.div`
-  display: flex;
-  background-color: lightblue;
+const ExitBtn = styled(MdClose)`
+  cursor: pointer;
+`;
+
+const DetailBtn = styled(ImEnlarge)`
+  cursor: pointer;
 `;
 
 const Title = styled.section`

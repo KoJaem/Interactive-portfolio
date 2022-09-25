@@ -3,11 +3,14 @@ import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import { motion, useIsPresent } from 'framer-motion';
 import { detailInfoType } from 'src/types';
+import { useSetRecoilState } from "recoil";
+import { selectProject } from 'src/recoil/atom';
 
 export const DetailPage = () => {
   const router = useRouter();
   const { project } = router.query;
   const [projectInfo, setProjectInfo] = useState<detailInfoType>();
+  const setSelectProject = useSetRecoilState(selectProject);
 
   const getProjectInfo = useCallback(async () => {
     const { simpleInfo } = await require(`src/dummy/${project}`);
@@ -39,6 +42,7 @@ export const DetailPage = () => {
           {projectInfo.title}
           <button
             onClick={() => {
+              setSelectProject('');
               router.push('/');
             }}
           >

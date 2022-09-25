@@ -58,6 +58,7 @@ const Container = styled(motion.div)`
   align-items: center;
   justify-content: center;
   box-shadow: 4px 4px 4px;
+  z-index: 9;
   /* transform: translate(-50%, -50%);
   left: 50%;
   top: 50%; */
