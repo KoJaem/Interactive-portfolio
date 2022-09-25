@@ -47,7 +47,7 @@ export const MoveImage = ({ src }: Props) => {
           initial={{ translateY: '-50%' }}
           // transition={{ ease: 'linear', duration: 1 }}
           top={top}
-          zindex={Math.floor(top)}
+          z_index={Math.floor(top)}
         >
           <MovingImg alt="" src={src} layout="fill" priority />
         </Container>
@@ -57,7 +57,7 @@ export const MoveImage = ({ src }: Props) => {
 };
 type StyledProps = {
   top: number;
-  zindex: number;
+  z_index: number;
 };
 const Container = styled(motion.section)<StyledProps>`
   position: absolute;
@@ -71,7 +71,7 @@ const Container = styled(motion.section)<StyledProps>`
   align-items: center;
   top: ${({ top }) => `${top}vh`};
   justify-content: center;
-  z-index: ${({ zindex }) => zindex};
+  z-index: ${({ z_index }) => z_index};
   box-shadow: 4px 4px 4px;
   /* transform: translate(-50%, -50%); */
 `;
