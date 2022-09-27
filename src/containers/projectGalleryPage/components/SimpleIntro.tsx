@@ -10,7 +10,7 @@ import { MotionText } from './MotionText';
 import { useRouter } from 'next/router';
 import { TextBox } from './TextBox';
 import { MdClose } from 'react-icons/md';
-import {ImEnlarge} from 'react-icons/im';
+import { ImEnlarge } from 'react-icons/im';
 
 export const SimpleIntro = () => {
   const [project, setProject] = useRecoilState(selectProject);
@@ -29,7 +29,6 @@ export const SimpleIntro = () => {
 
   const handleExit = () => {
     setProject('');
-    // Todo : 속도를 전부 원래대로 만들어줘야함
   };
 
   const handleDetail = () => {
@@ -50,12 +49,16 @@ export const SimpleIntro = () => {
             },
           }}
           exit={{
-            backgroundColor: [null, '#000000'], // test 테스트를 위해 검정색 넣음 나중엔 부모컴포넌트 색깔로 줄 예정 (customColor.lightYellow)
+            backgroundColor: [null, customColor.white],
             transition: { duration: 1 },
           }}
         >
-          <IconWrapper>
-            <DetailBtn size={28} onClick={() => handleDetail()} />
+          <IconWrapper
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 1, delay: 1 } }}
+            exit={{ opacity: 0 }}
+          >
+            <DetailBtn size={24} onClick={() => handleDetail()} />
             <ExitBtn size={40} onClick={() => handleExit()} />
           </IconWrapper>
           <MotionText>
@@ -156,14 +159,13 @@ const Wrapper = styled.section`
   max-width: 900px;
 `;
 
-const IconWrapper = styled.section`
+const IconWrapper = styled(motion.section)`
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 0;
   top: 12px;
-  right: 60px;
+  right: 80px;
 `;
 
 const ExitBtn = styled(MdClose)`

@@ -13,8 +13,8 @@ export const DetailPage = () => {
   const setSelectProject = useSetRecoilState(selectProject);
 
   const getProjectInfo = useCallback(async () => {
-    const { simpleInfo } = await require(`src/dummy/${project}`);
-    setProjectInfo(simpleInfo);
+    const { detailInfo } = await require(`src/dummy/${project}`);
+    setProjectInfo(detailInfo);
   }, [project]);
 
   // * 새로고침하고 바로 돌아오는 버튼 누르면 오류생기는데, 그거 방지하는 코드
