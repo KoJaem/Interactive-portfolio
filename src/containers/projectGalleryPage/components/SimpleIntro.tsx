@@ -41,7 +41,7 @@ export const SimpleIntro = () => {
       {projectInfo && (
         <Container
           animate={{
-            backgroundColor: [customColor.darkGreen, customColor.darkSky],
+            backgroundColor: [customColor.purple, customColor.magenta],
             transition: {
               backgroundColor: {
                 duration: 1,

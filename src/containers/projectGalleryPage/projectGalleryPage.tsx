@@ -13,7 +13,7 @@ export const ProjectGalleryPage = () => {
     <Container
       initial={{ backgroundColor: customColor.white }}
       animate={{
-        backgroundColor: selectedProject ? customColor.darkGreen : undefined,
+        backgroundColor: selectedProject ? customColor.purple : undefined,
         transition: { duration: selectedProject ? 2 : undefined },
       }}
     >
