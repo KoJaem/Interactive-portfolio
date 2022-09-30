@@ -3,30 +3,58 @@ import React from 'react';
 import { Typography } from 'src/components';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+const transition = { duration: 0.5 };
 
+const introVariants = {
+  initial: { scale: 0.9, opacity: 0 },
+  enter: { scale: 1, opacity: 1, transition },
+  exit: {
+    scale: 0.5,
+    opacity: 0,
+    transition: { transition },
+  },
+};
 export const IndexPage = () => {
   const router = useRouter();
   return (
     <Container>
-      <Wrapper>
+      <Wrapper
+        initial="initial"
+        animate="enter"
+        exit="exit"
+        variants={{
+          enter: {
+            transition: { staggerChildren: 0.5, staggerDirection: 1 },
+          },
+          exit: { transition: { staggerChildren: 0.5 } },
+        }}
+      >
         <Greeting>
-          <Typography size="60" color="gray" fontWeight='bold'>
-            Welcome to the
-          </Typography>
-          <section style={{ display: 'flex' }}>
-            <Typography size="80" color="purple" fontWeight='bold'>
-              KoJaem&apos;s
+          <motion.li variants={introVariants}>
+            <Typography size="60" color="gray" fontWeight="bold">
+              Welcome to the
             </Typography>
-            <Typography size="80" color="magenta" fontWeight='bold'>
-              &nbsp;exhibition
+          </motion.li>
+          <motion.li
+            style={{ display: 'flex', flexWrap: 'wrap' }}
+            variants={introVariants}
+          >
+            <Typography size="80" color="purple" fontWeight="bold">
+              KoJaem&apos;s&nbsp;
             </Typography>
-          </section>
+            <Typography size="80" color="magenta" fontWeight="bold">
+              exhibition
+            </Typography>
+          </motion.li>
         </Greeting>
-        <Typography size="40" color="white">
-          저는 프론트엔드 개발자를 꿈꾸며 공부하는 학생입니다.
-        </Typography>
-        <Dia />
+        <motion.li variants={introVariants}>
+          <Typography size="40" color="white" fontWeight="bold">
+            저는 프론트엔드 개발자를 꿈꾸며 공부하는 학생입니다.
+          </Typography>
+        </motion.li>
       </Wrapper>
+      <Dia />
     </Container>
   );
 };
@@ -38,7 +66,7 @@ const Container = styled.section`
   justify-content: center;
 `;
 
-const Wrapper = styled.section`
+const Wrapper = styled(motion.section)`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -46,17 +74,17 @@ const Wrapper = styled.section`
   margin-top: 30vh;
   width: 100%;
   background-color: ${customColor.black};
-  max-width: 1000px;
+  max-width: 1178px;
   gap: 60px 0;
 `;
 
-const Greeting = styled.section`
+const Greeting = styled(motion.section)`
   display: flex;
   flex-direction: column;
   gap: 12px 0;
 `;
 
-const Dia = styled.section`
+const Dia = styled(motion.section)`
   position: absolute;
   bottom: 40px;
   left: 50%;
