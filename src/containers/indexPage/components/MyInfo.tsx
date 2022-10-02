@@ -22,7 +22,7 @@ export const MyInfo = () => {
           <Typography size="32" color="white" fontWeight="bold">
             📞 010-2258-1401
           </Typography>
-          <Typography size="32" color="white" fontWeight="bold" fontHidden fontHeight='1.4'>
+          <Typography size="32" color="white" fontWeight="bold" fontHeight='1.4'>
             💌woalswhwh@gmail.com
           </Typography>
           <Line />
@@ -69,7 +69,7 @@ const InfoWrapper = styled.section`
   gap: 20px 0;
   height: 100%;
   width: 90%;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
 `;
 
 const Line = styled.hr`
