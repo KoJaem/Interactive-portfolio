@@ -14,25 +14,27 @@ export const MyInfo = () => {
         height={320}
         alt="profile"
       />
-      <InfoWrapper>
-        <Typography size="32" color="white" fontWeight="bold">
-          고재민
-        </Typography>
-        <Typography size="32" color="white" fontWeight="bold">
-          📞 010-2258-1401
-        </Typography>
-        <Typography size="32" color="white" fontWeight="bold">
-          💌 woalswhwh@gmail.com
-        </Typography>
-        <Line />
-        <section style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Typography size="32" color="skyBlue" fontWeight="bold">
-            FrontEnd
+      <Wrapper>
+        <InfoWrapper>
+          <Typography size="32" color="white" fontWeight="bold">
+            고재민
           </Typography>
-          <Typography size="32" color="magenta" fontWeight="bold">
-            GitHub
+          <Typography size="32" color="white" fontWeight="bold">
+            📞 010-2258-1401
           </Typography>
-        </section>
+          <Typography size="32" color="white" fontWeight="bold" fontHidden fontHeight='1.4'>
+            💌woalswhwh@gmail.com
+          </Typography>
+          <Line />
+          <section style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Typography size="32" color="skyBlue" fontWeight="bold">
+              FrontEnd
+            </Typography>
+            <Typography size="32" color="magenta" fontWeight="bold">
+              GitHub
+            </Typography>
+          </section>
+        </InfoWrapper>
         <Typography size="24" color="darkGray" fontWeight="bold">
           내일의 나에게 부끄럽지 않은 하루를 보내자
         </Typography>
@@ -41,7 +43,7 @@ export const MyInfo = () => {
             More &gt;&gt;
           </Typography>
         </MoreButton>
-      </InfoWrapper>
+      </Wrapper>
     </Container>
   );
 };
@@ -55,18 +57,26 @@ const Container = styled.section`
   gap: 0 120px;
 `;
 
+const Wrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+`;
+
 const InfoWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 20px 0;
   height: 100%;
+  width: 90%;
+  white-space: nowrap;
 `;
 
 const Line = styled.hr`
   border: 1px solid ${customColor.gray};
   justify-self: flex-start;
   margin: 0;
+  width: 100%;
 `;
 
 const MoreButton = styled.button`
