@@ -66,11 +66,12 @@ const Container = styled(motion.section)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 30vh;
+  padding-top: 25vh;
   width: 100%;
   background-color: ${customColor.black};
   max-width: 1178px;
   gap: 60px 0;
+  height: 100vh;
 `;
 
 const Greeting = styled(motion.section)`
@@ -81,7 +82,7 @@ const Greeting = styled(motion.section)`
 
 const Dia = styled(motion.section)`
   position: absolute;
-  bottom: 40px;
+  bottom: 60px;
   left: 50%;
   width: 40px;
   height: 40px;

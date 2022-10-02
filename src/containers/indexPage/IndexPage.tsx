@@ -1,24 +1,31 @@
 import { useRouter } from 'next/router';
 import React from 'react';
-import { Typography } from 'src/components';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { Intro } from './components';
+import { Intro, MyInfo } from './components';
 
 export const IndexPage = () => {
   const router = useRouter();
   return (
     <Container>
       <Intro />
-      
+      <GapLine />
+      <MyInfo />
     </Container>
   );
 };
 
 const Container = styled.section`
   display: flex;
-  height: 100vh;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: ${customColor.black};
   justify-content: center;
+  align-items: center;
+`;
+
+const GapLine = styled.hr`
+  margin: 20vh 0;
+  border: 1px solid ${customColor.gray};
+  width: 100%;
 `;
