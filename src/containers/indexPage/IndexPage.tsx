@@ -2,12 +2,13 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
-import { Intro, MyInfo } from './components';
+import { Header, Intro, MyInfo } from './components';
 
 export const IndexPage = () => {
   const router = useRouter();
   return (
     <Container>
+      <Header />
       <Intro />
       <GapLine />
       <MyInfo />
