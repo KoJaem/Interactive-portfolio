@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
-import { Header, Intro, MyInfo } from './components';
+import { Header, Intro, MyInfo, Projects } from './components';
 
 export const IndexPage = () => {
   const router = useRouter();
@@ -12,6 +12,8 @@ export const IndexPage = () => {
       <Intro />
       <GapLine />
       <MyInfo />
+      {/* <GapLine /> */}
+      {/* <Projects /> */}
     </Container>
   );
 };
