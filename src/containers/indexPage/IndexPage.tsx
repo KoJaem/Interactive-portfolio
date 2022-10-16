@@ -12,8 +12,8 @@ export const IndexPage = () => {
       <Intro />
       <GapLine />
       <MyInfo />
-      {/* <GapLine /> */}
-      {/* <Projects /> */}
+      <GapLine />
+      <Projects />
     </Container>
   );
 };
