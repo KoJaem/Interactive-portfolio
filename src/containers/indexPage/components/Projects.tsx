@@ -6,12 +6,17 @@ import 'swiper/css';
 import 'swiper/css/effect-cards';
 import Image from 'next/image';
 import { projectUrls } from 'src/dummy/projectUrls';
+import { Typography } from 'src/components';
+
 
 export const Projects = () => {
   return (
     <Container>
       <StyledSwiper
         effect="cards"
+        cardsEffect={{
+          slideShadows: false,
+        }}
         modules={[EffectCards]}
         grabCursor={true}
       >

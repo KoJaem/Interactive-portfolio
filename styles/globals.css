@@ -130,8 +130,3 @@ html,
 body {
   height: 100%;
 }
-
-.swiper-3d,
-.swiper-slide-shadow {
-  background: none !important;
-}
