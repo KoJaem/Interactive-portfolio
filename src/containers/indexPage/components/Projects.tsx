@@ -9,12 +9,16 @@ import { projects } from 'src/dummy/projectUrls';
 import { Typography } from 'src/components';
 import { motion } from 'framer-motion';
 
+type slideEventType = {
+  realIndex: number;
+};
+
 export const Projects = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [infoAnimation, setInfoAnimation] = useState<boolean>(false);
 
-  const slideChange = (e: any) => {
-    setActiveIndex(e.realIndex);
+  const slideChange = ({ realIndex }: slideEventType) => {
+    setActiveIndex(realIndex);
     setInfoAnimation(true);
   };
 
