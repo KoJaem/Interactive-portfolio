@@ -1,15 +1,16 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from 'styled-components';
 import { EffectCards } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import Image from 'next/image';
-import { projectUrls } from 'src/dummy/projectUrls';
+import { projects } from 'src/dummy/projectUrls';
 import { Typography } from 'src/components';
 
-
 export const Projects = () => {
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+
   return (
     <Container>
       <StyledSwiper
@@ -17,18 +18,22 @@ export const Projects = () => {
         cardsEffect={{
           slideShadows: false,
         }}
+        onSlideChange={e => setActiveIndex(e.activeIndex)}
         modules={[EffectCards]}
         grabCursor={true}
       >
-        {projectUrls.map((data, i) => (
+        {projects.map((data, i) => (
           <SwiperSlide key={i}>
             <Image
               style={{ borderRadius: 50 }}
-              src={data}
+              src={data.url}
               width={320}
               height={320}
               alt="project"
             />
+            {activeIndex === i && (
+              <div style={{ color: 'white' }}>{data.info}</div>
+            )}
           </SwiperSlide>
         ))}
       </StyledSwiper>
