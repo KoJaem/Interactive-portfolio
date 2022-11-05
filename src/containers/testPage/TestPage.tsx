@@ -20,37 +20,24 @@ export const TestPage = () => {
         centeredSlides
         slidesPerView="auto"
         coverflowEffect={{
-          rotate: 40,
+          rotate: 55,
           stretch: 20,
           depth: -120,
           slideShadows: false,
         }}
         breakpoints={{
-          768: {
+          1024: {
             coverflowEffect: {
               rotate: 60,
-              stretch: 40,
-              depth: -120,
-              modifier: 1,
-              scale: 1,
+              stretch: 20,
               slideShadows: false,
             },
           },
-          // 1371: {
-          //   coverflowEffect: {
-          //     rotate: 50,
-          //     stretch: 40,
-          //     depth: -120,
-          //     modifier: 1,
-          //     scale: 1,
-          //     slideShadows: false,
-          //   },
-          // },
         }}
       >
         {projects.map((data, i) => (
           <SwiperSlideTest1 key={i}>
-            <Image src={data.url} width={250} height={350} alt="project" />
+            <Image src={data.url} layout='fill' alt="project" />
           </SwiperSlideTest1>
         ))}
       </StyledSwiper>
@@ -69,6 +56,9 @@ const SwiperContainer = styled.div`
   list-style: none;
   padding: 0;
   z-index: 1;
+  @media all and (min-width: 1023px) {
+    max-width: 100%;
+  }
 `;
 
 const StyledSwiper = styled(Swiper)`
@@ -82,18 +72,8 @@ const SwiperSlideTest1 = styled(SwiperSlide)`
   font-size: 18px;
   background: #fff;
   width: 200px;
-
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
+  height: 280px;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
   align-items: center;
 `;
