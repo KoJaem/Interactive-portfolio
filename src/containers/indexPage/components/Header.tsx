@@ -3,7 +3,7 @@ import React from 'react';
 import { Typography } from 'src/components';
 import { customColor } from 'src/constants';
 import styled, { css } from 'styled-components';
-
+import { MdMenu } from 'react-icons/md';
 const buttonVariants = {
   initial: {
     color: customColor.darkGray,
@@ -12,13 +12,14 @@ const buttonVariants = {
     borderBottom: `3px solid ${customColor.gray}`,
     color: customColor.white,
     transition: {
-      duration: 0.1
+      duration: 0.1,
     },
   },
   tap: {
     borderBottom: `1px solid ${customColor.gray}`,
   },
 };
+
 
 export const Header = () => {
   return (
@@ -64,6 +65,12 @@ export const Header = () => {
           Github
         </GithubButton>
       </ButtonWrapper>
+      {/* <MenuIcon>
+        <MdMenu
+          size={40}
+        />
+      </MenuIcon> */}
+      <GradientTest>테스트트트</GradientTest>
     </Container>
   );
 };
@@ -86,6 +93,9 @@ const ButtonWrapper = styled.section`
   display: flex;
   gap: 0 80px;
   font-size: 20px;
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
 `;
 
 const buttonCss = css`
@@ -110,4 +120,22 @@ const Button = styled(motion.button)`
 const GithubButton = styled(motion.button)`
   ${buttonCss}
   background: linear-gradient(60deg, ${customColor.magenta} 0%, ${customColor.purple} 100%);
+`;
+
+const MenuIcon = styled.section`
+  display: none;
+  padding-top: 8px;
+
+  @media only screen and (max-width: 767px) {
+    display: flex;
+  }
+`;
+
+const GradientTest = styled.div`
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 50px;
+  font-weight: bold;
 `;

@@ -22,7 +22,6 @@ export const TestPage = () => {
           slidesPerView="auto"
           coverflowEffect={{
             rotate: 55,
-            // stretch: 0,
             depth: -120,
             slideShadows: false,
           }}
@@ -31,7 +30,6 @@ export const TestPage = () => {
               coverflowEffect: {
                 rotate: 20,
                 depth: -50,
-                slideShadows: false,
               },
             },
           }}
