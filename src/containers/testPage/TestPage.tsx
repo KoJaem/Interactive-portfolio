@@ -10,69 +10,79 @@ import Image from 'next/image';
 import { projects } from 'src/dummy/projectUrls';
 export const TestPage = () => {
   return (
-    <SwiperContainer>
-      <StyledSwiper
-        className="mySwiper"
-        loop
-        modules={[EffectCoverflow]}
-        effect="coverflow"
-        grabCursor
-        centeredSlides
-        slidesPerView="auto"
-        coverflowEffect={{
-          rotate: 55,
-          stretch: 20,
-          depth: -120,
-          slideShadows: false,
-        }}
-        breakpoints={{
-          1024: {
-            coverflowEffect: {
-              rotate: 60,
-              stretch: 20,
-              slideShadows: false,
+    <Container>
+      <Wrapper>
+        <StyledSwiper
+          className="mySwiper"
+          loop
+          modules={[EffectCoverflow]}
+          effect="coverflow"
+          grabCursor
+          centeredSlides
+          slidesPerView="auto"
+          coverflowEffect={{
+            rotate: 55,
+            // stretch: 0,
+            depth: -120,
+            slideShadows: false,
+          }}
+          breakpoints={{
+            1024: {
+              coverflowEffect: {
+                rotate: 20,
+                depth: -50,
+                slideShadows: false,
+              },
             },
-          },
-        }}
-      >
-        {projects.map((data, i) => (
-          <SwiperSlideTest1 key={i}>
-            <Image src={data.url} layout='fill' alt="project" />
-          </SwiperSlideTest1>
-        ))}
-      </StyledSwiper>
-    </SwiperContainer>
+          }}
+        >
+          {projects.map((data, i) => (
+            <SwiperSlideTest1 key={i}>
+              <Image src={data.url} layout="fill" alt="project" />
+            </SwiperSlideTest1>
+          ))}
+        </StyledSwiper>
+      </Wrapper>
+    </Container>
   );
 };
 
-const SwiperContainer = styled.div`
-  max-width: 710px;
-  padding: 48px 0;
+const Container = styled.section`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   perspective: 2000px;
-  margin-left: auto;
-  margin-right: auto;
   position: relative;
-  overflow: hidden;
-  list-style: none;
-  padding: 0;
+  overflow-x: hidden;
   z-index: 1;
+`;
+
+const Wrapper = styled.section`
+  display: flex;
+  max-width: 800px;
+  > div {
+    padding: 20px 0 200px 0;
+  }
   @media all and (min-width: 1023px) {
-    max-width: 100%;
+    max-width: 1200px;
+    /* max-width: 1400px; */
   }
 `;
+
 
 const StyledSwiper = styled(Swiper)`
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 `;
 
 const SwiperSlideTest1 = styled(SwiperSlide)`
   text-align: center;
   font-size: 18px;
   background: #fff;
-  width: 200px;
-  height: 280px;
+  width: 250px;
+  height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
