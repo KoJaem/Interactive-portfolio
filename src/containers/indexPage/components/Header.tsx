@@ -4,6 +4,8 @@ import { Typography } from 'src/components';
 import { customColor } from 'src/constants';
 import styled, { css } from 'styled-components';
 import { MdMenu } from 'react-icons/md';
+import { GradientTypography } from 'src/components/GradientTypography';
+import { GradientSvg } from './GradientSvgIcon';
 const buttonVariants = {
   initial: {
     color: customColor.darkGray,
@@ -21,16 +23,27 @@ const buttonVariants = {
 };
 
 
+
 export const Header = () => {
   return (
     <Container>
       <Title>
-        <Typography size="40" color="purple" fontWeight="bold">
+        <GradientTypography
+          size="40"
+          color1="purple"
+          color2="magenta"
+          fontWeight="bold"
+        >
           Ko
-        </Typography>
-        <Typography size="40" color="magenta" fontWeight="bold">
+        </GradientTypography>
+        <GradientTypography
+          size="40"
+          color1="magenta"
+          color2="black"
+          fontWeight="bold"
+        >
           Jaem
-        </Typography>
+        </GradientTypography>
       </Title>
       <ButtonWrapper>
         <Button
@@ -65,12 +78,9 @@ export const Header = () => {
           Github
         </GithubButton>
       </ButtonWrapper>
-      {/* <MenuIcon>
-        <MdMenu
-          size={40}
-        />
-      </MenuIcon> */}
-      <GradientTest>테스트트트</GradientTest>
+      <MenuIcon>
+        <GradientSvg Icon={MdMenu} color1={customColor.magenta} color2={customColor.purple} />
+      </MenuIcon>
     </Container>
   );
 };
@@ -124,6 +134,8 @@ const GithubButton = styled(motion.button)`
 
 const MenuIcon = styled.section`
   display: none;
+  position: absolute;
+  right: 40px;
   padding-top: 8px;
 
   @media only screen and (max-width: 767px) {
@@ -132,7 +144,7 @@ const MenuIcon = styled.section`
 `;
 
 const GradientTest = styled.div`
-  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+  background-image: linear-gradient(60deg, ${customColor.magenta} 0%, ${customColor.purple} 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
