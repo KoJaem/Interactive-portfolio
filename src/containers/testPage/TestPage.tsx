@@ -29,7 +29,7 @@ export const TestPage = () => {
             1024: {
               coverflowEffect: {
                 rotate: 20,
-                depth: -50,
+                depth: -80,
               },
             },
           }}

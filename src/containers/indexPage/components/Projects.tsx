@@ -9,81 +9,41 @@ import { projects } from 'src/dummy/projectUrls';
 import { Typography } from 'src/components';
 import { motion } from 'framer-motion';
 
-type slideEventType = {
-  realIndex: number;
-};
-
 export const Projects = () => {
-  const [activeIndex, setActiveIndex] = useState<number>(0);
-  const [infoAnimation, setInfoAnimation] = useState<boolean>(false);
-
-  const slideChange = ({ realIndex }: slideEventType) => {
-    setActiveIndex(realIndex);
-    setInfoAnimation(true);
+  const makeSpectrumText = (data: string, index: number) => {
+    return (
+      <motion.p
+        key={index}
+        animate={{
+          opacity: [0, 1],
+        }}
+        style={{display: 'inline', textShadow: 'white 1px 1px 5px'}}
+        transition={{
+          duration: 4,
+          delay: 1 + index * 0.2,
+        }}
+      >
+          {data}
+      </motion.p>
+    );
   };
-
   return (
     <Container>
       <Wrapper>
-        <StyledSwiper
-          style={{ margin: 0 }}
-          effect="cards"
-          cardsEffect={{
-            slideShadows: false,
-          }}
-          loop
-          onSlideChange={slideChange}
-          modules={[EffectCards]}
-          grabCursor={true}
-        >
-          {projects.map((data, i) => (
-            <SwiperSlide key={i}>
-              <Image
-                style={{ borderRadius: 50 }}
-                src={data.url}
-                width={320}
-                height={320}
-                alt="project"
-              />
-            </SwiperSlide>
-          ))}
-        </StyledSwiper>
-
-        <Info
-          onAnimationComplete={() => setInfoAnimation(false)}
-          animate={{
-            opacity: infoAnimation ? [1, 0] : [0, 1],
-          }}
-          transition={{ duration: 0.1 }}
-        >
-          <Typography size="20" color="white">
-            {projects[activeIndex].info}
-          </Typography>
-        </Info>
+        <Typography size="80" color="white">
+          {Array.from('Projects').map((data, i) => makeSpectrumText(data, i))}
+        </Typography>
       </Wrapper>
     </Container>
   );
 };
 
 const Container = styled.section`
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100%;
 `;
 
 const Wrapper = styled.section`
-  display: flex;
-  width: 100%;
-  max-width: 800px;
-  align-items: center;
-  justify-content: space-between;
 `;
-
-const StyledSwiper = styled(Swiper)`
-  width: 320px;
-  height: 500px;
-`;
-
-const Info = styled(motion.section)``;
