@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { projects } from 'src/dummy/projectUrls';
 import { Typography } from 'src/components';
 import { motion } from 'framer-motion';
+import { ProjectSwiper } from './index';
 
 export const Projects = () => {
   const makeSpectrumText = (data: string, index: number) => {
@@ -19,8 +20,8 @@ export const Projects = () => {
         }}
         style={{display: 'inline', textShadow: 'white 1px 1px 5px'}}
         transition={{
-          duration: 4,
-          delay: 1 + index * 0.2,
+          duration: 3,
+          delay: 0.5 + index * 0.3,
         }}
       >
           {data}
@@ -29,11 +30,12 @@ export const Projects = () => {
   };
   return (
     <Container>
-      <Wrapper>
+      <Title>
         <Typography size="80" color="white">
           {Array.from('Projects').map((data, i) => makeSpectrumText(data, i))}
         </Typography>
-      </Wrapper>
+      </Title>
+        <ProjectSwiper />
     </Container>
   );
 };
@@ -42,8 +44,10 @@ const Container = styled.section`
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 `;
 
-const Wrapper = styled.section`
+const Title = styled.section`
+  margin-bottom: 200px;
 `;
