@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import styled from 'styled-components';
 import 'swiper/css/navigation';
-import { EffectCoverflow, Autoplay , Navigation, Pagination } from 'swiper';
+import { EffectCoverflow, Autoplay } from 'swiper';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import Image from 'next/image';
@@ -23,7 +23,6 @@ export const ProjectSwiper = () => {
           autoplay={{
             delay: 1500,
             disableOnInteraction: false,
-            // pauseOnMouseEnter: true,
           }}
           speed={1000}
           slidesPerView="auto"
@@ -72,7 +71,7 @@ const Wrapper = styled.section`
   display: flex;
   max-width: 800px;
   > div {
-    padding: 40px 0 200px 0;
+    padding: 40px 0;
   }
   @media all and (min-width: 1023px) {
     max-width: 1200px;

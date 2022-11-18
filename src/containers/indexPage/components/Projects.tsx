@@ -49,5 +49,5 @@ const Container = styled.section`
 `;
 
 const Title = styled.section`
-  margin-bottom: 200px;
+  margin-bottom: 120px;
 `;
