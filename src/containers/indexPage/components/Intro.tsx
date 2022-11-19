@@ -28,9 +28,9 @@ export const Intro = () => {
         exit: { transition: { staggerChildren: 0.5 } },
       }}
     >
-      <Greeting>
+      <Welcome>
         <motion.li variants={introVariants}>
-          <Typography size="60" color="gray" fontWeight="bold">
+          <Typography size="3rem" color="gray" fontWeight="bold">
             Welcome to the
           </Typography>
         </motion.li>
@@ -38,19 +38,24 @@ export const Intro = () => {
           style={{ display: 'flex', flexWrap: 'wrap' }}
           variants={introVariants}
         >
-          <Typography size="80" color="purple" fontWeight="bold">
+          <Typography size="4rem" color="purple" fontWeight="bold">
             KoJaem&apos;s&nbsp;
           </Typography>
-          <Typography size="80" color="magenta" fontWeight="bold">
+          <Typography size="4rem" color="magenta" fontWeight="bold">
             exhibition
           </Typography>
         </motion.li>
-      </Greeting>
-      <motion.li variants={introVariants}>
-        <Typography size="40" color="white" fontWeight="bold">
-          저는 프론트엔드 개발자를 꿈꾸며 공부하는 학생입니다.
-        </Typography>
-      </motion.li>
+        <motion.li variants={introVariants}>
+          <Typography
+            size="1.6rem"
+            color="white"
+            fontWeight="bold"
+            fontHeight="2"
+          >
+            저는 프론트엔드 개발자를 꿈꾸며 공부하는 학생입니다.
+          </Typography>
+        </motion.li>
+      </Welcome>
       <Dia
         animate={{
           opacity: [0, 1],
@@ -74,10 +79,14 @@ const Container = styled(motion.section)`
   height: 100vh;
 `;
 
-const Greeting = styled(motion.section)`
+const Welcome = styled(motion.section)`
   display: flex;
   flex-direction: column;
   gap: 12px 0;
+  padding: 0 20px;
+  @media screen and (min-width: 1040px) {
+    padding: 0 60px;
+  }
 `;
 
 const Dia = styled(motion.section)`
@@ -93,4 +102,8 @@ const Dia = styled(motion.section)`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  display: none;
+  @media screen and (min-width: 767px) {
+    display: flex;
+  }
 `;

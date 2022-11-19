@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-import { Typography } from 'src/components';
 import { customColor } from 'src/constants';
 import styled, { css } from 'styled-components';
 import { MdMenu } from 'react-icons/md';
@@ -29,7 +28,7 @@ export const Header = () => {
     <Container>
       <Title>
         <GradientTypography
-          size="40"
+          size="2.5rem"
           color1="purple"
           color2="magenta"
           fontWeight="bold"
@@ -37,7 +36,7 @@ export const Header = () => {
           Ko
         </GradientTypography>
         <GradientTypography
-          size="40"
+          size="2.5rem"
           color1="magenta"
           color2="black"
           fontWeight="bold"
@@ -90,21 +89,28 @@ const Container = styled.section`
   top: 60px;
   display: flex;
   width: 100%;
-  padding: 0 80px;
+  padding: 0 20px;
   justify-content: space-between;
   z-index: 1;
+  @media screen and (min-width: 768px) {
+    padding: 0 20px;
+  }
+  @media screen and (min-width: 1040px) {
+    padding: 0 60px;
+  }
 `;
+
 
 const Title = styled.section`
   display: flex;
 `;
 
 const ButtonWrapper = styled.section`
-  display: flex;
+  display: none;
   gap: 0 80px;
   font-size: 20px;
-  @media only screen and (max-width: 767px) {
-    display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
   }
 `;
 
@@ -117,7 +123,7 @@ const buttonCss = css`
   padding: 12px 0;
   border-radius: 20px;
   box-sizing: border-box;
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
 `;
@@ -133,13 +139,13 @@ const GithubButton = styled(motion.button)`
 `;
 
 const MenuIcon = styled.section`
-  display: none;
+  display: flex;
   position: absolute;
   right: 40px;
   padding-top: 8px;
 
-  @media only screen and (max-width: 767px) {
-    display: flex;
+  @media screen and (min-width: 767px) {
+    display: none;
   }
 `;
 

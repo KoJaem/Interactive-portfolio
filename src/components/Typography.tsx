@@ -2,21 +2,21 @@ import { customColorType, customColor } from "src/constants/customColor";
 import styled from "styled-components";
 
 export type TypographyProps = React.PropsWithChildren<{
-  size:
-    | "80"
-    | "60"
-    | "48"
-    | "44"
-    | "40"
-    | "36"
-    | "32"
-    | "28"
-    | "24"
-    | "20"
-    | "16"
-    | "12"
-    | "8"
-    | "4";
+  size: string;
+    // | "80"
+    // | "60"
+    // | "48"
+    // | "44"
+    // | "40"
+    // | "36"
+    // | "32"
+    // | "28"
+    // | "24"
+    // | "20"
+    // | "16"
+    // | "12"
+    // | "8"
+    // | "4";
   color?: keyof customColorType;
   textAlign?: "left" | "center" | "right";
   fontWeight?: string;
@@ -34,7 +34,7 @@ export const handleColor = (color: keyof customColorType) => {
 };
 
 const TypographyText = styled.div<TypographyProps>`
-  font-size: ${({ size }) => size + "px"};
+  font-size: ${({ size }) => isNaN(Number(size)) ? size : size + "px"};
   color: ${({ color }) => (color ? handleColor(color) : customColor.black)};
   text-align: ${({ textAlign }) => textAlign};
   font-weight: ${({ fontWeight }) => fontWeight};

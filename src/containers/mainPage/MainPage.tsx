@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export const MainPage = () => {
   return (
     <Container>
-      <Typography size='16'>MainPage</Typography>
+      <Typography size='1rem'>MainPage</Typography>
     </Container>
   );
 };

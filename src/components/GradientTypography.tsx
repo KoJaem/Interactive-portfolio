@@ -2,21 +2,21 @@ import { customColorType, customColor } from 'src/constants/customColor';
 import styled from 'styled-components';
 
 export type GradientTypographyProps = React.PropsWithChildren<{
-  size:
-    | '80'
-    | '60'
-    | '48'
-    | '44'
-    | '40'
-    | '36'
-    | '32'
-    | '28'
-    | '24'
-    | '20'
-    | '16'
-    | '12'
-    | '8'
-    | '4';
+  size: string;
+    // | '80'
+    // | '60'
+    // | '48'
+    // | '44'
+    // | '40'
+    // | '36'
+    // | '32'
+    // | '28'
+    // | '24'
+    // | '20'
+    // | '16'
+    // | '12'
+    // | '8'
+    // | '4';
   color1?: keyof customColorType;
   color2?: keyof customColorType;
   textAlign?: 'left' | 'center' | 'right';
@@ -39,8 +39,7 @@ const TypographyText = styled.div<GradientTypographyProps>`
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
-  font-size: ${({ size }) => size + 'px'};
+  font-size: ${({ size }) => isNaN(Number(size)) ? size : size + "px"};
   text-align: ${({ textAlign }) => textAlign};
   font-weight: ${({ fontWeight }) => fontWeight};
   ${({ fontHeight }) =>

@@ -62,7 +62,7 @@ const Wrapper = styled.section`
   > div {
     padding: 20px 0 200px 0;
   }
-  @media all and (min-width: 1023px) {
+  @media screen and (min-width: 1023px) {
     max-width: 1200px;
     /* max-width: 1400px; */
   }

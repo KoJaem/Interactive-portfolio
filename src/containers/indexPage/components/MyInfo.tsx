@@ -16,30 +16,30 @@ export const MyInfo = () => {
       />
       <Wrapper>
         <InfoWrapper>
-          <Typography size="32" color="white" fontWeight="bold">
+          <Typography size="1.5rem" color="white" fontWeight="bold">
             고재민
           </Typography>
-          <Typography size="32" color="white" fontWeight="bold">
+          <Typography size="1.5rem" color="white" fontWeight="bold">
             📞 010-2258-1401
           </Typography>
-          <Typography size="32" color="white" fontWeight="bold" fontHeight='1.4'>
+          <Typography size="1.5rem" color="white" fontWeight="bold" fontHeight='1.4'>
             💌woalswhwh@gmail.com
           </Typography>
           <Line />
           <section style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Typography size="32" color="skyBlue" fontWeight="bold">
+            <Typography size="1.5rem" color="skyBlue" fontWeight="bold">
               FrontEnd
             </Typography>
-            <Typography size="32" color="magenta" fontWeight="bold">
+            <Typography size="1.5rem" color="magenta" fontWeight="bold">
               GitHub
             </Typography>
           </section>
         </InfoWrapper>
-        <Typography size="24" color="darkGray" fontWeight="bold">
+        <Typography size="1.2rem" color="darkGray" fontWeight="bold">
           내일의 나에게 부끄럽지 않은 하루를 보내자
         </Typography>
         <MoreButton>
-          <Typography size="28" color="white" fontWeight="bold">
+          <Typography size="1.3rem" color="white" fontWeight="bold">
             More &gt;&gt;
           </Typography>
         </MoreButton>
@@ -84,6 +84,9 @@ const MoreButton = styled.button`
   border-radius: 24px;
   width: 160px;
   height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   align-self: flex-end;
   cursor: pointer;
 `;

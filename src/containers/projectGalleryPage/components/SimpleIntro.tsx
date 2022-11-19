@@ -64,11 +64,11 @@ export const SimpleIntro = () => {
           <MotionText>
             <Wrapper>
               <Title>
-                <Typography size="40" color={'purple'} fontWeight="bold">
+                <Typography size="2rem" color={'purple'} fontWeight="bold">
                   {projectInfo.title}
                 </Typography>
                 <Typography
-                  size="20"
+                  size="1rem"
                   fontWeight="bold"
                 >{`${projectInfo.date[0]} ~ ${projectInfo.date[1]}`}</Typography>
               </Title>
@@ -79,7 +79,7 @@ export const SimpleIntro = () => {
                   paddingBT={16}
                   description="프로젝트 주제"
                 >
-                  <Typography size="28" color="white" fontWeight="bold">
+                  <Typography size="1.3rem" color="white" fontWeight="bold">
                     {projectInfo.topic}
                   </Typography>
                 </TextBox>
@@ -90,7 +90,7 @@ export const SimpleIntro = () => {
                   description="프로젝트 소개"
                 >
                   <Typography
-                    size="28"
+                    size="1.3rem"
                     fontWeight="bold"
                     color="white"
                     fontHeight="1.2"
@@ -107,7 +107,7 @@ export const SimpleIntro = () => {
                   >
                     {projectInfo.developEnv.map((data, i) => (
                       <Typography
-                        size="24"
+                        size="1.2rem"
                         color="white"
                         fontWeight="bold"
                         key={i}
@@ -125,7 +125,7 @@ export const SimpleIntro = () => {
                   >
                     {projectInfo.myRole.map((data, i) => (
                       <Typography
-                        size="24"
+                        size="1.2rem"
                         color="white"
                         fontWeight="bold"
                         key={i}

@@ -35,7 +35,7 @@ export const TextBox = ({
           animate={{ opacity: [0, 0.8] }}
           transition={{ duration: 0.2 }}
         >
-          <Typography size="20" fontWeight="bold" color="white">
+          <Typography size="1rem" fontWeight="bold" color="white">
             {description}
           </Typography>
         </Description>
