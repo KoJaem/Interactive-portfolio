@@ -2,7 +2,8 @@ import React from 'react';
 import { Typography } from 'src/components';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { GradientTypography } from "src/components/GradientTypography";
 const transition = { duration: 0.5 };
 
 const introVariants = {
@@ -15,12 +16,68 @@ const introVariants = {
   },
 };
 
+const INTRO_SECTION_PAGE_HEIGHT = 4000;
+
+const SCROLL_OFFSET = {
+  CONTAINER_SCALE: [0, 900],
+  TITLE_OPACITY: [700, 900],
+  INTRO_OPACITY: [500, 700],
+  NAME_OPACITY: [1000, 2400, 3500],
+  NAME_Y_POSITION: [1000, 1400],
+  INTEREST_OPACITY: [1400, 2400, 3500],
+  DIA_OPACITY: [2400, 3300]
+};
+
 export const Intro = () => {
+  const { scrollY } = useScroll();
+  const containerScale = useTransform(
+    scrollY,
+    SCROLL_OFFSET.CONTAINER_SCALE,
+    [1, 1.2],
+  );
+
+  const titleOpacity = useTransform(
+    scrollY,
+    SCROLL_OFFSET.TITLE_OPACITY,
+    [1, 0],
+  );
+
+  const introOpacity = useTransform(
+    scrollY,
+    SCROLL_OFFSET.INTRO_OPACITY,
+    [1, 0],
+  );
+
+  const nameOpacity = useTransform(
+    scrollY,
+    SCROLL_OFFSET.NAME_OPACITY,
+    [0, 1, 0],
+  );
+
+  const nameYPosition = useTransform(
+    scrollY,
+    SCROLL_OFFSET.NAME_Y_POSITION,
+    [20, 0],
+  );
+
+  const InterestOpacity = useTransform(
+    scrollY,
+    SCROLL_OFFSET.INTEREST_OPACITY,
+    [0, 1, 0],
+  );
+
+  const opacityZero = useTransform(
+    scrollY,
+    SCROLL_OFFSET.DIA_OPACITY,
+    [1, 0],
+  )
+
   return (
     <Container
       initial="initial"
       animate="enter"
       exit="exit"
+      style={{ height: INTRO_SECTION_PAGE_HEIGHT }}
       variants={{
         enter: {
           transition: { staggerChildren: 0.5, staggerDirection: 1 },
@@ -28,39 +85,92 @@ export const Intro = () => {
         exit: { transition: { staggerChildren: 0.5 } },
       }}
     >
-      <Welcome>
-        <motion.li variants={introVariants}>
-          <Typography size="3rem" color="gray" fontWeight="bold">
-            Welcome to the
-          </Typography>
-        </motion.li>
-        <motion.li
-          style={{ display: 'flex', flexWrap: 'wrap' }}
-          variants={introVariants}
-        >
-          <Typography size="4rem" color="purple" fontWeight="bold">
-            KoJaem&apos;s&nbsp;
-          </Typography>
-          <Typography size="4rem" color="magenta" fontWeight="bold">
-            exhibition
-          </Typography>
-        </motion.li>
-        <motion.li variants={introVariants}>
+      <Welcome style={{ scale: containerScale }}>
+        <motion.ul style={{ opacity: titleOpacity, marginBottom: 20 }}>
+          <motion.li variants={introVariants}>
+            <Typography
+              size="3rem"
+              color="gray"
+              fontWeight="bold"
+              fontHeight="1.5"
+              textAlign="center"
+            >
+              Welcome to the
+            </Typography>
+          </motion.li>
+          <motion.li
+            style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}
+            variants={introVariants}
+          >
+            <Typography size="4rem" color="purple" fontWeight="bold">
+              KoJaem&apos;s&nbsp;
+            </Typography>
+            <Typography size="4rem" color="magenta" fontWeight="bold">
+              exhibition
+            </Typography>
+          </motion.li>
+        </motion.ul>
+        <motion.li variants={introVariants} style={{ opacity: introOpacity, display: 'flex', justifyContent: 'center' }}>
           <Typography
             size="1.6rem"
             color="white"
             fontWeight="bold"
             fontHeight="2"
+            textAlign='center'
           >
             저는 프론트엔드 개발자를 꿈꾸며 공부하는 학생입니다.
           </Typography>
         </motion.li>
       </Welcome>
+      <SecondIntro>
+        <Name style={{ opacity: nameOpacity, y: nameYPosition }}>
+          <GradientTypography
+            size="4rem"
+            color1="purple"
+            color2="magenta"
+            fontHeight='1.5'
+            fontWeight="bold"
+          >
+            KoJaem
+          </GradientTypography>
+          <GradientTypography
+            size="4rem"
+            color1="magenta"
+            color2="darkGray"
+            fontWeight="bold"
+            fontHeight='1.5'
+          >
+            (고재민)
+          </GradientTypography>
+        </Name>
+        <Interest style={{ opacity: InterestOpacity }}>
+          <Typography
+            size="1.6rem"
+            color="white"
+            fontWeight="bold"
+            fontHeight="1.5"
+            textAlign="center"
+          >
+            UI, UX 에 대해 관심이 많으며
+          </Typography>
+          <Typography
+            size="1.6rem"
+            color="white"
+            fontWeight="bold"
+            fontHeight="1.5"
+            textAlign="center"
+          >
+            프론트엔드의 전반적인 기술에 대해 흥미가 있습니다
+          </Typography>
+        </Interest>
+      </SecondIntro>
       <Dia
+        initial={{ opacity: 0 }}
         animate={{
           opacity: [0, 1],
           transition: { delay: 1.5 },
         }}
+        style={{ opacity:opacityZero }}
       />
     </Container>
   );
@@ -68,30 +178,29 @@ export const Intro = () => {
 
 const Container = styled(motion.section)`
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 25vh;
   width: 100%;
   background-color: ${customColor.black};
   max-width: 1178px;
   gap: 60px 0;
-  height: 100vh;
+  display: flex;
+  justify-content: center;
 `;
 
 const Welcome = styled(motion.section)`
   display: flex;
+  position: fixed;
   flex-direction: column;
   gap: 12px 0;
   padding: 0 20px;
-  @media screen and (min-width: 1040px) {
-    padding: 0 60px;
+  top: 25vh;
+  @media screen and (min-height: 900px) {
+    top: 40vh;
   }
 `;
 
 const Dia = styled(motion.section)`
-  position: absolute;
-  bottom: 60px;
+  position: fixed;
+  top: 90vh;
   left: 50%;
   width: 40px;
   height: 40px;
@@ -106,4 +215,31 @@ const Dia = styled(motion.section)`
   @media screen and (min-width: 767px) {
     display: flex;
   }
+`;
+
+const SecondIntro = styled.section`
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 25vh;
+  @media screen and (min-height: 900px) {
+    top: 40vh;
+  }
+`;
+
+const Name = styled(motion.section)`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  @media screen and (min-height: 900px) {
+    flex-direction: row;
+  }
+`;
+
+const Interest = styled(motion.li)`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `;

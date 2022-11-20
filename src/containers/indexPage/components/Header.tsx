@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import { customColor } from 'src/constants';
 import styled, { css } from 'styled-components';
-import { MdMenu } from 'react-icons/md';
+import { AiFillGithub } from 'react-icons/ai';
 import { GradientTypography } from 'src/components/GradientTypography';
 import { GradientSvg } from './GradientSvgIcon';
 const buttonVariants = {
@@ -78,7 +78,11 @@ export const Header = () => {
         </GithubButton>
       </ButtonWrapper>
       <MenuIcon>
-        <GradientSvg Icon={MdMenu} color1={customColor.magenta} color2={customColor.purple} />
+        <GradientSvg
+          Icon={AiFillGithub}
+          color1={customColor.magenta}
+          color2={customColor.purple}
+        />
       </MenuIcon>
     </Container>
   );
@@ -109,6 +113,7 @@ const ButtonWrapper = styled.section`
   display: none;
   gap: 0 80px;
   font-size: 20px;
+  margin-top: 8px;
   @media screen and (min-width: 768px) {
     display: flex;
   }
@@ -142,7 +147,8 @@ const MenuIcon = styled.section`
   display: flex;
   position: absolute;
   right: 40px;
-  padding-top: 8px;
+  margin-top: 8px;
+  cursor: pointer;
 
   @media screen and (min-width: 767px) {
     display: none;
