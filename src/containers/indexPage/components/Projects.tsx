@@ -10,30 +10,15 @@ import { Typography } from 'src/components';
 import { motion } from 'framer-motion';
 import { ProjectSwiper } from './index';
 import { customColor } from 'src/constants';
+import { SpectrumText } from 'src/components/SpectrumText';
 
 export const Projects = () => {
-  const makeSpectrumText = (data: string, index: number) => {
-    return (
-      <motion.p
-        key={index}
-        animate={{
-          opacity: [0, 1],
-        }}
-        style={{display: 'inline', textShadow: 'white 1px 1px 5px'}}
-        transition={{
-          duration: 3,
-          delay: 0.5 + index * 0.3,
-        }}
-      >
-          {data}
-      </motion.p>
-    );
-  };
+  
   return (
     <Container>
       <Title>
         <Typography size="4rem" color="white">
-          {Array.from('Projects').map((data, i) => makeSpectrumText(data, i))}
+          <SpectrumText text='Projects' />
         </Typography>
       </Title>
       <ProjectSwiper />

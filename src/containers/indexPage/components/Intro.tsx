@@ -3,7 +3,8 @@ import { Typography } from 'src/components';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { GradientTypography } from "src/components/GradientTypography";
+import { GradientTypography } from 'src/components/GradientTypography';
+import { SpectrumText } from 'src/components/SpectrumText';
 const transition = { duration: 0.5 };
 
 const introVariants = {
@@ -19,13 +20,13 @@ const introVariants = {
 const INTRO_SECTION_PAGE_HEIGHT = 4000;
 
 const SCROLL_OFFSET = {
-  CONTAINER_SCALE: [0, 900],
-  TITLE_OPACITY: [700, 900],
-  INTRO_OPACITY: [500, 700],
-  NAME_OPACITY: [1000, 2400, 3500],
-  NAME_Y_POSITION: [1000, 1400],
-  INTEREST_OPACITY: [1400, 2400, 3500],
-  DIA_OPACITY: [2400, 3300]
+  CONTAINER_SCALE: [0, 1000],
+  TITLE_OPACITY: [750, 1000],
+  INTRO_OPACITY: [500, 750],
+  NAME_OPACITY: [1000, 2500, 3500],
+  NAME_Y_POSITION: [1000, 1500],
+  INTEREST_OPACITY: [1500, 2500, 3500],
+  DIA_OPACITY: [2500, 3300],
 };
 
 export const Intro = () => {
@@ -66,11 +67,7 @@ export const Intro = () => {
     [0, 1, 0],
   );
 
-  const opacityZero = useTransform(
-    scrollY,
-    SCROLL_OFFSET.DIA_OPACITY,
-    [1, 0],
-  )
+  const opacityZero = useTransform(scrollY, SCROLL_OFFSET.DIA_OPACITY, [1, 0]);
 
   return (
     <Container
@@ -99,7 +96,11 @@ export const Intro = () => {
             </Typography>
           </motion.li>
           <motion.li
-            style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+            }}
             variants={introVariants}
           >
             <Typography size="4rem" color="purple" fontWeight="bold">
@@ -110,15 +111,26 @@ export const Intro = () => {
             </Typography>
           </motion.li>
         </motion.ul>
-        <motion.li variants={introVariants} style={{ opacity: introOpacity, display: 'flex', justifyContent: 'center' }}>
+        <motion.li
+          variants={introVariants}
+          style={{
+            opacity: introOpacity,
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
           <Typography
             size="1.6rem"
             color="white"
             fontWeight="bold"
             fontHeight="2"
-            textAlign='center'
+            textAlign="center"
           >
-            저는 프론트엔드 개발자를 꿈꾸며 공부하는 학생입니다.
+            <SpectrumText
+              text="저는 프론트엔드 개발자를 꿈꾸며 공부하는 학생입니다."
+              delay={0.05}
+              duration={1}
+            />
           </Typography>
         </motion.li>
       </Welcome>
@@ -128,7 +140,7 @@ export const Intro = () => {
             size="4rem"
             color1="purple"
             color2="magenta"
-            fontHeight='1.5'
+            fontHeight="1.5"
             fontWeight="bold"
           >
             KoJaem
@@ -138,7 +150,7 @@ export const Intro = () => {
             color1="magenta"
             color2="darkGray"
             fontWeight="bold"
-            fontHeight='1.5'
+            fontHeight="1.5"
           >
             (고재민)
           </GradientTypography>
@@ -170,7 +182,7 @@ export const Intro = () => {
           opacity: [0, 1],
           transition: { delay: 1.5 },
         }}
-        style={{ opacity:opacityZero }}
+        style={{ opacity: opacityZero }}
       />
     </Container>
   );
@@ -205,13 +217,22 @@ const Dia = styled(motion.section)`
   width: 40px;
   height: 40px;
   background-color: ${customColor.white};
-  transform: translate(-50%, -50%) rotateZ(45deg);
+  transform: rotateZ(45deg);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   display: none;
+  :hover {
+    scale: 20;
+    top: 50%;
+    border-radius: 4px;
+    transform: rotateZ(0);
+    content: url('introDia.jpg');
+    object-fit: cover;
+    transition: all 1s;
+  }
   @media screen and (min-width: 767px) {
     display: flex;
   }
