@@ -54,7 +54,12 @@ const Container = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0 120px;
+  flex-direction: column;
+  gap: 20px 0;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 0 120px;
+  }
 `;
 
 const Wrapper = styled.section`
@@ -84,6 +89,7 @@ const MoreButton = styled.button`
   border-radius: 24px;
   width: 160px;
   height: 60px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
