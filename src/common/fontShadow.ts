@@ -1,0 +1,1 @@
+export const whiteShadow = 'white 1px 1px 1px'

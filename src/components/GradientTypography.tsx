@@ -3,26 +3,27 @@ import styled from 'styled-components';
 
 export type GradientTypographyProps = React.PropsWithChildren<{
   size: string;
-    // | '80'
-    // | '60'
-    // | '48'
-    // | '44'
-    // | '40'
-    // | '36'
-    // | '32'
-    // | '28'
-    // | '24'
-    // | '20'
-    // | '16'
-    // | '12'
-    // | '8'
-    // | '4';
+  // | '80'
+  // | '60'
+  // | '48'
+  // | '44'
+  // | '40'
+  // | '36'
+  // | '32'
+  // | '28'
+  // | '24'
+  // | '20'
+  // | '16'
+  // | '12'
+  // | '8'
+  // | '4';
   color1?: keyof customColorType;
   color2?: keyof customColorType;
   textAlign?: 'left' | 'center' | 'right';
   fontWeight?: string;
   fontHeight?: string;
   fontHidden?: boolean;
+  fontShadow?: string;
 }>;
 export const GradientTypography = (props: GradientTypographyProps) => {
   return <TypographyText {...props}>{props.children}</TypographyText>;
@@ -47,7 +48,9 @@ const TypographyText = styled.div<GradientTypographyProps>`
 
   ${({ fontHidden }) =>
     fontHidden ? 'overflow: hidden;text-overflow: ellipsis;' : ''}
-
+    
+  ${({fontShadow}) => 
+    fontShadow ? `text-shadow: ${fontShadow}` : ""}
 
 `;
 

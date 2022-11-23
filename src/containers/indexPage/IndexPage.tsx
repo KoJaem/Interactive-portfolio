@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
-import { Header, Intro, MyInfo, Projects } from './components';
+import { Header, Intro, MyInfo, Projects, MySkills } from './components';
 
 export const IndexPage = () => {
   const router = useRouter();
@@ -12,6 +12,8 @@ export const IndexPage = () => {
       <Intro />
       <GapLine />
       <MyInfo />
+      <Gap />
+      <MySkills />
       <GapLine />
       <Projects />
     </Container>
@@ -31,4 +33,8 @@ const GapLine = styled.hr`
   margin: 20vh 0;
   border: 1px solid ${customColor.gray};
   width: 100%;
+`;
+
+const Gap = styled.section`
+  margin: 20vh 0;
 `;

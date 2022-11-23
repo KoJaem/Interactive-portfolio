@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { GradientTypography } from 'src/components/GradientTypography';
 import { SpectrumText } from 'src/components/SpectrumText';
+import { whiteShadow } from 'src/common/fontShadow';
 const transition = { duration: 0.5 };
 
 const introVariants = {
@@ -103,7 +104,12 @@ export const Intro = () => {
             }}
             variants={introVariants}
           >
-            <Typography size="4rem" color="purple" fontWeight="bold">
+            <Typography
+              size="4rem"
+              color="purple"
+              fontWeight="bold"
+              fontShadow={whiteShadow}
+            >
               KoJaem&apos;s&nbsp;
             </Typography>
             <Typography size="4rem" color="magenta" fontWeight="bold">
@@ -128,7 +134,7 @@ export const Intro = () => {
           >
             <SpectrumText
               text="저는 프론트엔드 개발자를 꿈꾸며 공부하는 학생입니다."
-              delay={0.05}
+              delay={0.1}
               duration={1}
             />
           </Typography>
@@ -162,6 +168,7 @@ export const Intro = () => {
             fontWeight="bold"
             fontHeight="1.5"
             textAlign="center"
+            fontShadow={whiteShadow}
           >
             UI, UX 에 대해 관심이 많으며
           </Typography>
@@ -171,6 +178,7 @@ export const Intro = () => {
             fontWeight="bold"
             fontHeight="1.5"
             textAlign="center"
+            fontShadow={whiteShadow}
           >
             프론트엔드의 전반적인 기술에 대해 흥미가 있습니다
           </Typography>

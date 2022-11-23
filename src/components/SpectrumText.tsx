@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { whiteShadow } from 'src/common/fontShadow';
 
 type Props = {
   text: string;
@@ -23,7 +24,7 @@ export const SpectrumText = ({ text, duration, delay }: Props) => {
           }}
           style={{
             display: 'inline',
-            textShadow: 'white 1px 1px 5px',
+            textShadow: whiteShadow,
           }}
           transition={{
             duration: duration ? duration : 3,

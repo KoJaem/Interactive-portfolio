@@ -3,46 +3,68 @@ import { Typography } from 'src/components';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
 import Image from 'next/image';
+import { whiteShadow } from 'src/common/fontShadow';
+
+
 
 export const MyInfo = () => {
   return (
     <Container>
-      <Image
-        style={{ borderRadius: 50 }}
-        src={'/profile.jpeg'}
-        width={320}
-        height={320}
-        alt="profile"
-      />
-      <Wrapper>
-        <InfoWrapper>
-          <Typography size="1.5rem" color="white" fontWeight="bold">
-            고재민
-          </Typography>
-          <Typography size="1.5rem" color="white" fontWeight="bold">
-            📞 010-2258-1401
-          </Typography>
-          <Typography size="1.5rem" color="white" fontWeight="bold" fontHeight='1.4'>
-            💌woalswhwh@gmail.com
-          </Typography>
-          <Line />
-          <section style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Typography size="1.5rem" color="skyBlue" fontWeight="bold">
-              FrontEnd
-            </Typography>
-            <Typography size="1.5rem" color="magenta" fontWeight="bold">
-              GitHub
-            </Typography>
-          </section>
-        </InfoWrapper>
-        <Typography size="1.2rem" color="darkGray" fontWeight="bold">
-          내일의 나에게 부끄럽지 않은 하루를 보내자
+      <Title>
+        <Typography
+          fontShadow={whiteShadow}
+          size="4rem"
+          color="purple"
+          fontWeight="bold"
+        >
+          My <span style={{ color: customColor.magenta }}>Skills</span>
         </Typography>
-        <MoreButton>
-          <Typography size="1.3rem" color="white" fontWeight="bold">
-            More &gt;&gt;
+      </Title>
+      <Wrapper>
+        <Image
+          style={{ borderRadius: 50 }}
+          src={'/profile.jpg'}
+          width={320}
+          height={320}
+          alt="profile"
+        />
+        <Contents>
+          <InfoWrapper>
+            <Typography size="1.5rem" color="white" fontWeight="bold">
+              고재민
+            </Typography>
+            <Typography size="1.5rem" color="white" fontWeight="bold">
+              📞 010-2258-1401
+            </Typography>
+            <Typography
+              size="1.5rem"
+              color="white"
+              fontWeight="bold"
+              fontHeight="1.4"
+            >
+              💌woalswhwh@gmail.com
+            </Typography>
+            <Line />
+            <section
+              style={{ display: 'flex', justifyContent: 'space-between' }}
+            >
+              <Typography size="1.5rem" color="skyBlue" fontWeight="bold">
+                FrontEnd
+              </Typography>
+              <Typography size="1.5rem" color="magenta" fontWeight="bold">
+                GitHub
+              </Typography>
+            </section>
+          </InfoWrapper>
+          <Typography size="1.2rem" color="darkGray" fontWeight="bold">
+            내일의 나에게 부끄럽지 않은 하루를 보내자
           </Typography>
-        </MoreButton>
+          <MoreButton>
+            <Typography size="1.3rem" color="white" fontWeight="bold">
+              More &gt;&gt;
+            </Typography>
+          </MoreButton>
+        </Contents>
       </Wrapper>
     </Container>
   );
@@ -56,13 +78,29 @@ const Container = styled.section`
   align-items: center;
   flex-direction: column;
   gap: 20px 0;
+  /* @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 0 120px;
+  } */
+`;
+
+const Title = styled.section`
+  margin-bottom: 10vh;
+`;
+
+const Wrapper = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px 0;
   @media screen and (min-width: 768px) {
     flex-direction: row;
     gap: 0 120px;
   }
 `;
 
-const Wrapper = styled.section`
+const Contents = styled.section`
   display: flex;
   flex-direction: column;
   gap: 20px 0;

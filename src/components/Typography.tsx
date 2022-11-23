@@ -22,6 +22,7 @@ export type TypographyProps = React.PropsWithChildren<{
   fontWeight?: string;
   fontHeight?: string;
   fontHidden?: boolean;
+  fontShadow?: string;
 }>;
 export const Typography = (props: TypographyProps) => {
   return <TypographyText {...props}>{props.children}</TypographyText>;
@@ -43,4 +44,6 @@ const TypographyText = styled.div<TypographyProps>`
 
   ${({ fontHidden }) =>
     fontHidden ? "overflow: hidden;text-overflow: ellipsis;" : ""}
+  ${({fontShadow}) => 
+    fontShadow ? `text-shadow: ${fontShadow}` : ""}
 `;

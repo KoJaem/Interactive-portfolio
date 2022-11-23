@@ -91,11 +91,14 @@ export const Header = () => {
 const Container = styled.section`
   position: fixed;
   top: 60px;
-  display: flex;
+  display: none;
   width: 100%;
   padding: 0 20px;
   justify-content: space-between;
   z-index: 1;
+  @media screen and (min-width: 480px) {
+    display: flex;
+  }
   @media screen and (min-width: 768px) {
     padding: 0 20px;
   }
@@ -112,7 +115,7 @@ const Title = styled.section`
 const ButtonWrapper = styled.section`
   display: none;
   gap: 0 80px;
-  font-size: 20px;
+  font-size: 1rem;
   margin-top: 8px;
   @media screen and (min-width: 768px) {
     display: flex;

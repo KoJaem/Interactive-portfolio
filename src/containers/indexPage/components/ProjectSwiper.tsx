@@ -87,7 +87,6 @@ const StyledSwiper = styled(Swiper)`
 
 const StyledSwiperSlide = styled(SwiperSlide)`
   text-align: center;
-  font-size: 18px;
   width: 250px;
   height: 350px;
   display: flex;
