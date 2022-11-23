@@ -232,7 +232,9 @@ const Dia = styled(motion.section)`
     content: url('introDia.jpg');
     object-fit: cover;
   }
-  transition: all 1s;
+  /* transition: all 1s; */
+  transition-property: scale, top, transform, border-radius;
+  transition-duration: 1s;
 
   @media screen and (min-width: 767px) {
     display: flex;
