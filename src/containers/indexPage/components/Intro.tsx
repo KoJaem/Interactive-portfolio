@@ -231,8 +231,9 @@ const Dia = styled(motion.section)`
     transform: rotateZ(0);
     content: url('introDia.jpg');
     object-fit: cover;
-    transition: all 1s;
   }
+  transition: all 1s;
+
   @media screen and (min-width: 767px) {
     display: flex;
   }
