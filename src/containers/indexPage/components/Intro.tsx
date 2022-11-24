@@ -5,7 +5,13 @@ import styled from 'styled-components';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { GradientTypography } from 'src/components/GradientTypography';
 import { SpectrumText } from 'src/components/SpectrumText';
-import { grayBoldShadow, magentaBoldShadow, purpleBoldShadow, whiteBoldShadow } from 'src/common/fontShadow';
+import {
+  grayBoldShadow,
+  magentaBoldShadow,
+  purpleBoldShadow,
+  whiteBoldShadow,
+} from 'src/common/fontShadow';
+import { useIntersect } from 'src/hooks';
 const transition = { duration: 0.5 };
 
 const introVariants = {
@@ -23,6 +29,8 @@ export const Intro = () => {
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
+
+  const { isVisible } = useIntersect({ targetRef, options: { threshold: 0 } });
 
   const INTRO_SECTION_PAGE_HEIGHT = '400vh';
 
@@ -135,7 +143,7 @@ export const Intro = () => {
         <motion.li
           variants={introVariants}
           style={{
-            opacity: introOpacity,
+            opacity: isVisible ? introOpacity : 0,
             display: 'flex',
             justifyContent: 'center',
           }}
@@ -205,6 +213,7 @@ export const Intro = () => {
         animate={{
           opacity: [0, 1],
           transition: { delay: 1.5 },
+          backgroundColor: isVisible ? customColor.white : customColor.black,
         }}
         style={{ opacity: opacityZero }}
       />
@@ -240,7 +249,6 @@ const Dia = styled(motion.section)`
   left: 50%;
   width: 40px;
   height: 40px;
-  background-color: ${customColor.white};
   transform: rotateZ(45deg);
   display: flex;
   flex-direction: column;
