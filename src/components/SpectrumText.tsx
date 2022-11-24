@@ -5,15 +5,17 @@ type Props = {
   text: string;
   duration?: number;
   delay? : number;
+  shadow?: string;
 }
 /**
  * 
  * @param text : 스펙트럼 텍스트로 만들고싶은 text
  * @param duration? : 한글자가 완전히 보이는 시간
  * @param delay? : 글자 사이사이 딜레이 시간
+ * @param shadow? : 글자 shadow 종류
  * 
  */
-export const SpectrumText = ({ text, duration, delay }: Props) => {
+export const SpectrumText = ({ text, duration, delay, shadow }: Props) => {
   return (
     <>
       {Array.from(text).map((data, i) => (
@@ -24,7 +26,7 @@ export const SpectrumText = ({ text, duration, delay }: Props) => {
           }}
           style={{
             display: 'inline',
-            textShadow: whiteShadow,
+            textShadow: shadow ? shadow : whiteShadow,
           }}
           transition={{
             duration: duration ? duration : 3,

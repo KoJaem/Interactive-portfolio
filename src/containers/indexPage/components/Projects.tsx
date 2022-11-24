@@ -11,6 +11,7 @@ import { motion } from 'framer-motion';
 import { ProjectSwiper } from './index';
 import { customColor } from 'src/constants';
 import { SpectrumText } from 'src/components/SpectrumText';
+import { whiteBoldShadow } from 'src/common/fontShadow';
 
 export const Projects = () => {
   
@@ -18,7 +19,7 @@ export const Projects = () => {
     <Container>
       <Title>
         <Typography size="4rem" color="white">
-          <SpectrumText text='Projects' />
+          <SpectrumText text='Projects' shadow={whiteBoldShadow}/>
         </Typography>
       </Title>
       <ProjectSwiper />

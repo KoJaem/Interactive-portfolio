@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Typography } from 'src/components';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { GradientTypography } from 'src/components/GradientTypography';
 import { SpectrumText } from 'src/components/SpectrumText';
-import { whiteShadow } from 'src/common/fontShadow';
+import { grayBoldShadow, magentaBoldShadow, purpleBoldShadow, whiteBoldShadow } from 'src/common/fontShadow';
 const transition = { duration: 0.5 };
 
 const introVariants = {
@@ -18,60 +18,69 @@ const introVariants = {
   },
 };
 
-const INTRO_SECTION_PAGE_HEIGHT = 4000;
-
-const SCROLL_OFFSET = {
-  CONTAINER_SCALE: [0, 1000],
-  TITLE_OPACITY: [750, 1000],
-  INTRO_OPACITY: [500, 750],
-  NAME_OPACITY: [1000, 2500, 3500],
-  NAME_Y_POSITION: [1000, 1500],
-  INTEREST_OPACITY: [1500, 2500, 3500],
-  DIA_OPACITY: [2500, 3300],
-};
-
 export const Intro = () => {
-  const { scrollY } = useScroll();
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  const INTRO_SECTION_PAGE_HEIGHT = '400vh';
+
+  const SCROLL_OFFSET = {
+    CONTAINER_SCALE: [0, 0.25],
+    TITLE_OPACITY: [0.1875, 0.25],
+    INTRO_OPACITY: [0.125, 0.1875],
+    NAME_OPACITY: [0.25, 0.625, 0.875],
+    NAME_Y_POSITION: [0.25, 0.375],
+    INTEREST_OPACITY: [0.375, 0.625, 0.875],
+    DIA_OPACITY: [0.625, 0.75],
+  };
+
   const containerScale = useTransform(
-    scrollY,
+    scrollYProgress,
     SCROLL_OFFSET.CONTAINER_SCALE,
     [1, 1.2],
   );
 
   const titleOpacity = useTransform(
-    scrollY,
+    scrollYProgress,
     SCROLL_OFFSET.TITLE_OPACITY,
     [1, 0],
   );
 
   const introOpacity = useTransform(
-    scrollY,
+    scrollYProgress,
     SCROLL_OFFSET.INTRO_OPACITY,
     [1, 0],
   );
 
   const nameOpacity = useTransform(
-    scrollY,
+    scrollYProgress,
     SCROLL_OFFSET.NAME_OPACITY,
     [0, 1, 0],
   );
 
   const nameYPosition = useTransform(
-    scrollY,
+    scrollYProgress,
     SCROLL_OFFSET.NAME_Y_POSITION,
     [20, 0],
   );
 
   const InterestOpacity = useTransform(
-    scrollY,
+    scrollYProgress,
     SCROLL_OFFSET.INTEREST_OPACITY,
     [0, 1, 0],
   );
 
-  const opacityZero = useTransform(scrollY, SCROLL_OFFSET.DIA_OPACITY, [1, 0]);
+  const opacityZero = useTransform(
+    scrollYProgress,
+    SCROLL_OFFSET.DIA_OPACITY,
+    [1, 0],
+  );
 
   return (
     <Container
+      ref={targetRef}
       initial="initial"
       animate="enter"
       exit="exit"
@@ -92,6 +101,7 @@ export const Intro = () => {
               fontWeight="bold"
               fontHeight="1.5"
               textAlign="center"
+              fontShadow={grayBoldShadow}
             >
               Welcome to the
             </Typography>
@@ -108,11 +118,16 @@ export const Intro = () => {
               size="4rem"
               color="purple"
               fontWeight="bold"
-              fontShadow={whiteShadow}
+              fontShadow={purpleBoldShadow}
             >
               KoJaem&apos;s&nbsp;
             </Typography>
-            <Typography size="4rem" color="magenta" fontWeight="bold">
+            <Typography
+              size="4rem"
+              color="magenta"
+              fontWeight="bold"
+              fontShadow={magentaBoldShadow}
+            >
               exhibition
             </Typography>
           </motion.li>
@@ -136,6 +151,7 @@ export const Intro = () => {
               text="저는 프론트엔드 개발자를 꿈꾸며 공부하는 학생입니다."
               delay={0.1}
               duration={1}
+              shadow={whiteBoldShadow}
             />
           </Typography>
         </motion.li>
@@ -168,7 +184,7 @@ export const Intro = () => {
             fontWeight="bold"
             fontHeight="1.5"
             textAlign="center"
-            fontShadow={whiteShadow}
+            fontShadow={whiteBoldShadow}
           >
             UI, UX 에 대해 관심이 많으며
           </Typography>
@@ -178,7 +194,7 @@ export const Intro = () => {
             fontWeight="bold"
             fontHeight="1.5"
             textAlign="center"
-            fontShadow={whiteShadow}
+            fontShadow={whiteBoldShadow}
           >
             프론트엔드의 전반적인 기술에 대해 흥미가 있습니다
           </Typography>
