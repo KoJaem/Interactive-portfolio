@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Typography } from 'src/components';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { GradientTypography } from 'src/components/GradientTypography';
 import { SpectrumText } from 'src/components/SpectrumText';
 import {
@@ -30,7 +30,8 @@ export const Intro = () => {
     target: targetRef,
   });
 
-  const { isVisible } = useIntersect({ targetRef, options: { threshold: 0 } });
+  // const { isVisible } = useIntersect({ targetRef, options: { threshold: 0 } });
+  const isVisible = useInView(targetRef);
 
   const INTRO_SECTION_PAGE_HEIGHT = '400vh';
 
