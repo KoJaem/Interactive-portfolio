@@ -17,7 +17,7 @@ export const MyInfo = () => {
           color="purple"
           fontWeight="bold"
         >
-          My <span style={{ color: customColor.magenta }}>Skills</span>
+          My <span style={{ color: customColor.magenta }}>Info</span>
         </Typography>
       </Title>
       <Wrapper>

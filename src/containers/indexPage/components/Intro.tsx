@@ -38,12 +38,19 @@ export const Intro = () => {
   const SCROLL_OFFSET = {
     CONTAINER_SCALE: [0, 0.25],
     TITLE_OPACITY: [0.1875, 0.25],
-    INTRO_OPACITY: [0.125, 0.1875],
-    NAME_OPACITY: [0.25, 0.625, 0.875],
+    INTRO_OPACITY: [0.125, 0.225],
+    NAME_OPACITY: [0.25, 0.625, 1],
     NAME_Y_POSITION: [0.25, 0.375],
-    INTEREST_OPACITY: [0.375, 0.625, 0.875],
-    DIA_OPACITY: [0.625, 0.75],
+    INTEREST_OPACITY: [0.375, 0.625, 1],
+    DIA_OPACITY: [0.625, 1],
   };
+
+  // 스크롤 확인용 코드
+  useEffect(() => {
+    return scrollYProgress.onChange((lastest) => {
+      console.log(lastest);
+    })
+  }, [])
 
   const containerScale = useTransform(
     scrollYProgress,
@@ -167,24 +174,24 @@ export const Intro = () => {
       </Welcome>
       <SecondIntro>
         <Name style={{ opacity: nameOpacity, y: nameYPosition }}>
-          <GradientTypography
+          <Typography
             size="4rem"
-            color1="purple"
-            color2="magenta"
+            color='purple'
             fontHeight="1.5"
             fontWeight="bold"
+            fontShadow={purpleBoldShadow}
           >
             KoJaem
-          </GradientTypography>
-          <GradientTypography
+          </Typography>
+          <Typography
             size="4rem"
-            color1="magenta"
-            color2="darkGray"
+            color="magenta"
             fontWeight="bold"
             fontHeight="1.5"
+            fontShadow={magentaBoldShadow}
           >
             (고재민)
-          </GradientTypography>
+          </Typography>
         </Name>
         <Interest style={{ opacity: InterestOpacity }}>
           <Typography
