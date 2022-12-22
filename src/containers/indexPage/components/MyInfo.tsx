@@ -59,7 +59,7 @@ export const MyInfo = () => {
           <Typography size="1.2rem" color="darkGray" fontWeight="bold">
             내일의 나에게 부끄럽지 않은 하루를 보내자
           </Typography>
-          <MoreButton>
+          <MoreButton onClick={() => window.open('https://quiet-tangerine-0f6.notion.site/5d7f92f6e40a4ed7b019a69600060629')}>
             <Typography size="1.3rem" color="white" fontWeight="bold">
               More &gt;&gt;
             </Typography>

@@ -150,9 +150,9 @@ const Left = styled.section`
 const SmallImageContainer = styled.section`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
+  gap: 12px 0;
   max-width: 340px;
+  justify-content: space-between;
 `;
 
 const Right = styled.section`
@@ -175,17 +175,18 @@ const imageWrapperCss = css`
 const SmallImageWrapper = styled.section`
   border-radius: 8px;
   padding: 8px;
-
   ${imageWrapperCss}
 `;
 
 const ImageWrapper = styled.section`
   border-radius: 14px;
+  width: 100%;
+  max-width: 340px;
   padding: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  ${imageWrapperCss}
+  ${imageWrapperCss};
 `;
 
 const CategoryWrapper = styled.section`
