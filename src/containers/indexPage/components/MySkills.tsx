@@ -4,7 +4,7 @@ import { whiteShadow } from 'src/common/fontShadow';
 import { Typography } from 'src/components';
 import { customColor } from 'src/constants';
 import { mySkills } from 'src/dummy/mySkills';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const MySkills = () => {
   return (
@@ -140,7 +140,7 @@ const Left = styled.section`
   gap: 20px 0;
   margin-top: 80px;
   min-width: 340px;
-  @media screen and (min-width: 840px) {
+  @media screen and (min-width: 840px) { // padding 80 + 80, min-width 340 + 340 => 840
     position: sticky;
     height: max-content;
     top: 0;
@@ -151,7 +151,7 @@ const SmallImageContainer = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px;
+  gap: 12px;
   max-width: 340px;
 `;
 
@@ -164,16 +164,28 @@ const Right = styled.section`
   min-width: 340px;
 `;
 
+const imageWrapperCss = css`  
+  box-shadow: 4px 12px 30px 6px ${customColor.black}30;
+  :hover {
+    scale: 1.1;
+  }
+  transition: all 200ms ease;
+`;
+
 const SmallImageWrapper = styled.section`
   border-radius: 8px;
-  box-shadow: 4px 12px 30px 6px ${customColor.black}30;
-  padding: 4px;
+  padding: 8px;
+
+  ${imageWrapperCss}
 `;
 
 const ImageWrapper = styled.section`
   border-radius: 14px;
-  box-shadow: 4px 12px 30px 6px ${customColor.black}30;
   padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ${imageWrapperCss}
 `;
 
 const CategoryWrapper = styled.section`
