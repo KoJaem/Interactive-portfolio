@@ -30,7 +30,6 @@ export const Intro = () => {
     target: targetRef,
   });
 
-  // const { isVisible } = useIntersect({ targetRef, options: { threshold: 0 } });
   const isVisible = useInView(targetRef);
 
   const INTRO_SECTION_PAGE_HEIGHT = '400vh';
@@ -47,10 +46,10 @@ export const Intro = () => {
 
   // 스크롤 확인용 코드
   useEffect(() => {
-    return scrollYProgress.onChange((lastest) => {
+    return scrollYProgress.onChange(lastest => {
       console.log(lastest);
-    })
-  }, [])
+    });
+  }, []);
 
   const containerScale = useTransform(
     scrollYProgress,
@@ -176,7 +175,7 @@ export const Intro = () => {
         <Name style={{ opacity: nameOpacity, y: nameYPosition }}>
           <Typography
             size="4rem"
-            color='purple'
+            color="purple"
             fontHeight="1.5"
             fontWeight="bold"
             fontShadow={purpleBoldShadow}
@@ -216,15 +215,17 @@ export const Intro = () => {
           </Typography>
         </Interest>
       </SecondIntro>
-      <Dia
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: [0, 1],
-          transition: { delay: 1.5 },
-          backgroundColor: isVisible ? customColor.white : customColor.black,
-        }}
-        style={{ opacity: opacityZero }}
-      />
+      {isVisible && (
+        <Dia
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: [0, 1],
+            transition: { delay: 1.5 },
+            backgroundColor: isVisible ? customColor.white : customColor.black,
+          }}
+          style={{ opacity: opacityZero }}
+        />
+      )}
     </Container>
   );
 };
