@@ -124,6 +124,7 @@ const Wrapper = styled.section`
   width: 100%;
   max-width: 1178px;
   background-color: ${customColor.white};
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -139,6 +140,11 @@ const Left = styled.section`
   gap: 20px 0;
   margin-top: 80px;
   min-width: 340px;
+  @media screen and (min-width: 840px) {
+    position: sticky;
+    height: max-content;
+    top: 0;
+  }
 `;
 
 const SmallImageContainer = styled.section`
