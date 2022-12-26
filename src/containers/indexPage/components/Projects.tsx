@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/effect-cards';
 import Image from 'next/image';
 import { projects } from 'src/dummy/projectUrls';
-import { Typography } from 'src/components';
+import { MoreButton, Typography } from 'src/components';
 import { motion } from 'framer-motion';
 import { ProjectSwiper } from './index';
 import { customColor } from 'src/constants';
@@ -47,7 +47,6 @@ const Title = styled.section`
 `;
 const ButtonWrapper = styled.section`
   width: 100%;
-  max-width: 1200px;
   display: flex;
   justify-content: flex-end;
   max-width: 800px;
@@ -55,14 +54,4 @@ const ButtonWrapper = styled.section`
     max-width: 1200px;
   }
   margin: 40px 0px;
-`;
-const MoreButton = styled.button`
-  background-color: ${customColor.purple};
-  border-radius: 24px;
-  width: 160px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
 `;
