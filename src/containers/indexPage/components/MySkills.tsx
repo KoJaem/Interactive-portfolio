@@ -126,10 +126,13 @@ const Wrapper = styled.section`
   background-color: ${customColor.white};
   position: relative;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
   padding: 80px;
   padding-top: 0;
+  flex-wrap: wrap;
+  @media screen and (min-width: 840px) {
+    flex-wrap: nowrap;
+  }
 `;
 
 const Left = styled.section`
@@ -140,7 +143,7 @@ const Left = styled.section`
   gap: 20px 0;
   margin-top: 80px;
   min-width: 340px;
-  @media screen and (min-width: 840px) { // padding 80 + 80, min-width 340 + 340 => 840
+  @media screen and (min-width: 840px) {
     position: sticky;
     height: max-content;
     top: 0;
@@ -164,7 +167,7 @@ const Right = styled.section`
   min-width: 340px;
 `;
 
-const imageWrapperCss = css`  
+const imageWrapperCss = css`
   box-shadow: 4px 12px 30px 6px ${customColor.black}30;
   :hover {
     scale: 1.1;
