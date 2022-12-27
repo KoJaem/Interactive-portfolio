@@ -21,8 +21,6 @@ const buttonVariants = {
   },
 };
 
-
-
 export const Header = () => {
   return (
     <Container>
@@ -73,6 +71,7 @@ export const Header = () => {
           whileTap={{
             borderRadius: '50%',
           }}
+          onClick={() => window.open('https://github.com/KoJaem')}
         >
           Github
         </GithubButton>
@@ -107,7 +106,6 @@ const Container = styled.section`
   }
 `;
 
-
 const Title = styled.section`
   display: flex;
 `;
@@ -133,12 +131,16 @@ const buttonCss = css`
   box-sizing: border-box;
   font-size: 1rem;
   font-weight: bold;
-  cursor: pointer;
 `;
 
 const Button = styled(motion.button)`
   ${buttonCss}
   background-color: transparent;
+  /* transition: color 200ms linear; */
+  /* color: ${customColor.darkGray}; */
+  /* :hover { */
+    /* color: ${customColor.white}; */
+  /* } */
 `;
 
 const GithubButton = styled(motion.button)`
@@ -156,13 +158,4 @@ const MenuIcon = styled.section`
   @media screen and (min-width: 767px) {
     display: none;
   }
-`;
-
-const GradientTest = styled.div`
-  background-image: linear-gradient(60deg, ${customColor.magenta} 0%, ${customColor.purple} 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 50px;
-  font-weight: bold;
 `;

@@ -238,6 +238,7 @@ const Container = styled(motion.section)`
   gap: 60px 0;
   display: flex;
   justify-content: center;
+  pointer-events: none;
 `;
 
 const Welcome = styled(motion.section)`
@@ -265,6 +266,7 @@ const Dia = styled(motion.section)`
   justify-content: center;
   cursor: pointer;
   display: none;
+  pointer-events: auto;
   :hover {
     scale: 20;
     top: 50%;

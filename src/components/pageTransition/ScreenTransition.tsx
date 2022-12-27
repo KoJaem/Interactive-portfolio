@@ -55,6 +55,4 @@ export const ScreenTransition = ({ children }: Props) => {
 };
 
 const Container = styled(motion.section)`
-  overflow: hidden;
-  height: 100vh;
 `;

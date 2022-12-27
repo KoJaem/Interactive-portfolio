@@ -12,9 +12,10 @@ import { ProjectSwiper } from './index';
 import { customColor } from 'src/constants';
 import { SpectrumText } from 'src/components/SpectrumText';
 import { whiteBoldShadow } from 'src/common/fontShadow';
+import { useRouter } from 'next/router';
 
 export const Projects = () => {
-  
+  const router = useRouter();
   return (
     <Container>
       <Title>
@@ -24,7 +25,7 @@ export const Projects = () => {
       </Title>
       <ProjectSwiper />
       <ButtonWrapper>
-        <MoreButton>
+        <MoreButton onClick={() => router.push('projectGallery')}>
           <Typography size="1.3rem" color="white" fontWeight="bold">
             More &gt;&gt;
           </Typography>

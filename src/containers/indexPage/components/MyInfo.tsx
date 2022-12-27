@@ -5,8 +5,6 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import { whiteShadow } from 'src/common/fontShadow';
 
-
-
 export const MyInfo = () => {
   return (
     <Container>
@@ -51,26 +49,41 @@ export const MyInfo = () => {
               <Typography size="1.5rem" color="skyBlue" fontWeight="bold">
                 FrontEnd
               </Typography>
-              <Typography size="1.5rem" color="magenta" fontWeight="bold">
-                GitHub
-              </Typography>
+              <button onClick={() => window.open('https://github.com/KoJaem')}>
+                <Typography size="1.5rem" color="magenta" fontWeight="bold">
+                  GitHub
+                </Typography>
+              </button>
             </section>
           </InfoWrapper>
           <Typography size="1.2rem" color="darkGray" fontWeight="bold">
             내일의 나에게 부끄럽지 않은 하루를 보내자
           </Typography>
-            <MoreButton
-              style={{alignSelf: 'flex-end'}}
-              onClick={() =>
-                window.open(
-                  'https://quiet-tangerine-0f6.notion.site/5d7f92f6e40a4ed7b019a69600060629',
-                )
-              }
+          <MoreButton
+            style={{
+              alignSelf: 'flex-end',
+              display: 'flex',
+              gap: 8,
+              alignItems: 'center',
+              position: 'relative',
+            }}
+            backgroundColor="white"
+            onClick={() =>
+              window.open(
+                'https://quiet-tangerine-0f6.notion.site/5d7f92f6e40a4ed7b019a69600060629',
+              )
+            }
+          >
+              <Image src={'/notionIcon.png'} width={100} height={100} alt="Notion" />
+            <Typography
+              size="1.3rem"
+              color="black"
+              fontWeight="bold"
+              fontHeight="1.2"
             >
-              <Typography size="1.3rem" color="white" fontWeight="bold">
-                More &gt;&gt;
-              </Typography>
-            </MoreButton>
+              Notion
+            </Typography>
+          </MoreButton>
         </Contents>
       </Wrapper>
     </Container>

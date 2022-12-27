@@ -49,7 +49,7 @@ const screenCss = css`
   right: 0;
   bottom: 0;
   background-color: #5c9ea7;
-  z-index: 2;
+  z-index: 9;
 `;
 
 const Left = styled(motion.section)`

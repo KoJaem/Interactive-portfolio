@@ -9,6 +9,7 @@ import Head from 'next/head';
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   console.log(router.route.includes('projectGallery'));
+  console.log(router.route === '/')
   return (
     <>
       <Head>

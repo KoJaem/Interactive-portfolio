@@ -149,3 +149,16 @@ body {
 * {
   transition: padding, font-size 0.3s ease;
 }
+
+button {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+button:hover {
+  transform: scale(1.01);
+}
+
+button:active {
+  transform: scale(0.99);
+}
