@@ -30,10 +30,9 @@ type Props = {
 
 export const ScreenTransition = ({ children }: Props) => {
   const { asPath } = useRouter();
-  // const [screenAnimation, setScreenAnimation] = useState<boolean>(false);
 
   return (
-      <AnimatePresence mode="wait" initial={false}>
+      <AnimatePresence mode="wait">
         <motion.section key={asPath}>
           <Container
             initial={{ height: '100vh', scaleX: 1, x: 0 }}

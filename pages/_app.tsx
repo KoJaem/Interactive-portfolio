@@ -7,9 +7,8 @@ import { ScreenTransition } from 'src/components/pageTransition';
 import Head from 'next/head';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
-  console.log(router.route.includes('projectGallery'));
-  console.log(router.route === '/')
+  const {route} = useRouter();
+  
   return (
     <>
       <Head>
@@ -17,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <RecoilRoot>
         <Layout>
-          {router.route.includes('projectGallery') ? (
+          {route === '/' || route.includes('projectGallery') ? (
             <ScreenTransition>
               <Component {...pageProps} />
             </ScreenTransition>
