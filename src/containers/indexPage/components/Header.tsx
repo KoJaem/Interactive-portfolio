@@ -27,14 +27,15 @@ type Props = {
 export const Header = ({ refs }: Props) => {
   const scrollMove = (index: number) => {
     const value = refs.current[index]?.offsetTop;
+    const offset = index === 0 ? 0 : 100;
     window.scrollTo({
-      top: value! - 100,
+      top: value! - offset,
       behavior: 'smooth',
     });
   };
   return (
     <Container>
-      <Title onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+      <Title onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
         <GradientTypography
           size="2.5rem"
           color1="purple"

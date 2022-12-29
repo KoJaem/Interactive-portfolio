@@ -27,7 +27,12 @@ export const Projects = ({ refs }: Props) => {
       </Title>
       <ProjectSwiper />
       <ButtonWrapper>
-        <MoreButton onClick={() => router.push('projectGallery')}>
+        <MoreButton
+          onClick={async () => {
+            await router.push('projectGallery');
+            window.scrollTo({ top: refs.current[2]?.offsetTop! - 100 });
+          }}
+        >
           <Typography size="1.3rem" color="white" fontWeight="bold">
             More &gt;&gt;
           </Typography>
