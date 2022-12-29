@@ -4,10 +4,13 @@ import { customColor } from 'src/constants';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { whiteShadow } from 'src/common/fontShadow';
-
-export const MyInfo = () => {
+type Props = {
+  refs: React.MutableRefObject<null[] | HTMLElement[]>;
+};
+export const MyInfo = ({refs}:Props) => {
   return (
-    <Container>
+    <Container ref={(el) => {
+      refs.current[0] = el}}>
       <Title>
         <Typography
           fontShadow={whiteShadow}
@@ -74,7 +77,12 @@ export const MyInfo = () => {
               )
             }
           >
-              <Image src={'/notionIcon.png'} width={100} height={100} alt="Notion" />
+            <Image
+              src={'/notionIcon.png'}
+              width={100}
+              height={100}
+              alt="Notion"
+            />
             <Typography
               size="1.3rem"
               color="black"

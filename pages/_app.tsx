@@ -7,8 +7,8 @@ import { ScreenTransition } from 'src/components/pageTransition';
 import Head from 'next/head';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const {route} = useRouter();
-  
+  const { route } = useRouter();
+
   return (
     <>
       <Head>

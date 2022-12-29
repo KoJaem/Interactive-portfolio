@@ -5,10 +5,12 @@ import { Typography } from 'src/components';
 import { customColor } from 'src/constants';
 import { mySkills } from 'src/dummy/mySkills';
 import styled, { css } from 'styled-components';
-
-export const MySkills = () => {
+type Props = {
+  refs: React.MutableRefObject<null[] | HTMLElement[]>;
+};
+export const MySkills = ({ refs }: Props) => {
   return (
-    <Container>
+    <Container ref={el => (refs.current[1] = el)}>
       <Typography
         fontShadow={whiteShadow}
         size="4rem"

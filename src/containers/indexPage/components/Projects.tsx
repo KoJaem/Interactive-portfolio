@@ -13,14 +13,16 @@ import { customColor } from 'src/constants';
 import { SpectrumText } from 'src/components/SpectrumText';
 import { whiteBoldShadow } from 'src/common/fontShadow';
 import { useRouter } from 'next/router';
-
-export const Projects = () => {
+type Props = {
+  refs: React.MutableRefObject<null[] | HTMLElement[]>;
+};
+export const Projects = ({ refs }: Props) => {
   const router = useRouter();
   return (
-    <Container>
+    <Container ref={el => (refs.current[2] = el)}>
       <Title>
         <Typography size="4rem" color="white">
-          <SpectrumText text='Projects' shadow={whiteBoldShadow}/>
+          <SpectrumText text="Projects" shadow={whiteBoldShadow} />
         </Typography>
       </Title>
       <ProjectSwiper />

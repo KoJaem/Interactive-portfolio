@@ -1,21 +1,20 @@
-import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useRef } from 'react';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
 import { Header, Intro, MyInfo, Projects, MySkills } from './components';
 
 export const IndexPage = () => {
-  const router = useRouter();
+  const buttonRefs = useRef<null[] | HTMLElement[]>(new Array(3));
   return (
     <Container>
-      <Header />
+      <Header refs={buttonRefs} />
       <Intro />
       <GapLine />
-      <MyInfo />
+      <MyInfo refs={buttonRefs} />
       <Gap />
-      <MySkills />
+      <MySkills refs={buttonRefs} />
       <GapLine />
-      <Projects />
+      <Projects refs={buttonRefs} />
     </Container>
   );
 };

@@ -5,6 +5,7 @@ import styled, { css } from 'styled-components';
 import { AiFillGithub } from 'react-icons/ai';
 import { GradientTypography } from 'src/components/GradientTypography';
 import { GradientSvg } from './GradientSvgIcon';
+import { headers } from 'src/dummy/header';
 const buttonVariants = {
   initial: {
     color: customColor.darkGray,
@@ -20,11 +21,20 @@ const buttonVariants = {
     borderBottom: `1px solid ${customColor.gray}`,
   },
 };
-
-export const Header = () => {
+type Props = {
+  refs: React.MutableRefObject<null[] | HTMLElement[]>;
+};
+export const Header = ({ refs }: Props) => {
+  const scrollMove = (index: number) => {
+    const value = refs.current[index]?.offsetTop;
+    window.scrollTo({
+      top: value! - 100,
+      behavior: 'smooth',
+    });
+  };
   return (
     <Container>
-      <Title>
+      <Title onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
         <GradientTypography
           size="2.5rem"
           color1="purple"
@@ -43,24 +53,19 @@ export const Header = () => {
         </GradientTypography>
       </Title>
       <ButtonWrapper>
-        <Button
-          type="button"
-          initial="initial"
-          variants={buttonVariants}
-          whileHover="hover"
-          whileTap="tap"
-        >
-          My Info
-        </Button>
-        <Button
-          type="button"
-          initial="initial"
-          variants={buttonVariants}
-          whileHover="hover"
-          whileTap="tap"
-        >
-          Projects
-        </Button>
+        {headers.map((data, index) => (
+          <Button
+            type="button"
+            initial="initial"
+            variants={buttonVariants}
+            whileHover="hover"
+            whileTap="tap"
+            key={index}
+            onClick={() => scrollMove(index)}
+          >
+            {data}
+          </Button>
+        ))}
         <GithubButton
           type="button"
           initial={{ opacity: 0.6 }}
@@ -97,6 +102,7 @@ const Container = styled.section`
   z-index: 1;
   @media screen and (min-width: 480px) {
     display: flex;
+    align-items: center;
   }
   @media screen and (min-width: 768px) {
     padding: 0 20px;
@@ -106,7 +112,7 @@ const Container = styled.section`
   }
 `;
 
-const Title = styled.section`
+const Title = styled.button`
   display: flex;
 `;
 
@@ -139,7 +145,7 @@ const Button = styled(motion.button)`
   /* transition: color 200ms linear; */
   /* color: ${customColor.darkGray}; */
   /* :hover { */
-    /* color: ${customColor.white}; */
+  /* color: ${customColor.white}; */
   /* } */
 `;
 
