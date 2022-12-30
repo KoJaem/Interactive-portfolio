@@ -3,35 +3,16 @@ import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import { Screen } from './Screen';
 
-const variants = {
-  in: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: {
-      duration: 0.75,
-      delay: 0.5,
-    },
-  },
-  out: {
-    opacity: 0,
-    scale: 1,
-    y: 40,
-    transition: {
-      duration: 0.75,
-    },
-  },
-};
-
 type Props = {
   children: ReactNode;
 };
 
-export const ScreenTransition = ({ children }: Props) => {
+export const SlideAndScreen = ({ children }: Props) => {
   return (
     <>
       <Container
-        initial={{ height: '100vh', scaleX: 1, x: 0 }}
+        initial={{ x: '100%', height: '100vh' }}
+        animate={{ x: 0, transition: { duration: 1, ease: 'easeOut' } }}
         exit={{
           height: '45vh',
           x: '-100%',
@@ -48,5 +29,4 @@ export const ScreenTransition = ({ children }: Props) => {
   );
 };
 
-const Container = styled(motion.section)`
-`;
+const Container = styled(motion.section)``;

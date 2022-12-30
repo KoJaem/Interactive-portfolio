@@ -4,13 +4,13 @@ import React, { useEffect } from 'react';
 import styled, { css } from 'styled-components';
 
 export const Screen = () => {
-  const { route } = useRouter();
+  const { route: asPath } = useRouter();
   return (
     <>
       <Left
         initial={{
-          scaleX: route !== '/' ? 0.5 : 0,
-          height: route !== '/' ? '100vh' : 0,
+          scaleX: asPath !== '/projectGallery' ? 0.5 : 0,
+          height: asPath !== '/projectGallery' ? '100vh' : 0,
         }}
         animate={{
           scaleX: 0,
@@ -29,8 +29,8 @@ export const Screen = () => {
       />
       <Right
         initial={{
-          scaleX: route !== '/' ? 0.5 : 0,
-          height: route !== '/' ? '100vh' : 0,
+          scaleX: asPath !== '/projectGallery' ? 0.5 : 0,
+          height: asPath !== '/projectGallery' ? '100vh' : 0,
         }}
         animate={{
           scaleX: 0,

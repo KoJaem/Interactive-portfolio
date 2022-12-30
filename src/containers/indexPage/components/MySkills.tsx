@@ -125,13 +125,15 @@ const Container = styled.section`
 const Wrapper = styled.section`
   width: 100%;
   max-width: 1178px;
-  background-color: ${customColor.white};
+  /* background-color: ${customColor.white}; */
+  background: radial-gradient(circle, ${customColor.lightMagenta}, ${customColor.lightPurple});
   position: relative;
   display: flex;
   justify-content: space-around;
   padding: 80px;
   padding-top: 0;
   flex-wrap: wrap;
+  border-radius: 24px;
   @media screen and (min-width: 840px) {
     flex-wrap: nowrap;
   }
@@ -170,6 +172,7 @@ const Right = styled.section`
 `;
 
 const imageWrapperCss = css`
+  background-color: ${customColor.white};
   box-shadow: 4px 12px 30px 6px ${customColor.black}30;
   :hover {
     scale: 1.1;

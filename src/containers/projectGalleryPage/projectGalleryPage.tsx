@@ -13,22 +13,36 @@ export const ProjectGalleryPage = () => {
     <Container
       initial={{ backgroundColor: customColor.white }}
       animate={{
-        backgroundColor: selectedProject ? customColor.purple : undefined,
+        backgroundColor: selectedProject
+          ? customColor.purple
+          : customColor.darkGray,
         transition: { duration: selectedProject ? 2 : undefined },
       }}
     >
-      <ClickImage src="/fashion-exhibition.jpg" />
-      {/* <MoveImage src="/sample1.jpg" /> */}
-      {/* <MoveImage src="/sample2.jpg" /> */}
-      {/* <MoveImage src="/sample3.jpg" /> */}
-      <AnimatePresence mode="wait">
-        {selectedProject && <SimpleIntro />}
-      </AnimatePresence>
+      <Wrapper
+        initial={{ x: '100%' }}
+        animate={{ x: 0, transition: { duration: 2 } }}>
+        <ClickImage src="/fashion-exhibition.jpg" />
+        {/* <MoveImage src="/sample1.jpg" /> */}
+        {/* <MoveImage src="/sample2.jpg" /> */}
+        {/* <MoveImage src="/sample3.jpg" /> */}
+        <AnimatePresence mode="wait">
+          {selectedProject && <SimpleIntro />}
+        </AnimatePresence>
+      </Wrapper>
     </Container>
   );
 };
 
 const Container = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+`;
+
+const Wrapper = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;

@@ -3,11 +3,12 @@ import type { AppProps } from 'next/app';
 import { RecoilRoot } from 'recoil';
 import { Layout } from 'src/components';
 import { useRouter } from 'next/router';
-import { ScreenTransition } from 'src/components/pageTransition';
 import Head from 'next/head';
+import { TransitionSelect } from 'src/components/pageTransition/TransitionSelect';
+import { AnimatePresence, motion } from 'framer-motion';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const { route } = useRouter();
+  const { asPath } = useRouter();
 
   return (
     <>
@@ -16,13 +17,13 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <RecoilRoot>
         <Layout>
-          {route === '/' || route.includes('projectGallery') ? (
-            <ScreenTransition>
-              <Component {...pageProps} />
-            </ScreenTransition>
-          ) : (
-            <Component {...pageProps} />
-          )}
+          <AnimatePresence mode="wait">
+            <motion.section key={asPath}>
+              <TransitionSelect asPath={asPath}>
+                <Component {...pageProps} />
+              </TransitionSelect>
+            </motion.section>
+          </AnimatePresence>
         </Layout>
       </RecoilRoot>
     </>
