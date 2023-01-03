@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { projects } from 'src/dummy/projectUrls';
 import { MoreButton, Typography } from 'src/components';
 import { motion } from 'framer-motion';
-import { ProjectSwiper } from './index';
+import { ThreeDProjectSwiper } from './index';
 import { customColor } from 'src/constants';
 import { SpectrumText } from 'src/components/SpectrumText';
 import { whiteBoldShadow } from 'src/common/fontShadow';
@@ -25,9 +25,14 @@ export const Projects = ({ refs }: Props) => {
           <SpectrumText text="Projects" shadow={whiteBoldShadow} />
         </Typography>
       </Title>
-      <ProjectSwiper />
+      <ThreeDProjectSwiper />
       <ButtonWrapper>
-        <MoreButton onClick={() => router.push('projectGallery')}>
+        <MoreButton
+          onClick={async () => {
+            await router.push('projectGallery');
+            window.scrollTo({ top: refs.current[2]?.offsetTop });
+          }}
+        >
           <Typography size="1.3rem" color="white" fontWeight="bold">
             More &gt;&gt;
           </Typography>

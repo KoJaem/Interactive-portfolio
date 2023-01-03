@@ -3,3 +3,4 @@ export { MoveImage } from './MoveImage';
 export { SimpleIntro } from './SimpleIntro';
 export { MotionText } from './MotionText';
 export { ClickImage } from './ClickImage';
+export { ProjectSwiper } from './ProjectSwiper';

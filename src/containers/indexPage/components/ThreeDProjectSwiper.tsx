@@ -9,7 +9,7 @@ import 'swiper/css/navigation';
 import Image from 'next/image';
 import { projects } from 'src/dummy/projectUrls';
 
-export const ProjectSwiper = () => {
+export const ThreeDProjectSwiper = () => {
   return (
     <Container>
       <Wrapper>

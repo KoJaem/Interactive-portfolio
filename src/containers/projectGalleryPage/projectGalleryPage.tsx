@@ -5,6 +5,7 @@ import { customColor } from 'src/constants';
 import { selectProject } from 'src/recoil/atom';
 import styled from 'styled-components';
 import { ClickImage, SimpleIntro } from './components';
+import { ProjectSwiper } from './components/ProjectSwiper';
 
 export const ProjectGalleryPage = () => {
   const selectedProject = useRecoilValue(selectProject);
@@ -21,19 +22,21 @@ export const ProjectGalleryPage = () => {
     >
       <Wrapper
         initial={{ x: '100%' }}
-        animate={{ x: 0, transition: { duration: 2 } }}>
-        <ClickImage src="/fashion-exhibition.jpg" />
-        {/* <MoveImage src="/sample1.jpg" /> */}
-        {/* <MoveImage src="/sample2.jpg" /> */}
-        {/* <MoveImage src="/sample3.jpg" /> */}
-        <AnimatePresence mode="wait">
-          {selectedProject && <SimpleIntro />}
-        </AnimatePresence>
+        animate={{ x: 0, transition: { duration: 2 } }}
+      >
+        <ProjectSwiper />
+
       </Wrapper>
     </Container>
   );
 };
-
+{/* <ClickImage src="/fashion-exhibition.jpg" /> */}
+{/* <MoveImage src="/sample1.jpg" /> */}
+{/* <MoveImage src="/sample2.jpg" /> */}
+{/* <MoveImage src="/sample3.jpg" /> */}
+{/* <AnimatePresence mode="wait"> */}
+{/* {selectedProject && <SimpleIntro />} */}
+{/* </AnimatePresence> */}
 const Container = styled(motion.div)`
   display: flex;
   align-items: center;
