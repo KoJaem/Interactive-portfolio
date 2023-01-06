@@ -162,11 +162,3 @@ button:hover {
 button:active {
   transform: scale(0.99);
 }
-
-.swiper-button-prev {
-  /* Your CSS rules go here */
-}
-
-.swiper-button-next {
-  /* Your CSS rules go here */
-}
