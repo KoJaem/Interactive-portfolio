@@ -1,25 +1,16 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import React, { useCallback, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import React from 'react';
 import { useRecoilValue } from 'recoil';
-import { customColor } from 'src/constants';
 import { selectProject } from 'src/recoil/atom';
+import { customColor } from 'src/constants';
 import styled from 'styled-components';
-import { ClickImage, SimpleIntro } from './components';
 import { ProjectSwiper } from './components/ProjectSwiper';
 
 export const ProjectGalleryPage = () => {
-  const selectedProject = useRecoilValue(selectProject);
+  // const selectedProject = useRecoilValue(selectProject);
 
   return (
-    <Container
-      initial={{ backgroundColor: customColor.white }}
-      animate={{
-        backgroundColor: selectedProject
-          ? customColor.purple
-          : customColor.darkGray,
-        transition: { duration: selectedProject ? 2 : undefined },
-      }}
-    >
+    <Container>
       <Wrapper
         initial={{ x: '100%' }}
         animate={{ x: 0, transition: { duration: 2 } }}
@@ -43,6 +34,7 @@ const Container = styled(motion.div)`
   justify-content: center;
   width: 100%;
   height: 100%;
+  background-color: ${customColor.lightYellow};
 `;
 
 const Wrapper = styled(motion.div)`

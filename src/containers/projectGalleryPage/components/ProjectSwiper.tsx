@@ -1,11 +1,14 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import styled, { css } from 'styled-components';
 import Image from 'next/image';
 import { projects } from 'src/dummy/projectUrls';
 import { Navigation, Pagination } from 'swiper';
 import { customColor } from 'src/constants';
-import { useRouter } from 'next/router';
+import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
 
 export const ProjectSwiper = () => {
   return (
@@ -25,9 +28,9 @@ export const ProjectSwiper = () => {
           }}
           modules={[Pagination, Navigation]}
         >
-          <PrevButton className="swiper-button-prev">이전</PrevButton>
-          <NextButton className="swiper-button-next">다음</NextButton>
-          <PaginationButton className="swiper_pagination"></PaginationButton>
+          <PrevButton className="swiper-button-prev"><MdNavigateBefore size={40}/></PrevButton>
+          <NextButton className="swiper-button-next"><MdNavigateNext size={40}/></NextButton>
+          <PaginationButton className="swiper_pagination" />
           {projects.map((data, i) => (
             <StyledSwiperSlide key={i}>
               <Image
@@ -80,7 +83,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
 
 const ButtonCss = css`
   position: absolute;
-  top: '50%';
+  top: 50%;
   z-index: 999;
   background-color: ${customColor.white};
   --swiper-theme-color: green; // Todo 컬러 변경

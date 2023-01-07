@@ -1,11 +1,10 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/autoplay';
 import styled from 'styled-components';
-import 'swiper/css/navigation';
-import { EffectCoverflow, Autoplay , Navigation, Pagination } from 'swiper';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import { EffectCoverflow, Autoplay } from 'swiper';
 import Image from 'next/image';
 import { projects } from 'src/dummy/projectUrls';
 
@@ -86,6 +85,7 @@ const StyledSwiper = styled(Swiper)`
 `;
 
 const StyledSwiperSlide = styled(SwiperSlide)`
+  position: relative;
   text-align: center;
   width: 250px;
   height: 350px;
