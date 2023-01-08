@@ -9,14 +9,17 @@ import { projects } from 'src/dummy/projectUrls';
 import { Navigation, Pagination } from 'swiper';
 import { customColor } from 'src/constants';
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
-
-export const ProjectSwiper = () => {
+type Props = {
+  slideChange: ({ realIndex }: { realIndex: number }) => void;
+};
+export const ProjectSwiper = ({ slideChange }:Props) => {
   return (
     <Container>
       <Wrapper>
         <StyledSwiper
           slidesPerView={1}
           loop={true}
+          onSlideChange={slideChange}
           spaceBetween={100}
           pagination={{
             el: '.swiper_pagination',
@@ -53,7 +56,6 @@ export const ProjectSwiper = () => {
 
 const Container = styled.section`
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   position: relative;
