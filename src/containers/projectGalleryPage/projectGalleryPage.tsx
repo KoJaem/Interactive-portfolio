@@ -1,16 +1,17 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { useRecoilValue } from 'recoil';
-import { selectProject } from 'src/recoil/atom';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
 import { ProjectSwiper } from './components/ProjectSwiper';
 import { Typography } from 'src/components';
 import { projects } from 'src/dummy/projectUrls';
+import { ProjectIntro } from './components';
 
 export const ProjectGalleryPage = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [infoAnimation, setInfoAnimation] = useState<boolean>(false);
+
 
   const slideChange = ({ realIndex }: { realIndex: number }) => {
     setActiveIndex(realIndex);
@@ -30,13 +31,15 @@ export const ProjectGalleryPage = () => {
           onAnimationComplete={() => setInfoAnimation(false)}
           animate={{
             opacity: infoAnimation ? [1, 0] : [0, 1],
+            y: infoAnimation ? [0, 10] : [10, 0],
           }}
           transition={{ duration: 0.1 }}
         >
-          <Typography size="20" color="black">
-            {projects[activeIndex].info}
-          </Typography>
+          <ProjectIntro />
         </motion.div>
+        {/* <Typography size="20" color="black">
+            {projects[activeIndex].info}
+          </Typography> */}
       </Wrapper>
     </Container>
   );
@@ -65,6 +68,7 @@ export const ProjectGalleryPage = () => {
 const Container = styled(motion.div)`
   display: flex;
   align-items: center;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   background-color: ${customColor.lightYellow};
@@ -74,7 +78,6 @@ const Wrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
   width: 100%;
   height: 100%;
 `;

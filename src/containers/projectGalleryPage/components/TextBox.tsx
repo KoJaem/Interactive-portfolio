@@ -62,6 +62,8 @@ const Container = styled(motion.section)<StyledProps>`
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
+  cursor: default;
+  box-shadow: 4px 4px 5px ${customColor.darkGray};
 `;
 
 const Description = styled(motion.section)`
