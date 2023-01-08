@@ -28,9 +28,6 @@ export const ProjectSwiper = () => {
           }}
           modules={[Pagination, Navigation]}
         >
-          <PrevButton className="swiper-button-prev"><MdNavigateBefore size={40}/></PrevButton>
-          <NextButton className="swiper-button-next"><MdNavigateNext size={40}/></NextButton>
-          <PaginationButton className="swiper_pagination" />
           {projects.map((data, i) => (
             <StyledSwiperSlide key={i}>
               <Image
@@ -42,6 +39,13 @@ export const ProjectSwiper = () => {
             </StyledSwiperSlide>
           ))}
         </StyledSwiper>
+        <PrevButton className="swiper-button-prev">
+          <MdNavigateBefore size={40} />
+        </PrevButton>
+        <NextButton className="swiper-button-next">
+          <MdNavigateNext size={40} />
+        </NextButton>
+        <PaginationButton className="swiper_pagination" />
       </Wrapper>
     </Container>
   );
@@ -58,17 +62,22 @@ const Container = styled.section`
 
 const Wrapper = styled.section`
   display: flex;
+  flex-direction: column;
+  position: relative;
   --imageSize: 80vw;
   width: var(--imageSize);
   height: var(--imageSize);
   max-width: 320px;
   max-height: 320px;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 24px;
+  box-shadow: 4px 4px 5px ${customColor.darkGray};
 `;
 
 const StyledSwiper = styled(Swiper)`
   width: 100%;
   height: 100%;
-  padding: 20px;
 `;
 
 const StyledSwiperSlide = styled(SwiperSlide)`
@@ -86,7 +95,7 @@ const ButtonCss = css`
   top: 50%;
   z-index: 999;
   background-color: ${customColor.white};
-  --swiper-theme-color: green; // Todo 컬러 변경
+  --swiper-theme-color: ${customColor.magenta}; // Todo 컬러 변경
   width: 60px;
   height: 60px;
   border-radius: 999px;
@@ -107,11 +116,10 @@ const NextButton = styled.button`
 
 const PaginationButton = styled.div`
   display: flex;
-  justify-content: center;
+  width: 100%;
   justify-content: space-evenly;
   align-items: center;
   border-radius: 20px;
-  background-color: ${customColor.purple};
   --swiper-theme-color: ${customColor.skyBlue};
   .swiper-pagination-bullet {
     width: 20px;
