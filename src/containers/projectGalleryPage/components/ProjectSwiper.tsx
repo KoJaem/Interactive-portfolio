@@ -34,7 +34,7 @@ export const ProjectSwiper = ({ slideChange }:Props) => {
           {projects.map((data, i) => (
             <StyledSwiperSlide key={i}>
               <Image
-                src={data.url}
+                src={data.slideImage}
                 layout="fill"
                 alt="project"
                 style={{ borderRadius: '24px' }}
@@ -65,14 +65,15 @@ const Container = styled.section`
 const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   position: relative;
   --imageSize: 80vw;
   width: var(--imageSize);
   height: var(--imageSize);
   max-width: 320px;
   max-height: 320px;
+  padding: 16px 16px 8px 16px;
   gap: 8px;
-  padding: 16px;
   border-radius: 24px;
   box-shadow: 4px 4px 5px ${customColor.darkGray};
 `;
@@ -80,6 +81,7 @@ const Wrapper = styled.section`
 const StyledSwiper = styled(Swiper)`
   width: 100%;
   height: 100%;
+  border-radius: 24px;
 `;
 
 const StyledSwiperSlide = styled(SwiperSlide)`

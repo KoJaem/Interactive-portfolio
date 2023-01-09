@@ -11,7 +11,7 @@ export const ProjectIntro = () => {
     <Container>
       <Wrapper>
         <Title>
-          <Typography size="2rem" color={'purple'} fontWeight="bold">
+          <Typography size="2rem" color={'purple'} fontWeight="bold"> 
             {/* {projectInfo.title} */}
             asdasd
           </Typography>

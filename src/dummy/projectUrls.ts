@@ -1,3 +1,5 @@
+import { projectType } from 'src/types';
+
 export const projectUrls = [
   '/fashion-exhibition.jpg',
   '/sample1.jpg',
@@ -5,21 +7,57 @@ export const projectUrls = [
   '/sample3.jpg',
 ];
 
-export const projects = [
+export const projects: projectType[] = [
   {
-    url: '/fashion-exhibition.jpg',
-    info: '패션프로젝트',
+    slideImage: '/fashion-exhibition.jpg',
+    title: '이지포토',
+    people: '프론트 3, 백엔드 1',
+    date: ['2022.03', '2022.12'],
+    imageUrl: ['/fashion-exhibition.jpg', '/fashion-exhibition.jpg'],
+    info: '이지포토 프로젝트 소개',
+    developEnv: ['React', 'TypeScript', 'Emotion', 'Framer-motion', 'Figma'],
+    link: {
+      github: 'https://github.com/KoJaem/jolp-exhibition-fashion',
+      aws: 'https://easyphoto.site/',
+    },
   },
   {
-    url: '/sample1.jpg',
-    info: '샘플1',
+    slideImage: '/sample1.jpg',
+    title: '샘플1',
+    people: '프론트 3, 백엔드 1',
+    date: ['2022.03', '2022.12'],
+    imageUrl: ['/fashion-exhibition.jpg', '/fashion-exhibition.jpg'],
+    info: '이지포토 프로젝트 소개',
+    developEnv: ['React', 'TypeScript', 'Emotion', 'Framer-motion', 'Figma'],
+    link: {
+      github: 'https://github.com/KoJaem/jolp-exhibition-fashion',
+      aws: 'https://easyphoto.site/',
+    },
   },
   {
-    url: '/sample2.jpg',
-    info: '샘플2',
+    slideImage: '/sample2.jpg',
+    title: '샘플2',
+    people: '프론트 3, 백엔드 1',
+    date: ['2022.03', '2022.12'],
+    imageUrl: ['/fashion-exhibition.jpg', '/fashion-exhibition.jpg'],
+    info: '이지포토 프로젝트 소개',
+    developEnv: ['React', 'TypeScript', 'Emotion', 'Framer-motion', 'Figma'],
+    link: {
+      github: 'https://github.com/KoJaem/jolp-exhibition-fashion',
+      aws: 'https://easyphoto.site/',
+    },
   },
   {
-    url: '/sample3.jpg',
-    info: '샘플3',
+    slideImage: '/sample3.jpg',
+    title: '샘플3',
+    people: '프론트 3, 백엔드 1',
+    date: ['2022.03', '2022.12'],
+    imageUrl: ['/fashion-exhibition.jpg', '/fashion-exhibition.jpg'],
+    info: '이지포토 프로젝트 소개',
+    developEnv: ['React', 'TypeScript', 'Emotion', 'Framer-motion', 'Figma'],
+    link: {
+      github: 'https://github.com/KoJaem/jolp-exhibition-fashion',
+      aws: 'https://easyphoto.site/',
+    },
   },
 ];

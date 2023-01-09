@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
@@ -11,6 +11,10 @@ import { ProjectIntro } from './components';
 export const ProjectGalleryPage = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [infoAnimation, setInfoAnimation] = useState<boolean>(false);
+
+  useEffect(() => {
+    
+  }, [activeIndex]);
 
 
   const slideChange = ({ realIndex }: { realIndex: number }) => {
