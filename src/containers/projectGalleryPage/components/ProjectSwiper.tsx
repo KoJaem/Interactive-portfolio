@@ -12,7 +12,7 @@ import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
 type Props = {
   slideChange: ({ realIndex }: { realIndex: number }) => void;
 };
-export const ProjectSwiper = ({ slideChange }:Props) => {
+export const ProjectSwiper = ({ slideChange }: Props) => {
   return (
     <Container>
       <Wrapper>

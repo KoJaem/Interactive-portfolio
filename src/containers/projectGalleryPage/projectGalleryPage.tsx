@@ -16,7 +16,6 @@ export const ProjectGalleryPage = () => {
     
   }, [activeIndex]);
 
-
   const slideChange = ({ realIndex }: { realIndex: number }) => {
     setActiveIndex(realIndex);
     setInfoAnimation(true);
@@ -41,9 +40,9 @@ export const ProjectGalleryPage = () => {
         >
           <ProjectIntro />
         </motion.div>
-        {/* <Typography size="20" color="black">
-            {projects[activeIndex].info}
-          </Typography> */}
+        <Typography size="20" color="black">
+          {projects[activeIndex].info}
+        </Typography>
       </Wrapper>
     </Container>
   );
