@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -43,7 +43,7 @@ export const ProjectSwiper2 = () => {
           // delay: 1500,
           // disableOnInteraction: false,
           // }}
-          // speed={1000}
+          // speed={500}
           coverflowEffect={{
             rotate: 0,
             depth: 300,
@@ -92,7 +92,7 @@ export const ProjectSwiper2 = () => {
                       </Typography>
                       <LinkWrapper>
                         {data.link.hasOwnProperty('github') && (
-                          <button onClick={() => {window.open(data.link.github);}}>
+                          <button onClick={() => window.open(data.link.github)}>
                             <GradientSvg
                               Icon={AiFillGithub}
                               color1={customColor.skyBlue}
@@ -184,8 +184,6 @@ const AnimationBox = styled(motion.div)`
   justify-content: flex-end;
   position: relative;
   overflow: hidden;
-  pointer-events: auto;
-
 `;
 
 const ImageWrapper = styled(motion.div)`
@@ -193,12 +191,13 @@ const ImageWrapper = styled(motion.div)`
   width: 100%;
   aspect-ratio: 1;
   align-self: end;
+  z-index: 2;
 `;
 
 const Info = styled(motion.div)`
   position: absolute;
   width: 100%;
-  z-index: -1;
+  z-index: 1;
   padding-top: 28px !important;
   background-color: ${customColor.white};
   border-bottom-left-radius: 24px;
