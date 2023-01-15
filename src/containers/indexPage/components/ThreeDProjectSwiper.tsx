@@ -45,7 +45,7 @@ export const ThreeDProjectSwiper = () => {
                 src={data.slideImage}
                 layout="fill"
                 alt="project"
-                style={{ borderRadius: '50px', overflow: 'hidden' }}
+                style={{ borderRadius: '24px', overflow: 'hidden', objectFit: 'cover' }}
               />
             </StyledSwiperSlide>
           ))}
@@ -87,7 +87,7 @@ const StyledSwiper = styled(Swiper)`
 const StyledSwiperSlide = styled(SwiperSlide)`
   position: relative;
   text-align: center;
-  width: 250px;
+  width: 350px;
   height: 350px;
   display: flex;
   justify-content: center;

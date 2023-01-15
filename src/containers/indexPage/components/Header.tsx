@@ -82,11 +82,12 @@ export const Header = ({ refs }: Props) => {
           Github
         </GithubButton>
       </ButtonWrapper>
-      <MenuIcon>
+      <MenuIcon onClick={() => window.open('https://github.com/KoJaem')}>
         <GradientSvg
           Icon={AiFillGithub}
           color1={customColor.magenta}
           color2={customColor.purple}
+          id="github"
         />
       </MenuIcon>
     </Container>

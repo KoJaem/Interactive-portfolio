@@ -10,7 +10,7 @@ export const projectUrls = [
 export const projects: projectType[] = [
   {
     slideImage: '/fashion-exhibition.jpg',
-    title: '이지포토',
+    title: '인터렉티브 패션 전시회 웹',
     people: '프론트 3, 백엔드 1',
     date: ['2022.03', '2022.12'],
     imageUrl: ['/fashion-exhibition.jpg', '/fashion-exhibition.jpg'],

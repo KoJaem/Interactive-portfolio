@@ -9,6 +9,7 @@ export type customColorType = {
   lightPurple: string;
   lightMagenta: string;
   lightYellow: string;
+  orange: string;
   // darkGreen: string;
   // lightWhite: string;
   // darkSky: string;
@@ -25,6 +26,7 @@ export const customColor: customColorType = {
   lightPurple: '#ead4ff',
   lightMagenta: '#f3cffc',
   lightYellow: '#f9ffeb',
+  orange: '#FFAF3A',
   // darkGreen: '#b7c5b180',
   // lightWhite: '#f9ffeb',
   // darkSky: '#bdc0c2',

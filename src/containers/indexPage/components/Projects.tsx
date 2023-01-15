@@ -13,6 +13,7 @@ import { customColor } from 'src/constants';
 import { SpectrumText } from 'src/components/SpectrumText';
 import { whiteBoldShadow } from 'src/common/fontShadow';
 import { useRouter } from 'next/router';
+import { ProjectSwiper2 } from 'src/containers/indexPage/components/ProjectSwiper-newVersion';
 type Props = {
   refs: React.MutableRefObject<null[] | HTMLElement[]>;
 };
@@ -25,12 +26,13 @@ export const Projects = ({ refs }: Props) => {
           <SpectrumText text="Projects" shadow={whiteBoldShadow} />
         </Typography>
       </Title>
-      <ThreeDProjectSwiper />
+      {/* <ThreeDProjectSwiper /> */}
+      <ProjectSwiper2 />
       <ButtonWrapper>
         <MoreButton
           onClick={async () => {
             await router.push('projectGallery');
-            window.scrollTo({ top: refs.current[2]?.offsetTop });
+            window.scrollTo({ top: refs.current[2]?.offsetTop! - 50 });
           }}
         >
           <Typography size="1.3rem" color="white" fontWeight="bold">
@@ -51,7 +53,6 @@ const Container = styled.section`
 `;
 
 const Title = styled.section`
-  margin-bottom: 120px;
 `;
 const ButtonWrapper = styled.section`
   width: 100%;
@@ -61,5 +62,5 @@ const ButtonWrapper = styled.section`
   @media screen and (min-width: 1023px) {
     max-width: 1200px;
   }
-  margin: 40px 0px;
+  margin-bottom: 40px;
 `;

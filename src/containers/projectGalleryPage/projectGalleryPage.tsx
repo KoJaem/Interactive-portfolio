@@ -40,7 +40,7 @@ export const ProjectGalleryPage = () => {
         >
           <ProjectIntro />
         </motion.div>
-        <Typography size="20" color="black">
+        <Typography size="1.5rem" color="black">
           {projects[activeIndex].info}
         </Typography>
       </Wrapper>

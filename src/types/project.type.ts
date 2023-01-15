@@ -6,5 +6,10 @@ export type projectType = {
   imageUrl: string[]; // 상세보기에 나올 이미지들
   info: string; // 프로젝트 소개
   developEnv: string[]; // 개발환경
-  link: Object; // 관련 link 들 (현재는 github, AWS)
+  link: linkType; // 관련 link 들 (현재는 github, aws)
 };
+
+type linkType = {
+  github?: string;
+  aws?: string;
+}
