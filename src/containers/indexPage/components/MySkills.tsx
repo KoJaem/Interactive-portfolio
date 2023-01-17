@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import { whiteShadow } from 'src/common/fontShadow';
+import { purpleBoldShadow } from 'src/common/fontShadow';
 import { Typography } from 'src/components';
 import { customColor } from 'src/constants';
 import { mySkills } from 'src/dummy/mySkills';
@@ -12,8 +12,8 @@ export const MySkills = ({ refs }: Props) => {
   return (
     <Container ref={el => (refs.current[1] = el)}>
       <Typography
-        fontShadow={whiteShadow}
-        size="4rem"
+        fontShadow={purpleBoldShadow}
+        size="3rem"
         color="purple"
         fontWeight="bold"
       >

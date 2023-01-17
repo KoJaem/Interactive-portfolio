@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react';
 import { customColorType, customColor } from "src/constants/customColor";
 import styled from "styled-components";
 
@@ -23,9 +24,10 @@ export type TypographyProps = React.PropsWithChildren<{
   fontHeight?: string;
   fontHidden?: boolean;
   fontShadow?: string;
+  style?: CSSProperties;
 }>;
 export const Typography = (props: TypographyProps) => {
-  return <TypographyText {...props}>{props.children}</TypographyText>;
+  return <TypographyText style={props.style} {...props}>{props.children}</TypographyText>;
 };
 
 export const handleColor = (color: keyof customColorType) => {

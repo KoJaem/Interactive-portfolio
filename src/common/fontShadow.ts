@@ -14,3 +14,5 @@ export const purpleBoldShadow = `${customColor.purple} ${bold}`;
 export const magentaBoldShadow = `${customColor.magenta} ${bold}`;
 
 export const grayBoldShadow = `${customColor.gray} ${bold}`;
+
+export const skyBlueBoldShadow = `${customColor.skyBlue} ${bold}`

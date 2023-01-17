@@ -71,7 +71,7 @@ export const ProjectSwiper2 = () => {
                     src={`/imgs/projects/${data.slideImage}`}
                     layout="fill"
                     alt="project"
-                    style={{ borderRadius: 24 }}
+                    style={{ borderRadius: 12 }}
                   />
                 </ImageWrapper>
                 {activeIndex === i && (
@@ -164,12 +164,12 @@ const Wrapper = styled.section`
   width: 100%;
   height: 100%;
   max-width: 1200px;
-  border-radius: 24px;
+  /* border-radius: 12px; */
 `;
 
 const StyledSwiper = styled(Swiper)`
   width: 100%;
-  border-radius: 24px;
+  /* border-radius: 12px; */
   height: 100%;
 `;
 
@@ -182,7 +182,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
   position: relative;
   justify-content: center;
   align-items: center;
-  border-radius: 24px;
+  /* border-radius: 12px; */
   :not(.swiper-slide-active) {
     filter: brightness(70%);
   }
@@ -211,9 +211,9 @@ const Info = styled(motion.div)`
   width: 100%;
   z-index: 1;
   padding-top: 28px !important;
-  background-color: ${customColor.white};
-  border-bottom-left-radius: 24px;
-  border-bottom-right-radius: 24px;
+  background-color: ${customColor.lightGray};
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
   padding: 20px;
   display: flex;
   flex-direction: column;

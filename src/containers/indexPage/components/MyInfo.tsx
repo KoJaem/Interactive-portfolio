@@ -3,7 +3,7 @@ import { MoreButton, Typography } from 'src/components';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
 import Image from 'next/image';
-import { whiteShadow } from 'src/common/fontShadow';
+import { purpleBoldShadow } from 'src/common/fontShadow';
 type Props = {
   refs: React.MutableRefObject<null[] | HTMLElement[]>;
 };
@@ -13,8 +13,8 @@ export const MyInfo = ({refs}:Props) => {
       refs.current[0] = el}}>
       <Title>
         <Typography
-          fontShadow={whiteShadow}
-          size="4rem"
+          fontShadow={purpleBoldShadow}
+          size="3rem"
           color="purple"
           fontWeight="bold"
         >
@@ -35,7 +35,7 @@ export const MyInfo = ({refs}:Props) => {
               고재민
             </Typography>
             <Typography size="1.5rem" color="white" fontWeight="bold">
-              📞 010-2258-1401
+              tel : 010-2258-1401
             </Typography>
             <Typography
               size="1.5rem"
@@ -43,11 +43,11 @@ export const MyInfo = ({refs}:Props) => {
               fontWeight="bold"
               fontHeight="1.4"
             >
-              💌woalswhwh@gmail.com
+              woalswhwh@gmail.com
             </Typography>
             <Line />
             <section
-              style={{ display: 'flex', justifyContent: 'space-between' }}
+              style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
             >
               <Typography size="1.5rem" color="skyBlue" fontWeight="bold">
                 FrontEnd

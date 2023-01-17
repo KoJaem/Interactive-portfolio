@@ -9,9 +9,9 @@ import {
   grayBoldShadow,
   magentaBoldShadow,
   purpleBoldShadow,
+  skyBlueBoldShadow,
   whiteBoldShadow,
 } from 'src/common/fontShadow';
-import { useIntersect } from 'src/hooks';
 const transition = { duration: 0.5 };
 
 const introVariants = {
@@ -163,7 +163,22 @@ export const Intro = () => {
             textAlign="center"
           >
             <SpectrumText
-              text="저는 프론트엔드 개발자를 꿈꾸며 공부하는 학생입니다."
+              text="저는 "
+              delay={0.1}
+              duration={1}
+              shadow={whiteBoldShadow}
+            />
+            <SpectrumText
+              text="프론트엔드 개발자"
+              delay={0.1}
+              initialDelay={0.3}
+              color={customColor.skyBlue}
+              duration={1}
+              shadow={skyBlueBoldShadow}
+            />
+            <SpectrumText
+              text="를 꿈꾸며 공부하는 학생입니다."
+              initialDelay={1.2}
               delay={0.1}
               duration={1}
               shadow={whiteBoldShadow}
@@ -175,33 +190,29 @@ export const Intro = () => {
         <Name style={{ opacity: nameOpacity, y: nameYPosition }}>
           <Typography
             size="4rem"
-            color="purple"
+            color="skyBlue"
             fontHeight="1.5"
             fontWeight="bold"
-            fontShadow={purpleBoldShadow}
+            fontShadow={skyBlueBoldShadow}
           >
-            KoJaem
-          </Typography>
-          <Typography
-            size="4rem"
-            color="magenta"
-            fontWeight="bold"
-            fontHeight="1.5"
-            fontShadow={magentaBoldShadow}
-          >
-            (고재민)
+            FrontEnd
           </Typography>
         </Name>
         <Interest style={{ opacity: InterestOpacity }}>
           <Typography
             size="1.6rem"
-            color="white"
+            color="magenta"
             fontWeight="bold"
             fontHeight="1.5"
             textAlign="center"
-            fontShadow={whiteBoldShadow}
+            fontShadow={purpleBoldShadow}
           >
-            UI, UX 에 대해 관심이 많으며
+            UI, UX
+            <span
+              style={{ color: customColor.white, textShadow: whiteBoldShadow }}
+            >
+              에 대해 관심이 많으며
+            </span>
           </Typography>
           <Typography
             size="1.6rem"
