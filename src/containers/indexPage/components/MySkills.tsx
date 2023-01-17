@@ -28,7 +28,7 @@ export const MySkills = ({ refs }: Props) => {
             {mySkills.Tech.smallImage.map((data, i) => (
               <SmallImageWrapper key={i}>
                 <Image
-                  src={`/mySkills/${data}`}
+                  src={`/imgs/mySkills/${data}`}
                   width={85}
                   height={85}
                   alt="techSkill"
@@ -39,7 +39,7 @@ export const MySkills = ({ refs }: Props) => {
           {mySkills.Tech.image.map((data, i) => (
             <ImageWrapper key={i}>
               <Image
-                src={`/mySkills/${data}`}
+                src={`/imgs/mySkills/${data}`}
                 width={275}
                 height={85}
                 alt="techSkill"
@@ -55,7 +55,7 @@ export const MySkills = ({ refs }: Props) => {
             {mySkills.Community.map((data, i) => (
               <ImageWrapper key={i}>
                 <Image
-                  src={`/mySkills/${data}`}
+                  src={`/imgs/mySkills/${data}`}
                   width={275}
                   height={85}
                   alt="techSkill"
@@ -70,7 +70,7 @@ export const MySkills = ({ refs }: Props) => {
             {mySkills.Deployment.map((data, i) => (
               <ImageWrapper key={i}>
                 <Image
-                  src={`/mySkills/${data}`}
+                  src={`/imgs/mySkills/${data}`}
                   width={275}
                   height={85}
                   alt="techSkill"
@@ -85,7 +85,7 @@ export const MySkills = ({ refs }: Props) => {
             {mySkills.API.map((data, i) => (
               <ImageWrapper key={i}>
                 <Image
-                  src={`/mySkills/${data}`}
+                  src={`/imgs/mySkills/${data}`}
                   width={275}
                   height={85}
                   alt="techSkill"
@@ -100,7 +100,7 @@ export const MySkills = ({ refs }: Props) => {
             {mySkills.Mobile.map((data, i) => (
               <ImageWrapper key={i}>
                 <Image
-                  src={`/mySkills/${data}`}
+                  src={`/imgs/mySkills/${data}`}
                   width={275}
                   height={85}
                   alt="techSkill"

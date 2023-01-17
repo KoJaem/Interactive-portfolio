@@ -9,7 +9,9 @@ export type projectType = {
   link: linkType; // 관련 link 들 (현재는 github, aws)
 };
 
-type linkType = {
+export type linkType = {
   github?: string;
+  githubPage?: string;
   aws?: string;
-}
+  [key: string]: string | undefined;
+};

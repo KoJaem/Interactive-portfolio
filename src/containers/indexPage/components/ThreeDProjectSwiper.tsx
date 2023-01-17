@@ -6,7 +6,7 @@ import 'swiper/css/autoplay';
 import styled from 'styled-components';
 import { EffectCoverflow, Autoplay } from 'swiper';
 import Image from 'next/image';
-import { projects } from 'src/dummy/projectUrls';
+import { projects } from 'src/dummy/projects';
 
 export const ThreeDProjectSwiper = () => {
   return (
@@ -42,10 +42,14 @@ export const ThreeDProjectSwiper = () => {
           {projects.map((data, i) => (
             <StyledSwiperSlide key={i}>
               <Image
-                src={data.slideImage}
+                src={`/imgs/projects/${data.slideImage}`}
                 layout="fill"
                 alt="project"
-                style={{ borderRadius: '24px', overflow: 'hidden', objectFit: 'cover' }}
+                style={{
+                  borderRadius: '24px',
+                  overflow: 'hidden',
+                  objectFit: 'cover',
+                }}
               />
             </StyledSwiperSlide>
           ))}

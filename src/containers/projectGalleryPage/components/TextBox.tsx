@@ -7,7 +7,7 @@ type Props = {
   color: string;
   paddingLR: number;
   paddingBT: number;
-  gapBT?: number;
+  gap?: number;
   description: string;
   children: ReactNode;
 };
@@ -15,7 +15,7 @@ export const TextBox = ({
   color,
   paddingLR,
   paddingBT,
-  gapBT,
+  gap,
   description,
   children,
 }: Props) => {
@@ -25,7 +25,7 @@ export const TextBox = ({
       color={color}
       padding_lr={paddingLR}
       padding_bt={paddingBT}
-      gap_bt={gapBT}
+      gap={gap}
       onHoverStart={() => setHover(true)}
       onHoverEnd={() => setHover(false)}
     >
@@ -47,7 +47,7 @@ type StyledProps = {
   color: string;
   padding_lr: number;
   padding_bt: number;
-  gap_bt?: number;
+  gap?: number;
 };
 const Container = styled(motion.section)<StyledProps>`
   position: relative;
@@ -58,7 +58,7 @@ const Container = styled(motion.section)<StyledProps>`
   max-width: 900px;
   white-space: pre-wrap;
   display: flex;
-  gap: ${({ gap_bt }) => gap_bt && `${gap_bt}px 0`};
+  gap: ${({ gap }) => gap && `${gap}px`};
   flex-direction: column;
   justify-content: center;
   overflow: hidden;

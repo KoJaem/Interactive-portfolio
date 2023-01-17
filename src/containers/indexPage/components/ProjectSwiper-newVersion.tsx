@@ -5,13 +5,13 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import styled, { css } from 'styled-components';
 import Image from 'next/image';
-import { projects } from 'src/dummy/projectUrls';
+import { projects } from 'src/dummy/projects';
 import { customColor } from 'src/constants';
 import { Autoplay, EffectCoverflow } from 'swiper';
 import { motion } from 'framer-motion';
 import { Typography } from 'src/components';
 import { AiFillGithub } from 'react-icons/ai';
-import { FaAws } from 'react-icons/fa';
+import { FaAws, FaGithubSquare } from 'react-icons/fa';
 import { GradientSvg } from './GradientSvgIcon';
 
 const TOP_ANIMATION_POSITION = 100;
@@ -68,7 +68,7 @@ export const ProjectSwiper2 = () => {
                   }}
                 >
                   <Image
-                    src={data.slideImage}
+                    src={`/imgs/projects/${data.slideImage}`}
                     layout="fill"
                     alt="project"
                     style={{ borderRadius: 24 }}
@@ -99,6 +99,18 @@ export const ProjectSwiper2 = () => {
                               color2={customColor.black}
                               size={40}
                               id="slideGit"
+                            />
+                          </button>
+                        )}
+                        {data.link.hasOwnProperty('githubPage') && (
+                          <button onClick={() => window.open(data.link.githubPage)}>
+                            <GradientSvg
+                              Icon={FaGithubSquare}
+                              color1={customColor.skyBlue}
+                              color2={customColor.purple}
+                              size={40}
+                              id="githubPage"
+                              direction="leftToRight"
                             />
                           </button>
                         )}

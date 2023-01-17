@@ -5,7 +5,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import styled, { css } from 'styled-components';
 import Image from 'next/image';
-import { projects } from 'src/dummy/projectUrls';
+import { projects } from 'src/dummy/projects';
 import { Navigation, Pagination } from 'swiper';
 import { customColor } from 'src/constants';
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
@@ -34,7 +34,7 @@ export const ProjectSwiper = ({ slideChange }: Props) => {
           {projects.map((data, i) => (
             <StyledSwiperSlide key={i}>
               <Image
-                src={data.slideImage}
+                src={`/imgs/projects/${data.slideImage}`}
                 layout="fill"
                 alt="project"
                 style={{ borderRadius: '24px' }}

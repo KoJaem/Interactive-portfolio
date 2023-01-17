@@ -5,7 +5,7 @@ import { EffectCards } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import Image from 'next/image';
-import { projects } from 'src/dummy/projectUrls';
+import { projects } from 'src/dummy/projects';
 import { Typography } from 'src/components';
 import { motion } from 'framer-motion';
 

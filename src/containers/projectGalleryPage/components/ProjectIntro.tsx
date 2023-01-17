@@ -5,19 +5,26 @@ import { Typography } from 'src/components';
 import { TextBox } from './TextBox';
 import { MdClose } from 'react-icons/md';
 import { ImEnlarge } from 'react-icons/im';
-
-export const ProjectIntro = () => {
+import { projects } from 'src/dummy/projects';
+import Link from 'next/link';
+import { linkType } from 'src/types/project.type';
+import { customColor } from 'src/constants';
+type Props = {
+  activeIndex : number;
+}
+export const ProjectIntro = ({ activeIndex }: Props) => {
+  const project = projects[activeIndex];
+  // console.log(activeIndex)
   return (
     <Container>
       <Wrapper>
         <Title>
-          <Typography size="2rem" color={'purple'} fontWeight="bold"> 
+          <Typography size="2rem" color={'purple'} fontWeight="bold">
             {/* {projectInfo.title} */}
-            asdasd
+            {project.title}
           </Typography>
           <Typography size="1rem" fontWeight="bold">
-            asdasd
-            {/* {`${projectInfo.date[0]} ~ ${projectInfo.date[1]}`} */}
+            {`${project.date[0]} ~ ${project.date[1]}`}
           </Typography>
         </Title>
         <Introduction>
@@ -25,11 +32,10 @@ export const ProjectIntro = () => {
             color="#6774E5"
             paddingLR={28}
             paddingBT={16}
-            description="프로젝트 주제"
+            description="프로젝트 인원"
           >
             <Typography size="1.3rem" color="white" fontWeight="bold">
-              {/* {projectInfo.topic} */}
-              asdasdasd
+              {project.people}
             </Typography>
           </TextBox>
           <TextBox
@@ -44,37 +50,34 @@ export const ProjectIntro = () => {
               color="white"
               fontHeight="1.2"
             >
-              {/* {projectInfo.intro} */}
-              asdasdasd
+              {project.info}
             </Typography>
           </TextBox>
-          <EndIntro>
+          <Flex>
             <TextBox
               color="#78ABF6"
               paddingLR={28}
               paddingBT={20}
               description="개발환경"
             >
-              asdasdasdasd
-              {/* {projectInfo.developEnv.map((data, i) => (
-                  <Typography
-                    size="1.2rem"
-                    color="white"
-                    fontWeight="bold"
-                    key={i}
-                  >
-                    {data}
-                  </Typography>
-                ))} */}
+              {project.developEnv.map((data, i) => (
+                <Typography
+                  size="1.2rem"
+                  color="white"
+                  fontWeight="bold"
+                  key={i}
+                >
+                  {data}
+                </Typography>
+              ))}
             </TextBox>
             <TextBox
               color="#78ABF6"
               paddingLR={28}
               paddingBT={20}
-              gapBT={12}
-              description="나의역할"
+              description="나의 역할"
             >
-              {/* {projectInfo.myRole.map((data, i) => (
+              {/* {project.myRole.map((data, i) => (
                   <Typography
                     size="1.2rem"
                     color="white"
@@ -84,9 +87,17 @@ export const ProjectIntro = () => {
                     {data}
                   </Typography>
                 ))} */}
-              asdasdasdasd
             </TextBox>
-          </EndIntro>
+          </Flex>
+          <LinkBox>
+            {Object.keys(project.link).map((data, i) => (
+              <Typography size="1.2rem" color="white" fontWeight="bold" key={i}>
+                <Link href={project.link[data]!}>
+                  <a target="_blank">{data}</a>
+                </Link>
+              </Typography>
+            ))}
+          </LinkBox>
         </Introduction>
       </Wrapper>
     </Container>
@@ -98,8 +109,9 @@ const Container = styled(motion.section)`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: max-content;
   position: relative;
+  margin-bottom: 40px;
 `;
 
 const Wrapper = styled.section``;
@@ -134,8 +146,25 @@ const Introduction = styled.section`
   gap: 8px 0;
 `;
 
-const EndIntro = styled.section`
+const Flex = styled.section`
   display: flex;
   width: 100%;
   gap: 0 12px;
+`;
+
+const LinkBox = styled.div`
+  position: relative;
+  background-color: #78abf6;
+  padding: 28px 20px;
+  border-radius: 24px;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+  white-space: pre-wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  cursor: default;
+  box-shadow: 4px 4px 5px ${customColor.darkGray};
 `;

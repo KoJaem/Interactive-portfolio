@@ -7,7 +7,7 @@ import { EffectCoverflow, Navigation, Pagination } from 'swiper';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import Image from 'next/image';
-import { projects } from 'src/dummy/projectUrls';
+import { projects } from 'src/dummy/projects';
 export const TestPage = () => {
   return (
     <Container>

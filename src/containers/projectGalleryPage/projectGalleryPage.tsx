@@ -5,7 +5,7 @@ import { customColor } from 'src/constants';
 import styled from 'styled-components';
 import { ProjectSwiper } from './components/ProjectSwiper';
 import { Typography } from 'src/components';
-import { projects } from 'src/dummy/projectUrls';
+import { projects } from 'src/dummy/projects';
 import { ProjectIntro } from './components';
 
 export const ProjectGalleryPage = () => {
@@ -38,11 +38,11 @@ export const ProjectGalleryPage = () => {
           }}
           transition={{ duration: 0.1 }}
         >
-          <ProjectIntro />
+          <ProjectIntro activeIndex={activeIndex}/>
         </motion.div>
-        <Typography size="1.5rem" color="black">
+        {/* <Typography size="1.5rem" color="black">
           {projects[activeIndex].info}
-        </Typography>
+        </Typography> */}
       </Wrapper>
     </Container>
   );
@@ -73,7 +73,7 @@ const Container = styled(motion.div)`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: max-content;
   background-color: ${customColor.lightYellow};
 `;
 
