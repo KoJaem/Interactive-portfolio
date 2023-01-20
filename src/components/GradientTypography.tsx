@@ -21,7 +21,7 @@ export type GradientTypographyProps = React.PropsWithChildren<{
   color2?: keyof customColorType;
   textAlign?: 'left' | 'center' | 'right';
   fontWeight?: string;
-  fontHeight?: string;
+  lineHeight?: number;
   fontHidden?: boolean;
   fontShadow?: string;
 }>;
@@ -41,10 +41,9 @@ const TypographyText = styled.div<GradientTypographyProps>`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: ${({ size }) => isNaN(Number(size)) ? size : size + "px"};
-  text-align: ${({ textAlign }) => textAlign};
+  text-align: ${({ textAlign }) => textAlign ? textAlign : ''};
   font-weight: ${({ fontWeight }) => fontWeight};
-  ${({ fontHeight }) =>
-    fontHeight === 'normal' ? '' : `line-height: ${fontHeight};`}
+  line-height: ${({ lineHeight }) => lineHeight ? lineHeight : 1};
 
   ${({ fontHidden }) =>
     fontHidden ? 'overflow: hidden;text-overflow: ellipsis;' : ''}

@@ -84,7 +84,6 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
   box-sizing: border-box;
 }
@@ -132,22 +131,38 @@ body {
   font-size: 16px;
 }
 
-
-
 @media screen and (min-width: 768px) {
   html {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 1023px) {
   html {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
+@font-face {
+  font-family: 'g-market-sans';
+  font-weight: normal;
+  src: url('../src/assets/font/GmarketSansTTFMedium.ttf');
+}
+
+@font-face {
+  font-family: 'g-market-sans';
+  font-weight: bold;
+  src: url('../src/assets/font/GmarketSansTTFBold.ttf');
+}
+
+@font-face {
+  font-family: 'g-market-sans';
+  font-weight: 100;
+  src: url('../src/assets/font/GmarketSansTTFLight.ttf');
+}
 
 * {
   transition: padding, font-size 0.3s ease;
+  font-family: 'g-market-sans';
 }
 
 button {

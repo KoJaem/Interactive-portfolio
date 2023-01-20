@@ -48,7 +48,7 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
               size="1.3rem"
               fontWeight="bold"
               color="white"
-              fontHeight="1.2"
+              lineHeight={1.2}
             >
               {project.info}
             </Typography>

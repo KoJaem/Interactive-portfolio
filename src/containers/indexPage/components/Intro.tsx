@@ -114,7 +114,7 @@ export const Intro = () => {
               size="3rem"
               color="gray"
               fontWeight="bold"
-              fontHeight="1.5"
+              lineHeight={1.5}
               textAlign="center"
               fontShadow={grayBoldShadow}
             >
@@ -159,7 +159,7 @@ export const Intro = () => {
             size="1.6rem"
             color="white"
             fontWeight="bold"
-            fontHeight="2"
+            lineHeight={2}
             textAlign="center"
           >
             <SpectrumText
@@ -191,7 +191,7 @@ export const Intro = () => {
           <Typography
             size="4rem"
             color="skyBlue"
-            fontHeight="1.5"
+            lineHeight={1.5}
             fontWeight="bold"
             fontShadow={skyBlueBoldShadow}
           >
@@ -203,7 +203,7 @@ export const Intro = () => {
             size="1.6rem"
             color="magenta"
             fontWeight="bold"
-            fontHeight="1.5"
+            lineHeight={1.5}
             textAlign="center"
             fontShadow={purpleBoldShadow}
           >
@@ -218,7 +218,7 @@ export const Intro = () => {
             size="1.6rem"
             color="white"
             fontWeight="bold"
-            fontHeight="1.5"
+            lineHeight={1.5}
             textAlign="center"
             fontShadow={whiteBoldShadow}
           >

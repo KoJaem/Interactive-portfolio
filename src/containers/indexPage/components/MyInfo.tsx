@@ -25,13 +25,13 @@ export const MyInfo = ({refs}:Props) => {
         <Image
           style={{ borderRadius: 50 }}
           src={'/profile.jpg'}
-          width={320}
-          height={320}
+          width={340}
+          height={340}
           alt="profile"
         />
         <Contents>
           <InfoWrapper>
-            <Typography size="1.5rem" color="white" fontWeight="bold">
+            <Typography size="1.5rem" color="white" fontWeight="bold" lineHeight={1.4}>
               고재민
             </Typography>
             <Typography size="1.5rem" color="white" fontWeight="bold">
@@ -41,7 +41,7 @@ export const MyInfo = ({refs}:Props) => {
               size="1.5rem"
               color="white"
               fontWeight="bold"
-              fontHeight="1.4"
+              lineHeight={1.4}
             >
               woalswhwh@gmail.com
             </Typography>
@@ -87,7 +87,7 @@ export const MyInfo = ({refs}:Props) => {
               size="1.3rem"
               color="black"
               fontWeight="bold"
-              fontHeight="1.2"
+              lineHeight={1.2}
             >
               Notion
             </Typography>
@@ -139,7 +139,7 @@ const InfoWrapper = styled.section`
   flex-direction: column;
   gap: 20px 0;
   height: 100%;
-  width: 90%;
+  width: 100%;
   overflow-wrap: anywhere;
 `;
 
