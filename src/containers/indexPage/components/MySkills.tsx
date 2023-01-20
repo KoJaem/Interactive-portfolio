@@ -31,6 +31,7 @@ export const MySkills = ({ refs }: Props) => {
                   src={`/imgs/mySkills/${data}`}
                   width={85}
                   height={85}
+                  objectFit={'contain'}
                   alt="techSkill"
                 />
               </SmallImageWrapper>
@@ -43,6 +44,7 @@ export const MySkills = ({ refs }: Props) => {
                 width={275}
                 height={85}
                 alt="techSkill"
+                objectFit={'contain'}
               />
             </ImageWrapper>
           ))}
@@ -59,6 +61,7 @@ export const MySkills = ({ refs }: Props) => {
                   width={275}
                   height={85}
                   alt="techSkill"
+                  objectFit={'contain'}
                 />
               </ImageWrapper>
             ))}
@@ -74,6 +77,7 @@ export const MySkills = ({ refs }: Props) => {
                   width={275}
                   height={85}
                   alt="techSkill"
+                  objectFit={'contain'}
                 />
               </ImageWrapper>
             ))}
@@ -89,6 +93,7 @@ export const MySkills = ({ refs }: Props) => {
                   width={275}
                   height={85}
                   alt="techSkill"
+                  objectFit={'contain'}
                 />
               </ImageWrapper>
             ))}
@@ -104,6 +109,7 @@ export const MySkills = ({ refs }: Props) => {
                   width={275}
                   height={85}
                   alt="techSkill"
+                  objectFit={'contain'}
                 />
               </ImageWrapper>
             ))}
@@ -126,7 +132,11 @@ const Wrapper = styled.section`
   width: 100%;
   max-width: 1178px;
   /* background-color: ${customColor.white}; */
-  background: radial-gradient(circle, ${customColor.lightMagenta}, ${customColor.lightPurple});
+  background: radial-gradient(
+    circle,
+    ${customColor.lightMagenta},
+    ${customColor.lightPurple}
+  );
   position: relative;
   display: flex;
   justify-content: space-around;
