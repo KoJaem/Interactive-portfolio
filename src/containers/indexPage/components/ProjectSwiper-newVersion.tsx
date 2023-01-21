@@ -39,11 +39,11 @@ export const ProjectSwiper2 = () => {
           modules={[EffectCoverflow, Autoplay]}
           effect="coverflow"
           centeredSlides
-          // autoplay={{
-          // delay: 1500,
-          // disableOnInteraction: false,
-          // }}
-          // speed={500}
+          autoplay={{
+          delay: 1500,
+          disableOnInteraction: false,
+          }}
+          speed={500}
           coverflowEffect={{
             rotate: 0,
             depth: 300,

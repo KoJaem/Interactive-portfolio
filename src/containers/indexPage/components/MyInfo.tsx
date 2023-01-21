@@ -4,13 +4,18 @@ import { customColor } from 'src/constants';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { purpleBoldShadow } from 'src/common/fontShadow';
+import { customColorType } from 'src/constants/customColor';
+import { handleColor } from 'src/components/Typography';
 type Props = {
   refs: React.MutableRefObject<null[] | HTMLElement[]>;
 };
-export const MyInfo = ({refs}:Props) => {
+export const MyInfo = ({ refs }: Props) => {
   return (
-    <Container ref={(el) => {
-      refs.current[0] = el}}>
+    <Container
+      ref={el => {
+        refs.current[0] = el;
+      }}
+    >
       <Title>
         <Typography
           fontShadow={purpleBoldShadow}
@@ -31,11 +36,16 @@ export const MyInfo = ({refs}:Props) => {
         />
         <Contents>
           <InfoWrapper>
-            <Typography size="1.5rem" color="white" fontWeight="bold" lineHeight={1.4}>
+            <Typography
+              size="1.5rem"
+              color="white"
+              fontWeight="bold"
+              lineHeight={1.4}
+            >
               고재민
             </Typography>
             <Typography size="1.5rem" color="white" fontWeight="bold">
-              tel : 010-2258-1401
+              TEL : 010-2258-1401
             </Typography>
             <Typography
               size="1.5rem"
@@ -46,52 +56,65 @@ export const MyInfo = ({refs}:Props) => {
               woalswhwh@gmail.com
             </Typography>
             <Line />
-            <section
-              style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
-            >
-              <Typography size="1.5rem" color="skyBlue" fontWeight="bold">
-                FrontEnd
-              </Typography>
-              <button onClick={() => window.open('https://github.com/KoJaem')}>
+            <ButtonWrapper>
+              {/* <button onClick={() => window.open('https://github.com/KoJaem')}>
                 <Typography size="1.5rem" color="magenta" fontWeight="bold">
                   GitHub
                 </Typography>
-              </button>
-            </section>
+              </button> */}
+
+              <IconButton
+                backgroundColor="skyBlue"
+                style={{ gap: 4 }}
+                onClick={() => window.open('https://github.com/KoJaem')}
+              >
+
+                  <Image
+                    src={'/GithubIcon.png'}
+                    width={30}
+                    height={30}
+                    alt="Github"
+                  />
+                <Typography
+                  size="1.3rem"
+                  color="black"
+                  fontWeight="bold"
+                  lineHeight={1.2}
+                  notBreak
+                >
+                  Github
+                </Typography>
+              </IconButton>
+
+              <IconButton
+                style={{
+                  gap: 4,
+                }}
+                backgroundColor="white"
+                onClick={() =>
+                  window.open(
+                    'https://quiet-tangerine-0f6.notion.site/5d7f92f6e40a4ed7b019a69600060629',
+                  )
+                }
+              >
+               
+                  <Image src={'/notionIcon.png'} width={30} height={30} alt="Notion" />
+                
+                <Typography
+                  size="1.3rem"
+                  color="black"
+                  fontWeight="bold"
+                  lineHeight={1.2}
+                  notBreak
+                >
+                  Notion
+                </Typography>
+              </IconButton>
+            </ButtonWrapper>
           </InfoWrapper>
           <Typography size="1.2rem" color="darkGray" fontWeight="bold">
             내일의 나에게 부끄럽지 않은 하루를 보내자
           </Typography>
-          <MoreButton
-            style={{
-              alignSelf: 'flex-end',
-              display: 'flex',
-              gap: 8,
-              alignItems: 'center',
-              position: 'relative',
-            }}
-            backgroundColor="white"
-            onClick={() =>
-              window.open(
-                'https://quiet-tangerine-0f6.notion.site/5d7f92f6e40a4ed7b019a69600060629',
-              )
-            }
-          >
-            <Image
-              src={'/notionIcon.png'}
-              width={100}
-              height={100}
-              alt="Notion"
-            />
-            <Typography
-              size="1.3rem"
-              color="black"
-              fontWeight="bold"
-              lineHeight={1.2}
-            >
-              Notion
-            </Typography>
-          </MoreButton>
         </Contents>
       </Wrapper>
     </Container>
@@ -134,6 +157,18 @@ const Contents = styled.section`
   gap: 20px 0;
 `;
 
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
+`;
+
 const InfoWrapper = styled.section`
   display: flex;
   flex-direction: column;
@@ -148,4 +183,20 @@ const Line = styled.hr`
   justify-self: flex-start;
   margin: 0;
   width: 100%;
+`;
+
+type StyledProps = {
+  backgroundColor?: keyof customColorType;
+};
+
+const IconButton = styled.button<StyledProps>`
+  background-color: ${({ backgroundColor }) =>
+    backgroundColor ? handleColor(backgroundColor) : customColor.purple};
+  border-radius: 24px;
+  padding: 12px 20px;
+  width: 160px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { whiteShadow } from 'src/common/fontShadow';
 
 type Props = {
   text: string;

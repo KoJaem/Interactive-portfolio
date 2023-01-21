@@ -24,6 +24,8 @@ export type TypographyProps = React.PropsWithChildren<{
   lineHeight?: number;
   fontHidden?: boolean;
   fontShadow?: string;
+  opacity?: number;
+  notBreak?: boolean;
   style?: CSSProperties;
 }>;
 export const Typography = (props: TypographyProps) => {
@@ -37,14 +39,15 @@ export const handleColor = (color: keyof customColorType) => {
 };
 
 const TypographyText = styled.div<TypographyProps>`
-  font-size: ${({ size }) => isNaN(Number(size)) ? size : size + "px"};
+  font-size: ${({ size }) => (isNaN(Number(size)) ? size : size + 'px')};
   color: ${({ color }) => (color ? handleColor(color) : customColor.black)};
-  text-align: ${({ textAlign }) => textAlign ? textAlign : ''};
+  text-align: ${({ textAlign }) => (textAlign ? textAlign : '')};
   font-weight: ${({ fontWeight }) => fontWeight};
-  line-height: ${({ lineHeight }) => lineHeight ? lineHeight : 1};
+  line-height: ${({ lineHeight }) => (lineHeight ? lineHeight : 1)};
+  opacity: ${({ opacity }) => (opacity ? opacity : 1)};
+  ${({ notBreak }) => (notBreak ? `white-space:nowrap;` : '')};
 
   ${({ fontHidden }) =>
-    fontHidden ? "overflow: hidden;text-overflow: ellipsis;" : ""}
-  ${({fontShadow}) => 
-    fontShadow ? `text-shadow: ${fontShadow}` : ""}
+    fontHidden ? 'overflow: hidden;text-overflow: ellipsis;' : ''}
+  ${({ fontShadow }) => (fontShadow ? `text-shadow: ${fontShadow}` : '')}
 `;

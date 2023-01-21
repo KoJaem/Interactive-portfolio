@@ -108,10 +108,18 @@ export const Intro = () => {
       }}
     >
       <Welcome style={{ scale: containerScale }}>
-        <motion.ul style={{ opacity: titleOpacity, marginBottom: 20 }}>
+        <motion.ul
+          style={{
+            opacity: titleOpacity,
+            marginBottom: 20,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 40,
+          }}
+        >
           <motion.li variants={introVariants}>
             <Typography
-              size="3rem"
+              size="2.5rem"
               color="gray"
               fontWeight="bold"
               lineHeight={1.5}
@@ -130,7 +138,7 @@ export const Intro = () => {
             variants={introVariants}
           >
             <Typography
-              size="4rem"
+              size="4.5rem"
               color="purple"
               fontWeight="bold"
               fontShadow={purpleBoldShadow}
@@ -138,12 +146,12 @@ export const Intro = () => {
               KoJaem&apos;s&nbsp;
             </Typography>
             <Typography
-              size="4rem"
+              size="4.5rem"
               color="magenta"
               fontWeight="bold"
               fontShadow={magentaBoldShadow}
             >
-              exhibition
+              Exhibition
             </Typography>
           </motion.li>
         </motion.ul>
@@ -188,24 +196,24 @@ export const Intro = () => {
       </Welcome>
       <SecondIntro>
         <Name style={{ opacity: nameOpacity, y: nameYPosition }}>
-          <Typography
+          <GradientTypography
             size="4rem"
-            color="skyBlue"
+            color1='purple'
+            color2='magenta'
             lineHeight={1.5}
             fontWeight="bold"
-            fontShadow={skyBlueBoldShadow}
           >
             FrontEnd
-          </Typography>
+          </GradientTypography>
         </Name>
         <Interest style={{ opacity: InterestOpacity }}>
           <Typography
             size="1.6rem"
-            color="magenta"
+            color="skyBlue"
             fontWeight="bold"
             lineHeight={1.5}
             textAlign="center"
-            fontShadow={purpleBoldShadow}
+            fontShadow={skyBlueBoldShadow}
           >
             UI, UX
             <span

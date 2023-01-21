@@ -21,7 +21,7 @@ export const MySkills = ({ refs }: Props) => {
       </Typography>
       <Wrapper>
         <Left>
-          <Typography size="2.5rem" color="black" fontWeight="bold">
+          <Typography size="2rem" color="black" fontWeight='bold' opacity={0.5}>
             Tech
           </Typography>
           <SmallImageContainer>
@@ -51,7 +51,7 @@ export const MySkills = ({ refs }: Props) => {
         </Left>
         <Right>
           <CategoryWrapper>
-            <Typography size="2.5rem" color="black" fontWeight="bold">
+            <Typography size="2.5rem" color="black" fontWeight='bold' opacity={0.5}>
               Community
             </Typography>
             {mySkills.Community.map((data, i) => (
@@ -67,7 +67,7 @@ export const MySkills = ({ refs }: Props) => {
             ))}
           </CategoryWrapper>
           <CategoryWrapper>
-            <Typography size="2.5rem" color="black" fontWeight="bold">
+            <Typography size="2.5rem" color="black" fontWeight='bold' opacity={0.5}>
               Deployment
             </Typography>
             {mySkills.Deployment.map((data, i) => (
@@ -83,7 +83,7 @@ export const MySkills = ({ refs }: Props) => {
             ))}
           </CategoryWrapper>
           <CategoryWrapper>
-            <Typography size="2.5rem" color="black" fontWeight="bold">
+            <Typography size="2.5rem" color="black" fontWeight='bold' opacity={0.5}>
               API
             </Typography>
             {mySkills.API.map((data, i) => (
@@ -99,7 +99,7 @@ export const MySkills = ({ refs }: Props) => {
             ))}
           </CategoryWrapper>
           <CategoryWrapper>
-            <Typography size="2.5rem" color="black" fontWeight="bold">
+            <Typography size="2.5rem" color="black" fontWeight='bold' opacity={0.5}>
               Mobile
             </Typography>
             {mySkills.Mobile.map((data, i) => (
@@ -125,25 +125,28 @@ const Container = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background: linear-gradient(${customColor.black} 1%, ${customColor.lightMagenta} 10% 90%, ${customColor.black} 100%);
   gap: 80px 0;
+  padding: 300px 0;
 `;
 
 const Wrapper = styled.section`
   width: 100%;
-  max-width: 1178px;
   /* background-color: ${customColor.white}; */
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle,
-    ${customColor.lightMagenta},
-    ${customColor.lightPurple}
-  );
+    ${customColor.orange},
+    ${customColor.lightMagenta}
+  ); */
+  /* background-color: ${customColor.darkGray}20; */
+  max-width: 1178px;
   position: relative;
   display: flex;
   justify-content: space-around;
   padding: 80px;
   padding-top: 0;
   flex-wrap: wrap;
-  border-radius: 24px;
   @media screen and (min-width: 840px) {
     flex-wrap: nowrap;
   }
