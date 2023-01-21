@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { customColor } from 'src/constants';
 import styled, { css } from 'styled-components';
 import { AiFillGithub } from 'react-icons/ai';
 import { GradientTypography } from 'src/components/GradientTypography';
 import { GradientSvg } from './GradientSvgIcon';
 import { headers } from 'src/dummy/header';
+import { throttle } from 'lodash';
 const buttonVariants = {
   initial: {
     color: customColor.darkGray,
@@ -25,6 +26,32 @@ type Props = {
   refs: React.MutableRefObject<null[] | HTMLElement[]>;
 };
 export const Header = ({ refs }: Props) => {
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = throttle(() => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY.current && currentScrollY > window.innerHeight * 3.8) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      lastScrollY.current = currentScrollY;
+    }, 100);
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // useEffect(() => {
+  //   console.log(lastScrollY.current);
+  // }, [lastScrollY]);
+
+  // useEffect(() => {
+  //   console.log(isVisible);
+  // }, [isVisible]);
+
   const scrollMove = (index: number) => {
     const value = refs.current[index]?.offsetTop;
     const offset = index === 0 ? 0 : 100;
@@ -33,8 +60,9 @@ export const Header = ({ refs }: Props) => {
       behavior: 'smooth',
     });
   };
+
   return (
-    <Container>
+    <Container className={`header_${isVisible ? '' : 'hidden'}`}>
       <Title onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
         <GradientTypography
           size="2.5rem"
@@ -102,6 +130,7 @@ const Container = styled.section`
   padding: 0 20px;
   justify-content: space-between;
   z-index: 1;
+  transition: top 0.5s ease;
   @media screen and (min-width: 480px) {
     display: flex;
     align-items: center;

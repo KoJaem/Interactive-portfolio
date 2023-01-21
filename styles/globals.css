@@ -177,3 +177,7 @@ button:hover {
 button:active {
   transform: scale(0.99);
 }
+
+.header_hidden {
+  top: -80px !important;
+}

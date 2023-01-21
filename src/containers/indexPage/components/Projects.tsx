@@ -1,19 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React from 'react';
 import styled from 'styled-components';
-import { EffectCards } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
-import Image from 'next/image';
-import { projects } from 'src/dummy/projects';
 import { MoreButton, Typography } from 'src/components';
-import { motion } from 'framer-motion';
-import { ThreeDProjectSwiper } from './index';
-import { customColor } from 'src/constants';
-import { SpectrumText } from 'src/components/SpectrumText';
-import { whiteBoldShadow } from 'src/common/fontShadow';
 import { useRouter } from 'next/router';
 import { ProjectSwiper2 } from 'src/containers/indexPage/components/ProjectSwiper-newVersion';
+import { GradientTypography } from 'src/components/GradientTypography';
 type Props = {
   refs: React.MutableRefObject<null[] | HTMLElement[]>;
 };
@@ -22,9 +14,15 @@ export const Projects = ({ refs }: Props) => {
   return (
     <Container ref={el => (refs.current[2] = el)}>
       <Title>
-        <Typography size="4rem" color="white">
-          <SpectrumText text="Projects" shadow={whiteBoldShadow} />
-        </Typography>
+        <GradientTypography
+          size="4rem"
+          color1="purple"
+          color2="magenta"
+          lineHeight={1.5}
+          fontWeight="bold"
+        >
+          Projects
+        </GradientTypography>
       </Title>
       {/* <ThreeDProjectSwiper /> */}
       <ProjectSwiper2 />
