@@ -36,6 +36,7 @@ export const ProjectSwiper = ({ slideChange }: Props) => {
               <Image
                 src={`/imgs/projects/${data.slideImage}`}
                 layout="fill"
+                objectFit='cover'
                 alt="project"
                 style={{ borderRadius: '24px' }}
               />
@@ -75,7 +76,8 @@ const Wrapper = styled.section`
   padding: 16px 16px 8px 16px;
   gap: 8px;
   border-radius: 24px;
-  box-shadow: 4px 4px 5px ${customColor.darkGray};
+  background-color: transparent;
+  box-shadow: 4px 4px 5px ${customColor.skyBlue};
 `;
 
 const StyledSwiper = styled(Swiper)`
@@ -99,7 +101,7 @@ const ButtonCss = css`
   top: 50%;
   z-index: 999;
   background-color: ${customColor.white};
-  --swiper-theme-color: ${customColor.magenta}; // Todo 컬러 변경
+  --swiper-theme-color: ${customColor.magenta};
   width: 60px;
   height: 60px;
   border-radius: 999px;
@@ -124,7 +126,7 @@ const PaginationButton = styled.div`
   justify-content: space-evenly;
   align-items: center;
   border-radius: 20px;
-  --swiper-theme-color: ${customColor.skyBlue};
+  --swiper-theme-color: ${customColor.blue};
   .swiper-pagination-bullet {
     width: 20px;
     height: 20px;

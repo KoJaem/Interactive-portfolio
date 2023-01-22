@@ -3,12 +3,15 @@ import React, { ReactNode, useState } from 'react';
 import { Typography } from 'src/components';
 import styled from 'styled-components';
 import { customColor } from 'src/constants';
+import { handleColor } from 'src/components/Typography';
+import { customColorType } from 'src/constants/customColor';
 type Props = {
-  color: string;
+  color: keyof customColorType;
   paddingLR: number;
   paddingBT: number;
   gap?: number;
   description: string;
+  maxHeight?: number;
   children: ReactNode;
 };
 export const TextBox = ({
@@ -44,26 +47,28 @@ export const TextBox = ({
   );
 };
 type StyledProps = {
-  color: string;
+  color: keyof customColorType;
   padding_lr: number;
   padding_bt: number;
+  maxHeight?: number;
   gap?: number;
 };
 const Container = styled(motion.section)<StyledProps>`
   position: relative;
-  background-color: ${({ color }) => color};
+  background-color: ${({ color }) => `${handleColor(color)}50`};
   padding: ${({ padding_bt, padding_lr }) => `${padding_bt}px ${padding_lr}px`};
   border-radius: 24px;
   width: 100%;
-  max-width: 900px;
   white-space: pre-wrap;
   display: flex;
+  justify-content: center;
   gap: ${({ gap }) => gap && `${gap}px`};
   flex-direction: column;
-  justify-content: center;
   overflow: hidden;
   cursor: default;
-  box-shadow: 4px 4px 5px ${customColor.darkGray};
+  max-height: ${({ maxHeight }) => (maxHeight ? `${maxHeight}px` : '')};
+  overflow-y: auto;
+  box-shadow: 4px 4px 5px ${customColor.skyBlue};
 `;
 
 const Description = styled(motion.section)`

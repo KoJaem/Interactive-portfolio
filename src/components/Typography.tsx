@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
 import { customColorType, customColor } from "src/constants/customColor";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export type TypographyProps = React.PropsWithChildren<{
   size: string;
@@ -27,6 +27,7 @@ export type TypographyProps = React.PropsWithChildren<{
   opacity?: number;
   notBreak?: boolean;
   style?: CSSProperties;
+  listPoint?: boolean;
 }>;
 export const Typography = (props: TypographyProps) => {
   return <TypographyText style={props.style} {...props}>{props.children}</TypographyText>;
@@ -50,4 +51,11 @@ const TypographyText = styled.div<TypographyProps>`
   ${({ fontHidden }) =>
     fontHidden ? 'overflow: hidden;text-overflow: ellipsis;' : ''}
   ${({ fontShadow }) => (fontShadow ? `text-shadow: ${fontShadow}` : '')}
+
+  ${({ listPoint }) => listPoint ? css`
+  ::before {
+    content: '- ';
+  }
+  ` : ''};
+
 `;

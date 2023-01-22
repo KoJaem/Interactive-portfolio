@@ -3,24 +3,19 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Typography } from 'src/components';
 import { TextBox } from './TextBox';
-import { MdClose } from 'react-icons/md';
-import { ImEnlarge } from 'react-icons/im';
 import { projects } from 'src/dummy/projects';
 import Link from 'next/link';
-import { linkType } from 'src/types/project.type';
 import { customColor } from 'src/constants';
 type Props = {
-  activeIndex : number;
-}
+  activeIndex: number;
+};
 export const ProjectIntro = ({ activeIndex }: Props) => {
   const project = projects[activeIndex];
-  // console.log(activeIndex)
   return (
     <Container>
       <Wrapper>
         <Title>
-          <Typography size="2rem" color={'purple'} fontWeight="bold">
-            {/* {projectInfo.title} */}
+          <Typography size="1rem" color={'purple'} fontWeight="bold">
             {project.title}
           </Typography>
           <Typography size="1rem" fontWeight="bold">
@@ -29,23 +24,23 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
         </Title>
         <Introduction>
           <TextBox
-            color="#6774E5"
-            paddingLR={28}
-            paddingBT={16}
+            color="deepBlue"
+            paddingLR={20}
+            paddingBT={10}
             description="프로젝트 인원"
           >
-            <Typography size="1.3rem" color="white" fontWeight="bold">
+            <Typography size="1rem" color="white" fontWeight="bold">
               {project.people}
             </Typography>
           </TextBox>
           <TextBox
-            color="#78ABF6"
-            paddingLR={28}
-            paddingBT={40}
+            color="skyBlue"
+            paddingLR={20}
+            paddingBT={20}
             description="프로젝트 소개"
           >
             <Typography
-              size="1.3rem"
+              size="0.8rem"
               fontWeight="bold"
               color="white"
               lineHeight={1.2}
@@ -55,16 +50,18 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
           </TextBox>
           <Flex>
             <TextBox
-              color="#78ABF6"
-              paddingLR={28}
-              paddingBT={20}
+              color="skyBlue"
+              paddingLR={20}
+              paddingBT={10}
+              gap={10}
               description="개발환경"
             >
               {project.developEnv.map((data, i) => (
                 <Typography
-                  size="1.2rem"
+                  size="0.8rem"
                   color="white"
                   fontWeight="bold"
+                  listPoint
                   key={i}
                 >
                   {data}
@@ -72,26 +69,28 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
               ))}
             </TextBox>
             <TextBox
-              color="#78ABF6"
+              color="skyBlue"
               paddingLR={28}
               paddingBT={20}
               description="나의 역할"
+              gap={10}
             >
-              {/* {project.myRole.map((data, i) => (
+              {project.myRole?.map((data, i) => (
                   <Typography
-                    size="1.2rem"
+                    size="0.8rem"
                     color="white"
                     fontWeight="bold"
+                    listPoint
                     key={i}
                   >
                     {data}
                   </Typography>
-                ))} */}
+                ))}
             </TextBox>
           </Flex>
           <LinkBox>
             {Object.keys(project.link).map((data, i) => (
-              <Typography size="1.2rem" color="white" fontWeight="bold" key={i}>
+              <Typography size="0.8rem" color="skyBlue" fontWeight="bold" key={i}>
                 <Link href={project.link[data]!}>
                   <a target="_blank">{data}</a>
                 </Link>
@@ -111,39 +110,33 @@ const Container = styled(motion.section)`
   width: 100%;
   height: max-content;
   position: relative;
-  margin-bottom: 40px;
+  padding: 20px;
 `;
 
-const Wrapper = styled.section``;
-
-const IconWrapper = styled(motion.section)`
-  position: absolute;
+const Wrapper = styled.section`
   display: flex;
-  align-items: center;
   justify-content: center;
-  top: 12px;
-  right: 80px;
-`;
-
-const ExitBtn = styled(MdClose)`
-  cursor: pointer;
-`;
-
-const DetailBtn = styled(ImEnlarge)`
-  cursor: pointer;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
 `;
 
 const Title = styled.section`
   display: flex;
   align-items: baseline;
   gap: 0 12px;
+  width: 100%;
+  justify-content: center;
 `;
 
 const Introduction = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px 0;
+  gap: 12px;
+  width: 100%;
 `;
 
 const Flex = styled.section`
@@ -154,7 +147,7 @@ const Flex = styled.section`
 
 const LinkBox = styled.div`
   position: relative;
-  background-color: #78abf6;
+  background-color: ${customColor.skyBlue}30;
   padding: 28px 20px;
   border-radius: 24px;
   gap: 20px;

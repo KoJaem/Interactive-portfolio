@@ -1,11 +1,8 @@
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
-import { useRecoilValue } from 'recoil';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
 import { ProjectSwiper } from './components/ProjectSwiper';
-import { Typography } from 'src/components';
-import { projects } from 'src/dummy/projects';
 import { ProjectIntro } from './components';
 
 export const ProjectGalleryPage = () => {
@@ -36,45 +33,22 @@ export const ProjectGalleryPage = () => {
             opacity: infoAnimation ? [1, 0] : [0, 1],
             y: infoAnimation ? [0, 10] : [10, 0],
           }}
-          transition={{ duration: 0.1 }}
+          transition={{ duration: 0.2 }}
+          style={{width: '100%'}}
         >
           <ProjectIntro activeIndex={activeIndex}/>
         </motion.div>
-        {/* <Typography size="1.5rem" color="black">
-          {projects[activeIndex].info}
-        </Typography> */}
-      </Wrapper>
+      </Wrapper>  
     </Container>
   );
 };
-{
-  /* <ClickImage src="/fashion-exhibition.jpg" /> */
-}
-{
-  /* <MoveImage src="/sample1.jpg" /> */
-}
-{
-  /* <MoveImage src="/sample2.jpg" /> */
-}
-{
-  /* <MoveImage src="/sample3.jpg" /> */
-}
-{
-  /* <AnimatePresence mode="wait"> */
-}
-{
-  /* {selectedProject && <SimpleIntro />} */
-}
-{
-  /* </AnimatePresence> */
-}
 const Container = styled(motion.div)`
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
   height: max-content;
-  background-color: ${customColor.lightYellow};
+  background: linear-gradient(${customColor.skyBlue}, ${customColor.white});
 `;
 
 const Wrapper = styled(motion.div)`
