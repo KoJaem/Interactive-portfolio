@@ -45,11 +45,11 @@ export const Intro = () => {
   };
 
   // 스크롤 확인용 코드
-  useEffect(() => {
-    return scrollYProgress.onChange(lastest => {
-      console.log(lastest);
-    });
-  }, []);
+  // useEffect(() => {
+  //   return scrollYProgress.onChange(lastest => {
+  //     console.log(lastest);
+  //   });
+  // }, []);
 
   const containerScale = useTransform(
     scrollYProgress,

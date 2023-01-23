@@ -5,9 +5,7 @@ type Props = {
   children: React.ReactNode;
 };
 export const TransitionSelect = ({ asPath, children }: Props) => {
-  console.log(asPath);
   if (asPath === '/') return <ScreenAndSlide>{children}</ScreenAndSlide>;
-  if (asPath === '/projectGallery')
-    return <SlideAndScreen>{children}</SlideAndScreen>;
+  if (asPath === '/projectGallery') return <SlideAndScreen>{children}</SlideAndScreen>;
   return <>{children}</>;
 };

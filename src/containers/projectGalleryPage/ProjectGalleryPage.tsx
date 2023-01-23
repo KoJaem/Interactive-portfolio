@@ -22,9 +22,9 @@ export const ProjectGalleryPage = () => {
 
   const router = useRouter();
 
-  useEffect(() => {
-    console.log(activeIndex);
-  }, [activeIndex]);
+  // useEffect(() => {
+  //   console.log(activeIndex);
+  // }, [activeIndex]);
 
   const slideChange = ({ realIndex }: { realIndex: number }) => {
     setActiveIndex(realIndex);

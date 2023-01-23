@@ -25,9 +25,9 @@ export const ProjectSwiper2 = () => {
     setActiveIndex(realIndex);
   };
 
-  useEffect(() => {
-    console.log(activeIndex);
-  }, [activeIndex]);
+  // useEffect(() => {
+  //   console.log(activeIndex);
+  // }, [activeIndex]);
 
   return (
     <Container>
