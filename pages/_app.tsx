@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
+        <link rel="shortcut icon" href="/titleImage.png" type="image/x-icon" />
         <meta name="viewport" content="viewport-fit=cover" />
       </Head>
       <RecoilRoot>

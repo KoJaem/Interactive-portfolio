@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import React, { useEffect } from 'react';
+import React from 'react';
+import { customColor } from 'src/constants';
 import styled, { css } from 'styled-components';
 
 export const Screen = () => {
@@ -56,7 +57,8 @@ const screenCss = css`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #5c9ea7;
+  background: linear-gradient(${customColor.skyBlue}, ${customColor.black});
+  /* background-color: ${customColor.skyBlue}; */
   z-index: 9;
 `;
 

@@ -2,3 +2,4 @@
 export { Typography } from './Typography';
 export { Layout } from './Layout';
 export { MoreButton } from './MoreButton';
+export { Seo } from './Seo';

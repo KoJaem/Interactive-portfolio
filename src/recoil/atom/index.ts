@@ -1,1 +1,1 @@
-export { selectProject } from './selectProject';
+export { indexScreenAnimation } from './indexScreenAnimation';

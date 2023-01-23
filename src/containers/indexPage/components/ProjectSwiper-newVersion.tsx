@@ -1,11 +1,11 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import Image from 'next/image';
-import { projects } from 'src/dummy/projects';
+import { projects } from 'src/dummy';
 import { customColor } from 'src/constants';
 import { Autoplay, EffectCoverflow } from 'swiper';
 import { motion } from 'framer-motion';

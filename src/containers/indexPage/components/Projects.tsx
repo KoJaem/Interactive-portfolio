@@ -6,11 +6,14 @@ import { MoreButton, Typography } from 'src/components';
 import { useRouter } from 'next/router';
 import { ProjectSwiper2 } from 'src/containers/indexPage/components/ProjectSwiper-newVersion';
 import { GradientTypography } from 'src/components/GradientTypography';
+import { useSetRecoilState } from 'recoil';
+import { indexScreenAnimation } from 'src/recoil/atom';
 type Props = {
   refs: React.MutableRefObject<null[] | HTMLElement[]>;
 };
 export const Projects = ({ refs }: Props) => {
   const router = useRouter();
+  const setIndexScreenAnimation = useSetRecoilState(indexScreenAnimation);
   return (
     <Container ref={el => (refs.current[2] = el)}>
       <Title>
@@ -29,6 +32,7 @@ export const Projects = ({ refs }: Props) => {
       <ButtonWrapper>
         <MoreButton
           onClick={async () => {
+            setIndexScreenAnimation(false);
             await router.push('projectGallery');
             window.scrollTo({ top: refs.current[2]?.offsetTop! - 50 });
           }}

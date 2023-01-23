@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
-import { Screen } from './Screen';
+import { Screen } from './index';
 
 type Props = {
   children: ReactNode;

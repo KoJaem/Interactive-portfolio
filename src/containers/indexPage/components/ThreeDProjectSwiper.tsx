@@ -6,7 +6,7 @@ import 'swiper/css/autoplay';
 import styled from 'styled-components';
 import { EffectCoverflow, Autoplay } from 'swiper';
 import Image from 'next/image';
-import { projects } from 'src/dummy/projects';
+import { projects } from 'src/dummy';
 
 export const ThreeDProjectSwiper = () => {
   return (

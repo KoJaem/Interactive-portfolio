@@ -3,7 +3,7 @@ import React from 'react';
 import { purpleBoldShadow } from 'src/common/fontShadow';
 import { Typography } from 'src/components';
 import { customColor } from 'src/constants';
-import { mySkills } from 'src/dummy/mySkills';
+import { mySkills } from 'src/dummy';
 import styled, { css } from 'styled-components';
 type Props = {
   refs: React.MutableRefObject<null[] | HTMLElement[]>;

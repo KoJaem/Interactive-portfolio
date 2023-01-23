@@ -5,7 +5,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import styled, { css } from 'styled-components';
 import Image from 'next/image';
-import { projects } from 'src/dummy/projects';
+import { projects } from 'src/dummy';
 import { Navigation, Pagination } from 'swiper';
 import { customColor } from 'src/constants';
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';

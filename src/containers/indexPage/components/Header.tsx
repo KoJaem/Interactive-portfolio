@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components';
 import { AiFillGithub } from 'react-icons/ai';
 import { GradientTypography } from 'src/components/GradientTypography';
 import { GradientSvg } from './GradientSvgIcon';
-import { headers } from 'src/dummy/header';
+import { headers } from 'src/dummy';
 import { throttle } from 'lodash';
 const buttonVariants = {
   initial: {
@@ -165,7 +165,6 @@ const buttonCss = css`
   height: 40px;
   padding: 12px 0;
   border-radius: 20px;
-  box-sizing: border-box;
   font-size: 1rem;
   font-weight: bold;
 `;
