@@ -83,7 +83,7 @@ const Container = styled(motion.div)`
   width: 100%;
   height: 100%;
   padding-bottom: 60px;
-  overflow: hidden;
+  overflow-y: auto;
   background: linear-gradient(${customColor.skyBlue}, ${customColor.white});
 `;
 
