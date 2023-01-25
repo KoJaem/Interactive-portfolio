@@ -1,15 +1,12 @@
 import { motion } from 'framer-motion';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
 import { ProjectSwiper } from './components/ProjectSwiper';
 import { ProjectIntro } from './components';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { Header } from '../indexPage/components';
 import { RxCross1 } from 'react-icons/rx';
-import { useSetRecoilState } from 'recoil';
-import { indexScreenAnimation } from 'src/recoil/atom';
 
 const ButtonAnimate = {
   opacity: [0, 1],
@@ -18,7 +15,6 @@ const ButtonAnimate = {
 export const ProjectGalleryPage = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [infoAnimation, setInfoAnimation] = useState<boolean>(false);
-  const setIndexScreenAnimation = useSetRecoilState(indexScreenAnimation);
 
   const router = useRouter();
 
@@ -35,13 +31,7 @@ export const ProjectGalleryPage = () => {
 
   return (
     <Container>
-      <PrevButton
-        animate={ButtonAnimate}
-        onClick={() => {
-          setIndexScreenAnimation(true);
-          router.push('/');
-        }}
-      >
+      <PrevButton animate={ButtonAnimate} onClick={() => router.push('/')}>
         <RxCross1 size={40} />
       </PrevButton>
 

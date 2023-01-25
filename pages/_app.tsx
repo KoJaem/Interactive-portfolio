@@ -15,6 +15,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <link rel="shortcut icon" href="/titleImage.png" type="image/x-icon" />
         <meta name="viewport" content="viewport-fit=cover" />
+        <meta property="og:title" content="FrontEnd 개발자 KoJaem" />
+        <meta property="og:description" content="KoJaem Portfolio" />
+        <meta property="og:image" content="/thumbnail.jpg" />
       </Head>
       <RecoilRoot>
         <Layout>
