@@ -10,8 +10,8 @@ export const Screen = () => {
     <>
       <Left
         initial={{
-          scaleX: asPath !== '/projectGallery' ? 0.5 : 0,
-          height: asPath !== '/projectGallery' ? '100vh' : 0,
+          scaleX: asPath === '/' ? 0.5 : 0,
+          height: asPath === '/' ? '100vh' : 0,
         }}
         animate={{
           scaleX: 0,
@@ -30,8 +30,8 @@ export const Screen = () => {
       />
       <Right
         initial={{
-          scaleX: asPath !== '/projectGallery' ? 0.5 : 0,
-          height: asPath !== '/projectGallery' ? '100vh' : 0,
+          scaleX: asPath === '/' ? 0.5 : 0,
+          height: asPath === '/' ? '100vh' : 0,
         }}
         animate={{
           scaleX: 0,
