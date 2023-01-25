@@ -71,6 +71,7 @@ export const ProjectSwiper2 = () => {
                     src={`/imgs/projects/${data.slideImage}`}
                     layout="fill"
                     alt="project"
+                    objectFit='cover'
                     style={{ borderRadius: 12 }}
                   />
                 </ImageWrapper>

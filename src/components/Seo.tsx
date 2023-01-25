@@ -5,7 +5,7 @@ type Props = {
 export const Seo = ({ title }: Props) => {
   return (
     <Head>
-      <title>KoJaem&apos;s Exhibition | {title}</title>
+      <title>{`KoJaem&apos;s Exhibition | ${title}`}</title>
     </Head>
   );
 }

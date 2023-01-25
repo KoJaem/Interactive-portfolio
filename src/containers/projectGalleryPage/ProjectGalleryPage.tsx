@@ -82,6 +82,7 @@ const Container = styled(motion.div)`
   /* flex-direction: column; */
   width: 100%;
   height: 100%;
+  position: relative;
   padding-bottom: 60px;
   overflow-y: auto;
   background: linear-gradient(${customColor.skyBlue}, ${customColor.white});

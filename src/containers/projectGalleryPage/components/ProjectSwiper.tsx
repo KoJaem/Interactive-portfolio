@@ -10,6 +10,7 @@ import { Navigation, Pagination } from 'swiper';
 import { customColor } from 'src/constants';
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
 type Props = {
+  // activeIndex: number;
   slideChange: ({ realIndex }: { realIndex: number }) => void;
 };
 export const ProjectSwiper = ({ slideChange }: Props) => {
@@ -36,7 +37,7 @@ export const ProjectSwiper = ({ slideChange }: Props) => {
               <Image
                 src={`/imgs/projects/${data.slideImage}`}
                 layout="fill"
-                objectFit='cover'
+                objectFit="cover"
                 alt="project"
                 style={{ borderRadius: '24px' }}
               />
@@ -50,6 +51,10 @@ export const ProjectSwiper = ({ slideChange }: Props) => {
           <MdNavigateNext size={40} />
         </NextButton>
         <PaginationButton className="swiper_pagination" />
+        {/* 프로젝트 수 많아지면 페이지네이션 없애고 아래코드로 수정하기 */}
+        {/* <PaginationButton> 
+          <Typography size="1rem" color='blue' fontWeight='bold'>{`${activeIndex + 1} / ${projects.length}`}</Typography>
+        </PaginationButton> */}
       </Wrapper>
     </Container>
   );

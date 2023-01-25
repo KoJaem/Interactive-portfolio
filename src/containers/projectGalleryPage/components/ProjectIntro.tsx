@@ -34,7 +34,7 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
             </Typography>
           </TextBox>
           <TextBox
-            color="skyBlue"
+            color="magenta"
             paddingLR={20}
             paddingBT={20}
             description="프로젝트 소개"
@@ -43,14 +43,29 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
               size="0.8rem"
               fontWeight="bold"
               color="white"
-              lineHeight={1.2}
+              lineHeight={1.5}
             >
               {project.info}
             </Typography>
           </TextBox>
+          <TextBox
+            color="magenta"
+            paddingLR={20}
+            paddingBT={20}
+            description="프로젝트 기능"
+          >
+            <Typography
+              size="0.8rem"
+              fontWeight="bold"
+              color="white"
+              lineHeight={1.5}
+            >
+              {project.function}
+            </Typography>
+          </TextBox>
           <Flex>
             <TextBox
-              color="skyBlue"
+              color="magenta"
               paddingLR={20}
               paddingBT={10}
               gap={10}
@@ -69,28 +84,33 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
               ))}
             </TextBox>
             <TextBox
-              color="skyBlue"
+              color="magenta"
               paddingLR={28}
               paddingBT={20}
               description="나의 역할"
               gap={10}
             >
               {project.myRole?.map((data, i) => (
-                  <Typography
-                    size="0.8rem"
-                    color="white"
-                    fontWeight="bold"
-                    listPoint
-                    key={i}
-                  >
-                    {data}
-                  </Typography>
-                ))}
+                <Typography
+                  size="0.8rem"
+                  color="white"
+                  fontWeight="bold"
+                  listPoint
+                  key={i}
+                >
+                  {data}
+                </Typography>
+              ))}
             </TextBox>
           </Flex>
           <LinkBox>
             {Object.keys(project.link).map((data, i) => (
-              <Typography size="0.8rem" color="skyBlue" fontWeight="bold" key={i}>
+              <Typography
+                size="0.8rem"
+                color="purple"
+                fontWeight="bold"
+                key={i}
+              >
                 <Link href={project.link[data]!}>
                   <a target="_blank">{data}</a>
                 </Link>
@@ -147,7 +167,7 @@ const Flex = styled.section`
 
 const LinkBox = styled.div`
   position: relative;
-  background-color: ${customColor.skyBlue}30;
+  background-color: ${customColor.magenta}50;
   padding: 28px 20px;
   border-radius: 24px;
   gap: 20px;
