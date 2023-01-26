@@ -7,8 +7,7 @@ export const projects: projectType[] = [
     people: '프론트 4 (개인프로젝트 + 피드백)',
     date: ['2021.10', '2021.12'],
     imageUrl: ['fashion-exhibition.jpg', 'fashion-exhibition.jpg'],
-    info: `프로젝트의 주제는 "사용자에게 좋은 경험을 줄 수 있는 Interactive 한 소개 사이트를 만들어보자" 입니다.
-저는 소개할 주제로 패션전시회를 선택했습니다
+    info: `프로젝트의 주제는 <color>"사용자에게 좋은 경험을 줄 수 있는 Interactive 한 소개 사이트를 만들어보자"</color> 입니다.
 Framer 라는 리액트 라이브러리를 활용하여 만들었던, 제 첫 React 협업 프로젝트 입니다.
 컨셉이 아예 다른 사이트를 개개인이 디자인부터 완전히 새롭게 작업한 뒤,
 마지막에 합치는 형식으로 진행되었기에

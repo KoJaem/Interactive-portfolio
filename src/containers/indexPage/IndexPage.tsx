@@ -13,7 +13,7 @@ export const IndexPage = () => {
       <MyInfo refs={buttonRefs} />
       <Gap />
       <MySkills refs={buttonRefs} />
-      <GapLine />
+      <Gap />
       <Projects refs={buttonRefs} />
     </Container>
   );

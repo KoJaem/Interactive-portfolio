@@ -6,6 +6,8 @@ import { TextBox } from './TextBox';
 import { projects } from 'src/dummy/projects';
 import Link from 'next/link';
 import { customColor } from 'src/constants';
+import { ChangeColorText } from './index';
+
 type Props = {
   activeIndex: number;
 };
@@ -18,7 +20,7 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
           <Typography size="1rem" color={'purple'} fontWeight="bold">
             {project.title}
           </Typography>
-          <Typography size="1rem" fontWeight="bold">
+          <Typography size="1rem" >
             {`${project.date[0]} ~ ${project.date[1]}`}
           </Typography>
         </Title>
@@ -29,7 +31,7 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
             paddingBT={10}
             description="프로젝트 인원"
           >
-            <Typography size="1rem" color="white" fontWeight="bold">
+            <Typography size="1rem" color="white" >
               {project.people}
             </Typography>
           </TextBox>
@@ -39,14 +41,7 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
             paddingBT={20}
             description="프로젝트 소개"
           >
-            <Typography
-              size="0.8rem"
-              fontWeight="bold"
-              color="white"
-              lineHeight={1.5}
-            >
-              {project.info}
-            </Typography>
+            <ChangeColorText text={project.info}/>
           </TextBox>
           <TextBox
             color="magenta"
@@ -56,7 +51,7 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
           >
             <Typography
               size="0.8rem"
-              fontWeight="bold"
+              
               color="white"
               lineHeight={1.5}
             >
@@ -75,7 +70,7 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
                 <Typography
                   size="0.8rem"
                   color="white"
-                  fontWeight="bold"
+                  
                   listPoint
                   key={i}
                 >
@@ -94,7 +89,7 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
                 <Typography
                   size="0.8rem"
                   color="white"
-                  fontWeight="bold"
+                  
                   listPoint
                   key={i}
                 >
