@@ -2,3 +2,4 @@
 export { ProjectIntro } from './ProjectIntro';
 export { ProjectSwiper } from './ProjectSwiper';
 export { ChangeColorText } from './ChangeColorText';
+export { PhotoModal } from './PhotoModal';

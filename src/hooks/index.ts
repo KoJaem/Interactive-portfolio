@@ -3,3 +3,4 @@
 export { useInterval } from './useInterval';
 export { useTimeout } from './useTimeout';
 export { useIntersect } from './useIntersect';
+export { useModal } from './useModal';
