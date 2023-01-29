@@ -116,11 +116,15 @@ AWS EC2 에 배포완료 후, 실제 운영 예정이였으나, 해당 사이트
     // 사실상 12월5일에 끝난 프로젝트지만, 디자인 및 프로젝트 구조 변경을 하기로 결정하고 좀 더 추가작업중
   },
   {
-    thumbnail: 'street-vendor.jpg',
+    thumbnail: 'street-vendor.png',
     title: '손안의 노점',
     people: '프론트 3, 백엔드 1, 디자이너2',
     date: ['2023.01', 'ing'],
-    imageUrl: ['street-vendor1.jpg'],
+    imageUrl: [
+      'street-vendor1.png',
+      'street-vendor2.png',
+      'street-vendor3.png',
+    ],
     info: `이 프로젝트는 <color>대부분의 길찾기 어플에는 붕어빵, 타코야끼 등 여러 포장마차의 대한 정보가 나오지 않는데,</color>
 <color>이러한 점을 공략하여 길거리 노점의 관한 앱을 만들어보자</color> 라는 생각으로 시작하게 된 프로젝트입니다.
 아직 프로젝트 초기단계지만 정말 기대가 되는 프로젝트이며, 디자이너 두분과 함께 XD 및 Figma 를 통해 협업 진행중입니다.

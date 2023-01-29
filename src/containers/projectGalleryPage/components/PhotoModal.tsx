@@ -42,7 +42,7 @@ export const PhotoModal = ({ isOpen, handleCloseModal, src }: Props) => {
       >
         <StyledSwiper modules={[Navigation]} navigation spaceBetween={100}>
           <PrevButton onClick={handleCloseModal}>
-            <RxCross1 size={40} color={`${customColor.darkGray}`} />
+            <RxCross1 size={40} color={`${customColor.white}`} />
           </PrevButton>
           {src.map((data, index) => (
             <SwiperSlide key={`${data}-${index}`}>
@@ -85,6 +85,11 @@ const StyledSwiper = styled(Swiper)`
 
 const PrevButton = styled.button`
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${customColor.darkGray}80;
+  border-radius: 4px;
   top: 8px;
   right: 8px;
   z-index: 9;
