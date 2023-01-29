@@ -40,8 +40,8 @@ export const ProjectSwiper2 = () => {
           effect="coverflow"
           centeredSlides
           autoplay={{
-          delay: 1500,
-          disableOnInteraction: false,
+            delay: 1500,
+            disableOnInteraction: false,
           }}
           speed={500}
           coverflowEffect={{
@@ -68,10 +68,10 @@ export const ProjectSwiper2 = () => {
                   }}
                 >
                   <Image
-                    src={`/imgs/projects/${data.slideImage}`}
+                    src={`/imgs/projects/thumbnail/${data.thumbnail}`}
                     layout="fill"
                     alt="project"
-                    objectFit='cover'
+                    objectFit="cover"
                     style={{ borderRadius: 12 }}
                   />
                 </ImageWrapper>
@@ -104,7 +104,9 @@ export const ProjectSwiper2 = () => {
                           </button>
                         )}
                         {data.link.hasOwnProperty('githubPage') && (
-                          <button onClick={() => window.open(data.link.githubPage)}>
+                          <button
+                            onClick={() => window.open(data.link.githubPage)}
+                          >
                             <GradientSvg
                               Icon={FaGithubSquare}
                               color1={customColor.skyBlue}

@@ -48,7 +48,7 @@ export const PhotoModal = ({ isOpen, handleCloseModal, src }: Props) => {
             <SwiperSlide key={`${data}-${index}`}>
               <ImageWrapper>
                 <Image
-                  src={`/imgs/projects/${data}`}
+                  src={`/imgs/projects/slideImage/${data}`}
                   alt="project"
                   layout="fill"
                   objectFit="contain"

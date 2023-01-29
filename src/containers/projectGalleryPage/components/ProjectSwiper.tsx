@@ -41,7 +41,7 @@ export const ProjectSwiper = ({ activeIndex, slideChange }: Props) => {
           {projects.map((data, i) => (
             <StyledSwiperSlide key={i}>
               <Image
-                src={`/imgs/projects/${data.slideImage}`}
+                src={`/imgs/projects/thumbnail/${data.thumbnail}`}
                 layout="fill"
                 objectFit="contain"
                 alt="project"
