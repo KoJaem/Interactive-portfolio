@@ -20,7 +20,7 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
           <Typography size="1rem" color={'purple'} fontWeight="bold">
             {project.title}
           </Typography>
-          <Typography size="1rem" >
+          <Typography size="1rem">
             {`${project.date[0]} ~ ${project.date[1]}`}
           </Typography>
         </Title>
@@ -31,36 +31,29 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
             paddingBT={10}
             description="프로젝트 인원"
           >
-            <Typography size="1rem" color="white" >
+            <Typography size="1rem" color="white">
               {project.people}
             </Typography>
           </TextBox>
           <TextBox
-            color="magenta"
+            color="gray"
             paddingLR={20}
             paddingBT={20}
             description="프로젝트 소개"
           >
-            <ChangeColorText text={project.info}/>
+            <ChangeColorText text={project.info} />
           </TextBox>
           <TextBox
-            color="magenta"
+            color="gray"
             paddingLR={20}
             paddingBT={20}
             description="프로젝트 기능"
           >
-            <Typography
-              size="0.8rem"
-              
-              color="white"
-              lineHeight={1.5}
-            >
-              {project.function}
-            </Typography>
+            <ChangeColorText text={project.function} />
           </TextBox>
           <Flex>
             <TextBox
-              color="magenta"
+              color="purple"
               paddingLR={20}
               paddingBT={10}
               gap={10}
@@ -69,9 +62,9 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
               {project.developEnv.map((data, i) => (
                 <Typography
                   size="0.8rem"
-                  color="white"
-                  
+                  color="darkPurple"
                   listPoint
+                  lineHeight={1.4}
                   key={i}
                 >
                   {data}
@@ -79,18 +72,18 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
               ))}
             </TextBox>
             <TextBox
-              color="magenta"
+              color="purple"
               paddingLR={28}
               paddingBT={20}
               description="나의 역할"
               gap={10}
             >
-              {project.myRole?.map((data, i) => (
+              {project.myRole.map((data, i) => (
                 <Typography
                   size="0.8rem"
-                  color="white"
-                  
+                  color="darkPurple"
                   listPoint
+                  lineHeight={1.4}
                   key={i}
                 >
                   {data}
@@ -162,7 +155,7 @@ const Flex = styled.section`
 
 const LinkBox = styled.div`
   position: relative;
-  background-color: ${customColor.magenta}50;
+  background-color: ${customColor.purple}50;
   padding: 28px 20px;
   border-radius: 24px;
   gap: 20px;
@@ -174,5 +167,5 @@ const LinkBox = styled.div`
   justify-content: center;
   overflow: hidden;
   cursor: default;
-  box-shadow: 4px 4px 5px ${customColor.darkGray};
+  box-shadow: 2px 4px 5px ${customColor.gray};
 `;

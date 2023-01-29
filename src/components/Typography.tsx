@@ -39,7 +39,7 @@ export const handleColor = (color: keyof customColorType) => {
   }
 };
 
-const TypographyText = styled.div<TypographyProps>`
+const TypographyText = styled.p<TypographyProps>`
   font-size: ${({ size }) => (isNaN(Number(size)) ? size : size + 'px')};
   color: ${({ color }) => (color ? handleColor(color) : customColor.black)};
   text-align: ${({ textAlign }) => (textAlign ? textAlign : '')};
@@ -47,6 +47,7 @@ const TypographyText = styled.div<TypographyProps>`
   line-height: ${({ lineHeight }) => (lineHeight ? lineHeight : 1)};
   opacity: ${({ opacity }) => (opacity ? opacity : 1)};
   ${({ notBreak }) => (notBreak ? `white-space:nowrap;` : '')};
+  word-break: keep-all;
 
   ${({ fontHidden }) =>
     fontHidden ? 'overflow: hidden;text-overflow: ellipsis;' : ''}

@@ -35,7 +35,7 @@ export const handleColor = (color: keyof customColorType) => {
   }
 };
 
-const TypographyText = styled.div<GradientTypographyProps>`
+const TypographyText = styled.p<GradientTypographyProps>`
   background-image: ${({ color1, color2 }) => (color1 && color2 ? `linear-gradient(120deg, ${handleColor(color1)} 30%, ${handleColor(color2)} 100%)` : customColor.black)};
   background-clip: text;
   -webkit-background-clip: text;
@@ -44,6 +44,7 @@ const TypographyText = styled.div<GradientTypographyProps>`
   text-align: ${({ textAlign }) => textAlign ? textAlign : ''};
   font-weight: ${({ fontWeight }) => fontWeight};
   line-height: ${({ lineHeight }) => lineHeight ? lineHeight : 1};
+  word-break: keep-all;
 
   ${({ fontHidden }) =>
     fontHidden ? 'overflow: hidden;text-overflow: ellipsis;' : ''}

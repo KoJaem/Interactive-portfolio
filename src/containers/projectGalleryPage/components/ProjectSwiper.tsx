@@ -6,12 +6,12 @@ import 'swiper/css/pagination';
 import styled, { css } from 'styled-components';
 import Image from 'next/image';
 import { projects } from 'src/dummy';
-import { Navigation, Pagination } from 'swiper';
+import { Navigation } from 'swiper';
 import { customColor } from 'src/constants';
 import { useModal } from 'src/hooks';
 import { PhotoModal } from './index';
 import { Typography } from 'src/components';
-import { MdOutlineZoomOutMap } from 'react-icons/md';
+import { MdNavigateBefore, MdNavigateNext, MdOutlineZoomOutMap } from 'react-icons/md';
 
 type Props = {
   activeIndex: number;
@@ -28,15 +28,15 @@ export const ProjectSwiper = ({ activeIndex, slideChange }: Props) => {
           loop={true}
           onSlideChange={slideChange}
           spaceBetween={100}
-          pagination={{
-            el: '.swiper_pagination',
-            clickable: true,
-          }}
+          // pagination={{
+          //   el: '.swiper_pagination',
+          //   clickable: true,
+          // }}
           navigation={{
             prevEl: '.swiper-button-prev',
             nextEl: '.swiper-button-next',
           }}
-          modules={[Pagination, Navigation]}
+          modules={[Navigation]}
         >
           {projects.map((data, i) => (
             <StyledSwiperSlide key={i}>
@@ -53,13 +53,13 @@ export const ProjectSwiper = ({ activeIndex, slideChange }: Props) => {
           {/* <Typography size='0.8rem' color="white">자세히보기</Typography> */}
           <MdOutlineZoomOutMap color="white" size={20} />
         </MoreImage>
-        {/* <PrevButton className="swiper-button-prev">
+        <PrevButton className="swiper-button-prev">
           <MdNavigateBefore size={40} />
         </PrevButton>
         <NextButton className="swiper-button-next">
           <MdNavigateNext size={40} />
         </NextButton>
-        <PaginationButton className="swiper_pagination" /> */}
+        {/* <PaginationButton className="swiper_pagination" /> */}
         {/* 프로젝트 수 많아지면 페이지네이션 없애고 아래코드로 수정하기 */}
         <PaginationButton>
           <Typography size="1rem" color="blue" fontWeight="bold">{`${

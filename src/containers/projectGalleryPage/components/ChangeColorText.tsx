@@ -8,7 +8,7 @@ export const ChangeColorText = ({ text }: Props) => {
   const parts = text.split(/(<color>.*?<\/color>)/);
 
   return (
-    <Typography size="0.8rem" color="white" lineHeight={1.5}>
+    <Typography size="0.8rem" color="black" lineHeight={1.5}>
       {parts.map((data, index) => {
         if (data.includes('<color>')) {
           const temp = data.match(/<color>(.*?)<\/color>/);

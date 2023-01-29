@@ -4,6 +4,7 @@ export type customColorType = {
   gray: string;
   darkGray: string;
   purple: string;
+  darkPurple: string;
   magenta: string;
   blue: string;
   skyBlue: string;
@@ -22,6 +23,7 @@ export const customColor: customColorType = {
   gray: '#D9D9D9',
   darkGray: '#7E7E87',
   purple: '#992DFA',
+  darkPurple: '#461670',
   magenta: '#D648FD',
   blue: '#3d70fc',
   skyBlue: '#47B5FF',
