@@ -71,6 +71,7 @@ Front-End 의 퍼블리싱이 끝난 후 Back-End 와 API 연동작업을 할려
       'weather-outfit8.png',
       'weather-outfit9.png',
       'weather-outfit10.png',
+      'weather-outfit11.png',
     ],
     info: `주제는 "요즘같은 예측하기 힘든 날씨의 코디를 사용자가 저장하고, 볼 수 있게 하자" 입니다.
 프로젝트 주제가 일교차가 심한 요즘 너무 공감되어서 재밌을것 같다고 느껴졌고 그렇게 시작하게 되었습니다.
@@ -157,7 +158,9 @@ AWS EC2 에 배포완료 후, 실제 운영 예정이였으나, 해당 사이트
       'fashion-exhibition3.png',
       'fashion-exhibition4.png',
       'fashion-exhibition5.png',
-      'fashion-exhibition6.gif',
+      'fashion-exhibition6.png',
+      'fashion-exhibition7.png',
+      'fashion-exhibition8.gif',
     ],
     info: `프로젝트의 주제는 <color>"사용자에게 좋은 경험을 줄 수 있는 Interactive 한 소개 사이트를 만들어보자"</color> 입니다.
 Framer 라는 리액트 라이브러리를 활용하여 만들었던, 제 첫 React 협업 프로젝트 입니다.
@@ -193,6 +196,7 @@ Follow-ship 이 얼마나 중요한지 등 많은 것을 느끼게 해준 프로
       'travel-with-pet2.png',
       'travel-with-pet3.png',
       'travel-with-pet4.png',
+      'travel-with-pet5.png',
     ],
     info: `프로젝트의 주제는 "반려동물을 사랑하는 사람들을 위한 커뮤니티를 만들어보자" 입니다.
 이 사이트에서는 반려동물과 함께 갈 수 있는 여행지, 식당, 숙박 등 여러시설에 대한 정보와
