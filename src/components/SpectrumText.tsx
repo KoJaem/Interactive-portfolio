@@ -21,7 +21,7 @@ export const SpectrumText = ({ text, duration = 3, delay = 0.3, shadow, initialD
   return (
     <>
       {Array.from(text).map((data, i) => (
-        <motion.p
+        <motion.span
           key={i}
           animate={{
             opacity: [0, 1],
@@ -37,7 +37,7 @@ export const SpectrumText = ({ text, duration = 3, delay = 0.3, shadow, initialD
           }}
         >
           {data}
-        </motion.p>
+        </motion.span>
       ))}
     </>
   );

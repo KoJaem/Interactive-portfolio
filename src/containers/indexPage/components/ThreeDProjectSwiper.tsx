@@ -42,7 +42,7 @@ export const ThreeDProjectSwiper = () => {
           {projects.map((data, i) => (
             <StyledSwiperSlide key={i}>
               <Image
-                src={`/imgs/projects/${data.slideImage}`}
+                src={`/imgs/projects/thumbnail/${data.thumbnail}`}
                 layout="fill"
                 alt="project"
                 style={{

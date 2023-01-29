@@ -32,14 +32,14 @@ export const ProjectGalleryPage = () => {
   return (
     <Container>
       <PrevButton animate={ButtonAnimate} onClick={() => router.push('/')}>
-        <RxCross1 size={40} />
+        <RxCross1 size={40} color={`${customColor.darkGray}`}/>
       </PrevButton>
 
       <Wrapper
         initial={{ x: 1920 }}
         animate={{ x: 0, transition: { duration: 2 } }}
       >
-        <ProjectSwiper slideChange={slideChange} />
+        <ProjectSwiper activeIndex={activeIndex} slideChange={slideChange} />
 
         <motion.div
           onAnimationComplete={() => setInfoAnimation(false)}
