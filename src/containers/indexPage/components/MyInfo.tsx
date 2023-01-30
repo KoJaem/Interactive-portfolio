@@ -28,10 +28,11 @@ export const MyInfo = ({ refs }: Props) => {
       </Title>
       <Wrapper>
         <Image
-          style={{ borderRadius: 50 }}
+          style={{ borderRadius: 24 }}
           src={'/profile.jpg'}
           width={340}
           height={340}
+          objectFit="cover"
           alt="profile"
         />
         <Contents>
