@@ -79,7 +79,10 @@ const StyledSwiper = styled(Swiper)`
   position: relative;
   .swiper-button-prev,
   .swiper-button-next {
-    color: ${customColor.white}90;
+    color: ${customColor.gray};
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
 

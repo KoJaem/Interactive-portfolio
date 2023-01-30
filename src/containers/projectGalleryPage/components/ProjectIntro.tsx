@@ -167,5 +167,5 @@ const LinkBox = styled.div`
   justify-content: center;
   overflow: hidden;
   cursor: default;
-  box-shadow: 2px 4px 5px ${customColor.gray};
+  box-shadow: 2px 2px 4px ${customColor.gray};
 `;

@@ -68,7 +68,7 @@ const Container = styled(motion.section)<StyledProps>`
   cursor: default;
   max-height: ${({ maxHeight }) => (maxHeight ? `${maxHeight}px` : '')};
   overflow-y: auto;
-  box-shadow: 4px 4px 5px ${customColor.skyBlue};
+  box-shadow: 2px 2px 4px ${customColor.skyBlue};
 `;
 
 const Description = styled(motion.section)`

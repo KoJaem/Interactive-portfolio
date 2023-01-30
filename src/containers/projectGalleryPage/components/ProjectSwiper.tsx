@@ -95,7 +95,8 @@ const Wrapper = styled.section`
   padding: 16px;
   gap: 8px;
   background-color: transparent;
-  box-shadow: 4px 4px 5px ${customColor.skyBlue};
+  box-shadow: 2px 2px 4px ${customColor.skyBlue};
+  border-radius: 4px;
 `;
 
 const StyledSwiper = styled(Swiper)`
@@ -118,7 +119,7 @@ const ButtonCss = css`
   position: absolute;
   top: 50%;
   z-index: 999;
-  background-color: ${customColor.white};
+  background-color: ${customColor.white}80;
   --swiper-theme-color: ${customColor.magenta};
   width: 60px;
   height: 60px;

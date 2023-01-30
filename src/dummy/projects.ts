@@ -14,6 +14,7 @@ export const projects: projectType[] = [
       'easyphoto5.png',
       'easyphoto6.png',
       'easyphoto7.png',
+      'easyphoto8.png',
     ],
     info: `<color>프로젝트의 주제는 "사진 이렇게 편집해주세요!"</color> 같은 글을 SNS 에서 몇번씩 본적이 있는데,
 이러한 주제를 전담마크한 사이트를 한번 만들어보자는 생각에서 진행하게 되었습니다.
