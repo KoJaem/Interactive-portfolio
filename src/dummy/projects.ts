@@ -42,6 +42,7 @@ Front-End 의 퍼블리싱이 끝난 후 Back-End 와 API 연동작업을 할려
       'React-Query',
       'Figma',
       'React-Hook-Form',
+      'React-Redux',
     ],
     myRole: [
       '프로젝트 리더 (2차)',
@@ -92,6 +93,7 @@ AWS EC2 에 배포완료 후, 실제 운영 예정이였으나, 해당 프로젝
       'Next.js',
       'TypeScript',
       'Emotion',
+      'Recoil',
       'Axios',
       'React-Hook-Form',
       'React-Dev-Tools',
@@ -138,6 +140,7 @@ AWS EC2 에 배포완료 후, 실제 운영 예정이였으나, 해당 프로젝
       'Next.js',
       'TypeScript',
       'styled-components',
+      'Recoil',
       'React-Hook-Form',
       'React-Query',
       'nx workspace',
