@@ -1,10 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { Typography } from 'src/components';
-import { customColor } from 'src/constants';
-import styled from 'styled-components';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
-import { GradientTypography } from 'src/components/GradientTypography';
-import { SpectrumText } from 'src/components/SpectrumText';
+import { useRef } from 'react';
 import {
   grayBoldShadow,
   magentaBoldShadow,
@@ -12,6 +7,11 @@ import {
   skyBlueBoldShadow,
   whiteBoldShadow,
 } from 'src/common/fontShadow';
+import { Typography } from 'src/components';
+import { GradientTypography } from 'src/components/GradientTypography';
+import { SpectrumText } from 'src/components/SpectrumText';
+import { customColor } from 'src/constants';
+import styled from 'styled-components';
 const transition = { duration: 0.5 };
 
 const introVariants = {
@@ -278,6 +278,7 @@ const Dia = styled(motion.section)`
   left: 50%;
   width: 40px;
   height: 40px;
+  z-index: 9;
   transform: rotateZ(45deg);
   display: flex;
   flex-direction: column;
@@ -298,7 +299,7 @@ const Dia = styled(motion.section)`
   transition-property: scale, top, transform, border-radius;
   transition-duration: 1s;
 
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     display: flex;
   }
 `;

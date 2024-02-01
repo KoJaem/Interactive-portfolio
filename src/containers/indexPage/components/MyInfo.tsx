@@ -69,13 +69,12 @@ export const MyInfo = ({ refs }: Props) => {
                 style={{ gap: 4 }}
                 onClick={() => window.open('https://github.com/KoJaem')}
               >
-
-                  <Image
-                    src={'/GithubIcon.png'}
-                    width={30}
-                    height={30}
-                    alt="Github"
-                  />
+                <Image
+                  src={'/GithubIcon.png'}
+                  width={30}
+                  height={30}
+                  alt="Github"
+                />
                 <Typography
                   size="1.3rem"
                   color="black"
@@ -98,9 +97,12 @@ export const MyInfo = ({ refs }: Props) => {
                   )
                 }
               >
-               
-                  <Image src={'/notionIcon.png'} width={30} height={30} alt="Notion" />
-                
+                <Image
+                  src={'/notionIcon.png'}
+                  width={30}
+                  height={30}
+                  alt="Notion"
+                />
                 <Typography
                   size="1.3rem"
                   color="black"

@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/effect-cards';
 import { MoreButton, Typography } from 'src/components';
 import { useRouter } from 'next/router';
-import { ProjectSwiper2 } from 'src/containers/indexPage/components/ProjectSwiper-newVersion';
+import { ProjectSwiper_NewVersion } from 'src/containers/indexPage/components/ProjectSwiper_NewVersion';
 import { GradientTypography } from 'src/components/GradientTypography';
 import { useSetRecoilState } from 'recoil';
 import { indexScreenAnimation } from 'src/recoil/atom';
@@ -27,8 +27,7 @@ export const Projects = ({ refs }: Props) => {
           Projects
         </GradientTypography>
       </Title>
-      {/* <ThreeDProjectSwiper /> */}
-      <ProjectSwiper2 />
+      <ProjectSwiper_NewVersion />
       <ButtonWrapper>
         <MoreButton
           onClick={async () => {

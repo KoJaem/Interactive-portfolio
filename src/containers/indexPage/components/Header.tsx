@@ -191,7 +191,7 @@ const MenuIcon = styled.section`
   margin-top: 8px;
   cursor: pointer;
 
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     display: none;
   }
 `;
