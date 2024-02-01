@@ -18,16 +18,11 @@ export const ProjectGalleryPage = () => {
 
   const router = useRouter();
 
-  // useEffect(() => {
-  //   console.log(activeIndex);
-  // }, [activeIndex]);
 
   const slideChange = ({ realIndex }: { realIndex: number }) => {
     setActiveIndex(realIndex);
     setInfoAnimation(true);
   };
-
-  // const selectedProject = useRecoilValue(selectProject);
 
   return (
     <Container>
@@ -99,5 +94,5 @@ const NotionButton = styled(motion.button)`
   justify-content: center;
   position: fixed;
   z-index: 1;
-  bottom: 20px;
+  bottom: 40px;
 `;
