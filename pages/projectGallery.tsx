@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { Seo } from 'src/components';
-import { LangchainChatWindow } from 'src/components/LangchainChatWindow';
 import { ProjectGalleryPage } from 'src/containers/projectGalleryPage/ProjectGalleryPage';
 import { indexScreenAnimation } from 'src/recoil/atom';
 
@@ -15,7 +14,7 @@ export default function ProjectGallery() {
     <>
       <Seo title={'Gallery'} />
       <ProjectGalleryPage />
-      <LangchainChatWindow bubbleColor={'skyBlue'} boxHeaderColor='skyBlue' />
+      {/* <LangchainChatWindow bubbleColor={'skyBlue'} boxHeaderColor='skyBlue' /> */}
     </>
   );
 }
