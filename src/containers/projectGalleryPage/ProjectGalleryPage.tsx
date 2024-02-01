@@ -94,5 +94,5 @@ const NotionButton = styled(motion.button)`
   justify-content: center;
   position: fixed;
   z-index: 1;
-  bottom: 40px;
+  bottom: 20px;
 `;

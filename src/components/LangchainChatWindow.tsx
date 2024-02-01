@@ -147,7 +147,6 @@ const Container = styled.section<StyledContainerProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: auto;
   @media screen and (min-width: 768px) {
     right: 40px;
     transform: none;
@@ -161,6 +160,7 @@ const ChatBoxWrapper = styled.section`
   width: 80vw;
   height: 80vh;
   border-radius: 12px;
+  /* overflow: auto; */
 `;
 
 type StyledProps = {
@@ -183,6 +183,7 @@ const ChatBoxContent = styled.section`
   padding: 12px;
   display: flex;
   background-color: ${customColor.white};
+  height: 80%;
 `;
 
 const HistoryWrapper = styled.section`
@@ -190,6 +191,7 @@ const HistoryWrapper = styled.section`
   flex-direction: column;
   gap: 8px;
   width: 100%;
+  overflow: auto;
 `;
 
 const UserChatBubble = styled.article`
@@ -223,7 +225,8 @@ const TextAreaWrapper = styled.article`
   background-color: ${customColor.lightGray};
   border-radius: 12px;
   padding: 8px;
-  margin-bottom: 12px;
+  position: absolute;
+  bottom: 20px;
 `;
 
 const TextArea = styled.textarea`
