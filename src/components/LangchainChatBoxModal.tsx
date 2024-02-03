@@ -18,12 +18,10 @@ import { motion } from 'framer-motion';
 type Props = {
   boxHeaderColor: keyof customColorType;
   handleModal: () => void;
-  setIsModalAnimating: Dispatch<SetStateAction<boolean>>;
 };
 export const LangchainChatBoxModal = ({
   boxHeaderColor,
   handleModal,
-  setIsModalAnimating,
 }: Props) => {
   const [history, setHistory] = useState<Array<string>>([]);
   const { isOpen: isOpenAccessKeyModal, handleModal: handleAccessKeyModal } =
@@ -98,15 +96,9 @@ export const LangchainChatBoxModal = ({
   return (
     <ChatBoxWrapper
       initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-      exit={{ scale: 0 }}
+      animate={{ scale: 1, transition: { duration: 0.2, ease: 'easeInOut' } }}
+      exit={{ scale: 0, transition: { duration: 0.2, ease: 'easeInOut' } }}
       style={{ transformOrigin: 'bottom right' }}
-      onAnimationStart={() => {
-        setIsModalAnimating(true);
-      }}
-      onAnimationComplete={() => {
-        setIsModalAnimating(false);
-      }}
     >
       <ChatBoxHeader color={boxHeaderColor}>
         <Typography size="1.2rem">KoJaem GPT</Typography>
@@ -202,7 +194,9 @@ const ChatBoxContent = styled.section`
   padding: 12px;
   display: flex;
   background-color: ${customColor.white};
-  height: 80%;
+  height: calc(
+    100% - 60px - 60px - 20px
+  ); // 헤더, input, input position bottom 값들
 `;
 
 const HistoryWrapper = styled.section`
@@ -239,7 +233,7 @@ const Form = styled.form`
 
 const TextAreaWrapper = styled.article`
   display: flex;
-  width: calc(100% - 40px);
+  width: calc(100% - 24px);
   justify-content: space-between;
   background-color: ${customColor.lightGray};
   border-radius: 12px;

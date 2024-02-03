@@ -4,7 +4,7 @@ import { useModal } from 'src/hooks';
 import styled from 'styled-components';
 import { handleColor } from './Typography';
 import { LangchainChatBoxModal } from './LangchainChatBoxModal';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 
 type Props = {
@@ -13,24 +13,27 @@ type Props = {
 };
 export const LangchainChatWindow = ({ bubbleColor, boxHeaderColor }: Props) => {
   const { isOpen, handleModal } = useModal();
-  const [isModalAnimating, setIsModalAnimating] = useState<boolean>(false);
 
   return (
     <Container isOpen={isOpen}>
-      {!isOpen && !isModalAnimating && (
-        <IoChatbubbleEllipses
-          onClick={handleModal}
-          size={40}
-          fill={handleColor(bubbleColor)}
-          cursor={'pointer'}
-        />
+      {!isOpen && (
+        <ChatBubbleWrapper
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5 } }}
+        >
+          <IoChatbubbleEllipses
+            onClick={handleModal}
+            size={40}
+            fill={handleColor(bubbleColor)}
+            cursor={'pointer'}
+          />
+        </ChatBubbleWrapper>
       )}
       <AnimatePresence mode="wait">
         {isOpen && (
           <LangchainChatBoxModal
             boxHeaderColor={boxHeaderColor}
             handleModal={handleModal}
-            setIsModalAnimating={setIsModalAnimating}
           />
         )}
       </AnimatePresence>
@@ -57,3 +60,5 @@ const Container = styled.section<StyledContainerProps>`
     transform: none;
   }
 `;
+
+const ChatBubbleWrapper = styled(motion.section)``;

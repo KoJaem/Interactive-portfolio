@@ -81,7 +81,7 @@ type StyledProps = {
 const AccessKeyHeader = styled.section<StyledProps>`
   background-color: ${({ color }) =>
     color ? handleColor(color) : customColor.purple};
-  height: 60px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;

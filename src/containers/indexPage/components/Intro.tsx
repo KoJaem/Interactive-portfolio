@@ -237,17 +237,17 @@ export const Intro = () => {
           </Typography>
         </Interest>
       </SecondIntro>
-      {isVisible && (
+      {/* {isVisible && (
         <Dia
           initial={{ opacity: 0 }}
           animate={{
-            opacity: [0, 1],
-            transition: { delay: 1.5 },
+            opacity: 1,
+            transition: { delay: 1.5, duration: 0.5 },
             backgroundColor: isVisible ? customColor.white : customColor.black,
           }}
           style={{ opacity: opacityZero }}
         />
-      )}
+      )} */}
     </Container>
   );
 };
@@ -281,37 +281,37 @@ const Welcome = styled(motion.section)`
   }
 `;
 
-const Dia = styled(motion.section)`
-  position: fixed;
-  top: 90vh;
-  left: 50%;
-  width: 40px;
-  height: 40px;
-  z-index: 9;
-  transform: rotateZ(45deg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  display: none;
-  pointer-events: auto;
-  :hover {
-    scale: 20;
-    top: 50%;
-    border-radius: 4px;
-    transform: rotateZ(0);
-    content: url('introDia.jpg');
-    object-fit: cover;
-  }
-  /* transition: all 1s; */
-  transition-property: scale, top, transform, border-radius;
-  transition-duration: 1s;
+// const Dia = styled(motion.section)`
+//   position: fixed;
+//   top: 90vh;
+//   left: 50%;
+//   width: 40px;
+//   height: 40px;
+//   z-index: 9;
+//   transform: rotateZ(45deg);
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   cursor: pointer;
+//   display: none;
+//   pointer-events: auto;
+//   :hover {
+//     scale: 20;
+//     top: 50%;
+//     border-radius: 4px;
+//     transform: rotateZ(0);
+//     content: url('introDia.jpg');
+//     object-fit: cover;
+//   }
+//   /* transition: all 1s; */
+//   transition-property: scale, top, transform, border-radius;
+//   transition-duration: 1s;
 
-  @media screen and (min-width: 768px) {
-    display: flex;
-  }
-`;
+//   @media screen and (min-width: 768px) {
+//     display: flex;
+//   }
+// `;
 
 const SecondIntro = styled.section`
   position: fixed;
