@@ -126,18 +126,19 @@ const Container = styled.section`
   position: fixed;
   top: 60px;
   display: none;
+  align-items: center;
   width: 100%;
   padding: 0 20px;
   justify-content: space-between;
   z-index: 1;
   transition: top 0.5s ease;
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 320px) {
     display: flex;
     align-items: center;
   }
-  /* @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     padding: 0 20px;
-  } */
+  }
   @media screen and (min-width: 1040px) {
     padding: 0 60px;
   }
@@ -188,7 +189,6 @@ const MenuIcon = styled.section`
   display: flex;
   position: absolute;
   right: 40px;
-  margin-top: 8px;
   cursor: pointer;
 
   @media screen and (min-width: 768px) {

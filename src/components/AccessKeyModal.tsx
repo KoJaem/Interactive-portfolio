@@ -21,7 +21,7 @@ export const AccessKeyModal = ({
     <Container>
       <Wrapper>
         <AccessKeyHeader color={boxHeaderColor}>
-          <Typography size="0.8rem">Access Key</Typography>
+          <Typography size="1rem">Access Key</Typography>
           <RxCross1
             onClick={handleModal}
             size={20}
@@ -72,6 +72,7 @@ const Wrapper = styled.section`
   left: 50%;
   width: 50%;
   z-index: 2;
+  min-width: 160px;
 `;
 
 type StyledProps = {

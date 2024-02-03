@@ -9,12 +9,12 @@ export const IndexPage = () => {
     <Container>
       <Header refs={buttonRefs} />
       <Intro />
-      <GapLine />
+      {/* <GapLine />
       <MyInfo refs={buttonRefs} />
       <Gap />
       <MySkills refs={buttonRefs} />
       <Gap />
-      <Projects refs={buttonRefs} />
+      <Projects refs={buttonRefs} /> */}
     </Container>
   );
 };

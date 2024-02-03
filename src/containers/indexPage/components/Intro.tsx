@@ -138,18 +138,20 @@ export const Intro = () => {
             variants={introVariants}
           >
             <Typography
-              size="4.5rem"
+              size="4rem"
               color="purple"
               fontWeight="bold"
               fontShadow={purpleBoldShadow}
+              breakAll
             >
               KoJaem&apos;s&nbsp;
             </Typography>
             <Typography
-              size="4.5rem"
+              size="4rem"
               color="magenta"
               fontWeight="bold"
               fontShadow={magentaBoldShadow}
+              breakAll
             >
               Exhibition
             </Typography>
@@ -198,10 +200,11 @@ export const Intro = () => {
         <Name style={{ opacity: nameOpacity, y: nameYPosition }}>
           <GradientTypography
             size="4rem"
-            color1='purple'
-            color2='magenta'
+            color1="purple"
+            color2="magenta"
             lineHeight={1.5}
             fontWeight="bold"
+            breakAll
           >
             FrontEnd
           </GradientTypography>
@@ -263,11 +266,17 @@ const Container = styled(motion.section)`
 const Welcome = styled(motion.section)`
   display: flex;
   position: fixed;
+  width: 100%;
   flex-direction: column;
   gap: 12px 0;
   padding: 0 20px;
-  top: 25vh;
-  @media screen and (min-height: 900px) {
+  top: 10vh;
+
+  @media screen and (min-width: 320px) {
+    top: 25vh;
+  }
+
+  @media screen and (min-width: 768px) {
     top: 40vh;
   }
 `;
