@@ -11,8 +11,8 @@ export const SlideAndScreen = ({ children }: Props) => {
   return (
     <>
       <Container
-        initial={{ x: '100%', height: '100vh' }}
-        animate={{ x: 0, transition: { duration: 1, ease: 'easeOut' } }}
+        initial={{ x: '100%', height: '1000vh' }}
+        animate={{ x: 0, height: '100vh', transition: { duration: 1, ease: 'easeOut' } }}
         exit={{
           height: '45vh',
           x: '-100%',
