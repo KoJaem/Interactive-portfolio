@@ -1,6 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import axios, { AxiosError } from 'axios';
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 import { HiOutlinePaperAirplane } from 'react-icons/hi2';
 import { RxCross1 } from 'react-icons/rx';
@@ -13,14 +13,17 @@ import { object, string } from 'yup';
 import { AccessKeyModal } from './AccessKeyModal';
 import { ChatLoading } from './ChatLoading';
 import { Typography, handleColor } from './Typography';
+import { motion } from 'framer-motion';
 
 type Props = {
   boxHeaderColor: keyof customColorType;
   handleModal: () => void;
+  setIsModalAnimating: Dispatch<SetStateAction<boolean>>;
 };
 export const LangchainChatBoxModal = ({
   boxHeaderColor,
   handleModal,
+  setIsModalAnimating,
 }: Props) => {
   const [history, setHistory] = useState<Array<string>>([]);
   const { isOpen: isOpenAccessKeyModal, handleModal: handleAccessKeyModal } =
@@ -61,7 +64,7 @@ export const LangchainChatBoxModal = ({
         {
           question,
           history: formattedConversationHistory,
-          accessKey
+          accessKey,
         },
       );
 
@@ -70,7 +73,10 @@ export const LangchainChatBoxModal = ({
       const axiosError = error as AxiosError;
       switch (axiosError.response?.status) {
         case 401:
-          setHistory(prev => [...prev, 'AccessKey 가 올바르지 않습니다. 확인 후 다시 이용해주세요.']);
+          setHistory(prev => [
+            ...prev,
+            'AccessKey 가 올바르지 않습니다. 확인 후 다시 이용해주세요.',
+          ]);
           setInvalidAccessKey(true);
           break;
         default:
@@ -90,7 +96,18 @@ export const LangchainChatBoxModal = ({
   };
 
   return (
-    <ChatBoxWrapper>
+    <ChatBoxWrapper
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      exit={{ scale: 0 }}
+      style={{ transformOrigin: 'bottom right' }}
+      onAnimationStart={() => {
+        setIsModalAnimating(true);
+      }}
+      onAnimationComplete={() => {
+        setIsModalAnimating(false);
+      }}
+    >
       <ChatBoxHeader color={boxHeaderColor}>
         <Typography size="1.2rem">KoJaem GPT</Typography>
         <RxCross1
@@ -154,7 +171,7 @@ export const LangchainChatBoxModal = ({
   );
 };
 
-const ChatBoxWrapper = styled.section`
+const ChatBoxWrapper = styled(motion.section)`
   position: relative;
   background-color: white;
   max-width: 600px;
