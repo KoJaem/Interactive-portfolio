@@ -1,6 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import axios, { AxiosError } from 'axios';
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 import { HiOutlinePaperAirplane } from 'react-icons/hi2';
 import { RxCross1 } from 'react-icons/rx';
@@ -13,6 +13,7 @@ import { object, string } from 'yup';
 import { AccessKeyModal } from './AccessKeyModal';
 import { ChatLoading } from './ChatLoading';
 import { Typography, handleColor } from './Typography';
+import { motion } from 'framer-motion';
 
 type Props = {
   boxHeaderColor: keyof customColorType;
@@ -61,7 +62,7 @@ export const LangchainChatBoxModal = ({
         {
           question,
           history: formattedConversationHistory,
-          accessKey
+          accessKey,
         },
       );
 
@@ -70,7 +71,10 @@ export const LangchainChatBoxModal = ({
       const axiosError = error as AxiosError;
       switch (axiosError.response?.status) {
         case 401:
-          setHistory(prev => [...prev, 'AccessKey 가 올바르지 않습니다. 확인 후 다시 이용해주세요.']);
+          setHistory(prev => [
+            ...prev,
+            'AccessKey 가 올바르지 않습니다. 확인 후 다시 이용해주세요.',
+          ]);
           setInvalidAccessKey(true);
           break;
         default:
@@ -90,7 +94,12 @@ export const LangchainChatBoxModal = ({
   };
 
   return (
-    <ChatBoxWrapper>
+    <ChatBoxWrapper
+      initial={{ scale: 0 }}
+      animate={{ scale: 1, transition: { duration: 0.2, ease: 'easeInOut' } }}
+      exit={{ scale: 0, transition: { duration: 0.2, ease: 'easeInOut' } }}
+      style={{ transformOrigin: 'bottom right' }}
+    >
       <ChatBoxHeader color={boxHeaderColor}>
         <Typography size="1.2rem">KoJaem GPT</Typography>
         <RxCross1
@@ -154,7 +163,7 @@ export const LangchainChatBoxModal = ({
   );
 };
 
-const ChatBoxWrapper = styled.section`
+const ChatBoxWrapper = styled(motion.section)`
   position: relative;
   background-color: white;
   max-width: 600px;
@@ -185,7 +194,9 @@ const ChatBoxContent = styled.section`
   padding: 12px;
   display: flex;
   background-color: ${customColor.white};
-  height: 80%;
+  height: calc(
+    100% - 60px - 60px - 20px
+  ); // 헤더, input, input position bottom 값들
 `;
 
 const HistoryWrapper = styled.section`
@@ -222,7 +233,7 @@ const Form = styled.form`
 
 const TextAreaWrapper = styled.article`
   display: flex;
-  width: 100%;
+  width: calc(100% - 24px);
   justify-content: space-between;
   background-color: ${customColor.lightGray};
   border-radius: 12px;

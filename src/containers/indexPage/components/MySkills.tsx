@@ -21,7 +21,7 @@ export const MySkills = ({ refs }: Props) => {
       </Typography>
       <Wrapper>
         <Left>
-          <Typography size="2rem" color="black" fontWeight='bold' opacity={0.5}>
+          <Typography size="2rem" color="black" fontWeight="bold" opacity={0.5}>
             Tech
           </Typography>
           <SmallImageContainer>
@@ -51,7 +51,12 @@ export const MySkills = ({ refs }: Props) => {
         </Left>
         <Right>
           <CategoryWrapper>
-            <Typography size="2.5rem" color="black" fontWeight='bold' opacity={0.5}>
+            <Typography
+              size="2rem"
+              color="black"
+              fontWeight="bold"
+              opacity={0.5}
+            >
               Community
             </Typography>
             {mySkills.Community.map((data, i) => (
@@ -67,7 +72,12 @@ export const MySkills = ({ refs }: Props) => {
             ))}
           </CategoryWrapper>
           <CategoryWrapper>
-            <Typography size="2.5rem" color="black" fontWeight='bold' opacity={0.5}>
+            <Typography
+              size="2.5rem"
+              color="black"
+              fontWeight="bold"
+              opacity={0.5}
+            >
               Deployment
             </Typography>
             {mySkills.Deployment.map((data, i) => (
@@ -83,7 +93,12 @@ export const MySkills = ({ refs }: Props) => {
             ))}
           </CategoryWrapper>
           <CategoryWrapper>
-            <Typography size="2.5rem" color="black" fontWeight='bold' opacity={0.5}>
+            <Typography
+              size="2.5rem"
+              color="black"
+              fontWeight="bold"
+              opacity={0.5}
+            >
               API
             </Typography>
             {mySkills.API.map((data, i) => (
@@ -99,7 +114,12 @@ export const MySkills = ({ refs }: Props) => {
             ))}
           </CategoryWrapper>
           <CategoryWrapper>
-            <Typography size="2.5rem" color="black" fontWeight='bold' opacity={0.5}>
+            <Typography
+              size="2.5rem"
+              color="black"
+              fontWeight="bold"
+              opacity={0.5}
+            >
               Mobile
             </Typography>
             {mySkills.Mobile.map((data, i) => (
@@ -126,7 +146,11 @@ const Container = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(${customColor.black} 1%, ${customColor.lightMagenta} 10% 90%, ${customColor.black} 100%);
+  background: linear-gradient(
+    ${customColor.black} 1%,
+    ${customColor.lightMagenta} 10% 90%,
+    ${customColor.black} 100%
+  );
   gap: 80px 0;
   padding: 300px 0;
 `;
@@ -159,7 +183,14 @@ const Left = styled.section`
   align-items: center;
   gap: 20px 0;
   margin-top: 80px;
-  min-width: 340px;
+  min-width: 280px;
+
+  @media screen and (min-width: 840px) {
+    position: sticky;
+    height: max-content;
+    top: 0;
+  }
+
   @media screen and (min-width: 840px) {
     position: sticky;
     height: max-content;
@@ -181,16 +212,18 @@ const Right = styled.section`
   align-items: center;
   gap: 80px 0;
   margin-top: 80px;
-  min-width: 340px;
+  min-width: 280px;
 `;
 
 const imageWrapperCss = css`
   background-color: ${customColor.white};
   box-shadow: 4px 12px 30px 6px ${customColor.black}30;
-  :hover {
-    scale: 1.1;
-  }
   transition: all 200ms ease;
+  @media screen and (min-width: 320px) {
+    :hover {
+      scale: 1.1;
+    }
+  }
 `;
 
 const SmallImageWrapper = styled.section`

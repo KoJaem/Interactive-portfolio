@@ -88,7 +88,11 @@ export const ProjectSwiper_NewVersion = () => {
                       {data.title}
                     </Typography>
                     <SlideInfo>
-                      <Typography size="0.8rem" color="darkGray">
+                      <Typography
+                        size="0.8rem"
+                        color="darkGray"
+                        textAlign="left"
+                      >
                         {data.date[0]} ~ {data.date[1]}
                       </Typography>
                       <LinkWrapper>

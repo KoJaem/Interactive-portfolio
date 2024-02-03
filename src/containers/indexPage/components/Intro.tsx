@@ -138,18 +138,20 @@ export const Intro = () => {
             variants={introVariants}
           >
             <Typography
-              size="4.5rem"
+              size="4rem"
               color="purple"
               fontWeight="bold"
               fontShadow={purpleBoldShadow}
+              breakAll
             >
               KoJaem&apos;s&nbsp;
             </Typography>
             <Typography
-              size="4.5rem"
+              size="4rem"
               color="magenta"
               fontWeight="bold"
               fontShadow={magentaBoldShadow}
+              breakAll
             >
               Exhibition
             </Typography>
@@ -198,10 +200,11 @@ export const Intro = () => {
         <Name style={{ opacity: nameOpacity, y: nameYPosition }}>
           <GradientTypography
             size="4rem"
-            color1='purple'
-            color2='magenta'
+            color1="purple"
+            color2="magenta"
             lineHeight={1.5}
             fontWeight="bold"
+            breakAll
           >
             FrontEnd
           </GradientTypography>
@@ -234,17 +237,17 @@ export const Intro = () => {
           </Typography>
         </Interest>
       </SecondIntro>
-      {isVisible && (
+      {/* {isVisible && (
         <Dia
           initial={{ opacity: 0 }}
           animate={{
-            opacity: [0, 1],
-            transition: { delay: 1.5 },
+            opacity: 1,
+            transition: { delay: 1.5, duration: 0.5 },
             backgroundColor: isVisible ? customColor.white : customColor.black,
           }}
           style={{ opacity: opacityZero }}
         />
-      )}
+      )} */}
     </Container>
   );
 };
@@ -263,46 +266,52 @@ const Container = styled(motion.section)`
 const Welcome = styled(motion.section)`
   display: flex;
   position: fixed;
+  width: 100%;
   flex-direction: column;
   gap: 12px 0;
   padding: 0 20px;
-  top: 25vh;
-  @media screen and (min-height: 900px) {
+  top: 10vh;
+
+  @media screen and (min-width: 320px) {
+    top: 25vh;
+  }
+
+  @media screen and (min-width: 768px) {
     top: 40vh;
   }
 `;
 
-const Dia = styled(motion.section)`
-  position: fixed;
-  top: 90vh;
-  left: 50%;
-  width: 40px;
-  height: 40px;
-  z-index: 9;
-  transform: rotateZ(45deg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  display: none;
-  pointer-events: auto;
-  :hover {
-    scale: 20;
-    top: 50%;
-    border-radius: 4px;
-    transform: rotateZ(0);
-    content: url('introDia.jpg');
-    object-fit: cover;
-  }
-  /* transition: all 1s; */
-  transition-property: scale, top, transform, border-radius;
-  transition-duration: 1s;
+// const Dia = styled(motion.section)`
+//   position: fixed;
+//   top: 90vh;
+//   left: 50%;
+//   width: 40px;
+//   height: 40px;
+//   z-index: 9;
+//   transform: rotateZ(45deg);
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   cursor: pointer;
+//   display: none;
+//   pointer-events: auto;
+//   :hover {
+//     scale: 20;
+//     top: 50%;
+//     border-radius: 4px;
+//     transform: rotateZ(0);
+//     content: url('introDia.jpg');
+//     object-fit: cover;
+//   }
+//   /* transition: all 1s; */
+//   transition-property: scale, top, transform, border-radius;
+//   transition-duration: 1s;
 
-  @media screen and (min-width: 768px) {
-    display: flex;
-  }
-`;
+//   @media screen and (min-width: 768px) {
+//     display: flex;
+//   }
+// `;
 
 const SecondIntro = styled.section`
   position: fixed;

@@ -14,9 +14,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <link rel="shortcut icon" href="/titleImage.png" type="image/x-icon" />
-        <meta name="viewport" content="viewport-fit=cover" /> {/* 모바일에서 웹처럼 보이게 하는 meta code */}
-        <meta property="og:title" content="FrontEnd 개발자 KoJaem" />
-        <meta property="og:description" content="KoJaem Portfolio" />
+        {/* 모바일에서 웹처럼 보이게 하는 meta code */}
+        {/* <meta name="viewport" content="viewport-fit=cover" /> */}
+        <meta property="og:title" content="FrontEnd Developer KoJaem" />
+        <meta property="og:description" content="KoJaem Exhibition" />
         <meta property="og:image" content="/thumbnail.jpg" />
       </Head>
       <RecoilRoot>
