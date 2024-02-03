@@ -1,25 +1,32 @@
-import { IoChatbubbleEllipses } from 'react-icons/io5';
+import { yupResolver } from '@hookform/resolvers/yup';
+import axios, { AxiosError } from 'axios';
+import { useState } from 'react';
+import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 import { HiOutlinePaperAirplane } from 'react-icons/hi2';
 import { RxCross1 } from 'react-icons/rx';
 import { customColor } from 'src/constants';
 import { customColorType } from 'src/constants/customColor';
 import { useModal } from 'src/hooks';
-import styled from 'styled-components';
-import { Typography, handleColor } from './Typography';
-import { useState } from 'react';
-import { object, string } from 'yup';
-import { FieldValues, FormProvider, useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
 import { formatConversationHistory } from 'src/utils';
-import axios from 'axios';
+import styled from 'styled-components';
+import { object, string } from 'yup';
+import { AccessKeyModal } from './AccessKeyModal';
 import { ChatLoading } from './ChatLoading';
+import { Typography, handleColor } from './Typography';
 
 type Props = {
   boxHeaderColor: keyof customColorType;
   handleModal: () => void;
 };
-export const LangchainChatBoxModal = ({ boxHeaderColor, handleModal }: Props) => {
+export const LangchainChatBoxModal = ({
+  boxHeaderColor,
+  handleModal,
+}: Props) => {
   const [history, setHistory] = useState<Array<string>>([]);
+  const { isOpen: isOpenAccessKeyModal, handleModal: handleAccessKeyModal } =
+    useModal();
+  const [accessKey, setAccessKey] = useState<string>();
+  const [invalidAccessKey, setInvalidAccessKey] = useState<boolean>(false);
 
   const schema = object().shape({
     question: string().required(`질문을 입력해주세요`),
@@ -38,7 +45,7 @@ export const LangchainChatBoxModal = ({ boxHeaderColor, handleModal }: Props) =>
 
   const submit = async (data: FieldValues) => {
     try {
-      if (!process.env.NEXT_PUBLIC_LAMBDA_URL) {
+      if (!process.env.NEXT_PUBLIC_LAMBDA_URL || invalidAccessKey) {
         return;
       }
       const question = data.question;
@@ -54,17 +61,32 @@ export const LangchainChatBoxModal = ({ boxHeaderColor, handleModal }: Props) =>
         {
           question,
           history: formattedConversationHistory,
+          accessKey
         },
       );
 
       setHistory(prev => [...prev, `${response}`]);
-    } catch (error) {
-      console.log(error);
-      setHistory(prev => [
-        ...prev,
-        '서버가 불안정합니다. 잠시 후 다시 질문 해주세요.',
-      ]);
+    } catch (error: unknown) {
+      const axiosError = error as AxiosError;
+      switch (axiosError.response?.status) {
+        case 401:
+          setHistory(prev => [...prev, 'AccessKey 가 올바르지 않습니다. 확인 후 다시 이용해주세요.']);
+          setInvalidAccessKey(true);
+          break;
+        default:
+          setHistory(prev => [
+            ...prev,
+            '서버가 불안정합니다. 잠시 후 다시 질문 해주세요.',
+          ]);
+      }
     }
+  };
+
+  const checkAccessKey = () => {
+    if (accessKey) {
+      return;
+    }
+    handleAccessKeyModal();
   };
 
   return (
@@ -107,20 +129,33 @@ export const LangchainChatBoxModal = ({ boxHeaderColor, handleModal }: Props) =>
                   ? `요청중입니다... (시간이 걸릴 수 있습니다)`
                   : '고재민님에 대해 무엇이 궁금하신가요?'
               }
+              onClick={checkAccessKey}
               {...register('question')}
-              disabled={isSubmitting}
+              readOnly={!accessKey}
+              disabled={isSubmitting || invalidAccessKey}
             />
-            <SubmitButton type="submit" disabled={isSubmitting}>
+            <SubmitButton
+              type="submit"
+              disabled={isSubmitting || invalidAccessKey}
+            >
               <HiOutlinePaperAirplane />
             </SubmitButton>
           </TextAreaWrapper>
         </Form>
       </FormProvider>
+      {isOpenAccessKeyModal && (
+        <AccessKeyModal
+          boxHeaderColor={boxHeaderColor}
+          handleModal={handleAccessKeyModal}
+          setAccessKey={value => setAccessKey(value)}
+        />
+      )}
     </ChatBoxWrapper>
   );
 };
 
 const ChatBoxWrapper = styled.section`
+  position: relative;
   background-color: white;
   max-width: 600px;
   max-height: 600px;
