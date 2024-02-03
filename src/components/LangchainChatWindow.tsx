@@ -46,6 +46,7 @@ const Container = styled.section<StyledContainerProps>`
   display: flex;
   justify-content: center;
   align-items: center;
+  right: 20px;
   @media screen and (min-width: 768px) {
     right: 40px;
     transform: none;

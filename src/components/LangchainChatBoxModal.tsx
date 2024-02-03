@@ -222,7 +222,7 @@ const Form = styled.form`
 
 const TextAreaWrapper = styled.article`
   display: flex;
-  width: 100%;
+  width: calc(100% - 40px);
   justify-content: space-between;
   background-color: ${customColor.lightGray};
   border-radius: 12px;
