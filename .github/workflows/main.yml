@@ -13,9 +13,7 @@ jobs:
         uses: actions/checkout@master
 
       - run: npm install
-      - run: npm run build
       - run: npm run export
-
       - uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete
