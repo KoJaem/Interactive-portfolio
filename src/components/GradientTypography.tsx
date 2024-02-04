@@ -24,6 +24,7 @@ export type GradientTypographyProps = React.PropsWithChildren<{
   lineHeight?: number;
   fontHidden?: boolean;
   fontShadow?: string;
+  breakAll?: boolean;
 }>;
 export const GradientTypography = (props: GradientTypographyProps) => {
   return <TypographyText {...props}>{props.children}</TypographyText>;
@@ -44,7 +45,7 @@ const TypographyText = styled.p<GradientTypographyProps>`
   text-align: ${({ textAlign }) => textAlign ? textAlign : ''};
   font-weight: ${({ fontWeight }) => fontWeight};
   line-height: ${({ lineHeight }) => lineHeight ? lineHeight : 1};
-  word-break: keep-all;
+  word-break: ${({ breakAll }) => (breakAll ? 'break-all' : 'keep-all')};
 
   ${({ fontHidden }) =>
     fontHidden ? 'overflow: hidden;text-overflow: ellipsis;' : ''}

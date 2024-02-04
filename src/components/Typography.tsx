@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
-import { customColorType, customColor } from "src/constants/customColor";
-import styled, { css } from "styled-components";
+import { customColorType, customColor } from 'src/constants/customColor';
+import styled, { css } from 'styled-components';
 
 export type TypographyProps = React.PropsWithChildren<{
   size: string;
@@ -28,9 +28,14 @@ export type TypographyProps = React.PropsWithChildren<{
   notBreak?: boolean;
   style?: CSSProperties;
   listPoint?: boolean;
+  breakAll?: boolean;
 }>;
 export const Typography = (props: TypographyProps) => {
-  return <TypographyText style={props.style} {...props}>{props.children}</TypographyText>;
+  return (
+    <TypographyText style={props.style} {...props}>
+      {props.children}
+    </TypographyText>
+  );
 };
 
 export const handleColor = (color: keyof customColorType) => {
@@ -47,16 +52,17 @@ const TypographyText = styled.p<TypographyProps>`
   line-height: ${({ lineHeight }) => (lineHeight ? lineHeight : 1)};
   opacity: ${({ opacity }) => (opacity ? opacity : 1)};
   ${({ notBreak }) => (notBreak ? `white-space:nowrap;` : '')};
-  word-break: keep-all;
+  word-break: ${({ breakAll }) => (breakAll ? 'break-all' : 'keep-all')};
 
   ${({ fontHidden }) =>
     fontHidden ? 'overflow: hidden;text-overflow: ellipsis;' : ''}
   ${({ fontShadow }) => (fontShadow ? `text-shadow: ${fontShadow}` : '')}
-
-  ${({ listPoint }) => listPoint ? css`
-  ::before {
-    content: '- ';
-  }
-  ` : ''};
-
+    ${({ listPoint }) =>
+    listPoint
+      ? css`
+          ::before {
+            content: '- ';
+          }
+        `
+      : ''};
 `;

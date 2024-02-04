@@ -18,16 +18,11 @@ export const ProjectGalleryPage = () => {
 
   const router = useRouter();
 
-  // useEffect(() => {
-  //   console.log(activeIndex);
-  // }, [activeIndex]);
 
   const slideChange = ({ realIndex }: { realIndex: number }) => {
     setActiveIndex(realIndex);
     setInfoAnimation(true);
   };
-
-  // const selectedProject = useRecoilValue(selectProject);
 
   return (
     <Container>

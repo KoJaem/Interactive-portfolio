@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { Seo } from 'src/components';
 import { ProjectGalleryPage } from 'src/containers/projectGalleryPage/ProjectGalleryPage';
@@ -12,8 +12,9 @@ export default function ProjectGallery() {
   }, []);
   return (
     <>
-      <Seo title={'Gallery'}/>
+      <Seo title={'Gallery'} />
       <ProjectGalleryPage />
+      {/* <LangchainChatWindow bubbleColor={'skyBlue'} boxHeaderColor='skyBlue' /> */}
     </>
   );
 }

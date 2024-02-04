@@ -1,11 +1,11 @@
-import React from 'react';
-import { MoreButton, Typography } from 'src/components';
-import { customColor } from 'src/constants';
-import styled from 'styled-components';
 import Image from 'next/image';
+import React from 'react';
 import { purpleBoldShadow } from 'src/common/fontShadow';
-import { customColorType } from 'src/constants/customColor';
+import { Typography } from 'src/components';
 import { handleColor } from 'src/components/Typography';
+import { customColor } from 'src/constants';
+import { customColorType } from 'src/constants/customColor';
+import styled from 'styled-components';
 type Props = {
   refs: React.MutableRefObject<null[] | HTMLElement[]>;
 };
@@ -69,13 +69,12 @@ export const MyInfo = ({ refs }: Props) => {
                 style={{ gap: 4 }}
                 onClick={() => window.open('https://github.com/KoJaem')}
               >
-
-                  <Image
-                    src={'/GithubIcon.png'}
-                    width={30}
-                    height={30}
-                    alt="Github"
-                  />
+                <Image
+                  src={'/GithubIcon.png'}
+                  width={30}
+                  height={30}
+                  alt="Github"
+                />
                 <Typography
                   size="1.3rem"
                   color="black"
@@ -98,9 +97,12 @@ export const MyInfo = ({ refs }: Props) => {
                   )
                 }
               >
-               
-                  <Image src={'/notionIcon.png'} width={30} height={30} alt="Notion" />
-                
+                <Image
+                  src={'/notionIcon.png'}
+                  width={30}
+                  height={30}
+                  alt="Notion"
+                />
                 <Typography
                   size="1.3rem"
                   color="black"
@@ -124,7 +126,7 @@ export const MyInfo = ({ refs }: Props) => {
 
 const Container = styled.section`
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

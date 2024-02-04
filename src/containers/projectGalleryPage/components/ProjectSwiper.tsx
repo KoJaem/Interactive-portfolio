@@ -59,8 +59,6 @@ export const ProjectSwiper = ({ activeIndex, slideChange }: Props) => {
         <NextButton className="swiper-button-next">
           <MdNavigateNext size={40} />
         </NextButton>
-        {/* <PaginationButton className="swiper_pagination" /> */}
-        {/* 프로젝트 수 많아지면 페이지네이션 없애고 아래코드로 수정하기 */}
         <PaginationButton>
           <Typography size="1rem" color="blue" fontWeight="bold">{`${
             activeIndex + 1
@@ -118,7 +116,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
 const ButtonCss = css`
   position: absolute;
   top: 50%;
-  z-index: 999;
+  z-index: 99;
   background-color: ${customColor.white}80;
   --swiper-theme-color: ${customColor.magenta};
   width: 60px;

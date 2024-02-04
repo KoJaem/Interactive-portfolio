@@ -18,7 +18,7 @@ const TOP_ANIMATION_POSITION = 100;
 type Props = {
   // slideChange: ({ realIndex }: { realIndex: number }) => void;
 };
-export const ProjectSwiper2 = () => {
+export const ProjectSwiper_NewVersion = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   const slideChange = ({ realIndex }: { realIndex: number }) => {
@@ -88,7 +88,11 @@ export const ProjectSwiper2 = () => {
                       {data.title}
                     </Typography>
                     <SlideInfo>
-                      <Typography size="0.8rem" color="darkGray">
+                      <Typography
+                        size="0.8rem"
+                        color="darkGray"
+                        textAlign="left"
+                      >
                         {data.date[0]} ~ {data.date[1]}
                       </Typography>
                       <LinkWrapper>
