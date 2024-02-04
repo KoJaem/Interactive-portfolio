@@ -1,7 +1,8 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
-import { Header, Intro, MyInfo, Projects, MySkills } from './components';
+import { Header, Intro, MyInfo, MySkills, Projects } from './components';
+import { IntersectionWrapper } from 'src/components/intersectionWrapper';
 
 export const IndexPage = () => {
   const buttonRefs = useRef<null[] | HTMLElement[]>(new Array(3));
@@ -10,11 +11,17 @@ export const IndexPage = () => {
       <Header refs={buttonRefs} />
       <Intro />
       <GapLine />
-      <MyInfo refs={buttonRefs} />
-      <Gap />
-      <MySkills refs={buttonRefs} />
-      <Gap />
-      <Projects refs={buttonRefs} />
+      <IntersectionWrapper>
+        <MyInfo refs={buttonRefs} />
+        <Gap />
+      </IntersectionWrapper>
+      <IntersectionWrapper>
+        <MySkills refs={buttonRefs} />
+        <Gap />
+      </IntersectionWrapper>
+      <IntersectionWrapper>
+        <Projects refs={buttonRefs} />
+      </IntersectionWrapper>
     </Container>
   );
 };

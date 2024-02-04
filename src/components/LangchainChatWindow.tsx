@@ -1,11 +1,12 @@
+import { AnimatePresence, motion } from 'framer-motion';
 import { IoChatbubbleEllipses } from 'react-icons/io5';
 import { customColorType } from 'src/constants/customColor';
 import { useModal } from 'src/hooks';
 import styled from 'styled-components';
 import { handleColor } from './Typography';
-import { LangchainChatBoxModal } from './LangchainChatBoxModal';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
+import dynamic from 'next/dynamic';
+
+const LangchainChatBoxModal = dynamic(() => import('./LangchainChatBoxModal'));
 
 type Props = {
   bubbleColor: keyof customColorType;
@@ -17,7 +18,7 @@ export const LangchainChatWindow = ({ bubbleColor, boxHeaderColor }: Props) => {
   return (
     <Container isOpen={isOpen}>
       {!isOpen && (
-        <ChatBubbleWrapper
+        <motion.section
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5 } }}
         >
@@ -27,7 +28,7 @@ export const LangchainChatWindow = ({ bubbleColor, boxHeaderColor }: Props) => {
             fill={handleColor(bubbleColor)}
             cursor={'pointer'}
           />
-        </ChatBubbleWrapper>
+        </motion.section>
       )}
       <AnimatePresence mode="wait">
         {isOpen && (
@@ -60,5 +61,3 @@ const Container = styled.section<StyledContainerProps>`
     transform: none;
   }
 `;
-
-const ChatBubbleWrapper = styled(motion.section)``;
