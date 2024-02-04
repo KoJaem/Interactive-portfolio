@@ -157,7 +157,7 @@ export const Intro = () => {
             </Typography>
           </motion.li>
         </motion.ul>
-        <motion.li
+        <motion.article
           variants={introVariants}
           style={{
             opacity: isVisible ? introOpacity : 0,
@@ -194,7 +194,7 @@ export const Intro = () => {
               shadow={whiteBoldShadow}
             />
           </Typography>
-        </motion.li>
+        </motion.article>
       </Welcome>
       <SecondIntro>
         <Name style={{ opacity: nameOpacity, y: nameYPosition }}>
@@ -334,7 +334,7 @@ const Name = styled(motion.section)`
   }
 `;
 
-const Interest = styled(motion.li)`
+const Interest = styled(motion.article)`
   display: flex;
   align-items: center;
   flex-direction: column;
