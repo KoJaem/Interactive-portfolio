@@ -44,7 +44,6 @@ const LangchainChatBoxModal = ({ boxHeaderColor, handleModal }: Props) => {
   const submit = async (data: FieldValues) => {
     try {
       if (!process.env.NEXT_PUBLIC_LAMBDA_URL || invalidAccessKey) {
-        console.log('NEXT_PUBLIC_LAMBDA_URL', process.env.NEXT_PUBLIC_LAMBDA_URL);
         return;
       }
       const question = data.question;
