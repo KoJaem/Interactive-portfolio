@@ -17,7 +17,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         {/* 모바일에서 웹처럼 보이게 하는 meta code */}
         {/* <meta name="viewport" content="viewport-fit=cover" /> */}
         <meta property="og:title" content="FrontEnd Developer KoJaem" />
-        <meta property="og:description" content="KoJaem Exhibition" />
+        <meta name="description" content="Introducing Front End Developer KoJaem. Enjoy the fun with interactive elements." />
+        <meta
+          property="og:description"
+          content="Introducing Front End Developer KoJaem. Enjoy the fun with interactive elements."
+        />
         <meta property="og:image" content="/thumbnail.jpg" />
       </Head>
       <RecoilRoot>

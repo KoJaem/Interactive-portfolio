@@ -1,6 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import axios, { AxiosError } from 'axios';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 import { HiOutlinePaperAirplane } from 'react-icons/hi2';
 import { RxCross1 } from 'react-icons/rx';
@@ -13,16 +14,12 @@ import { object, string } from 'yup';
 import { AccessKeyModal } from './AccessKeyModal';
 import { ChatLoading } from './ChatLoading';
 import { Typography, handleColor } from './Typography';
-import { motion } from 'framer-motion';
 
 type Props = {
   boxHeaderColor: keyof customColorType;
   handleModal: () => void;
 };
-export const LangchainChatBoxModal = ({
-  boxHeaderColor,
-  handleModal,
-}: Props) => {
+const LangchainChatBoxModal = ({ boxHeaderColor, handleModal }: Props) => {
   const [history, setHistory] = useState<Array<string>>([]);
   const { isOpen: isOpenAccessKeyModal, handleModal: handleAccessKeyModal } =
     useModal();
@@ -256,3 +253,5 @@ const SubmitButton = styled.button`
   justify-content: center;
   width: 20px;
 `;
+
+export default LangchainChatBoxModal;
