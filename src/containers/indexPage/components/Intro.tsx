@@ -36,10 +36,13 @@ export const Intro = () => {
 
   const SCROLL_OFFSET = {
     CONTAINER_SCALE: [0, 0.25],
+    CONTAINER_Y: [0, 0.25],
     TITLE_OPACITY: [0.1875, 0.25],
     INTRO_OPACITY: [0.125, 0.225],
     NAME_OPACITY: [0.25, 0.625, 1],
-    NAME_Y_POSITION: [0.25, 0.375],
+    NAME_SCALE: [0.25, 0.625, 1],
+    // NAME_Y_POSITION: [0.25, 0.375],
+    INTEREST_SCALE: [0.375, 0.625, 1],
     INTEREST_OPACITY: [0.375, 0.625, 1],
     DIA_OPACITY: [0.625, 1],
   };
@@ -55,6 +58,12 @@ export const Intro = () => {
     scrollYProgress,
     SCROLL_OFFSET.CONTAINER_SCALE,
     [1, 1.2],
+  );
+
+  const containerY = useTransform(
+    scrollYProgress,
+    SCROLL_OFFSET.CONTAINER_Y,
+    [1, -40],
   );
 
   const titleOpacity = useTransform(
@@ -75,10 +84,22 @@ export const Intro = () => {
     [0, 1, 0],
   );
 
-  const nameYPosition = useTransform(
+  const nameScale = useTransform(
     scrollYProgress,
-    SCROLL_OFFSET.NAME_Y_POSITION,
-    [20, 0],
+    SCROLL_OFFSET.NAME_SCALE,
+    [0.3, 1, 1],
+  );
+
+  // const nameYPosition = useTransform(
+  //   scrollYProgress,
+  //   SCROLL_OFFSET.NAME_Y_POSITION,
+  //   [20, 0],
+  // );
+
+  const InterestScale = useTransform(
+    scrollYProgress,
+    SCROLL_OFFSET.INTEREST_SCALE,
+    [0.3, 1, 1],
   );
 
   const InterestOpacity = useTransform(
@@ -107,7 +128,7 @@ export const Intro = () => {
         exit: { transition: { staggerChildren: 0.5 } },
       }}
     >
-      <Welcome style={{ scale: containerScale }}>
+      <Welcome style={{ scale: containerScale, y: containerY }}>
         <motion.ul
           style={{
             opacity: titleOpacity,
@@ -197,7 +218,7 @@ export const Intro = () => {
         </motion.article>
       </Welcome>
       <SecondIntro>
-        <Name style={{ opacity: nameOpacity, y: nameYPosition }}>
+        <Name style={{ opacity: nameOpacity, scale: nameScale }}>
           <GradientTypography
             size="4rem"
             color1="purple"
@@ -209,7 +230,7 @@ export const Intro = () => {
             FrontEnd
           </GradientTypography>
         </Name>
-        <Interest style={{ opacity: InterestOpacity }}>
+        <Interest style={{ opacity: InterestOpacity, scale: InterestScale }}>
           <Typography
             size="1.6rem"
             color="skyBlue"

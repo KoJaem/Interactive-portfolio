@@ -217,6 +217,7 @@ const Right = styled.section`
 
 const imageWrapperCss = css`
   background-color: ${customColor.white};
+  /* border: 4px solid ${customColor.black}; */
   box-shadow: 4px 12px 30px 6px ${customColor.black}30;
   transition: all 200ms ease;
   @media screen and (min-width: 320px) {
