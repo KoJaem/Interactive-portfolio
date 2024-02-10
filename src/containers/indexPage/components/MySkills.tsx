@@ -200,10 +200,9 @@ const Left = styled.section`
 
 const SmallImageContainer = styled.section`
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px 0;
+  gap: 12px;
+  width: 100vw;
   max-width: 340px;
-  justify-content: space-between;
 `;
 
 const Right = styled.section`
@@ -222,20 +221,23 @@ const imageWrapperCss = css`
   transition: all 200ms ease;
   @media screen and (min-width: 320px) {
     :hover {
-      scale: 1.1;
+      scale: 1.05;
+    }
+    :active {
+      scale: 1;
     }
   }
 `;
 
 const SmallImageWrapper = styled.section`
   border-radius: 8px;
-  padding: 8px;
+  padding: 12px;
   ${imageWrapperCss}
 `;
 
 const ImageWrapper = styled.section`
   border-radius: 14px;
-  width: 100%;
+  width: 100vw;
   max-width: 340px;
   padding: 12px;
   display: flex;

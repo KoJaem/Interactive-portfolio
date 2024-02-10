@@ -1,14 +1,9 @@
 export const mySkills = {
   Tech: {
-    smallImage: [
-      'HTML.png',
-      'CSS.png',
-      'JavaScript.png',
-      'TypeScript.png',
-      'React.png',
-      'styled-components.png',
-    ],
+    smallImage: ['HTML.png', 'CSS.png', 'JavaScript.png'],
     image: [
+      'React.png',
+      'TypeScript.png',
       'Redux.png',
       'emotion.png',
       'Recoil.png',
