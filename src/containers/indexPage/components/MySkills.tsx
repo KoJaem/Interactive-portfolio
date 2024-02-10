@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import { purpleBoldShadow } from 'src/common/fontShadow';
 import { Typography } from 'src/components';
+import { IntersectionWrapper } from 'src/components/intersectionWrapper';
 import { customColor } from 'src/constants';
 import { mySkills } from 'src/dummy';
 import styled, { css } from 'styled-components';
@@ -20,46 +21,30 @@ export const MySkills = ({ refs }: Props) => {
         My <span style={{ color: customColor.magenta }}>Skills</span>
       </Typography>
       <Wrapper>
-        <Left>
-          <Typography size="2rem" color="black" fontWeight="bold" opacity={0.5}>
-            Tech
-          </Typography>
-          <SmallImageContainer>
-            {mySkills.Tech.smallImage.map((data, i) => (
-              <SmallImageWrapper key={i}>
-                <Image
-                  src={`/imgs/mySkills/${data}`}
-                  width={85}
-                  height={85}
-                  objectFit={'contain'}
-                  alt="techSkill"
-                />
-              </SmallImageWrapper>
-            ))}
-          </SmallImageContainer>
-          {mySkills.Tech.image.map((data, i) => (
-            <ImageWrapper key={i}>
-              <Image
-                src={`/imgs/mySkills/${data}`}
-                width={275}
-                height={85}
-                alt="techSkill"
-                objectFit={'contain'}
-              />
-            </ImageWrapper>
-          ))}
-        </Left>
-        <Right>
-          <CategoryWrapper>
+        <IntersectionWrapper>
+          <Left>
             <Typography
               size="2rem"
               color="black"
               fontWeight="bold"
               opacity={0.5}
             >
-              Community
+              Tech
             </Typography>
-            {mySkills.Community.map((data, i) => (
+            <SmallImageContainer>
+              {mySkills.Tech.smallImage.map((data, i) => (
+                <SmallImageWrapper key={i}>
+                  <Image
+                    src={`/imgs/mySkills/${data}`}
+                    width={85}
+                    height={85}
+                    objectFit={'contain'}
+                    alt="techSkill"
+                  />
+                </SmallImageWrapper>
+              ))}
+            </SmallImageContainer>
+            {mySkills.Tech.image.map((data, i) => (
               <ImageWrapper key={i}>
                 <Image
                   src={`/imgs/mySkills/${data}`}
@@ -70,71 +55,96 @@ export const MySkills = ({ refs }: Props) => {
                 />
               </ImageWrapper>
             ))}
-          </CategoryWrapper>
-          <CategoryWrapper>
-            <Typography
-              size="2.5rem"
-              color="black"
-              fontWeight="bold"
-              opacity={0.5}
-            >
-              Deployment
-            </Typography>
-            {mySkills.Deployment.map((data, i) => (
-              <ImageWrapper key={i}>
-                <Image
-                  src={`/imgs/mySkills/${data}`}
-                  width={275}
-                  height={85}
-                  alt="techSkill"
-                  objectFit={'contain'}
-                />
-              </ImageWrapper>
-            ))}
-          </CategoryWrapper>
-          <CategoryWrapper>
-            <Typography
-              size="2.5rem"
-              color="black"
-              fontWeight="bold"
-              opacity={0.5}
-            >
-              API
-            </Typography>
-            {mySkills.API.map((data, i) => (
-              <ImageWrapper key={i}>
-                <Image
-                  src={`/imgs/mySkills/${data}`}
-                  width={275}
-                  height={85}
-                  alt="techSkill"
-                  objectFit={'contain'}
-                />
-              </ImageWrapper>
-            ))}
-          </CategoryWrapper>
-          <CategoryWrapper>
-            <Typography
-              size="2.5rem"
-              color="black"
-              fontWeight="bold"
-              opacity={0.5}
-            >
-              Mobile
-            </Typography>
-            {mySkills.Mobile.map((data, i) => (
-              <ImageWrapper key={i}>
-                <Image
-                  src={`/imgs/mySkills/${data}`}
-                  width={275}
-                  height={85}
-                  alt="techSkill"
-                  objectFit={'contain'}
-                />
-              </ImageWrapper>
-            ))}
-          </CategoryWrapper>
-        </Right>
+          </Left>
+        </IntersectionWrapper>
+        <IntersectionWrapper>
+          <Right>
+            <CategoryWrapper>
+              <Typography
+                size="2rem"
+                color="black"
+                fontWeight="bold"
+                opacity={0.5}
+              >
+                Community
+              </Typography>
+              {mySkills.Community.map((data, i) => (
+                <ImageWrapper key={i}>
+                  <Image
+                    src={`/imgs/mySkills/${data}`}
+                    width={275}
+                    height={85}
+                    alt="techSkill"
+                    objectFit={'contain'}
+                  />
+                </ImageWrapper>
+              ))}
+            </CategoryWrapper>
+            <CategoryWrapper>
+              <Typography
+                size="2.5rem"
+                color="black"
+                fontWeight="bold"
+                opacity={0.5}
+              >
+                Deployment
+              </Typography>
+              {mySkills.Deployment.map((data, i) => (
+                <ImageWrapper key={i}>
+                  <Image
+                    src={`/imgs/mySkills/${data}`}
+                    width={275}
+                    height={85}
+                    alt="techSkill"
+                    objectFit={'contain'}
+                  />
+                </ImageWrapper>
+              ))}
+            </CategoryWrapper>
+            <CategoryWrapper>
+              <Typography
+                size="2.5rem"
+                color="black"
+                fontWeight="bold"
+                opacity={0.5}
+              >
+                API
+              </Typography>
+              {mySkills.API.map((data, i) => (
+                <ImageWrapper key={i}>
+                  <Image
+                    src={`/imgs/mySkills/${data}`}
+                    width={275}
+                    height={85}
+                    alt="techSkill"
+                    objectFit={'contain'}
+                  />
+                </ImageWrapper>
+              ))}
+            </CategoryWrapper>
+            <CategoryWrapper>
+              <Typography
+                size="2.5rem"
+                color="black"
+                fontWeight="bold"
+                opacity={0.5}
+              >
+                Mobile
+              </Typography>
+              {mySkills.Mobile.map((data, i) => (
+                <ImageWrapper key={i}>
+                  <Image
+                    src={`/imgs/mySkills/${data}`}
+                    width={275}
+                    height={85}
+                    alt="techSkill"
+                    objectFit={'contain'}
+                  />
+                </ImageWrapper>
+              ))}
+            </CategoryWrapper>
+          </Right>
+        </IntersectionWrapper>
       </Wrapper>
     </Container>
   );

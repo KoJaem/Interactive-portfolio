@@ -143,6 +143,7 @@ const LangchainChatBoxModal = ({ boxHeaderColor, handleModal }: Props) => {
             <SubmitButton
               type="submit"
               disabled={isSubmitting || invalidAccessKey}
+              aria-label='chat-submit'
             >
               <HiOutlinePaperAirplane />
             </SubmitButton>

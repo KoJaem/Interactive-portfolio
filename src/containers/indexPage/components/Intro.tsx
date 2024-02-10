@@ -194,22 +194,22 @@ export const Intro = () => {
             textAlign="center"
           >
             <SpectrumText
-              text="저는 "
+              text="저는 1년차 "
               delay={0.1}
               duration={1}
               shadow={whiteBoldShadow}
             />
             <SpectrumText
-              text="프론트엔드 개발자"
+              text="프론트엔드 개발자 "
               delay={0.1}
-              initialDelay={0.3}
+              initialDelay={0.7}
               color={customColor.skyBlue}
               duration={1}
               shadow={skyBlueBoldShadow}
             />
             <SpectrumText
-              text="를 꿈꾸며 공부하는 학생입니다."
-              initialDelay={1.2}
+              text="KoJaem 입니다."
+              initialDelay={1.7}
               delay={0.1}
               duration={1}
               shadow={whiteBoldShadow}

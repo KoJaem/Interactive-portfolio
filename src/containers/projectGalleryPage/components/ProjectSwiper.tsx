@@ -53,13 +53,13 @@ export const ProjectSwiper = ({ activeIndex, slideChange }: Props) => {
           {/* <Typography size='0.8rem' color="white">자세히보기</Typography> */}
           <MdOutlineZoomOutMap color="white" size={20} />
         </MoreImage>
-        <PrevButton className="swiper-button-prev">
+        <PrevButton className="swiper-button-prev" aria-label='prev'>
           <MdNavigateBefore size={40} />
         </PrevButton>
-        <NextButton className="swiper-button-next">
+        <NextButton className="swiper-button-next" aria-label='next'>
           <MdNavigateNext size={40} />
         </NextButton>
-        <PaginationButton>
+        <PaginationButton aria-label='page-navigation'>
           <Typography size="1rem" color="blue" fontWeight="bold">{`${
             activeIndex + 1
           } / ${projects.length}`}</Typography>

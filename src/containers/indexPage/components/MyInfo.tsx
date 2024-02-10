@@ -3,6 +3,7 @@ import React from 'react';
 import { purpleBoldShadow } from 'src/common/fontShadow';
 import { Typography } from 'src/components';
 import { handleColor } from 'src/components/Typography';
+import { IntersectionWrapper } from 'src/components/intersectionWrapper';
 import { customColor } from 'src/constants';
 import { customColorType } from 'src/constants/customColor';
 import styled from 'styled-components';
@@ -26,100 +27,104 @@ export const MyInfo = ({ refs }: Props) => {
           My <span style={{ color: customColor.magenta }}>Info</span>
         </Typography>
       </Title>
-      <Wrapper>
-        <Image
-          style={{ borderRadius: 24 }}
-          src={'/profile.jpg'}
-          width={340}
-          height={340}
-          objectFit="cover"
-          alt="profile"
-        />
-        <Contents>
-          <InfoWrapper>
-            <Typography
-              size="1.5rem"
-              color="white"
-              fontWeight="bold"
-              lineHeight={1.4}
-            >
-              고재민
-            </Typography>
-            <Typography size="1.5rem" color="white" fontWeight="bold">
-              TEL : 010-2258-1401
-            </Typography>
-            <Typography
-              size="1.5rem"
-              color="white"
-              fontWeight="bold"
-              lineHeight={1.4}
-            >
-              woalswhwh@gmail.com
-            </Typography>
-            <Line />
-            <ButtonWrapper>
-              {/* <button onClick={() => window.open('https://github.com/KoJaem')}>
+      <IntersectionWrapper>
+        <Wrapper>
+          <Image
+            style={{ borderRadius: 24 }}
+            src={'/profile.jpg'}
+            width={340}
+            height={340}
+            objectFit="cover"
+            alt="profile"
+          />
+          <Contents>
+            <InfoWrapper>
+              <Typography
+                size="1.5rem"
+                color="white"
+                fontWeight="bold"
+                lineHeight={1.4}
+              >
+                고재민
+              </Typography>
+              <Typography size="1.5rem" color="white" fontWeight="bold">
+                TEL : 010-2258-1401
+              </Typography>
+              <Typography
+                size="1.5rem"
+                color="white"
+                fontWeight="bold"
+                lineHeight={1.4}
+              >
+                woalswhwh@gmail.com
+              </Typography>
+              <Line />
+              <ButtonWrapper>
+                {/* <button onClick={() => window.open('https://github.com/KoJaem')}>
                 <Typography size="1.5rem" color="magenta" fontWeight="bold">
                   GitHub
                 </Typography>
               </button> */}
 
-              <IconButton
-                backgroundColor="skyBlue"
-                style={{ gap: 4 }}
-                onClick={() => window.open('https://github.com/KoJaem')}
-              >
-                <Image
-                  src={'/GithubIcon.png'}
-                  width={30}
-                  height={30}
-                  alt="Github"
-                />
-                <Typography
-                  size="1.3rem"
-                  color="black"
-                  fontWeight="bold"
-                  lineHeight={1.2}
-                  notBreak
+                <IconButton
+                  backgroundColor="skyBlue"
+                  style={{ gap: 4 }}
+                  onClick={() => window.open('https://github.com/KoJaem')}
+                  aria-label="open-github"
                 >
-                  Github
-                </Typography>
-              </IconButton>
+                  <Image
+                    src={'/GithubIcon.png'}
+                    width={30}
+                    height={30}
+                    alt="My Github"
+                  />
+                  <Typography
+                    size="1.3rem"
+                    color="black"
+                    fontWeight="bold"
+                    lineHeight={1.2}
+                    notBreak
+                  >
+                    Github
+                  </Typography>
+                </IconButton>
 
-              <IconButton
-                style={{
-                  gap: 4,
-                }}
-                backgroundColor="white"
-                onClick={() =>
-                  window.open(
-                    'https://quiet-tangerine-0f6.notion.site/5d7f92f6e40a4ed7b019a69600060629',
-                  )
-                }
-              >
-                <Image
-                  src={'/notionIcon.png'}
-                  width={30}
-                  height={30}
-                  alt="Notion"
-                />
-                <Typography
-                  size="1.3rem"
-                  color="black"
-                  fontWeight="bold"
-                  lineHeight={1.2}
-                  notBreak
+                <IconButton
+                  style={{
+                    gap: 4,
+                  }}
+                  backgroundColor="white"
+                  onClick={() =>
+                    window.open(
+                      'https://quiet-tangerine-0f6.notion.site/5d7f92f6e40a4ed7b019a69600060629',
+                    )
+                  }
+                  aria-label="open-notion"
                 >
-                  Notion
-                </Typography>
-              </IconButton>
-            </ButtonWrapper>
-          </InfoWrapper>
-          <Typography size="1.2rem" color="darkGray" fontWeight="bold">
-            내일의 나에게 부끄럽지 않은 하루를 보내자
-          </Typography>
-        </Contents>
-      </Wrapper>
+                  <Image
+                    src={'/notionIcon.png'}
+                    width={30}
+                    height={30}
+                    alt="My Notion"
+                  />
+                  <Typography
+                    size="1.3rem"
+                    color="black"
+                    fontWeight="bold"
+                    lineHeight={1.2}
+                    notBreak
+                  >
+                    Notion
+                  </Typography>
+                </IconButton>
+              </ButtonWrapper>
+            </InfoWrapper>
+            <Typography size="1.2rem" color="darkGray" fontWeight="bold">
+              내일의 나에게 부끄럽지 않은 하루를 보내자
+            </Typography>
+          </Contents>
+        </Wrapper>
+      </IntersectionWrapper>
     </Container>
   );
 };

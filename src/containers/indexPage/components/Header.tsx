@@ -91,6 +91,7 @@ export const Header = ({ refs }: Props) => {
             whileTap="tap"
             key={index}
             onClick={() => scrollMove(index)}
+            aria-label={`move-${data}`}
           >
             {data}
           </Button>
@@ -106,6 +107,7 @@ export const Header = ({ refs }: Props) => {
             borderRadius: '50%',
           }}
           onClick={() => window.open('https://github.com/KoJaem')}
+          aria-label="move-github"
         >
           Github
         </GithubButton>
