@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import React, { ReactNode } from 'react';
 import { useRecoilValue } from 'recoil';
 import { indexScreenAnimation } from 'src/recoil/atom';
-import styled from 'styled-components';
 import { Screen } from './index';
 
 type Props = {
@@ -14,7 +13,7 @@ export const ScreenAndSlide = ({ children }: Props) => {
   const checkIndexScreen = useRecoilValue(indexScreenAnimation);
   return (
     <>
-      <Container
+      <motion.section
         exit={{
           x: '-100%',
           transition: {
@@ -23,10 +22,9 @@ export const ScreenAndSlide = ({ children }: Props) => {
         }}
       >
         {children}
-      </Container>
+      </motion.section>
       {checkIndexScreen && <Screen />}
     </>
   );
 };
 
-const Container = styled(motion.section)``;
