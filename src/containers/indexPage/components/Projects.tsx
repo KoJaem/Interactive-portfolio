@@ -8,7 +8,7 @@ import { ProjectSwiper_NewVersion } from 'src/containers/indexPage/components/Pr
 import { GradientTypography } from 'src/components/GradientTypography';
 import { useSetRecoilState } from 'recoil';
 import { indexScreenAnimation } from 'src/recoil/atom';
-import { IntersectionWrapper } from 'src/components/intersectionWrapper';
+import { IntersectionWrapper } from 'src/components/IntersectionWrapper';
 type Props = {
   refs: React.MutableRefObject<null[] | HTMLElement[]>;
 };

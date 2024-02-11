@@ -2,7 +2,6 @@ import Image from 'next/image';
 import React from 'react';
 import { purpleBoldShadow } from 'src/common/fontShadow';
 import { Typography } from 'src/components';
-import { IntersectionWrapper } from 'src/components/intersectionWrapper';
 import { customColor } from 'src/constants';
 import { mySkills } from 'src/dummy';
 import styled, { css } from 'styled-components';
@@ -21,7 +20,6 @@ export const MySkills = ({ refs }: Props) => {
         My <span style={{ color: customColor.magenta }}>Skills</span>
       </Typography>
       <Wrapper>
-        <IntersectionWrapper>
           <Left>
             <Typography
               size="2rem"
@@ -56,8 +54,6 @@ export const MySkills = ({ refs }: Props) => {
               </ImageWrapper>
             ))}
           </Left>
-        </IntersectionWrapper>
-        <IntersectionWrapper>
           <Right>
             <CategoryWrapper>
               <Typography
@@ -144,7 +140,6 @@ export const MySkills = ({ refs }: Props) => {
               ))}
             </CategoryWrapper>
           </Right>
-        </IntersectionWrapper>
       </Wrapper>
     </Container>
   );

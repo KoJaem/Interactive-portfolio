@@ -3,7 +3,7 @@ import React from 'react';
 import { purpleBoldShadow } from 'src/common/fontShadow';
 import { Typography } from 'src/components';
 import { handleColor } from 'src/components/Typography';
-import { IntersectionWrapper } from 'src/components/intersectionWrapper';
+import { IntersectionWrapper } from 'src/components/IntersectionWrapper';
 import { customColor } from 'src/constants';
 import { customColorType } from 'src/constants/customColor';
 import styled from 'styled-components';
