@@ -33,6 +33,7 @@ export const AccessKeyModal = ({
           <Input {...register('accessKey')} />
           <SubmitButton
             type="button"
+            aria-label='accessKey-submit'
             onClick={() => {
               setAccessKey(getValues('accessKey'));
               handleModal();
@@ -42,7 +43,7 @@ export const AccessKeyModal = ({
           </SubmitButton>
         </InputWrapper>
       </Wrapper>
-      <Overlay onClick={handleModal} />
+      <Overlay />
     </Container>
   );
 };

@@ -26,7 +26,7 @@ export const ProjectGalleryPage = () => {
 
   return (
     <Container>
-      <PrevButton animate={ButtonAnimate} onClick={() => router.push('/')}>
+      <PrevButton animate={ButtonAnimate} onClick={() => router.push('/')} aria-label='move-prev'>
         <RxCross1 size={40} color={`${customColor.darkGray}`}/>
       </PrevButton>
 
@@ -49,6 +49,7 @@ export const ProjectGalleryPage = () => {
         </motion.div>
         <NotionButton
           animate={ButtonAnimate}
+          aria-label='open-notion'
           onClick={() =>
             window.open(
               'https://quiet-tangerine-0f6.notion.site/5d7f92f6e40a4ed7b019a69600060629',

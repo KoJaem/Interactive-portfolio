@@ -21,7 +21,7 @@ export const customColor: customColorType = {
   white: '#FFFFFF',
   black: '#0F0F10',
   gray: '#D9D9D9',
-  darkGray: '#7E7E87',
+  darkGray: '#5f5f66',
   purple: '#992DFA',
   darkPurple: '#461670',
   magenta: '#D648FD',
