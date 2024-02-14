@@ -14,7 +14,7 @@ export const IntersectionWrapper = ({ minHeight, children }: Props) => {
   }, []);
 
   return (
-    <Container ref={observerTarget} minHeight={minHeight}>
+    <Container ref={observerTarget} minHeight={minHeight} show={show}>
       {show && children}
     </Container>
   );
@@ -22,13 +22,9 @@ export const IntersectionWrapper = ({ minHeight, children }: Props) => {
 
 type StyledProps = {
   minHeight?: string;
+  show?: boolean;
 };
 const Container = styled.section<StyledProps>`
   width: 100%;
-  min-height: ${({ minHeight }) =>
-    minHeight
-      ? isNaN(Number(minHeight))
-        ? minHeight
-        : `${minHeight}px`
-      : '100px'};
+  min-height: ${({ show, minHeight }) => show ? '' : minHeight ? isNaN(Number(minHeight)) ? minHeight : `${minHeight}px` : '100px'};
 `;

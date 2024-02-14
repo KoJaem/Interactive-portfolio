@@ -16,7 +16,7 @@ export const MoreButton = ({
   backgroundColor,
 }: Props) => {
   return (
-    <Wrapper backgroundColor={backgroundColor} style={style} onClick={onClick}>
+    <Wrapper backgroundColor={backgroundColor} style={style} onClick={onClick} aria-label='move-detail-project'>
       {children}
     </Wrapper>
   );

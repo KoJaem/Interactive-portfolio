@@ -91,6 +91,7 @@ export const Header = ({ refs }: Props) => {
             whileTap="tap"
             key={index}
             onClick={() => scrollMove(index)}
+            aria-label={`move-${data}`}
           >
             {data}
           </Button>
@@ -106,6 +107,7 @@ export const Header = ({ refs }: Props) => {
             borderRadius: '50%',
           }}
           onClick={() => window.open('https://github.com/KoJaem')}
+          aria-label="move-github"
         >
           Github
         </GithubButton>
@@ -150,11 +152,16 @@ const Title = styled.button`
 
 const ButtonWrapper = styled.section`
   display: none;
-  gap: 0 4vw;
   font-size: 1rem;
   margin-top: 8px;
   @media screen and (min-width: 768px) {
     display: flex;
+    gap: 0 20px;
+  }
+
+  @media screen and (min-width: 1040px) {
+    display: flex;
+    gap: 0 80px;
   }
 `;
 

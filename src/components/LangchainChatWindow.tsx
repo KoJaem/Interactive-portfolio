@@ -1,10 +1,10 @@
 import { AnimatePresence, motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import { IoChatbubbleEllipses } from 'react-icons/io5';
 import { customColorType } from 'src/constants/customColor';
 import { useModal } from 'src/hooks';
 import styled from 'styled-components';
 import { handleColor } from './Typography';
-import dynamic from 'next/dynamic';
 
 const LangchainChatBoxModal = dynamic(() => import('./LangchainChatBoxModal'));
 
@@ -22,6 +22,7 @@ export const LangchainChatWindow = ({ bubbleColor, boxHeaderColor }: Props) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5 } }}
         >
+          
           <IoChatbubbleEllipses
             onClick={handleModal}
             size={40}

@@ -97,7 +97,10 @@ export const ProjectSwiper_NewVersion = () => {
                       </Typography>
                       <LinkWrapper>
                         {data.link.hasOwnProperty('github') && (
-                          <button onClick={() => window.open(data.link.github)}>
+                          <button
+                            onClick={() => window.open(data.link.github)}
+                            aria-label={`open-${data.title}-github`}
+                          >
                             <GradientSvg
                               Icon={AiFillGithub}
                               color1={customColor.skyBlue}
@@ -110,6 +113,7 @@ export const ProjectSwiper_NewVersion = () => {
                         {data.link.hasOwnProperty('githubPage') && (
                           <button
                             onClick={() => window.open(data.link.githubPage)}
+                            aria-label={`open-${data.title}-githubPage`}
                           >
                             <GradientSvg
                               Icon={FaGithubSquare}
@@ -122,7 +126,10 @@ export const ProjectSwiper_NewVersion = () => {
                           </button>
                         )}
                         {data.link.hasOwnProperty('aws') && (
-                          <button onClick={() => window.open(data.link.aws)}>
+                          <button
+                            onClick={() => window.open(data.link.aws)}
+                            aria-label={`open-${data.title}-aws`}
+                          >
                             <GradientSvg
                               Icon={FaAws}
                               color1={customColor.orange}

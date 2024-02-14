@@ -111,13 +111,13 @@ const LangchainChatBoxModal = ({ boxHeaderColor, handleModal }: Props) => {
           {history.map((data, i) => {
             return i % 2 === 0 ? (
               <UserChatBubble key={i}>
-                <Typography size="0.8rem" lineHeight={1.6}>
+                <Typography size="0.8rem" lineHeight={1.6} breakAll>
                   {data}
                 </Typography>
               </UserChatBubble>
             ) : (
               <AIChatBubble key={i}>
-                <Typography size="0.8rem" lineHeight={1.6}>
+                <Typography size="0.8rem" lineHeight={1.6} breakAll>
                   {data}
                 </Typography>
               </AIChatBubble>
@@ -143,6 +143,7 @@ const LangchainChatBoxModal = ({ boxHeaderColor, handleModal }: Props) => {
             <SubmitButton
               type="submit"
               disabled={isSubmitting || invalidAccessKey}
+              aria-label='chat-submit'
             >
               <HiOutlinePaperAirplane />
             </SubmitButton>
@@ -209,7 +210,8 @@ const UserChatBubble = styled.article`
   width: fit-content;
   padding: 8px;
   border-radius: 12px;
-  margin-right: 20%;
+  align-self: flex-end;
+  margin-left: 20%;
 `;
 
 const AIChatBubble = styled.article`
@@ -217,8 +219,7 @@ const AIChatBubble = styled.article`
   width: fit-content;
   padding: 8px;
   border-radius: 12px;
-  align-self: flex-end;
-  margin-left: 20%;
+  margin-right: 20%;
 `;
 
 const Form = styled.form`
