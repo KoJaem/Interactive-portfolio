@@ -111,13 +111,13 @@ const LangchainChatBoxModal = ({ boxHeaderColor, handleModal }: Props) => {
           {history.map((data, i) => {
             return i % 2 === 0 ? (
               <UserChatBubble key={i}>
-                <Typography size="0.8rem" lineHeight={1.6}>
+                <Typography size="0.8rem" lineHeight={1.6} breakAll>
                   {data}
                 </Typography>
               </UserChatBubble>
             ) : (
               <AIChatBubble key={i}>
-                <Typography size="0.8rem" lineHeight={1.6}>
+                <Typography size="0.8rem" lineHeight={1.6} breakAll>
                   {data}
                 </Typography>
               </AIChatBubble>
