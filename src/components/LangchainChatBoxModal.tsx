@@ -210,7 +210,8 @@ const UserChatBubble = styled.article`
   width: fit-content;
   padding: 8px;
   border-radius: 12px;
-  margin-right: 20%;
+  align-self: flex-end;
+  margin-left: 20%;
 `;
 
 const AIChatBubble = styled.article`
@@ -218,8 +219,7 @@ const AIChatBubble = styled.article`
   width: fit-content;
   padding: 8px;
   border-radius: 12px;
-  align-self: flex-end;
-  margin-left: 20%;
+  margin-right: 20%;
 `;
 
 const Form = styled.form`

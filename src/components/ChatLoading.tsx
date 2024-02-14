@@ -13,11 +13,8 @@ export const ChatLoading:FC = () => {
 
 const Container = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   gap: 2px;
-  align-self: flex-end;
   margin-top: 20px;
   margin-bottom: 20px;
 `;
