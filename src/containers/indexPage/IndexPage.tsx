@@ -10,11 +10,11 @@ export const IndexPage = () => {
       <Header refs={buttonRefs} />
       <Intro />
       <GapLine />
-        <MyInfo refs={buttonRefs} />
-        <Gap />
-        <MySkills refs={buttonRefs} />
-        <Gap />
-        <Projects refs={buttonRefs} />
+      <MyInfo refs={buttonRefs} />
+      <Gap />
+      <MySkills refs={buttonRefs} />
+      <Gap />
+      <Projects refs={buttonRefs} />
     </Container>
   );
 };
@@ -37,3 +37,15 @@ const GapLine = styled.hr`
 const Gap = styled.section`
   margin: 20vh 0;
 `;
+
+
+// <iframe
+// src="https://d3aqn2y3q7oegc.cloudfront.net"
+// height="500"
+// width="100%"
+// ></iframe>
+// <iframe
+// src="https://d2ql7g3zfmsy1e.cloudfront.net"
+// height="500"
+// width="100%"
+// ></iframe>
