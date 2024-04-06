@@ -2,12 +2,16 @@ import { useRef } from 'react';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
 import { Header, Intro, MyInfo, MySkills, Projects } from './components';
+import Image from 'next/image';
 
 export const IndexPage = () => {
   const buttonRefs = useRef<null[] | HTMLElement[]>(new Array(3));
   return (
     <Container>
       <Header refs={buttonRefs} />
+      <Iphone>
+        <IPhoneImage src={'iPhone.png'} objectFit='contain' layout='fill'/>
+      </Iphone>
       <Intro />
       <GapLine />
       <MyInfo refs={buttonRefs} />
@@ -38,6 +42,19 @@ const Gap = styled.section`
   margin: 20vh 0;
 `;
 
+const Iphone = styled.section`
+  position: relative;
+  width: 640px;
+  height: 360px;
+`;
+
+const IPhoneImage = styled(Image)`
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  object-fit: contain;
+`;
 
 // <iframe
 // src="https://d3aqn2y3q7oegc.cloudfront.net"
