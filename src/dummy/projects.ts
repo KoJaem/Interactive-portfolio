@@ -55,7 +55,7 @@ Front-End 의 퍼블리싱이 끝난 후 Back-End 와 API 연동작업을 할려
     ],
     link: {
       github: 'https://github.com/potato-club/photoshop-commission-site',
-      aws: 'https://easyphoto.site/',
+      // aws: 'https://easyphoto.site/',
     },
   },
   {
@@ -111,10 +111,8 @@ AWS EC2 에 배포완료 후, 실제 운영 예정이였으나, 해당 프로젝
       '옷장페이지에 관련된 api 렌더링최적화 구현 (자세한 사항은 Notion 확인)',
     ],
     link: {
-      // Todo : AWS 링크 추가해야함
       github: 'https://github.com/potato-club/temperature-outfit',
     },
-    // 사실상 12월5일에 끝난 프로젝트지만, 디자인 및 프로젝트 구조 변경을 하기로 결정하고 좀 더 추가작업중
   },
   {
     thumbnail: 'street-vendor.png',
@@ -228,7 +226,30 @@ Follow-ship 이 얼마나 중요한지 등 많은 것을 느끼게 해준 프로
     ],
     link: {
       github: 'https://github.com/potato-club/travel-with-pet',
-      aws: 'https://d1ql6v5yorw07d.cloudfront.net/',
+      // aws: 'https://d1ql6v5yorw07d.cloudfront.net/',
     },
+  },
+  {
+    thumbnail: 'flutter_games.png',
+    title: 'Flutter 게임 프로젝트',
+    people: '개인 프로젝트',
+    date: ['2023.05', '2024.03'],
+    imageUrl: [
+      'flutter_games1.png',
+    ],
+    info: `Flutter 기술에 관심이 생겨서 <color>"재미있는 프로젝트를 해보자"</color> 라는 생각으로 시작하게 된 프로젝트 입니다.`,
+    function: `기능 적어야함`,
+    developEnv: [
+      'Flutter',
+      'Flutter-flame',
+      'jenny',
+    ],
+    myRole: [
+      '개인 프로젝트 (전체 구현)',
+    ],
+    link: {
+      // github: '',
+    },
+    // action 버튼을 만들면 좋을거같음
   },
 ];
