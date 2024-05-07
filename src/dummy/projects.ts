@@ -62,7 +62,7 @@ Front-End 의 퍼블리싱이 끝난 후 Back-End 와 API 연동작업을 할려
     thumbnail: 'weather-outfit.png',
     title: '날씨별 코디추천 사이트',
     people: '프론트 3, 백엔드 1',
-    date: ['2022.05', 'ing'],
+    date: ['2022.05', '2023.04'],
     imageUrl: [
       'weather-outfit1.png',
       'weather-outfit2.png',
@@ -115,10 +115,11 @@ AWS EC2 에 배포완료 후, 실제 운영 예정이였으나, 해당 프로젝
     },
   },
   {
+    // Todo 삭제
     thumbnail: 'street-vendor.png',
     title: '손안의 노점',
     people: '프론트 3, 백엔드 1, 디자이너2',
-    date: ['2023.01', 'ing'],
+    date: ['2023.01', '2023.11'],
     imageUrl: [
       'street-vendor1.png',
       'street-vendor2.png',
