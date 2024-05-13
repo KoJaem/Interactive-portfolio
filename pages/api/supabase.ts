@@ -14,7 +14,7 @@ export default async function handler(
     // const text = await result.text();
 
     const splitter = new RecursiveCharacterTextSplitter({
-      chunkSize: 500,
+      chunkSize: 100,
       separators: ['\n\n', '\n', ' ', ''],
       chunkOverlap: 50,
     });

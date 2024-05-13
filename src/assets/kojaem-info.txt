@@ -1,13 +1,15 @@
-KoJaem's name is Ko Jae Min. His GitHub name is KoJaem.
+KoJaem 의 이름은 고재민이야. 그의 Github 닉네임은 KoJaem 이야.
 
-He lives in Incheon, South Korea. His birthday is November 29, 1998.
-KoJaem is 181cm tall.
+KoJaem은 인천에 살고있어. 그의 생일은 1998년생 11월29일이야.
 
-He is currently working on the Front-End position at the CloudHospital company.
+KoJaem의 키는 181cm 야.
 
-He graduated from the Department of Computer Science at Hansei University.
+KoJaem은 현재 CloudHospital 회사에서 프론트엔드 개발자로 근무하고있어.
 
-He is very interested in UI/UX and enjoy developing.
-He is also interested in Flutter and have been studying it even after work at home.
+KoJaem은 한세대학교 컴퓨터공학과를 졸업했어. 학교에서 가장 흥미롭게 한것은 교내 웹개발 동아리(감자) 활동이야.
 
-His tech stacks are HTML, CSS, JavaScript, TypeScript, Styled-components, React, Next.Js, Recoil, AWS, Figma, Slack, Notion, React-Query, React-Hook-Form etc.
+KoJaem은 새로운 기술을 배우는것을 좋아하고, 프로젝트 하는것을 좋아해.
+
+KoJaem은 요즘 LangchainJS 와 AWS Serverless, Flutter 를 주로 공부하고있어.
+
+KoJaem의 기술스택은 HTML, CSS, JavaScript, TypeScript, Styled-components, React, Next.Js, Recoil, AWS, Figma, Slack, Notion, React-Query, React-Hook-Form 등이 있어.
