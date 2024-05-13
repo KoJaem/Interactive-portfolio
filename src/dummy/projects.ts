@@ -235,22 +235,14 @@ Follow-ship 이 얼마나 중요한지 등 많은 것을 느끼게 해준 프로
     title: 'Flutter 게임 프로젝트',
     people: '개인 프로젝트',
     date: ['2023.05', '2024.03'],
-    imageUrl: [
-      'flutter_games1.png',
-    ],
+    imageUrl: ['flutter_games1.png'],
     info: `Flutter 기술에 관심이 생겨서 <color>"재미있는 프로젝트를 해보자"</color> 라는 생각으로 시작하게 된 프로젝트 입니다.`,
     function: `기능 적어야함`,
-    developEnv: [
-      'Flutter',
-      'Flutter-flame',
-      'jenny',
-    ],
-    myRole: [
-      '개인 프로젝트 (전체 구현)',
-    ],
+    developEnv: ['Flutter', 'Flutter-flame', 'jenny'],
+    myRole: ['개인 프로젝트 (전체 구현)'],
     link: {
-      // github: '',
+      game: 'https://d2ql7g3zfmsy1e.cloudfront.net',
+      game2: 'https://d3aqn2y3q7oegc.cloudfront.net',
     },
-    // action 버튼을 만들면 좋을거같음
   },
 ];

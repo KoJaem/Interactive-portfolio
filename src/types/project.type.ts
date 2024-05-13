@@ -15,5 +15,7 @@ export type linkType = {
   github?: string;
   githubPage?: string;
   aws?: string;
+  game?: string;
+  game2?: string;
   [key: string]: string | undefined;
 };

@@ -15,27 +15,6 @@ export const IndexPage = () => {
   return (
     <Container>
       <Header refs={buttonRefs} />
-      {/* <PhoneGameComponent
-        containerWidth={700}
-        containerHeight={400}
-        iframeWidth={600}
-        iframeHeight={300}
-        src="https://d2ql7g3zfmsy1e.cloudfront.net"
-      /> */}
-      <PhoneGameComponent
-        containerWidth={1100}
-        containerHeight={530}
-        iframeWidth={932}
-        iframeHeight={430}
-        src="https://d2ql7g3zfmsy1e.cloudfront.net"
-      />
-      <PhoneGameComponent
-        containerWidth={1100}
-        containerHeight={530}
-        iframeWidth={932}
-        iframeHeight={430}
-        src="https://d3aqn2y3q7oegc.cloudfront.net"
-      />
       <Intro />
       <GapLine />
       <MyInfo refs={buttonRefs} />

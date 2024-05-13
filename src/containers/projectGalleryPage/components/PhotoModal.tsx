@@ -1,12 +1,12 @@
 import Image from 'next/image';
+import { RxCross1 } from 'react-icons/rx';
+import Modal from 'react-modal';
+import { customColor } from 'src/constants';
 import styled from 'styled-components';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { customColor } from 'src/constants';
-import Modal from 'react-modal';
-import { RxCross1 } from 'react-icons/rx';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const modalStyle = {
   overlay: {
@@ -33,35 +33,35 @@ type Props = {
 };
 
 export const PhotoModal = ({ isOpen, handleCloseModal, src }: Props) => {
-    return (
-      <Modal
-        ariaHideApp={false}
-        onRequestClose={handleCloseModal}
-        isOpen={isOpen}
-        style={modalStyle}
-      >
-        <StyledSwiper modules={[Navigation]} navigation spaceBetween={100}>
-          <PrevButton onClick={handleCloseModal} aria-label='prev'>
-            <RxCross1 size={40} color={`${customColor.white}`} />
-          </PrevButton>
-          {src.map((data, index) => (
-            <SwiperSlide key={`${data}-${index}`}>
-              <ImageWrapper>
-                <Image
-                  src={`/imgs/projects/slideImage/${data}`}
-                  alt="project"
-                  layout="fill"
-                  objectFit="contain"
-                  style={{
-                    zIndex: 9,
-                  }}
-                />
-              </ImageWrapper>
-            </SwiperSlide>
-          ))}
-        </StyledSwiper>
-      </Modal>
-    );
+  return (
+    <Modal
+      ariaHideApp={false}
+      onRequestClose={handleCloseModal}
+      isOpen={isOpen}
+      style={modalStyle}
+    >
+      <StyledSwiper modules={[Navigation]} navigation spaceBetween={100}>
+        <PrevButton onClick={handleCloseModal} aria-label="prev">
+          <RxCross1 size={40} color={`${customColor.white}`} />
+        </PrevButton>
+        {src.map((data, index) => (
+          <SwiperSlide key={`${data}-${index}`}>
+            <ImageWrapper>
+              <Image
+                src={`/imgs/projects/slideImage/${data}`}
+                alt="project"
+                layout="fill"
+                objectFit="contain"
+                style={{
+                  zIndex: 9,
+                }}
+              />
+            </ImageWrapper>
+          </SwiperSlide>
+        ))}
+      </StyledSwiper>
+    </Modal>
+  );
 };
 const ImageWrapper = styled.section`
   position: relative;

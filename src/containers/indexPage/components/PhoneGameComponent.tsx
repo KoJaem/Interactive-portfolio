@@ -33,10 +33,8 @@ const Container = styled.section<StyledProps>`
   height: ${({ height }) => `${height}px`};
   /* width: 710px; */
   /* height: 400px; */
-  overflow: hidden;
   background-image: url('iPhone.png');
   background-repeat: no-repeat;
-  overflow: hidden;
   object-fit: contain;
   background-size: contain;
   background-position: center;
