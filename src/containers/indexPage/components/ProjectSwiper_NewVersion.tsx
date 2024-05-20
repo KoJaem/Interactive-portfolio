@@ -145,12 +145,12 @@ export const ProjectSwiper_NewVersion = () => {
                               />
                             </button>
                           )}
-                          {data.link.hasOwnProperty('game') && (
+                          {data.action?.hasOwnProperty('game') && (
                             <>
                               <GameButton
                                 // onClick={() => window.open(data.link.githubPage)}
                                 onClick={() => {
-                                  setGameLink(data.link.game);
+                                  setGameLink(data.action?.game);
                                 }}
                                 aria-label={`open-${data.title}-game`}
                               >
@@ -170,11 +170,11 @@ export const ProjectSwiper_NewVersion = () => {
                               </ResponsiveText>
                             </>
                           )}
-                          {data.link.hasOwnProperty('game2') && (
+                          {data.action?.hasOwnProperty('game2') && (
                             <GameButton
-                              // onClick={() => window.open(data.link.githubPage)}
+                              // onClick={() => window.open(data.action.githubPage)}
                               onClick={() => {
-                                setGameLink(data.link.game2);
+                                setGameLink(data.action?.game2);
                               }}
                               aria-label={`open-${data.title}-game2`}
                             >

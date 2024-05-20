@@ -236,11 +236,23 @@ Follow-ship 이 얼마나 중요한지 등 많은 것을 느끼게 해준 프로
     people: '개인 프로젝트',
     date: ['2023.05', '2024.03'],
     imageUrl: ['flutter_games1.png'],
-    info: `Flutter 기술에 관심이 생겨서 <color>"재미있는 프로젝트를 해보자"</color> 라는 생각으로 시작하게 된 프로젝트 입니다.`,
-    function: `기능 적어야함`,
-    developEnv: ['Flutter', 'Flutter-flame', 'jenny'],
+    info: `이 프로젝트는 <color>앱개발에도 흥미를 가져보자</color> 라는 생각에 시작하게 되었습니다.
+취업을 하게되면서 자연스럽게 취미생활이던 게임을 줄이게 되었는데,
+<color>게임을 플레이 할 시간에 게임을 개발해보자</color> 라는 단순한 생각에서 1인 개발을 시작하게 되었습니다.
+처음에는 Flutter-Flame 라이브러리에 대해 기초적인 개념을 익히고 싶어서 강의를 보며
+pixel adventure 를 만들어보았었는데, 그 후에 우연히 보게 된 유튜브에서 <color>AI 가 그려주는 그림</color>에 관련한 내용을 접하게 되면서
+<color>stable-diffusion</color> 을 활용한 캐릭터와 배경 이미지를 만들어서 스토리텔링 형식의 게임을 만들어보았습니다.
+모바일 게임을 생각하여 만들었지만, Flutter 로 개발을 진행하였기 때문에 이 사이트에서 PC 로 간단하게 플레이 해보실 수 있습니다.
+`,
+    function: `pixel adventure : 점프게임 (<color>Tiled 를 사용하여 스테이지 구현</color>)
+스토리텔링 게임 : 스토리텔링 게임 / 추 후 image, text 등의 <color>assets 을 넣어서 쉽게 스토리텔링 게임을 만들 수 있도록 구현</color>`,
+    developEnv: ['Flutter', 'Flutter-flame', 'Jenny'],
     myRole: ['개인 프로젝트 (전체 구현)'],
     link: {
+      // game: 'https://d2ql7g3zfmsy1e.cloudfront.net',
+      // game2: 'https://d3aqn2y3q7oegc.cloudfront.net',
+    },
+    action: {
       game: 'https://d2ql7g3zfmsy1e.cloudfront.net',
       game2: 'https://d3aqn2y3q7oegc.cloudfront.net',
     },

@@ -6,8 +6,7 @@ import {
   Intro,
   MyInfo,
   MySkills,
-  PhoneGameComponent,
-  Projects,
+  Projects
 } from './components';
 
 export const IndexPage = () => {
