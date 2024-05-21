@@ -5,3 +5,4 @@ export const MyInfo = dynamic(() => import('./MyInfo').then(mod => mod.MyInfo));
 export const Projects = dynamic(() => import('./Projects').then(mod => mod.Projects));
 export const ThreeDProjectSwiper = dynamic(() => import('./ThreeDProjectSwiper').then(mod => mod.ThreeDProjectSwiper));
 export const MySkills = dynamic(() => import('./MySkills').then(mod => mod.MySkills));
+export const PhoneGameComponent = dynamic(() => import('./PhoneGameComponent').then(mod => mod.PhoneGameComponent));
