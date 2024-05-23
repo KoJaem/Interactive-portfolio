@@ -173,11 +173,12 @@ const Wrapper = styled.section`
   position: relative;
   display: flex;
   justify-content: space-around;
-  padding: 80px;
+  padding: 20px;
   padding-top: 0;
   flex-wrap: wrap;
   @media screen and (min-width: 840px) {
     flex-wrap: nowrap;
+    padding: 80px;
   }
 `;
 

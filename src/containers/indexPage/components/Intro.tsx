@@ -194,7 +194,7 @@ export const Intro = () => {
             textAlign="center"
           >
             <SpectrumText
-              text="저는 1년차 "
+              text="저는 2년차 "
               delay={0.1}
               duration={1}
               shadow={whiteBoldShadow}

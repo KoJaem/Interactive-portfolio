@@ -9,6 +9,7 @@ export type projectType = {
   developEnv: string[]; // 개발환경
   myRole: string[];
   link: linkType; // 관련 link 들 (현재는 github, aws)
+  action?: actionType; // 관련 actionLink 들 (game 모달 등)
 };
 
 export type linkType = {
@@ -16,4 +17,9 @@ export type linkType = {
   githubPage?: string;
   aws?: string;
   [key: string]: string | undefined;
+};
+
+export type actionType = {
+  game?: string;
+  game2?: string;
 };

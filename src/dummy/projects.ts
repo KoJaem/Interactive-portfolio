@@ -55,14 +55,14 @@ Front-End 의 퍼블리싱이 끝난 후 Back-End 와 API 연동작업을 할려
     ],
     link: {
       github: 'https://github.com/potato-club/photoshop-commission-site',
-      aws: 'https://easyphoto.site/',
+      // aws: 'https://easyphoto.site/',
     },
   },
   {
     thumbnail: 'weather-outfit.png',
     title: '날씨별 코디추천 사이트',
     people: '프론트 3, 백엔드 1',
-    date: ['2022.05', 'ing'],
+    date: ['2022.05', '2023.04'],
     imageUrl: [
       'weather-outfit1.png',
       'weather-outfit2.png',
@@ -111,16 +111,15 @@ AWS EC2 에 배포완료 후, 실제 운영 예정이였으나, 해당 프로젝
       '옷장페이지에 관련된 api 렌더링최적화 구현 (자세한 사항은 Notion 확인)',
     ],
     link: {
-      // Todo : AWS 링크 추가해야함
       github: 'https://github.com/potato-club/temperature-outfit',
     },
-    // 사실상 12월5일에 끝난 프로젝트지만, 디자인 및 프로젝트 구조 변경을 하기로 결정하고 좀 더 추가작업중
   },
   {
+    // Todo 삭제
     thumbnail: 'street-vendor.png',
     title: '손안의 노점',
     people: '프론트 3, 백엔드 1, 디자이너2',
-    date: ['2023.01', 'ing'],
+    date: ['2023.01', '2023.11'],
     imageUrl: [
       'street-vendor1.png',
       'street-vendor2.png',
@@ -228,7 +227,34 @@ Follow-ship 이 얼마나 중요한지 등 많은 것을 느끼게 해준 프로
     ],
     link: {
       github: 'https://github.com/potato-club/travel-with-pet',
-      aws: 'https://d1ql6v5yorw07d.cloudfront.net/',
+      // aws: 'https://d1ql6v5yorw07d.cloudfront.net/',
+    },
+  },
+  {
+    thumbnail: 'flutter_games.png',
+    title: 'Flutter 게임 프로젝트',
+    people: '개인 프로젝트',
+    date: ['2023.05', '2024.03'],
+    imageUrl: ['flutter_games1.png'],
+    info: `이 프로젝트는 <color>앱개발에도 흥미를 가져보자</color> 라는 생각에 시작하게 되었습니다.
+취업을 하게되면서 자연스럽게 취미생활이던 게임을 줄이게 되었는데,
+<color>게임을 플레이 할 시간에 게임을 개발해보자</color> 라는 단순한 생각에서 1인 개발을 시작하게 되었습니다.
+처음에는 Flutter-Flame 라이브러리에 대해 기초적인 개념을 익히고 싶어서 강의를 보며
+pixel adventure 를 만들어보았었는데, 그 후에 우연히 보게 된 유튜브에서 <color>AI 가 그려주는 그림</color>에 관련한 내용을 접하게 되면서
+<color>stable-diffusion</color> 을 활용한 캐릭터와 배경 이미지를 만들어서 스토리텔링 형식의 게임을 만들어보았습니다.
+모바일 게임을 생각하여 만들었지만, Flutter 로 개발을 진행하였기 때문에 이 사이트에서 PC 로 간단하게 플레이 해보실 수 있습니다.
+`,
+    function: `pixel adventure : 점프게임 (<color>Tiled 를 사용하여 스테이지 구현</color>)
+스토리텔링 게임 : 스토리텔링 게임 / 추 후 image, text 등의 <color>assets 을 넣어서 쉽게 스토리텔링 게임을 만들 수 있도록 구현</color>`,
+    developEnv: ['Flutter', 'Flutter-flame', 'Jenny'],
+    myRole: ['개인 프로젝트 (전체 구현)'],
+    link: {
+      // game: 'https://d2ql7g3zfmsy1e.cloudfront.net',
+      // game2: 'https://d3aqn2y3q7oegc.cloudfront.net',
+    },
+    action: {
+      game: 'https://d2ql7g3zfmsy1e.cloudfront.net',
+      game2: 'https://d3aqn2y3q7oegc.cloudfront.net',
     },
   },
 ];

@@ -128,8 +128,8 @@ const LangchainChatBoxModal = ({ boxHeaderColor, handleModal }: Props) => {
       </ChatBoxContent>
       <FormProvider {...formMethods}>
         <Form onSubmit={handleSubmit(submit)}>
-          <TextAreaWrapper>
-            <TextArea
+          <InputWrapper>
+            <Input
               placeholder={
                 isSubmitting
                   ? `요청중입니다... (시간이 걸릴 수 있습니다)`
@@ -145,9 +145,9 @@ const LangchainChatBoxModal = ({ boxHeaderColor, handleModal }: Props) => {
               disabled={isSubmitting || invalidAccessKey}
               aria-label='chat-submit'
             >
-              <HiOutlinePaperAirplane />
+              <HiOutlinePaperAirplane color={customColor.darkPurple}/>
             </SubmitButton>
-          </TextAreaWrapper>
+          </InputWrapper>
         </Form>
       </FormProvider>
       {isOpenAccessKeyModal && (
@@ -229,7 +229,7 @@ const Form = styled.form`
   background-color: ${customColor.white};
 `;
 
-const TextAreaWrapper = styled.article`
+const InputWrapper = styled.article`
   display: flex;
   width: calc(100% - 24px);
   justify-content: space-between;
@@ -240,12 +240,13 @@ const TextAreaWrapper = styled.article`
   bottom: 20px;
 `;
 
-const TextArea = styled.textarea`
+const Input = styled.input`
   resize: none;
   outline: none;
   border: none;
   background: transparent;
   width: 100%;
+  height: 20px;
 `;
 
 const SubmitButton = styled.button`

@@ -49,10 +49,10 @@ export const ProjectSwiper = ({ activeIndex, slideChange }: Props) => {
             </StyledSwiperSlide>
           ))}
         </StyledSwiper>
-        <MoreImage onClick={handleOpenModal}>
+        <MoreDetail onClick={handleOpenModal} aria-label='detail-project'>
           {/* <Typography size='0.8rem' color="white">자세히보기</Typography> */}
           <MdOutlineZoomOutMap color="white" size={20} />
-        </MoreImage>
+        </MoreDetail>
         <PrevButton className="swiper-button-prev" aria-label='prev'>
           <MdNavigateBefore size={40} />
         </PrevButton>
@@ -150,7 +150,7 @@ const PaginationButton = styled.div`
   }
 `;
 
-const MoreImage = styled.button`
+const MoreDetail = styled.button`
   position: absolute;
   bottom: 8px;
   right: 20px;
