@@ -70,11 +70,11 @@ Front-End 의 퍼블리싱이 끝난 후 Back-End 와 API 연동작업을 할려
       'weather-outfit4.png',
       'weather-outfit5.png',
       'weather-outfit6.png',
-      'weather-outfit7.png',
-      'weather-outfit8.png',
-      'weather-outfit9.png',
-      'weather-outfit10.png',
-      'weather-outfit11.png',
+      'weather-outfit7.gif',
+      'weather-outfit8.gif',
+      'weather-outfit9.gif',
+      'weather-outfit10.gif',
+      // 'weather-outfit11.png',
     ],
     info: `주제는 <color>"요즘같은 예측하기 힘든 날씨의 코디를 사용자가 저장하고, 볼 수 있게 하자"</color> 입니다.
 프로젝트 주제가 일교차가 심한 요즘 너무 공감되어서 재밌을것 같다고 느껴졌고 그렇게 시작하게 되었습니다.
@@ -115,49 +115,6 @@ AWS EC2 에 배포완료 후, 실제 운영 예정이였으나, 해당 프로젝
     },
   },
   {
-    // Todo 삭제
-    thumbnail: 'street-vendor.png',
-    title: '손안의 노점',
-    people: '프론트 3, 백엔드 1, 디자이너2',
-    date: ['2023.01', '2023.11'],
-    imageUrl: [
-      'street-vendor1.png',
-      'street-vendor2.png',
-      'street-vendor3.png',
-    ],
-    info: `이 프로젝트는 <color>대부분의 길찾기 어플에는 붕어빵, 타코야끼 등 여러 포장마차의 대한 정보가 나오지 않는데,</color>
-<color>이러한 점을 공략하여 길거리 노점의 관한 앱을 만들어보자</color> 라는 생각으로 시작하게 된 프로젝트입니다.
-아직 프로젝트 초기단계지만 정말 기대가 되는 프로젝트이며, 디자이너 두분과 함께 XD 및 Figma 를 통해 협업 진행중입니다.
-`,
-    function: `<color>손님은 붕어빵, 타코야끼 등의 노점을 쉽게 찾아서 좋고,</color>
-<color>사장님은 이 어플을 통해 손님을 좀 더 유입시킬 수 있다는 점이 이 앱의 핵심 기능</color>입니다.
-구글 로그인으로 로그인을 할 수 있으며, 사장앱, 손님앱을 분리하여 작업할 계획이며,
-<color>손님들이 가게가 있다고 제보하는것이 아닌, 사장님이 직접 가게를 등록함으로써</color>
-<color>손님들이 앱의 정보를 보고 갔다가 가게가 없는 상황을 방지하였습니다.</color>
-`,
-    developEnv: [
-      'Next.js',
-      'TypeScript',
-      'styled-components',
-      'Recoil',
-      'React-Hook-Form',
-      'React-Query',
-      'nx workspace',
-      'react-spring',
-      'react-native (webView)',
-      'Figma',
-    ],
-    myRole: [
-      '가게 상세페이지 UI 및 기능 구현',
-      '장바구니 및 주문하기 UI 및 기능 구현',
-      'TimePicker 구현',
-      '※ 작업중인 프로젝트 이므로 추 후 추가 될 예정입니다.',
-    ],
-    link: {
-      github: 'https://github.com/potato-club/street-vendor-front',
-    },
-  },
-  {
     thumbnail: 'fashion-exhibition.png',
     title: '인터렉티브 패션 전시회 웹',
     people: '프론트 4 (개인프로젝트 + 피드백)',
@@ -180,7 +137,7 @@ Framer 라는 리액트 라이브러리를 활용하여 만들었던, <color>제
 <color>빨리 성장하고 싶다는 계기</color>를 준 프로젝트 입니다.
 또한, 이 프로젝트를 진행하면서 여러가지 배운점이 많았고, 아쉬운점도 많았기에
 실력있는 개발자가 되려면 Leader-ship 만큼
-Follow-ship 이 얼마나 중요한지 등 많은 것을 느끼게 해준 프로젝트 입니다.
+Follower-ship 이 얼마나 중요한지 등 많은 것을 느끼게 해준 프로젝트 입니다.
 프로젝트를 같이 진행한 조원들에게 여러 피드백과 도움을 받고 많은 성장을 할 수 있었고
 저도 언젠가 <color>"팀원들에게 피드백을 해줄 수 있는 역량이 있는 사람이 되고싶다"</color>고 느꼈습니다.`,
     function: `사이트에 들어가서 사진이나 상단바의 브랜드 로고를 누르면 해당 브랜드의 대한 소개 및 내용을 인터렉티브하게 확인하실 수 있는 간단한 소개 사이트입니다.
@@ -235,7 +192,14 @@ Follow-ship 이 얼마나 중요한지 등 많은 것을 느끼게 해준 프로
     title: 'Flutter 게임 프로젝트',
     people: '개인 프로젝트',
     date: ['2023.05', '2024.03'],
-    imageUrl: ['flutter_games1.png'],
+    imageUrl: [
+      'flutter_games2.png',
+      'flutter_games3.png',
+      'flutter_games4.png',
+      'flutter_games5.png',
+      'flutter_games6.png',
+      'flutter_games7.png',
+    ],
     info: `이 프로젝트는 <color>앱개발에도 흥미를 가져보자</color> 라는 생각에 시작하게 되었습니다.
 취업을 하게되면서 자연스럽게 취미생활이던 게임을 줄이게 되었는데,
 <color>게임을 플레이 할 시간에 게임을 개발해보자</color> 라는 단순한 생각에서 1인 개발을 시작하게 되었습니다.

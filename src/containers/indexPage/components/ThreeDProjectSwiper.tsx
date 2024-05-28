@@ -24,6 +24,7 @@ export const ThreeDProjectSwiper = () => {
             disableOnInteraction: false,
           }}
           speed={1000}
+          threshold={20}
           slidesPerView="auto"
           coverflowEffect={{
             rotate: 55,
