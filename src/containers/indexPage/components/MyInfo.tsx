@@ -96,7 +96,7 @@ export const MyInfo = ({ refs }: Props) => {
                   backgroundColor="white"
                   onClick={() =>
                     window.open(
-                      'https://quiet-tangerine-0f6.notion.site/5d7f92f6e40a4ed7b019a69600060629',
+                      'https://kojaem.notion.site/KoJaem-5d7f92f6e40a4ed7b019a69600060629?pvs=4',
                     )
                   }
                   aria-label="open-notion"
