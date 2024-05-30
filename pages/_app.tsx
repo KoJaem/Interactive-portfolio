@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           property="og:description"
           content="Introducing Front End Developer KoJaem. Enjoy the fun with interactive elements."
         />
-        <meta property="og:image" content="/thumbnail.jpg" />
+        <meta property="og:image" content="/thumbnail.png" />
       </Head>
       <RecoilRoot>
         <Layout>
