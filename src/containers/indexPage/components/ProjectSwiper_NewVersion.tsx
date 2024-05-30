@@ -164,7 +164,11 @@ export const ProjectSwiper_NewVersion = () => {
                                 />
                               </GameButton>
                               <ResponsiveText>
-                                <Typography size="0.8rem" textAlign="center" color='darkGray'>
+                                <Typography
+                                  size="0.8rem"
+                                  textAlign="center"
+                                  color="darkGray"
+                                >
                                   1280 이상 해상도에서 플레이가 가능합니다.
                                 </Typography>
                               </ResponsiveText>

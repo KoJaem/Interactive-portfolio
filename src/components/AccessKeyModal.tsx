@@ -30,10 +30,18 @@ export const AccessKeyModal = ({
           />
         </AccessKeyHeader>
         <InputWrapper>
-          <Input {...register('accessKey')} />
+          <Input
+            {...register('accessKey')}
+            onKeyDown={e => {
+              if (e.key === 'Enter') {
+                setAccessKey(getValues('accessKey'));
+                handleModal();
+              }
+            }}
+          />
           <SubmitButton
             type="button"
-            aria-label='accessKey-submit'
+            aria-label="accessKey-submit"
             onClick={() => {
               setAccessKey(getValues('accessKey'));
               handleModal();

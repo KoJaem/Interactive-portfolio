@@ -28,6 +28,7 @@ export const ProjectSwiper = ({ activeIndex, slideChange }: Props) => {
           loop={true}
           onSlideChange={slideChange}
           spaceBetween={100}
+          threshold={20}
           // pagination={{
           //   el: '.swiper_pagination',
           //   clickable: true,
@@ -49,17 +50,17 @@ export const ProjectSwiper = ({ activeIndex, slideChange }: Props) => {
             </StyledSwiperSlide>
           ))}
         </StyledSwiper>
-        <MoreDetail onClick={handleOpenModal} aria-label='detail-project'>
+        <MoreDetail onClick={handleOpenModal} aria-label="detail-project">
           {/* <Typography size='0.8rem' color="white">자세히보기</Typography> */}
           <MdOutlineZoomOutMap color="white" size={20} />
         </MoreDetail>
-        <PrevButton className="swiper-button-prev" aria-label='prev'>
+        <PrevButton className="swiper-button-prev" aria-label="prev">
           <MdNavigateBefore size={40} />
         </PrevButton>
-        <NextButton className="swiper-button-next" aria-label='next'>
+        <NextButton className="swiper-button-next" aria-label="next">
           <MdNavigateNext size={40} />
         </NextButton>
-        <PaginationButton aria-label='page-navigation'>
+        <PaginationButton aria-label="page-navigation">
           <Typography size="1rem" color="blue" fontWeight="bold">{`${
             activeIndex + 1
           } / ${projects.length}`}</Typography>

@@ -40,7 +40,7 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
             color="gray"
             paddingLR={20}
             paddingBT={20}
-            description="프로젝트 소개"
+            description="프로젝트 개요"
           >
             <ChangeColorText text={project.info} />
           </TextBox>

@@ -40,7 +40,12 @@ export const PhotoModal = ({ isOpen, handleCloseModal, src }: Props) => {
       isOpen={isOpen}
       style={modalStyle}
     >
-      <StyledSwiper modules={[Navigation]} navigation spaceBetween={100}>
+      <StyledSwiper
+        modules={[Navigation]}
+        navigation
+        spaceBetween={100}
+        threshold={20}
+      >
         <PrevButton onClick={handleCloseModal} aria-label="prev">
           <RxCross1 size={40} color={`${customColor.white}`} />
         </PrevButton>
