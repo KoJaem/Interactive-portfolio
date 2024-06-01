@@ -12,7 +12,7 @@ KoJaem은 새로운 기술을 배우는것을 좋아하고, 사이드 프로젝�
 
 KoJaem은 요즘 LangchainJS 와 AWS Serverless, Flutter 를 주로 공부하고있어.
 
-KoJaem의 기술스택은 HTML, CSS, JavaScript, TypeScript, Styled-components, React, NextJs, Recoil, SWR, AWS, Figma, Slack, Notion, React-Query, React-Hook-Form 등이 있어.
+KoJaem의 기술스택은 HTML, CSS, JavaScript, TypeScript, React, NextJs, Styled-components, TailwindCss, Recoil, React-Query, SWR, AWS, Figma, Notion 등 여러가지가 있어.
 
 KoJaem이 가장 좋아하는 음식은 치킨이야.
 
