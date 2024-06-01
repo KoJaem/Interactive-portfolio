@@ -1,7 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import axios, { AxiosError } from 'axios';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 import { HiOutlinePaperAirplane } from 'react-icons/hi2';
 import { RxCross1 } from 'react-icons/rx';
@@ -25,6 +25,7 @@ const LangchainChatBoxModal = ({ boxHeaderColor, handleModal }: Props) => {
     useModal();
   const [accessKey, setAccessKey] = useState<string>();
   const [invalidAccessKey, setInvalidAccessKey] = useState<boolean>(false);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
 
   const schema = object().shape({
     question: string().required(`질문을 입력해주세요`),
@@ -83,6 +84,17 @@ const LangchainChatBoxModal = ({ boxHeaderColor, handleModal }: Props) => {
     }
   };
 
+  const scrollToBottom = () => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop =
+        chatContainerRef.current.scrollHeight;
+    }
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [history]);
+
   const checkAccessKey = () => {
     if (accessKey) {
       return;
@@ -107,7 +119,7 @@ const LangchainChatBoxModal = ({ boxHeaderColor, handleModal }: Props) => {
         />
       </ChatBoxHeader>
       <ChatBoxContent>
-        <HistoryWrapper>
+        <HistoryWrapper ref={chatContainerRef}>
           {history.map((data, i) => {
             return i % 2 === 0 ? (
               <UserChatBubble key={i}>
@@ -143,9 +155,9 @@ const LangchainChatBoxModal = ({ boxHeaderColor, handleModal }: Props) => {
             <SubmitButton
               type="submit"
               disabled={isSubmitting || invalidAccessKey}
-              aria-label='chat-submit'
+              aria-label="chat-submit"
             >
-              <HiOutlinePaperAirplane color={customColor.darkPurple}/>
+              <HiOutlinePaperAirplane color={customColor.darkPurple} />
             </SubmitButton>
           </InputWrapper>
         </Form>
