@@ -191,13 +191,7 @@ const Left = styled.section`
   margin-top: 80px;
   min-width: 280px;
 
-  @media screen and (min-width: 840px) {
-    position: sticky;
-    height: max-content;
-    top: 0;
-  }
-
-  @media screen and (min-width: 840px) {
+  @media screen and (min-width: 720px) {
     position: sticky;
     height: max-content;
     top: 0;
