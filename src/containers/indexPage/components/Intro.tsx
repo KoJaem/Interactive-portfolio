@@ -182,7 +182,7 @@ export const Intro = () => {
           variants={introVariants}
           style={{
             opacity: isVisible ? introOpacity : 0,
-            display: 'flex',
+            display: isVisible ? 'flex' : 'none',
             justifyContent: 'center',
           }}
         >

@@ -150,7 +150,7 @@ const LangchainChatBoxModal = ({ boxHeaderColor, handleModal }: Props) => {
               onClick={checkAccessKey}
               {...register('question')}
               readOnly={!accessKey}
-              disabled={isSubmitting || invalidAccessKey}
+              disabled={invalidAccessKey}
             />
             <SubmitButton
               type="submit"
