@@ -1,25 +1,22 @@
 export const mySkills = {
   Tech: {
-    smallImage: [
-      'HTML.png',
-      'CSS.png',
-      'JavaScript.png',
+    smallImage: ['HTML.png', 'CSS.png', 'JavaScript.png'],
+    image: [
       'TypeScript.png',
       'React.png',
-      'styled-components.png',
-    ],
-    image: [
-      'Redux.png',
-      'emotion.png',
-      'Recoil.png',
-      'ReactHookForm.png',
       'NextJs.png',
+      'Redux.png',
+      'Recoil.png',
+      'tailwindcss.png',
+      'framer-motion.png',
+      'styled-components.png',
+      'ReactHookForm.png',
     ],
   },
   Community: ['GitHub.png', 'Notion.png', 'Slack.png', 'Figma.png'],
-  Deployment: ['AWS.png'],
+  Deployment: ['AWS.png', 'vercel.png'],
 
-  API: ['PostMan.png', 'Axios.png', 'ReactQuery.png'],
+  API: ['PostMan.png', 'Axios.png', 'ReactQuery.png', 'SWR.png'],
 
-  Mobile: ['React-Native.png'],
+  Mobile: ['Flutter.png', 'React-Native.png'],
 };

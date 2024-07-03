@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { Typography } from 'src/components';
-import { TextBox } from './TextBox';
-import { projects } from 'src/dummy/projects';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { Typography } from 'src/components';
 import { customColor } from 'src/constants';
+import { projects } from 'src/dummy/projects';
+import styled from 'styled-components';
+import { TextBox } from './TextBox';
 import { ChangeColorText } from './index';
 
 type Props = {
@@ -13,6 +13,7 @@ type Props = {
 };
 export const ProjectIntro = ({ activeIndex }: Props) => {
   const project = projects[activeIndex];
+  const router = useRouter();
   return (
     <Container>
       <Wrapper>
@@ -39,7 +40,7 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
             color="gray"
             paddingLR={20}
             paddingBT={20}
-            description="프로젝트 소개"
+            description="프로젝트 개요"
           >
             <ChangeColorText text={project.info} />
           </TextBox>
@@ -104,6 +105,30 @@ export const ProjectIntro = ({ activeIndex }: Props) => {
                 </Link>
               </Typography>
             ))}
+            {project.action && (
+              <>
+                {Object.keys(project.action).map((data, i) => (
+                  <div
+                    key={i}
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => router.push('/')}
+                    aria-label="move-prev"
+                  >
+                    <Typography
+                      size="0.8rem"
+                      color="purple"
+                      fontWeight="bold"
+                      textAlign="left"
+                    >
+                      {data}
+                    </Typography>
+                  </div>
+                ))}
+                <Typography size="0.8rem">
+                  메인페이지에서 게임을 플레이 해보세요.(1280 이상 환경)
+                </Typography>
+              </>
+            )}
           </LinkBox>
         </Introduction>
       </Wrapper>

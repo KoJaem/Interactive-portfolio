@@ -20,41 +20,29 @@ export const MySkills = ({ refs }: Props) => {
         My <span style={{ color: customColor.magenta }}>Skills</span>
       </Typography>
       <Wrapper>
-        <Left>
-          <Typography size="2rem" color="black" fontWeight='bold' opacity={0.5}>
-            Tech
-          </Typography>
-          <SmallImageContainer>
-            {mySkills.Tech.smallImage.map((data, i) => (
-              <SmallImageWrapper key={i}>
-                <Image
-                  src={`/imgs/mySkills/${data}`}
-                  width={85}
-                  height={85}
-                  objectFit={'contain'}
-                  alt="techSkill"
-                />
-              </SmallImageWrapper>
-            ))}
-          </SmallImageContainer>
-          {mySkills.Tech.image.map((data, i) => (
-            <ImageWrapper key={i}>
-              <Image
-                src={`/imgs/mySkills/${data}`}
-                width={275}
-                height={85}
-                alt="techSkill"
-                objectFit={'contain'}
-              />
-            </ImageWrapper>
-          ))}
-        </Left>
-        <Right>
-          <CategoryWrapper>
-            <Typography size="2.5rem" color="black" fontWeight='bold' opacity={0.5}>
-              Community
+          <Left>
+            <Typography
+              size="2rem"
+              color="black"
+              fontWeight="bold"
+              opacity={0.5}
+            >
+              Tech
             </Typography>
-            {mySkills.Community.map((data, i) => (
+            <SmallImageContainer>
+              {mySkills.Tech.smallImage.map((data, i) => (
+                <SmallImageWrapper key={i}>
+                  <Image
+                    src={`/imgs/mySkills/${data}`}
+                    width={85}
+                    height={85}
+                    objectFit={'contain'}
+                    alt="techSkill"
+                  />
+                </SmallImageWrapper>
+              ))}
+            </SmallImageContainer>
+            {mySkills.Tech.image.map((data, i) => (
               <ImageWrapper key={i}>
                 <Image
                   src={`/imgs/mySkills/${data}`}
@@ -65,56 +53,93 @@ export const MySkills = ({ refs }: Props) => {
                 />
               </ImageWrapper>
             ))}
-          </CategoryWrapper>
-          <CategoryWrapper>
-            <Typography size="2.5rem" color="black" fontWeight='bold' opacity={0.5}>
-              Deployment
-            </Typography>
-            {mySkills.Deployment.map((data, i) => (
-              <ImageWrapper key={i}>
-                <Image
-                  src={`/imgs/mySkills/${data}`}
-                  width={275}
-                  height={85}
-                  alt="techSkill"
-                  objectFit={'contain'}
-                />
-              </ImageWrapper>
-            ))}
-          </CategoryWrapper>
-          <CategoryWrapper>
-            <Typography size="2.5rem" color="black" fontWeight='bold' opacity={0.5}>
-              API
-            </Typography>
-            {mySkills.API.map((data, i) => (
-              <ImageWrapper key={i}>
-                <Image
-                  src={`/imgs/mySkills/${data}`}
-                  width={275}
-                  height={85}
-                  alt="techSkill"
-                  objectFit={'contain'}
-                />
-              </ImageWrapper>
-            ))}
-          </CategoryWrapper>
-          <CategoryWrapper>
-            <Typography size="2.5rem" color="black" fontWeight='bold' opacity={0.5}>
-              Mobile
-            </Typography>
-            {mySkills.Mobile.map((data, i) => (
-              <ImageWrapper key={i}>
-                <Image
-                  src={`/imgs/mySkills/${data}`}
-                  width={275}
-                  height={85}
-                  alt="techSkill"
-                  objectFit={'contain'}
-                />
-              </ImageWrapper>
-            ))}
-          </CategoryWrapper>
-        </Right>
+          </Left>
+          <Right>
+            <CategoryWrapper>
+              <Typography
+                size="2rem"
+                color="black"
+                fontWeight="bold"
+                opacity={0.5}
+              >
+                Community
+              </Typography>
+              {mySkills.Community.map((data, i) => (
+                <ImageWrapper key={i}>
+                  <Image
+                    src={`/imgs/mySkills/${data}`}
+                    width={275}
+                    height={85}
+                    alt="techSkill"
+                    objectFit={'contain'}
+                  />
+                </ImageWrapper>
+              ))}
+            </CategoryWrapper>
+            <CategoryWrapper>
+              <Typography
+                size="2.5rem"
+                color="black"
+                fontWeight="bold"
+                opacity={0.5}
+              >
+                Deployment
+              </Typography>
+              {mySkills.Deployment.map((data, i) => (
+                <ImageWrapper key={i}>
+                  <Image
+                    src={`/imgs/mySkills/${data}`}
+                    width={275}
+                    height={85}
+                    alt="techSkill"
+                    objectFit={'contain'}
+                  />
+                </ImageWrapper>
+              ))}
+            </CategoryWrapper>
+            <CategoryWrapper>
+              <Typography
+                size="2.5rem"
+                color="black"
+                fontWeight="bold"
+                opacity={0.5}
+              >
+                API
+              </Typography>
+              {mySkills.API.map((data, i) => (
+                <ImageWrapper key={i}>
+                  <Image
+                    src={`/imgs/mySkills/${data}`}
+                    width={275}
+                    height={85}
+                    alt="techSkill"
+                    objectFit={'contain'}
+                  />
+                </ImageWrapper>
+              ))}
+            </CategoryWrapper>
+            <CategoryWrapper>
+              <Typography
+                size="2.5rem"
+                color="black"
+                fontWeight="bold"
+                opacity={0.5}
+              >
+                Mobile
+              </Typography>
+              {mySkills.Mobile.map((data, i) => (
+                <ImageWrapper key={i}>
+                  <Image
+                    src={`/imgs/mySkills/${data}`}
+                    width={275}
+                    height={85}
+                    alt="techSkill"
+                    objectFit={'contain'}
+                  />
+                </ImageWrapper>
+              ))}
+            </CategoryWrapper>
+          </Right>
       </Wrapper>
     </Container>
   );
@@ -126,7 +151,11 @@ const Container = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(${customColor.black} 1%, ${customColor.lightMagenta} 10% 90%, ${customColor.black} 100%);
+  background: linear-gradient(
+    ${customColor.black} 1%,
+    ${customColor.lightMagenta} 10% 90%,
+    ${customColor.black} 100%
+  );
   gap: 80px 0;
   padding: 300px 0;
 `;
@@ -144,11 +173,12 @@ const Wrapper = styled.section`
   position: relative;
   display: flex;
   justify-content: space-around;
-  padding: 80px;
+  padding: 20px;
   padding-top: 0;
   flex-wrap: wrap;
   @media screen and (min-width: 840px) {
     flex-wrap: nowrap;
+    padding: 80px;
   }
 `;
 
@@ -159,8 +189,9 @@ const Left = styled.section`
   align-items: center;
   gap: 20px 0;
   margin-top: 80px;
-  min-width: 340px;
-  @media screen and (min-width: 840px) {
+  min-width: 280px;
+
+  @media screen and (min-width: 720px) {
     position: sticky;
     height: max-content;
     top: 0;
@@ -169,10 +200,9 @@ const Left = styled.section`
 
 const SmallImageContainer = styled.section`
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px 0;
+  gap: 12px;
+  width: 100vw;
   max-width: 340px;
-  justify-content: space-between;
 `;
 
 const Right = styled.section`
@@ -181,27 +211,33 @@ const Right = styled.section`
   align-items: center;
   gap: 80px 0;
   margin-top: 80px;
-  min-width: 340px;
+  min-width: 280px;
 `;
 
 const imageWrapperCss = css`
   background-color: ${customColor.white};
+  /* border: 4px solid ${customColor.black}; */
   box-shadow: 4px 12px 30px 6px ${customColor.black}30;
-  :hover {
-    scale: 1.1;
-  }
   transition: all 200ms ease;
+  @media screen and (min-width: 320px) {
+    :hover {
+      scale: 1.05;
+    }
+    :active {
+      scale: 1;
+    }
+  }
 `;
 
 const SmallImageWrapper = styled.section`
   border-radius: 8px;
-  padding: 8px;
+  padding: 12px;
   ${imageWrapperCss}
 `;
 
 const ImageWrapper = styled.section`
   border-radius: 14px;
-  width: 100%;
+  width: 100vw;
   max-width: 340px;
   padding: 12px;
   display: flex;

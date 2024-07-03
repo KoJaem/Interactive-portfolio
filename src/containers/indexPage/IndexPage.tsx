@@ -1,7 +1,13 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { customColor } from 'src/constants';
 import styled from 'styled-components';
-import { Header, Intro, MyInfo, Projects, MySkills } from './components';
+import {
+  Header,
+  Intro,
+  MyInfo,
+  MySkills,
+  Projects
+} from './components';
 
 export const IndexPage = () => {
   const buttonRefs = useRef<null[] | HTMLElement[]>(new Array(3));

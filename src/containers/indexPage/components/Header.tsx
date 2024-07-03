@@ -91,6 +91,7 @@ export const Header = ({ refs }: Props) => {
             whileTap="tap"
             key={index}
             onClick={() => scrollMove(index)}
+            aria-label={`move-${data}`}
           >
             {data}
           </Button>
@@ -106,6 +107,7 @@ export const Header = ({ refs }: Props) => {
             borderRadius: '50%',
           }}
           onClick={() => window.open('https://github.com/KoJaem')}
+          aria-label="move-github"
         >
           Github
         </GithubButton>
@@ -126,18 +128,19 @@ const Container = styled.section`
   position: fixed;
   top: 60px;
   display: none;
+  align-items: center;
   width: 100%;
   padding: 0 20px;
   justify-content: space-between;
   z-index: 1;
   transition: top 0.5s ease;
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 320px) {
     display: flex;
     align-items: center;
   }
-  /* @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     padding: 0 20px;
-  } */
+  }
   @media screen and (min-width: 1040px) {
     padding: 0 60px;
   }
@@ -149,11 +152,16 @@ const Title = styled.button`
 
 const ButtonWrapper = styled.section`
   display: none;
-  gap: 0 4vw;
   font-size: 1rem;
   margin-top: 8px;
   @media screen and (min-width: 768px) {
     display: flex;
+    gap: 0 20px;
+  }
+
+  @media screen and (min-width: 1040px) {
+    display: flex;
+    gap: 0 80px;
   }
 `;
 
@@ -188,7 +196,6 @@ const MenuIcon = styled.section`
   display: flex;
   position: absolute;
   right: 40px;
-  margin-top: 8px;
   cursor: pointer;
 
   @media screen and (min-width: 768px) {

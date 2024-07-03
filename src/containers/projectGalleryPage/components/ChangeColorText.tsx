@@ -19,7 +19,7 @@ export const ChangeColorText = ({ text }: Props) => {
               {notTagText}
             </span>
           );
-        } else return <span key={index}>{data}</span>;
+        } else return data && <span key={index}>{data}</span>;
       })}
     </Typography>
   );

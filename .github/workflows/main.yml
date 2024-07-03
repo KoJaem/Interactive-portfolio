@@ -13,7 +13,9 @@ jobs:
         uses: actions/checkout@master
 
       - run: npm install
-      - run: npm run build
+      - run: npm run export
+        env:
+          NEXT_PUBLIC_LAMBDA_URL: ${{ secrets.LAMBDA_URL }}
 
       - uses: jakejarvis/s3-sync-action@master
         with:

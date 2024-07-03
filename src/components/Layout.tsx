@@ -10,6 +10,6 @@ export const Layout = ({ children }: Props) => {
 };
 
 const Container = styled.section`
-  height: 100vh;
+  min-height: 100vh;
   /* background-color: ${customColor.black}; */
 `;

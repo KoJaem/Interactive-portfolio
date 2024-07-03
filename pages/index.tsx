@@ -8,7 +8,7 @@ const Home: NextPage = () => {
     <>
       <Seo title={'Main'} />
       <IndexPage />
-      <LangchainChatWindow bubbleColor={'white'} boxHeaderColor='purple'/>
+      <LangchainChatWindow bubbleColor={'lightYellow'} boxHeaderColor='purple'/>
     </>
   );
 };
