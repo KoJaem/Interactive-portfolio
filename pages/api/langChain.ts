@@ -1,4 +1,4 @@
-// serverless(Lambda) 백업코드
+//  AI serverless (Lambda) 코드 일부 백업
 import { SupabaseVectorStore } from '@langchain/community/vectorstores/supabase';
 import { StringOutputParser } from '@langchain/core/output_parsers';
 import { PromptTemplate } from '@langchain/core/prompts';
@@ -8,22 +8,14 @@ import {
 } from '@langchain/core/runnables';
 import { ChatOpenAI, OpenAIEmbeddings } from '@langchain/openai';
 import { createClient } from '@supabase/supabase-js';
-import { NextApiRequest } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next';
 
-export const handler = async (event: NextApiRequest) => {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse,
+) {
   try {
-    const requestBody = JSON.parse(event.body);
-    const { question, history, accessKey } = requestBody;
-
-    const accessKeysArray = process.env.ACCESS_KEYS?.split(',') ?? [];
-
-    if (!accessKey || !accessKeysArray.includes(accessKey)) {
-      console.log(`accessKey: ${accessKey} question: ${question}\n`);
-      return {
-        statusCode: 401,
-        body: JSON.stringify(`Access denied!`),
-      };
-    }
+    const { question, history, accessKey } = req.body;
 
     if (!question) {
       return {
@@ -37,7 +29,7 @@ export const handler = async (event: NextApiRequest) => {
       openAIApiKey,
       maxTokens: 200,
       temperature: 0,
-      modelName: 'gpt-3.5-turbo',
+      modelName: 'gpt-4o',
     });
 
     const standaloneQuestionTemplate = `Given some conversation history (if any) and a question, convert the question to a standalone question. 
@@ -83,24 +75,11 @@ answer: `;
 
     const response = await chain.invoke({ question, history });
 
-    // const response = await new Promise((resolve, reject) => {
-    //   chain.invoke({ question, history });
-    // })
-
-    console.log(
-      `accessKey: ${accessKey} question: ${question}\nhistory: ${history}\nresponse: ${response}\n`,
-    );
-
-    const res = {
-      statusCode: 200,
-      body: JSON.stringify(response),
-    };
-
-    return res;
+    res.status(200).json({ message: response });
   } catch (error: any) {
     return error?.message || '';
   }
-};
+}
 
 const combineDocuments = (docs: { pageContent: string }[]) => {
   return docs.map(doc => doc.pageContent).join('\n\n');

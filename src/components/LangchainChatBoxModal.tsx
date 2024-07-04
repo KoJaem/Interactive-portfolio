@@ -56,6 +56,7 @@ const LangchainChatBoxModal = ({ boxHeaderColor, handleModal }: Props) => {
       setHistory(prev => [...prev, `${question}`]);
 
       const { data: response } = await axios.post(
+        // '/api/langChain',
         process.env.NEXT_PUBLIC_LAMBDA_URL,
         {
           question,
@@ -64,6 +65,7 @@ const LangchainChatBoxModal = ({ boxHeaderColor, handleModal }: Props) => {
         },
       );
 
+      // setHistory(prev => [...prev, `${response.message}`]);
       setHistory(prev => [...prev, `${response}`]);
     } catch (error: unknown) {
       const axiosError = error as AxiosError;
