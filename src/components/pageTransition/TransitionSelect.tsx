@@ -6,6 +6,6 @@ type Props = {
 };
 export const TransitionSelect = ({ asPath, children }: Props) => {
   if (asPath === '/') return <ScreenAndSlide>{children}</ScreenAndSlide>;
-  if (asPath === '/project-gallery') return <SlideAndScreen>{children}</SlideAndScreen>;
+  if (asPath === '/projectGallery') return <SlideAndScreen>{children}</SlideAndScreen>;
   return <>{children}</>;
 };
