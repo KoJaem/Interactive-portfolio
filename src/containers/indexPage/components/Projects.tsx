@@ -35,7 +35,7 @@ export const Projects = ({ refs }: Props) => {
             <MoreButton
               onClick={async () => {
                 setIndexScreenAnimation(false);
-                await router.push('project-gallery');
+                await router.push('projectGallery');
                 window.scrollTo({ top: refs.current[2]?.offsetTop! - 50 });
               }}
             >
