@@ -27,7 +27,7 @@ export const Projects = ({ refs }: Props) => {
               lineHeight={1.5}
               fontWeight="bold"
             >
-              Projects
+              Side Projects
             </GradientTypography>
           </Title>
           <ProjectSwiper_NewVersion />
