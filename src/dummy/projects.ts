@@ -230,7 +230,7 @@ Flutter 로 개발을 진행하였기 때문에 PC버전으로도 손쉽게 배�
       // game2: 'https://d3aqn2y3q7oegc.cloudfront.net',
     },
     action: {
-      game: 'https://d2ql7g3zfmsy1e.cloudfront.net',
+      game: 'https://d2qe02gk5ngtdj.cloudfront.net',
       game2: 'https://d3aqn2y3q7oegc.cloudfront.net',
     },
   },
