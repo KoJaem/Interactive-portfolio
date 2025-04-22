@@ -73,7 +73,7 @@ export const MyInfo = ({ refs }: Props) => {
                   aria-label="open-github"
                 >
                   <Image
-                    src={'/GithubIcon.png'}
+                    src={'/githubIcon.png'}
                     width={30}
                     height={30}
                     alt="My Github"

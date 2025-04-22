@@ -2,6 +2,184 @@ import { projectType } from 'src/types';
 
 export const projects: projectType[] = [
   {
+    thumbnail: 'zznpk.png',
+    title: '짜릿한 선택! 짱픽!',
+    people: '프론트 1 백엔드 1 디자이너 1',
+    date: ['2025.02', 'ing'],
+    imageUrl: [],
+    info: `다양한 주제로 이상형월드컵을 생성하고 플레이할 수 있는 콘텐츠 기반 웹 서비스입니다.
+    프론트엔드 1명, 백엔드 1명, 디자이너 1명으로 구성된 팀에서 실제 운영을 목표로 진행 중인 프로젝트입니다.
+    현재는 와이어프레임 단계로, 투박한 디자인으로 구성되어 있으며 디자인 구현 및 세부적인 이슈들을 작업 중입니다.`,
+    function: `- 이상형월드컵 생성 기능
+    - 사용자 플레이 기능
+    - 게임 진행 UI
+    - 비공개 테스트(하이브리드 앱) 진행`,
+    developEnv: [
+      'Next.js',
+      'TailwindCSS',
+      'Orval (OpenAPI Generator)',
+      'npm',
+      'React Query',
+      'zustand',
+      'framer-motion',
+      'Github Actions',
+      'Vercel',
+      'React Native (Expo)',
+    ],
+    myRole: [
+      '프로젝트 리더',
+      '개발 환경 자동화 세팅',
+      'Slack Notification 구현',
+      '프론트엔드 전체 개발 (Web, WebView)',
+      '사용자 경험 개선 (Streaming SSR)',
+      'Firebase 기반 App Notification',
+    ],
+    link: {
+      // github: 'https://github.com/Rookeys/balance-game-front',
+      figma:
+        'https://www.figma.com/design/K7KQT0CDKhgNoqZ9eYpmuy/%EC%A7%B1%ED%94%BD?node-id=0-1&p=f&t=nNz3pK6rOGuDFfGc-0',
+      deploy: 'https://zznpk.com',
+    },
+  },
+  {
+    thumbnail: 'picki-talki.png',
+    title: '피키토키',
+    people: '프론트 2 백엔드 2 디자인 2',
+    date: ['2025.01', '2025.02'],
+    imageUrl: [],
+    info: `웹 개발 동아리 DND의 해커톤 대회에서 특별상을 수상한 것을 계기로 DND 12기에 참여하게 되었고, 
+  프론트엔드 2명, 백엔드 2명, 디자이너 2명으로 구성된 팀에서 8주간(기획 4주, 개발 4주) 프로젝트를 수행했습니다.
+
+  짧은 기간 안에 기획부터 배포까지 완료해야 하는 만큼, 팀원과의 원활한 협업과 빠른 의사결정을 최우선으로 하여 프로젝트를 진행했습니다.`,
+    function: `- 메인 페이지
+- 채널 페이지
+- 시그널 작성 및 응답 작성 페이지
+- 공용 컴포넌트 구조 설계 및 구현
+- PWA 기능
+- 자동화된 배포 시스템`,
+    developEnv: [
+      'Next.js',
+      'TailwindCSS',
+      'zustand',
+      'framer-motion',
+      'Orval',
+      'React-Query',
+      'Serwist',
+    ],
+    myRole: [
+      '프로젝트 리더',
+      'API 코드 세팅 (Orval)',
+      'PWA 구현',
+      '공용 컴포넌트 및 메인 UI 개발',
+      '채널/시그널 페이지 구현',
+      '배포 및 메타데이터 구성',
+    ],
+    link: {
+      github: 'https://github.com/dnd-side-project/dnd-12th-4-frontend',
+      'figma lo-fi':
+        'https://www.figma.com/design/7hWMRfIBLwVNfEdsMahqeS/lo-fi?node-id=0-1&p=f&t=B6PLq00WgPROUKpa-0',
+      figma:
+        'https://www.figma.com/design/kU6cWZCX0dEIFgIGoLaO2J/DND-12-4-hi-fi?node-id=0-1&p=f&t=iJY28SghiVPnhUmi-0',
+      deploy: 'https://picki-talki.site',
+    },
+  },
+  {
+    thumbnail: 'story-of-dreams.png',
+    title: '꿈을 찾는 우리들의 이야기',
+    people: '개인 프로젝트',
+    date: ['2024.12', '2025.01'],
+    imageUrl: [],
+    info: `대학생 때 서울대학교 학생이 AI를 활용해 게임을 하나 만들었다는 소식을 접한 후,
+  게임을 한번 플레이해보고 나서 스토리텔링 게임을 만들어두면 이미지나 음성, 스토리 등의 Asset 데이터만 수정하면
+  비슷한 게임을 여러 개 만들 수 있겠다는 아이디어를 얻었습니다.
+  
+  이를 바탕으로 '눈으로 보는 스토리텔링' 형식의 게임을 개발하였으며, 
+  플레이어는 간단한 조작으로 스토리를 감상할 수 있습니다.
+  `,
+    function: `게임을 플레이하면서 스토리를 감상할 수 있으며, 
+  갤러리 페이지에서 이미지들을 한번에 확인하고, 캐릭터 소개 페이지에서 게임의 주요 인물들을 소개하는 기능을 제공합니다.`,
+    developEnv: [
+      'Flutter',
+      'Flutter-Flame',
+      'Stable Diffusion',
+      'Shared Preferences',
+    ],
+    myRole: ['개인 프로젝트 (전체 구현)'],
+    link: {
+      playStore:
+        'https://play.google.com/store/apps/details?id=com.kojaem.storyofdreams',
+    },
+  },
+  {
+    thumbnail: 'flutter_games.png',
+    title: 'Flutter 게임 프로젝트',
+    people: '개인 프로젝트',
+    date: ['2023.05', '2024.03'],
+    imageUrl: [
+      'flutter_games2.png',
+      'flutter_games3.png',
+      'flutter_games4.png',
+      'flutter_games5.png',
+      'flutter_games6.png',
+      'flutter_games7.png',
+    ],
+    info: `이 프로젝트는 <color>앱개발에도 흥미를 가져보자</color> 라는 생각에 시작하게 되었습니다.
+취업을 하게되면서 자연스럽게 취미생활이던 게임을 줄이게 되었는데,
+<color>게임을 플레이 할 시간에 게임을 개발해보자</color> 라는 단순한 생각에서 1인 개발을 시작하게 되었습니다.
+
+처음에는 Flutter-Flame 라이브러리에 대해 기초적인 개념을 익히고 싶어서 강의를 보며
+pixel adventure 를 만들어보았었는데, 그 후에 우연히 보게 된 유튜브에서 <color>AI 가 그려주는 그림</color>에 관련한 내용을 접하게 되면서
+<color>stable-diffusion</color> 을 활용한 캐릭터와 배경 이미지를 만들어서 스토리텔링 형식의 게임을 만들어보았습니다.
+
+모바일 게임을 생각하여 만들었지만,
+Flutter 로 개발을 진행하였기 때문에 PC버전으로도 손쉽게 배포 할 수 있어서
+포트폴리오 사이트 메인페이지에서 PC 로 간단하게 플레이 해보실 수 있도록 설정해두었습니다.
+
+※ 모바일 앱 배포용으로 만든것을 PC 버전으로 배포한것이기 때문에, 폰트가 깨지는등의 약간의 호환성 문제가 있을 수 있습니다
+`,
+    function: `pixel adventure : 점프게임 (<color>Tiled 를 사용하여 스테이지 구현</color>)
+스토리텔링 게임 : 스토리텔링 게임 / 추 후 image, text 등의 <color>assets 을 넣어서 쉽게 스토리텔링 게임을 만들 수 있도록 구현</color>`,
+    developEnv: ['Flutter', 'Flutter-flame', 'Jenny'],
+    myRole: ['개인 프로젝트 (전체 구현)'],
+    link: {
+      // game: 'https://d2ql7g3zfmsy1e.cloudfront.net',
+      // game2: 'https://d3aqn2y3q7oegc.cloudfront.net',
+    },
+    action: {
+      game: 'https://d2qe02gk5ngtdj.cloudfront.net',
+      game2: 'https://d3aqn2y3q7oegc.cloudfront.net',
+    },
+  },
+  {
+    thumbnail: 'flutter_calendar.png',
+    title: 'Flutter 일정관리 앱',
+    people: '프론트 2',
+    date: ['2023.09', '2024.02'],
+    imageUrl: [],
+    info: `이 프로젝트의 주제는 <color>"사내 연차 관리를 앱으로 손쉽게 관리하자"</color> 입니다.
+
+제가 근무하고 있는 회사에서는 연차를 사용할 때 구글 캘린더에 일정을 등록하고, 남은 연차는 엑셀로 관리하고 있었는데,
+이로 인해 신청 후 누락되기도 하고, 관리하는 분의 번거로움도 있어 이를 해결하고자 프로젝트를 시작하였습니다.
+
+Flutter에 흥미를 가지게 되면서 공부를 목적으로 회사 팀원에게 제안하여 평일 저녁이나 주말에 온라인 회의를 통해 진행한 프로젝트입니다.
+
+프론트 개발이 완료된 이후, 사내에서 사용하기 위해 백엔드 개발자 분들께서 개발을 진행 해주시다가 보류처리가 되었던 아쉬운 프로젝트 입니다.`,
+    function: `<color>구글 캘린더 API를 연동하여 조직원들이 직접 일정을 등록하고, 이를 한눈에 확인할 수 있도록 구현</color>하였습니다.
+관리자는 조직원들을 추가 및 연차관리를 할 수 있으며,
+조직원은 개인 마이페이지에서 본인의 정보를 수정하거나 일정 확인 및 휴가요청을 할 수 있습니다.`,
+    developEnv: ['Flutter', 'Firebase', 'Google Calendar v3 API'],
+    myRole: [
+      '메인페이지 구현',
+      '캘린더 페이지 및 일정등록 기능 구현 (Google Calendar API 연동)',
+      '마이페이지 및 조직원 수정 UI 구현',
+    ],
+    link: {
+      github: 'https://github.com/Rookeys/Calendar-App/tree/main',
+      figma:
+        'https://www.figma.com/proto/mUqlNE7BchDod0LKAR8M83/Rookeys?type=design&node-id=902-5724&t=P6MB0kRfn4bywl0F-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=902%3A5724&show-proto-sidebar=1',
+    },
+  },
+  {
     thumbnail: 'easyphoto.png',
     title: '포토샵 커미션 사이트',
     people: '프론트 3, 백엔드 2',
@@ -152,7 +330,7 @@ Framer 라는 애니메이션 라이브러리를 활용하여 만들었던, <col
     ],
     link: {
       github: 'https://github.com/KoJaem/jolp-exhibition-fashion',
-      githubPage: 'https://kojaem.github.io/jolp-exhibition-fashion/',
+      deploy: 'https://kojaem.github.io/jolp-exhibition-fashion/',
       // https://artvelop.github.io/jolp-exhibition/
     },
   },
@@ -192,46 +370,6 @@ Framer 라는 애니메이션 라이브러리를 활용하여 만들었던, <col
     link: {
       github: 'https://github.com/potato-club/travel-with-pet',
       // aws: 'https://d1ql6v5yorw07d.cloudfront.net/',
-    },
-  },
-  {
-    thumbnail: 'flutter_games.png',
-    title: 'Flutter 게임 프로젝트',
-    people: '개인 프로젝트',
-    date: ['2023.05', '2024.03'],
-    imageUrl: [
-      'flutter_games2.png',
-      'flutter_games3.png',
-      'flutter_games4.png',
-      'flutter_games5.png',
-      'flutter_games6.png',
-      'flutter_games7.png',
-    ],
-    info: `이 프로젝트는 <color>앱개발에도 흥미를 가져보자</color> 라는 생각에 시작하게 되었습니다.
-취업을 하게되면서 자연스럽게 취미생활이던 게임을 줄이게 되었는데,
-<color>게임을 플레이 할 시간에 게임을 개발해보자</color> 라는 단순한 생각에서 1인 개발을 시작하게 되었습니다.
-
-처음에는 Flutter-Flame 라이브러리에 대해 기초적인 개념을 익히고 싶어서 강의를 보며
-pixel adventure 를 만들어보았었는데, 그 후에 우연히 보게 된 유튜브에서 <color>AI 가 그려주는 그림</color>에 관련한 내용을 접하게 되면서
-<color>stable-diffusion</color> 을 활용한 캐릭터와 배경 이미지를 만들어서 스토리텔링 형식의 게임을 만들어보았습니다.
-
-모바일 게임을 생각하여 만들었지만,
-Flutter 로 개발을 진행하였기 때문에 PC버전으로도 손쉽게 배포 할 수 있어서
-포트폴리오 사이트 메인페이지에서 PC 로 간단하게 플레이 해보실 수 있도록 설정해두었습니다.
-
-※ 모바일 앱 배포용으로 만든것을 PC 버전으로 배포한것이기 때문에, 폰트가 깨지는등의 약간의 호환성 문제가 있을 수 있습니다
-`,
-    function: `pixel adventure : 점프게임 (<color>Tiled 를 사용하여 스테이지 구현</color>)
-스토리텔링 게임 : 스토리텔링 게임 / 추 후 image, text 등의 <color>assets 을 넣어서 쉽게 스토리텔링 게임을 만들 수 있도록 구현</color>`,
-    developEnv: ['Flutter', 'Flutter-flame', 'Jenny'],
-    myRole: ['개인 프로젝트 (전체 구현)'],
-    link: {
-      // game: 'https://d2ql7g3zfmsy1e.cloudfront.net',
-      // game2: 'https://d3aqn2y3q7oegc.cloudfront.net',
-    },
-    action: {
-      game: 'https://d2qe02gk5ngtdj.cloudfront.net',
-      game2: 'https://d3aqn2y3q7oegc.cloudfront.net',
     },
   },
 ];
