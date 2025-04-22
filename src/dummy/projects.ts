@@ -6,7 +6,7 @@ export const projects: projectType[] = [
     title: '짜릿한 선택! 짱픽!',
     people: '프론트 1 백엔드 1 디자이너 1',
     date: ['2025.02', 'ing'],
-    imageUrl: [],
+    imageUrl: ['zznpk1.png'],
     info: `다양한 주제로 이상형월드컵을 생성하고 플레이할 수 있는 콘텐츠 기반 웹 서비스입니다.
     프론트엔드 1명, 백엔드 1명, 디자이너 1명으로 구성된 팀에서 실제 운영을 목표로 진행 중인 프로젝트입니다.
     현재는 와이어프레임 단계로, 투박한 디자인으로 구성되어 있으며 디자인 구현 및 세부적인 이슈들을 작업 중입니다.`,
@@ -46,7 +46,27 @@ export const projects: projectType[] = [
     title: '피키토키',
     people: '프론트 2 백엔드 2 디자인 2',
     date: ['2025.01', '2025.02'],
-    imageUrl: [],
+    imageUrl: [
+      'picki-talki1.gif',
+      'picki-talki2.gif',
+      'picki-talki3.png',
+      'picki-talki4.gif',
+      'picki-talki5.png',
+      'picki-talki6.png',
+      'picki-talki7.png',
+      'picki-talki8.png',
+      'picki-talki9.gif',
+      'picki-talki10.png',
+      'picki-talki11.png',
+      'picki-talki12.gif',
+      'picki-talki13.png',
+      'picki-talki14.png',
+      'picki-talki15.png',
+      'picki-talki16.png',
+      'picki-talki17.png',
+      'picki-talki18.png',
+      'picki-talki19.png',
+    ],
     info: `웹 개발 동아리 DND의 해커톤 대회에서 특별상을 수상한 것을 계기로 DND 12기에 참여하게 되었고, 
   프론트엔드 2명, 백엔드 2명, 디자이너 2명으로 구성된 팀에서 8주간(기획 4주, 개발 4주) 프로젝트를 수행했습니다.
 
@@ -88,7 +108,15 @@ export const projects: projectType[] = [
     title: '꿈을 찾는 우리들의 이야기',
     people: '개인 프로젝트',
     date: ['2024.12', '2025.01'],
-    imageUrl: [],
+    imageUrl: [
+      'story-of-dreams1.png',
+      'story-of-dreams2.png',
+      'story-of-dreams3.png',
+      'story-of-dreams4.png',
+      'story-of-dreams5.png',
+      'story-of-dreams6.png',
+      'story-of-dreams7.png',
+    ],
     info: `대학생 때 서울대학교 학생이 AI를 활용해 게임을 하나 만들었다는 소식을 접한 후,
   게임을 한번 플레이해보고 나서 스토리텔링 게임을 만들어두면 이미지나 음성, 스토리 등의 Asset 데이터만 수정하면
   비슷한 게임을 여러 개 만들 수 있겠다는 아이디어를 얻었습니다.
@@ -155,7 +183,28 @@ Flutter 로 개발을 진행하였기 때문에 PC버전으로도 손쉽게 배�
     title: 'Flutter 일정관리 앱',
     people: '프론트 2',
     date: ['2023.09', '2024.02'],
-    imageUrl: [],
+    imageUrl: [
+      'flutter_calendar1.png',
+      'flutter_calendar2.png',
+      'flutter_calendar3.png',
+      'flutter_calendar4.png',
+      'flutter_calendar5.png',
+      'flutter_calendar6.png',
+      'flutter_calendar7.png',
+      'flutter_calendar8.png',
+      'flutter_calendar9.png',
+      'flutter_calendar10.png',
+      'flutter_calendar11.png',
+      'flutter_calendar12.png',
+      'flutter_calendar13.png',
+      'flutter_calendar14.png',
+      'flutter_calendar15.gif',
+      'flutter_calendar16.png',
+      'flutter_calendar17.png',
+      'flutter_calendar18.png',
+      'flutter_calendar19.png',
+      'flutter_calendar20.png',
+    ],
     info: `이 프로젝트의 주제는 <color>"사내 연차 관리를 앱으로 손쉽게 관리하자"</color> 입니다.
 
 제가 근무하고 있는 회사에서는 연차를 사용할 때 구글 캘린더에 일정을 등록하고, 남은 연차는 엑셀로 관리하고 있었는데,
@@ -238,7 +287,7 @@ Front-End 의 퍼블리싱이 끝난 후 Back-End 와 API 연동작업을 할려
   },
   {
     thumbnail: 'weather-outfit.png',
-    title: '날씨별 코디추천 사이트',
+    title: 'Cody Diary',
     people: '프론트 3, 백엔드 1',
     date: ['2022.05', '2023.04'],
     imageUrl: [
