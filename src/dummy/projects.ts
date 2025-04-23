@@ -95,11 +95,11 @@ WebView 기반 앱에서도 동작이 가능합니다.`,
     ],
     link: {
       github: 'https://github.com/dnd-side-project/dnd-12th-4-frontend',
+      deploy: 'https://picki-talki.site',
       'figma lo-fi':
         'https://www.figma.com/design/7hWMRfIBLwVNfEdsMahqeS/lo-fi?node-id=0-1&p=f&t=B6PLq00WgPROUKpa-0',
       figma:
         'https://www.figma.com/design/kU6cWZCX0dEIFgIGoLaO2J/DND-12-4-hi-fi?node-id=0-1&p=f&t=iJY28SghiVPnhUmi-0',
-      deploy: 'https://picki-talki.site',
       notion:
         'https://petalite-globe-c6e.notion.site/DND-12-4-16c9edc7074d80d08f53fae99de453d1',
       '최종발표 Notion':
