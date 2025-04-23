@@ -14,8 +14,11 @@ export type projectType = {
 
 export type linkType = {
   github?: string;
-  githubPage?: string;
-  aws?: string;
+  deploy?: string;
+  playStore?: string;
+  figma?: string;
+  // githubPage?: string;
+  // aws?: string;
   [key: string]: string | undefined;
 };
 

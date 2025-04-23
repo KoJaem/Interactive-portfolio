@@ -62,8 +62,7 @@ const Wrapper = styled.section`
   align-items: center;
 `;
 
-const Title = styled.section`
-`;
+const Title = styled.section``;
 const ButtonWrapper = styled.section`
   width: 100%;
   display: flex;
