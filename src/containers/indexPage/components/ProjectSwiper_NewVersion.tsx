@@ -2,8 +2,9 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 import { AiFillGithub } from 'react-icons/ai';
-import { FaAws, FaGithubSquare } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaFigma, FaGithubSquare } from 'react-icons/fa';
 import { IoLogoGameControllerB } from 'react-icons/io';
+import { IoLogoGooglePlaystore } from 'react-icons/io5';
 import { Typography } from 'src/components';
 import { customColor } from 'src/constants';
 import { projects } from 'src/dummy';
@@ -76,8 +77,8 @@ export const ProjectSwiper_NewVersion = () => {
                       src={`/imgs/projects/thumbnail/${data.thumbnail}`}
                       layout="fill"
                       alt="project"
-                      objectFit="cover"
-                      style={{ borderRadius: 12 }}
+                      objectFit="contain"
+                      // style={{ borderRadius: 12 }}
                     />
                   </ImageWrapper>
                   {activeIndex === i && (
@@ -115,33 +116,44 @@ export const ProjectSwiper_NewVersion = () => {
                               />
                             </button>
                           )}
-                          {data.link.hasOwnProperty('githubPage') && (
+                          {data.link.hasOwnProperty('figma') && (
                             <button
-                              onClick={() => window.open(data.link.githubPage)}
-                              aria-label={`open-${data.title}-githubPage`}
+                              onClick={() => window.open(data.link.figma)}
+                              aria-label={`open-${data.title}-figma`}
+                            >
+                              <Image
+                                src={'/figmaIcon.png'}
+                                alt="figmaIcon"
+                                width={30}
+                                height={45}
+                              />
+                            </button>
+                          )}
+                          {data.link.hasOwnProperty('deploy') && (
+                            <button
+                              onClick={() => window.open(data.link.deploy)}
+                              aria-label={`open-${data.title}-deploy`}
                             >
                               <GradientSvg
-                                Icon={FaGithubSquare}
-                                color1={customColor.skyBlue}
+                                Icon={FaExternalLinkAlt}
+                                color1={customColor.blue}
                                 color2={customColor.purple}
-                                size={40}
-                                id="githubPage"
+                                size={36}
+                                id="deploy"
                                 direction="leftToRight"
                               />
                             </button>
                           )}
-                          {data.link.hasOwnProperty('aws') && (
+                          {data.link.hasOwnProperty('playStore') && (
                             <button
-                              onClick={() => window.open(data.link.aws)}
-                              aria-label={`open-${data.title}-aws`}
+                              onClick={() => window.open(data.link.playStore)}
+                              aria-label={`open-${data.title}-playStore`}
                             >
-                              <GradientSvg
-                                Icon={FaAws}
-                                color1={customColor.orange}
-                                color2={customColor.darkGray}
-                                size={40}
-                                id="aws"
-                                direction="leftToRight"
+                              <Image
+                                src={'/playStoreIcon.png'}
+                                alt="playStoreIcon"
+                                width={40}
+                                height={46}
                               />
                             </button>
                           )}
@@ -280,6 +292,9 @@ const ImageWrapper = styled(motion.div)`
   aspect-ratio: 1;
   align-self: end;
   z-index: 2;
+  background-color: ${customColor.lightGray};
+  border-radius: 12px;
+  overflow: hidden;
 `;
 
 const Info = styled(motion.div)`

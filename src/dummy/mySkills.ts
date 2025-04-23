@@ -16,7 +16,15 @@ export const mySkills = {
   Community: ['GitHub.png', 'Notion.png', 'Slack.png', 'Figma.png'],
   Deployment: ['AWS.png', 'vercel.png'],
 
-  API: ['PostMan.png', 'Axios.png', 'ReactQuery.png', 'SWR.png'],
+  API: [
+    'PostMan.png',
+    'Axios.png',
+    'ky.png',
+    'ReactQuery.png',
+    'SWR.png',
+    'openapi-generator.png',
+    'Orval.png',
+  ],
 
   Mobile: ['Flutter.png', 'React-Native.png'],
 };
