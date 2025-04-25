@@ -9,7 +9,7 @@ export const projects: projectType[] = [
     imageUrl: ['zznpk1.png'],
     info: `<color>다양한 주제로 이상형월드컵을 생성 및 공유하고, 플레이 할 수 있는 플랫폼</color>입니다.
 프론트엔드 1명, 백엔드 1명, 디자이너 1명으로 구성된 팀에서 실제 운영을 목표로 진행 중인 프로젝트입니다.
-현재는 <color>와이어프레임 단계</color>로, 투박한 디자인으로 구성되어 있으며 <color>디자인 구현 및 세부적인 이슈들을 작업 중</color>입니다.`,
+현재는 <color>와이어프레임 단계</color>로, 투박한 디자인으로 구성되어 있으며 <color>디자인 구현 및 세부적인 이슈들을 작업 중 </color>입니다.`,
     function: `<color>이상형 월드컵을 공유 및 플레이 하거나 카카오톡으로 로그인하여 나만의 이상형 월드컵을 생성</color>할 수 있습니다.
 생성된 게임이나, 게임에 사용된 각각의 리소스에 대해 <color>댓글을 남기며 의견을 공유</color>할 수 있습니다.
 마이페이지에서 <color>내가 만든 게임을 관리</color>하거나, 상대방에게 보이는 <color>프로필을 수정</color>할 수 있습니다.
@@ -68,7 +68,7 @@ export const projects: projectType[] = [
       'picki-talki19.png',
     ],
     info: `웹 개발 동아리 <color>DND의 해커톤 대회에서 프리패스 특별상을 수상한 것을 계기로 DND 12기에 참여</color>하게 되었고,
-프론트엔드 2명, 백엔드 2명, 디자이너 2명으로 구성된 팀에서 <color>8주간</color>(기획 4주, 개발 4주) <color>프로젝트를 진행</color>히였습니다.
+프론트엔드 2명, 백엔드 2명, 디자이너 2명으로 구성된 팀에서 <color>8주간</color>(기획 4주, 개발 4주) <color>프로젝트를 진행</color>하였습니다.
 
 <color>짧은 기간 안에 기획부터 배포까지 완료</color>해야 하는 만큼, <color>팀원과의 원활한 협업과 빠른 의사결정을 최우선으로 하여 프로젝트를 진행</color>하였습니다.
 개발진행 8주 후, 타 외부 동아리 <color>Yapp 과 연합하여 오프라인 최종발표를 진행</color> 하였습니다.
@@ -120,15 +120,17 @@ export const projects: projectType[] = [
       'story-of-dreams6.png',
       'story-of-dreams7.png',
     ],
-    info: `대학생 때 서울대학교 학생이 AI를 활용해 게임을 하나 만들었다는 소식을 접한 후,
-게임을 한번 플레이해보고 나서 <color>스토리텔링 게임을 만들어두면 이미지나 음성, 스토리 등의 Asset 데이터만 수정하면</color>
-<color>비슷한 게임을 여러 개 만들 수 있겠다는 아이디어를 얻었습니다.</color>
+    info: `이 프로젝트는 <color>AI 이미지 생성 기술을 활용한 스토리텔링 게임</color> 개발을 본격적으로 진행하기 위해 시작한 프로젝트입니다.
 
-그 후, AI로 이미지 asset 을 만드는 기술인 <color>stable-diffusion</color> 에 관심을 가지게 되었고,
-이를 바탕으로 <color>눈으로 보는 스토리텔링 형식의 게임을 개발</color>하였습니다.
+대학생 시절, 서울대학교 학생이 AI를 활용해 게임을 만들었다는 소식을 접한 후 직접 플레이해보고 나서, <color>스토리텔링 게임을 하나 만들어두면 asset 데이터만 바꿔 여러 게임으로 확장할 수 있겠다는 아이디어</color>를 떠올렸지만, 당시에는 디자인에 대한 역량이 부족해 구체적으로 실행하지는 못했었습니다.
 
-앱을 실제로 출시하면서 <color>2023년 11월 이후 생성된 개인 개발자 계정</color>에서는 <color>약 2주동안 비공개 테스트를 진행해야 한다는 점</color>과,
-<color>admob</color>, <color>개인정보처리방침</color> 등 <color>앱을 실제로 출시할때 어떠한것들을 고려해야하는지 알 수 있었습니다.</color>
+이후, <color>Flutter 게임 프로젝트</color>를 진행하면서 <color>Stable Diffusion으로 이미지 asset을 제작하는 경험</color>을 하였고, 해당 아이디어를 실현에 옮기고자 이 프로젝트를 시작하게 되었습니다.
+
+<color>Flutter</color> 및 <color>Flutter-Flame</color>을 활용해 <color>눈으로 보는 스토리텔링 형식의 게임</color>을 구현하였고,
+캐릭터와 배경은 <color>Stable Diffusion</color>을 통해 직접 생성한 이미지로 구성하였습니다.
+
+또한 실제 앱 출시를 통해 <color>2023년 11월 이후 생성된 개인 개발자 계정</color>에서는 <color>약 2주동안 비공개 테스트를 진행해야 한다는 점</color>과,
+<color>admob</color>, <color>개인정보처리방침</color> 등 <color> 출시 시 필요한 요소들</color>을 직접 경험하며 배울 수 있었습니다.
 `,
     function: `게임을 플레이하면서 <color>스토리를 감상</color>할 수 있으며,
 갤러리 페이지에서 <color>진행된 스토리에 맞게 사용된 이미지들을 확인</color> 할 수 있고,
@@ -162,8 +164,8 @@ export const projects: projectType[] = [
 취업 후 자연스럽게 줄어든 게임 플레이 시간을 대신해, <color>직접 게임을 개발해보자는 단순한 발상으로 1인 개발을 시작</color>하였습니다.
 
 초기에는 <color>Flutter</color>와 <color>Flutter-Flame</color>에 대한 기초 개념을 익히기 위해 강의를 참고하여 <color>Pixel Adventure</color>를 구현하였고,
-이후 <color>AI가 생성하는 이미지</color>에 대한 유튜브 콘텐츠를 접하면서 <color>Stable Diffusion</color>을 활용해 <color>캐릭터와 배경 이미지를 생성</color>하고,
-이를 바탕으로 <color>스토리텔링 형식의 게임</color>을 개발하게 되었습니다.
+이후 <color>AI가 이미지 생성 기술</color>에 대한 유튜브 콘텐츠를 접하면서 <color>Stable Diffusion</color>을 활용해 <color>캐릭터와 배경 이미지를 생성</color>하고,
+이를 바탕으로 <color>스토리텔링 형식의 게임 제작 가능성</color> 발견하게 되었습니다.
 
 ※ 모바일 게임을 염두에 두고 제작하였으나, <color>Flutter는 웹 배포도 지원</color>하기 때문에 포트폴리오 사이트에서 PC로도 간단히 플레이해보실 수 있도록 구성하였습니다.
 `,
@@ -212,7 +214,7 @@ export const projects: projectType[] = [
 <color>Flutter</color>에 흥미를 가지게 되면서 공부를 목적으로 회사 팀원에게 제안하여 평일 저녁이나 주말에 온라인 회의를 통해 진행한 프로젝트입니다.
 
 당시에 근무하고 있는 회사에서는 연차를 사용할 때 <color>구글 캘린더에 일정을 등록</color>하고, 남은 연차는 엑셀로 관리하고 있었는데,
-이로 인해 신청 후 누락되기도 하고, <color>관리하는 분의 번거로움도 있어 이를 해결</color>하고자 프로젝트를 시작하였습니다.
+이로 인해 신청 후 누락이 되는 등, <color>휴가를 관리 해주시는분의 번거로움도 있어 이를 해결</color>하고자 프로젝트를 시작하였습니다.
 
 프론트 개발이 완료된 이후, 사내에서 사용하기 위해 백엔드 개발자 분들께서 개발을 진행 해주시다가 보류처리가 되었던 아쉬운 프로젝트 입니다.`,
     function: `<color>구글 캘린더 API를 연동하여 조직원들이 직접 일정을 등록할 수 있고, 이를 한눈에 확인할 수 있습니다.</color>
@@ -245,7 +247,7 @@ export const projects: projectType[] = [
       'easyphoto7.png',
       'easyphoto8.png',
     ],
-    info: `<color>프로젝트의 주제는 "사진 이렇게 편집해주세요!"</color> 같은 글을 SNS 에서 몇번씩 본적이 있는데,
+    info: `프로젝트의 주제는 <color>"사진 이렇게 편집해주세요!"</color> 같은 글을 SNS 에서 몇번씩 본적이 있는데,
 이러한 주제를 전담마크한 사이트를 한번 만들어보자는 생각에서 진행하게 되었습니다.
 저에게는 되게 깊은 의미가 있던 프로젝트로, <color>백엔드 개발자와 협업을 처음 하는 프로젝트</color> 였기에
 <color>API연동 및 백엔드 개발자와 협업을 적극적으로 진행</color>하였습니다.
@@ -305,7 +307,7 @@ Front-End 의 퍼블리싱이 끝난 후 Back-End 와 API 연동작업을 할려
       'weather-outfit10.gif',
       // 'weather-outfit11.png',
     ],
-    info: `주제는 <color>"요즘같은 예측하기 힘든 날씨의 코디를 사용자가 저장하고, 볼 수 있게 하자"</color> 입니다.
+    info: `프로젝트의 주제는 <color>"요즘같은 예측하기 힘든 날씨의 코디를 사용자가 저장하고, 볼 수 있게 하자"</color> 입니다.
 일교차가 심한 요즘, 이러한 주제의 프로젝트로 개발하면 너무 재밌을것 같다고 느껴졌고 그렇게 시작하게 되었습니다.
 
 <color>체감온도는 상대적인 것이라 사용자의 후기를 저장하는것이 중요하다고 느껴졌고</color> 그 기능을 주로 생각하여 개발을 하였습니다.
