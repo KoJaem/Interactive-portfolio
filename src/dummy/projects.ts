@@ -6,10 +6,21 @@ export const projects: projectType[] = [
     title: '짜릿한 선택! 짱픽!',
     people: '프론트 1 백엔드 1 디자이너 1',
     date: ['2025.02', 'ing'],
-    imageUrl: ['zznpk1.png'],
+    imageUrl: [
+      'zznpk1.png',
+      'zznpk2.png',
+      'zznpk3.png',
+      'zznpk4.png',
+      'zznpk5.png',
+      'zznpk6.png',
+      'zznpk7.png',
+      'zznpk8.png',
+      'zznpk9.png',
+      'zznpk10.png',
+    ],
     info: `<color>다양한 주제로 이상형월드컵을 생성 및 공유하고, 플레이 할 수 있는 플랫폼</color>입니다.
 프론트엔드 1명, 백엔드 1명, 디자이너 1명으로 구성된 팀에서 실제 운영을 목표로 진행 중인 프로젝트입니다.
-현재는 <color>와이어프레임 단계</color>로, 투박한 디자인으로 구성되어 있으며 <color>디자인 구현 및 세부적인 이슈들을 작업 중 </color>입니다.`,
+현재 <color>Google Play 프로덕션 심사를 통과</color>하였으며, 디자인 및 기능 검토를 마친 후 <color>2025년 5월 중순 정식 출시 예정</color>입니다.`,
     function: `<color>이상형 월드컵을 공유 및 플레이 하거나 카카오톡으로 로그인하여 나만의 이상형 월드컵을 생성</color>할 수 있습니다.
 생성된 게임이나, 게임에 사용된 각각의 리소스에 대해 <color>댓글을 남기며 의견을 공유</color>할 수 있습니다.
 마이페이지에서 <color>내가 만든 게임을 관리</color>하거나, 상대방에게 보이는 <color>프로필을 수정</color>할 수 있습니다.
