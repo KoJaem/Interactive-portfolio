@@ -152,8 +152,8 @@ export const ProjectSwiper_NewVersion = () => {
                               <Image
                                 src={'/playStoreIcon.png'}
                                 alt="playStoreIcon"
-                                width={40}
-                                height={46}
+                                width={36}
+                                height={40}
                               />
                             </button>
                           )}
