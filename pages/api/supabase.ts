@@ -14,9 +14,9 @@ export default async function handler(
     // const text = await result.text();
 
     const splitter = new RecursiveCharacterTextSplitter({
-      chunkSize: 100,
+      chunkSize: 300,
+      chunkOverlap: 20,
       separators: ['\n\n', '\n'],
-      chunkOverlap: 0,
     });
 
     const sbApiKey = process.env.SUPABASE_API_KEY;
